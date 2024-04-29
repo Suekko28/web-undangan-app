@@ -1,0 +1,3752 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./assets/5447182-1-1@2x.png");
+    background-size: cover; /* atau background-size: 100% 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Background tetap di tempat ketika di-scroll */
+    width: auto;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+#timer {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+#timer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    background-color: #fd856c;
+    position: relative;
+}
+
+#timer > div span {
+    color: #fd856c;
+    position: absolute;
+    bottom: -32px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+span {
+    font-size: 16px;
+}
+
+.aku-tak-pernah1 {
+    line-height: 150%;
+    padding: 200px;
+    font-size: 16px;
+}
+
+.b48 {
+    width: 55px;
+    position: relative;
+    display: none;
+}
+.yth-bapakibusaudarai5 {
+    flex: 1;
+    position: relative;
+}
+.ust-isra-rafi3 {
+    position: relative;
+    font-size: 14px;
+    font-family: "Marck Script";
+}
+.anda-diundang-dengan3 {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+}
+.yth-bapakibusaudarai-parent3 {
+    height: 47px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.undangan-pernikahan5 {
+    position: relative;
+    line-height: 140%;
+    z-index: 1;
+    font-size: 16px;
+}
+.jamaludin-maryam5 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: "Rouge Script";
+}
+.undangan-pernikahan-parent2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 0;
+    max-width: 100%;
+}
+.button-icon {
+    height: 1176px;
+    width: 2090px;
+    position: absolute;
+    margin: 0 !important;
+    bottom: -407px;
+    left: -780px;
+    object-fit: cover;
+}
+.header-section-icon {
+    width: 390px;
+    height: 390px;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.text-node,
+.frame-inner,
+.frame-item,
+.frame-inner2 {
+    position: absolute;
+    margin: 0 !important;
+    border-radius: 50%;
+}
+.content-frame2,
+.subheader {
+    position: absolute;
+    border-radius: 50%;
+    border: 0 solid #ffcf9c;
+    box-sizing: border-box;
+}
+.subheader {
+    width: calc(100% - 16px);
+    top: 8px;
+    right: 8.5px;
+    left: 7.5px;
+    height: 433px;
+    z-index: 1;
+}
+.content-frame2 {
+    top: 0;
+    left: -0.5px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.container-text-frame {
+    height: 449px;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+}
+.text-input-field,
+.text-node {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+.text-node {
+    top: 18px;
+    width: 489px;
+    height: 489px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    left: 50px;
+    position: relative;
+    gap: 0 10px;
+}
+.text-input-field {
+    align-items: center;
+    justify-content: center;
+}
+.days-until-we3 {
+    position: relative;
+    line-height: 140%;
+    font-size: 16px;
+}
+.input-text {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 32px;
+    background-color: #fd856c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.hari11 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #fd856c;
+    text-align: left;
+}
+.text-field {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b49 {
+    position: relative;
+    line-height: 140%;
+}
+.text-field1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 0;
+    text-align: left;
+    color: #fd856c;
+    font-family: Cormorant;
+}
+.b50 {
+    position: relative;
+    line-height: 140%;
+}
+.wrapper38 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 32px;
+    background-color: #fd856c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.jam8 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #fd856c;
+    text-align: left;
+}
+.text-field2 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b51 {
+    position: relative;
+    line-height: 140%;
+}
+.text-field3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 0;
+    text-align: left;
+    color: #fd856c;
+    font-family: Cormorant;
+}
+.b52 {
+    position: relative;
+    line-height: 140%;
+}
+.wrapper39 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 32px;
+    background-color: #fd856c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.menit8 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #fd856c;
+    text-align: left;
+}
+.text-field4 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b53 {
+    position: relative;
+    line-height: 140%;
+}
+.text-field5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 0;
+    text-align: left;
+    color: #fd856c;
+    font-family: Cormorant;
+}
+.b54 {
+    position: relative;
+    line-height: 140%;
+}
+.wrapper40 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 32px;
+    background-color: #fd856c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.detik8 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #fd856c;
+    text-align: left;
+}
+.text-field6 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.link-button {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 1px 0 0;
+    gap: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+.image-placeholder {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 14px;
+    gap: 24px 0;
+    z-index: 1;
+}
+.icon-home3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button56 {
+    height: 56px;
+    width: 56px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.icon-rings3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button57 {
+    height: 56px;
+    width: 56px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.icon-letter3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button58 {
+    height: 56px;
+    width: 56px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.icon-post-card3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button59 {
+    height: 56px;
+    width: 56px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.icon-gift3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button60,
+.navbar-mobile3 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.button60 {
+    height: 56px;
+    width: 56px;
+    border-radius: 32px;
+    justify-content: flex-start;
+    padding: 8px;
+    cursor: pointer;
+}
+.navbar-mobile3 {
+    margin: 0 auto;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    border-radius: 100px;
+    transform: translateX(-50%);
+    background-color: #d8bd99;
+    backdrop-filter: blur(6px);
+    align-items: flex-start;
+    padding: 12px 24px;
+    gap: 12px;
+    max-width: 100%;
+    z-index: 2;
+    font-size: 10px;
+    padding: 8px;
+}
+.rectangle {
+    width: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 22px 0;
+    max-width: 100%;
+    font-size: 24px;
+    color: #bb8554;
+    font-family: "Cormorant Infant";
+}
+
+.button2 {
+    top: 959px;
+    left: 1800px;
+    border-radius: 120px;
+    overflow: hidden;
+}
+.whatsapp-video-2024-02-12-at-13 {
+    position: absolute;
+    top: 0;
+    left: -880px;
+    width: 960px;
+    height: 544px;
+    display: none;
+}
+.piringan-1-icon3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.button61 {
+    width: 80px;
+    right: 80px;
+    height: 80px;
+    position: fixed;
+    border-radius: 120px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-image: url(./assets/Piringan.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 999;
+}
+
+.whatsapp-video-2024-01-30-at-1 {
+    position: absolute;
+    top: calc(50% - 180px);
+    left: calc(50% - 320px);
+    width: 640px;
+    height: 360px;
+    display: none;
+}
+.play-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.pause-1-icon {
+    position: unset;
+    top: calc(50% - 65px);
+    left: calc(50% - 65px);
+    width: 100%;
+    height: auto;
+}
+.play-icon {
+    overflow: hidden;
+    display: none;
+}
+.pause-1-icon {
+    object-fit: cover;
+    z-index: 1;
+}
+.floating-button4 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    border-radius: 120px;
+    box-shadow: -8px 8px 9.8px rgba(0, 0, 0, 0.07);
+    /* overflow: hidden; */
+    flex-shrink: 0;
+    z-index: 1;
+    bottom: 120px;
+    right: 40px;
+}
+
+.play-icon {
+    transition: transform 0.3s ease; /* Animasi transformasi */
+}
+
+.play.icon {
+    transform: rotate(360deg); /* Putar 360 derajat */
+}
+
+audio {
+    display: none;
+}
+
+.banner6,
+.r-s-v-p-mobile1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 834px 0 0;
+}
+.banner6 {
+    align-self: stretch;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    padding: 80px;
+    box-sizing: border-box;
+    max-width: 100%;
+    gap: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #fff;
+    font-family: "Cormorant Garamond";
+    background-image: url(./assets/button@2x.png);
+    background-position: center;
+    background-size: cover;
+}
+.jamaludin3,
+.mempelai7 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: inherit;
+}
+.mempelai7 {
+    width: 312px;
+    display: inline-block;
+    font-size: 24px;
+}
+.jamaludin3 {
+    align-self: stretch;
+    font-size: 24px;
+}
+.anak-dari-bapak6 {
+    width: 387px;
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-family: Cormorant;
+    display: inline-block;
+}
+.copy-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px 0;
+    box-sizing: border-box;
+    gap: 16px 0;
+    min-width: 252px;
+    max-width: 100%;
+}
+.container-frame-icon {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.card-mandiri {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+    min-width: 475px;
+    max-width: 100%;
+}
+.frame3 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 400;
+    font-size: 36px;
+    font-family: inherit;
+    text-align: center;
+}
+.card-mandiri-child,
+.container-frame-icon {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.maryam3 {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: 24px;
+}
+.anak-dari-bapak7 {
+    width: 387px;
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-family: Cormorant;
+    display: inline-block;
+}
+.maryam-parent1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    box-sizing: border-box;
+    gap: 16px 0;
+    min-width: 252px;
+    max-width: 100%;
+}
+.card-mandiri1 {
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 24px;
+    min-width: 475px;
+    text-align: left;
+}
+.card-b-c-a,
+.card-mandiri1,
+.mempelai6 {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+.card-b-c-a {
+    width: 1652px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 80px;
+    text-align: right;
+}
+.mempelai6 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px;
+    box-sizing: border-box;
+    gap: 32px 0;
+    text-align: center;
+    font-size: 48px;
+    color: #bb8554;
+    font-family: "Rouge Script";
+}
+.content-area-child {
+    position: absolute;
+    top: 29.7px;
+    left: 29.8px;
+    width: 890.2px;
+    height: 812.7px;
+    object-fit: contain;
+}
+.polygon-3-stroke6 {
+    position: absolute;
+    width: calc(100% - 15px);
+    top: 20.6px;
+    right: 5.8px;
+    left: 9.2px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 830.8px;
+    object-fit: contain;
+    z-index: 1;
+}
+.content-area-item,
+.polygon-4-stroke6 {
+    position: absolute;
+    top: 80.2px;
+    left: 65.8px;
+    width: 815.4px;
+    height: 711.7px;
+    object-fit: contain;
+    z-index: 2;
+}
+.polygon-4-stroke6 {
+    top: 72.3px;
+    left: 48.4px;
+    width: 833.6px;
+    height: 727.5px;
+    z-index: 3;
+}
+.content-area-inner {
+    position: absolute;
+    width: calc(100% - 20.2px);
+    top: 9px;
+    right: 8.8px;
+    left: 11.4px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 854.1px;
+    object-fit: contain;
+    z-index: 4;
+}
+.content-area-child1,
+.polygon-5-stroke6 {
+    position: absolute;
+    top: -0.5px;
+    left: -0.5px;
+    width: 924.9px;
+    height: 873.1px;
+    object-fit: contain;
+    z-index: 5;
+}
+.content-area-child1 {
+    top: 29.7px;
+    left: 29.8px;
+    width: 890.2px;
+    height: 812.7px;
+    z-index: 6;
+}
+.polygon-3-stroke7 {
+    position: absolute;
+    width: calc(100% - 15px);
+    top: 20.6px;
+    right: 5.8px;
+    left: 9.2px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 830.8px;
+    object-fit: contain;
+    z-index: 7;
+}
+.content-area-child2,
+.polygon-4-stroke7 {
+    position: absolute;
+    top: 80.2px;
+    left: 65.8px;
+    width: 815.4px;
+    height: 711.7px;
+    object-fit: contain;
+    z-index: 8;
+}
+.polygon-4-stroke7 {
+    top: 72.3px;
+    left: 48.4px;
+    width: 833.6px;
+    height: 727.5px;
+    z-index: 9;
+}
+.content-area-child3 {
+    position: absolute;
+    width: calc(100% - 20.2px);
+    top: 9px;
+    right: 8.8px;
+    left: 11.4px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 854.1px;
+    object-fit: contain;
+    z-index: 10;
+}
+.content-area,
+.polygon-5-stroke7 {
+    position: absolute;
+    margin: 0 !important;
+}
+.content-area {
+    width: 925px;
+    height: 873px;
+    bottom: 3139px;
+    left: -18px;
+}
+.polygon-5-stroke7 {
+    height: calc(100% + 0.1px);
+    width: calc(100% - 0.1px);
+    top: -0.5px;
+    right: 0.6px;
+    bottom: 0.4px;
+    left: -0.5px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 11;
+}
+.aku-tak-pernah3,
+.blank-line25 {
+    margin: 0;
+}
+.aku-tak-pernah-container3 {
+    height: 511px;
+    width: 216px;
+    position: relative;
+    line-height: 140%;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 12;
+}
+.content-area1 {
+    width: 925px;
+    margin: 0 !important;
+    position: absolute;
+    bottom: 3139px;
+    left: -18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 181px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.akad9 {
+    margin: 0;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: "Rouge Script";
+}
+.sabtu-11-november6,
+.tanggal6 {
+    position: relative;
+    line-height: 140%;
+}
+.rectangle-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.waktu6,
+.wib-selesai6 {
+    position: relative;
+    line-height: 140%;
+}
+.wib-selesai6 {
+    align-self: stretch;
+    white-space: nowrap;
+}
+.button-frame2 {
+    width: 197px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.tempat6 {
+    position: relative;
+    line-height: 140%;
+}
+.jl-ir-h6 {
+    width: 880px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.tempat-parent3,
+.text-frame1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.text-frame1 {
+    gap: 24px;
+    font-size: 16px;
+    text-align: center;
+}
+.map-button-icon {
+    height: 36px;
+    width: 36px;
+    position: relative;
+}
+.buka-map6 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #fff;
+    text-align: left;
+}
+.gallery-frame2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 6px;
+    height: 40px;
+}
+.gallery-frame-wrapper {
+    cursor: pointer;
+    border: 0;
+    padding: 6px 18px;
+    background-color: #c79d70;
+    flex: 1;
+    width: 50%;
+    border-radius: 240px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+.frame-child41 {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    min-height: 36px;
+}
+.tambah-ke-kalender6 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #fff;
+    text-align: left;
+}
+.frame-parent145 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 19px;
+    gap: 0 6px;
+}
+.frame-parent144,
+.frame-wrapper11 {
+    display: flex;
+    justify-content: center;
+}
+.frame-wrapper11 {
+    cursor: pointer;
+    border: 0;
+    padding: 6px 18px;
+    background-color: #c79d70;
+    border-radius: 240px;
+    overflow: hidden;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 56px;
+}
+.frame-parent144 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+.text-frame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 48px;
+}
+.story-frame-icon {
+    width: 370px;
+    height: 28px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+.resepsi8 {
+    margin: 0;
+    position: relative;
+    font-size: 36px;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: "Rouge Script";
+}
+.sabtu-11-november7,
+.tanggal7 {
+    position: relative;
+    line-height: 140%;
+}
+.tanggal-parent3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.waktu7,
+.wib-selesai7 {
+    position: relative;
+    line-height: 140%;
+}
+.wib-selesai7 {
+    align-self: stretch;
+    white-space: nowrap;
+}
+.waktu-parent3 {
+    width: 197px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.jl-ir-h7,
+.tempat7 {
+    position: relative;
+    line-height: 140%;
+}
+.jl-ir-h7 {
+    width: 880px;
+    display: inline-block;
+    text-align: center;
+}
+.resepsi-parent3,
+.tempat-parent4 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.resepsi-parent3 {
+    gap: 16px 0;
+    font-size: 16px;
+    text-align: center;
+}
+.frame-child42 {
+    height: 36px;
+    width: 36px;
+    position: relative;
+}
+.buka-map7 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #fff;
+    text-align: left;
+}
+.frame-parent147 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 6px;
+    min-height: 44px;
+}
+.frame-wrapper12 {
+    cursor: pointer;
+    border: 0;
+    padding: 6px 18px;
+    background-color: #c79d70;
+    flex: 1;
+    border-radius: 240px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    min-width: 240px;
+}
+.frame-child43 {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    min-height: 36px;
+}
+.tambah-ke-kalender7 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #fff;
+    text-align: left;
+}
+.frame-parent148 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 19px;
+    gap: 0 6px;
+}
+.frame-parent146,
+.frame-wrapper13 {
+    display: flex;
+    justify-content: center;
+}
+.frame-wrapper13 {
+    cursor: pointer;
+    border: 0;
+    padding: 6px 18px;
+    background-color: #c79d70;
+    border-radius: 240px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 56px;
+}
+.frame-parent146 {
+    width: 656px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0 16px;
+    max-width: 100%;
+}
+.jadwal11,
+.text-frame2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.text-frame2 {
+    width: 880px;
+    gap: 47px 0;
+}
+.jadwal11 {
+    flex: 1;
+    border-radius: 40px;
+    border: 6px solid #ffcf9c;
+    box-sizing: border-box;
+    padding: 80px;
+    gap: 24px;
+}
+.asset-2-53,
+.asset-2-63 {
+    height: 480px;
+    width: 240px;
+    position: absolute;
+    margin: 0 !important;
+    z-index: 1;
+}
+.asset-2-53 {
+    top: 40px;
+    left: -132px;
+    object-fit: cover;
+}
+.asset-2-63 {
+    right: -133px;
+    bottom: 103px;
+    object-fit: contain;
+}
+.jadwal10 {
+    width: 1120px;
+    border-radius: 48px;
+    background-color: #fff;
+    border: 4px solid #c79d70;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 44px 40px 36px;
+    position: relative;
+    gap: 0 154px;
+}
+.jadwal-wrapper,
+.jadwal10,
+.jadwal9 {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.jadwal9 {
+    flex: 1;
+    border-radius: 80px;
+    background-color: rgba(255, 245, 235, 0.5);
+    backdrop-filter: blur(25px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+}
+.jadwal-wrapper {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 24px;
+    color: #bb8554;
+    font-family: "Cormorant Infant";
+}
+
+.galeri {
+    position: relative;
+    line-height: 150%;
+    font-size: 24px;
+}
+
+.aku-tak-pernah {
+    margin: 0;
+    text-align: left;
+}
+.aku-tak-pernah-container {
+    position: absolute;
+    top: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+    left: 40%; /* Sesuaikan dengan posisi yang diinginkan */
+    transform: translate(-50%, -50%); /* Untuk menengahkan elemen */
+    line-height: 140%;
+    display: inline-block;
+    width: auto; /* Sesuaikan dengan lebar konten */
+    height: auto; /* Sesuaikan dengan tinggi konten */
+}
+
+.caption {
+    justify-content: center;
+    align-items: center;
+    width: 582.66px;
+    display: flex;
+    position: relative;
+    height: 550px;
+    background-image: url("./assets/caption.png");
+    background-position: right;
+    background-size: cover;
+}
+.frame-child6 {
+    justify-content: center;
+    align-items: center;
+    width: 703.4px;
+    display: flex;
+    position: relative;
+    height: 664px;
+}
+.frame-child6 {
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 24px;
+}
+.frame-child6,
+.frame-parent17 {
+    border-radius: var(--br-5xl);
+}
+.frame-parent17,
+.frame-parent18 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom yang setara */
+    grid-auto-rows: auto; /* Tinggi baris disesuaikan dengan konten */
+    gap: 24px; /* Jarak antar gambar */
+    align-items: center;
+    justify-content: center;
+}
+
+.frame-parent16 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px 0;
+}
+.caption-parent,
+.frame-parent16,
+.gallery {
+    display: flex;
+    align-items: center;
+}
+.caption-parent {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0 24px;
+    text-align: center;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.gallery {
+    width: 1920px;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    gap: 24px 0;
+    text-align: left;
+    font-family: var(--font-rouge-script);
+    font-size: var(--font-size-29xl);
+}
+
+.r-s-v-p-caption {
+    height: 320px;
+    width: 320px;
+    position: absolute;
+    margin: 0 !important;
+    bottom: 0;
+    left: -0.3px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    z-index: 12;
+}
+.galeri3 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: inherit;
+}
+.card-list16 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 749px 0 20px;
+}
+.frame-child44,
+.frame-child45,
+.frame-child46 {
+    position: relative;
+    border-radius: 24px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    min-height: 320px;
+}
+.frame-parent149 {
+    align-self: stretch;
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 2px 0 0;
+    gap: 0 23px;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    z-index: 12;
+}
+.frame-child47,
+.frame-child48 {
+    height: 320px;
+    flex: 1;
+    position: relative;
+    border-radius: 24px;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    min-width: 208px;
+    min-height: 320px;
+}
+.frame-parent150 {
+    width: 664px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0 1px 0 0;
+    box-sizing: border-box;
+    gap: 0 23px;
+}
+.frame-parent150,
+.mobile-r-s-v-p1,
+.r-s-v-p-frame,
+.ucapan-mobile-label {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.mobile-r-s-v-p1 {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px 0;
+}
+.r-s-v-p-frame,
+.ucapan-mobile-label {
+    flex-direction: row;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.ucapan-mobile-label {
+    width: 1028px;
+    padding: 0 20px 0 0;
+    position: relative;
+}
+.r-s-v-p-frame {
+    width: 1120px;
+    padding: 0 0 80px 20px;
+    text-align: left;
+    font-size: 48px;
+    font-family: "Rouge Script";
+}
+.cerita-cinta-kami3 {
+    margin: 0;
+    width: 1120px;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    max-width: 100%;
+    font-size: 24px;
+}
+.pertemuan3 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: bold;
+}
+.tidak-ada-yang3 {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+}
+.r-s-v-p-name-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: 16px;
+    max-width: 100%;
+    font-size: 20px;
+}
+.r-s-v-p-nope-button {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.r-s-v-p-frame-title {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+}
+.r-s-v-p-frame-title-child {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    min-height: 320px;
+}
+.pendekatan3 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.seiring-berjalannya-waktu3 {
+    width: 776px;
+    position: relative;
+    line-height: 140%;
+    display: inline-block;
+    font-size: 16px;
+}
+.pendekatan-parent1,
+.r-s-v-p-frame-title1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+.pendekatan-parent1 {
+    align-items: flex-start;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 20px;
+}
+.r-s-v-p-frame-title1 {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 0 24px;
+    text-align: left;
+}
+.atas-kehendak-allah3,
+.lamaran3 {
+    position: relative;
+    line-height: 140%;
+}
+.lamaran3 {
+    align-self: stretch;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.atas-kehendak-allah3 {
+    width: 776px;
+    display: inline-block;
+    font-size: 16px;
+}
+.lamaran-parent1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 20px;
+}
+.r-s-v-p-frame-title-item {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.r-s-v-p-frame-title2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+}
+.r-s-v-p-frame-title-inner {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    min-height: 320px;
+}
+.pernikahan3 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.blank-line26,
+.kami-memutuskan-untuk3 {
+    margin: 0;
+}
+.kami-memutuskan-untuk-container3 {
+    height: 136px;
+    position: relative;
+    line-height: 140%;
+    font-size: 16px;
+    display: inline-block;
+}
+.pernikahan-parent1,
+.r-s-v-p-frame-title3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+.pernikahan-parent1 {
+    flex: 1;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 16px;
+}
+.r-s-v-p-frame-title3 {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 24px;
+    text-align: left;
+}
+.r-s-v-p-mobile-frame {
+    width: 1120px;
+    flex-direction: column;
+    gap: 24px 0;
+    text-align: right;
+    font-size: 24px;
+    font-family: "Cormorant Infant";
+}
+.cerita-cinta4,
+.r-s-v-p-mobile-frame,
+.rsvp6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+.cerita-cinta4 {
+    align-self: stretch;
+    border-radius: 80px;
+    background-color: rgba(255, 245, 235, 0.5);
+    backdrop-filter: blur(25px);
+    flex-direction: column;
+    padding: 80px;
+    box-sizing: border-box;
+    gap: 24px 0;
+    z-index: 0;
+    text-align: center;
+    font-size: 48px;
+    color: #bb8554;
+    font-family: "Rouge Script";
+}
+.rsvp6 {
+    align-self: stretch;
+    position: relative;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: var(--font-rouge-script);
+}
+.masukkan-nama-kamu9,
+.nama-lengkap3 {
+    position: relative;
+    display: inline-block;
+}
+.nama-lengkap3 {
+    width: 149.5px;
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.masukkan-nama-kamu9 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-family: "Cormorant Infant";
+    font-size: 16px;
+    background-color: transparent;
+    height: 36px;
+    flex: 1;
+    line-height: 150%;
+    color: black;
+    text-align: left;
+    min-width: 250px;
+    max-width: 100%;
+}
+
+.masukkan-nama-kamu9::placeholder {
+    color: var(--color-lightgray);
+}
+.field34,
+.nama-lengkap-container {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.field34 {
+    border-radius: 8px;
+    border: 1px solid #c79d70;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 17px 10px 15px;
+}
+.nama-lengkap-container {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.bersedia-hadir-di3,
+.ya5 {
+    position: relative;
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bersedia-hadir-di3 {
+    align-self: stretch;
+}
+.ya5 {
+    flex: 1;
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 500;
+    font-family: "Cormorant Infant";
+    color: #bb8554;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.framecontainer {
+    width: 128px;
+    border-radius: 100px;
+    background-color: #fff;
+    border: 0.6px solid #bb8554;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 51px;
+}
+.tidak5 {
+    flex: 1;
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 500;
+    font-family: "Cormorant Infant";
+    color: #bb8554;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.framecontainer1,
+.r-s-v-pbutton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.framecontainer1 {
+    cursor: pointer;
+    border: 0.6px solid #bb8554;
+    padding: 7px 51px;
+    background-color: #fff;
+    flex: 1;
+    border-radius: 100px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+textarea {
+    font-size: 16px;
+}
+
+.value {
+    display: none;
+}
+
+.radio_group {
+    display: flex;
+    gap: 16px;
+}
+
+.radio_group label {
+    padding: 7px 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.6px solid #bb8554;
+    border-radius: 100px;
+}
+
+.radio_group input:checked + .radio_label {
+    background: #bb8554;
+    color: white;
+}
+
+.radio_group input {
+    display: none;
+}
+
+.r-s-v-pbutton {
+    width: 298px;
+    justify-content: flex-start;
+    gap: 0 8px;
+}
+.pendekatan-perikahan-frame {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px 0;
+    font-size: 16px;
+}
+.ucapan-doa9 {
+    width: 149.5px;
+    position: relative;
+    line-height: 140%;
+    font-weight: 500;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.field35,
+.frame-parent151,
+.ucapan-doa-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.field35 {
+    border: 1px solid #c79d70;
+    background-color: transparent;
+    height: 128px;
+    width: auto;
+    font-size: 16px;
+    outline: 0;
+    align-self: stretch;
+    border-radius: 8px;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 16px;
+    font-family: "Cormorant Infant";
+    color: black;
+}
+
+.field35::placeholder {
+    color: var(--color-lightgray);
+    font-size: 16px;
+}
+.frame-parent151,
+.ucapan-doa-container {
+    flex-direction: column;
+}
+.ucapan-doa-container {
+    align-self: stretch;
+    gap: 8px 0;
+}
+.frame-parent151 {
+    width: 560px;
+    gap: 16px 0;
+    max-width: 100%;
+    text-align: justify;
+    font-size: 24px;
+    font-family: "Cormorant Infant";
+}
+.b-c-acard {
+    height: 36px;
+    width: 36px;
+    position: relative;
+}
+.kirim-ucapan5 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #fff;
+    text-align: left;
+}
+.cardlist,
+.rsvp-mobile3 {
+    align-items: center;
+    max-width: 100%;
+}
+.cardlist {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: #bb8554;
+    width: 560px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 12px;
+    min-height: 56px;
+}
+.cardlist:hover {
+    background-color: #a16b3b;
+}
+.rsvp-mobile3 {
+    width: 652px;
+    border-radius: var(--br-base);
+    background-color: var(--neutral-0);
+    border: 6px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-21xl);
+    gap: 24px 0;
+}
+.questionfield,
+.questionfield1,
+.rsvp-mobile3,
+.rsvp5,
+.ucapan-mobile3 {
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+.questionfield,
+.questionfield1 {
+    border: 1px solid #bb8554;
+    background-color: #fff;
+    height: 251px;
+    width: 376px;
+    outline: 0;
+    border-radius: 16px;
+    box-shadow: -10px 10px 10px rgba(187, 133, 84, 0.08);
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    font-family: "Cormorant Infant";
+    font-weight: 700;
+    font-size: 24px;
+    color: #bb8554;
+}
+.rsvp5,
+.ucapan-mobile {
+    max-width: 100%;
+}
+
+.ucapan-mobile,
+.ucapan-mobile-inner {
+    padding: var(--padding-5xl);
+}
+.ucapan-mobile {
+    border-radius: 10px;
+    background-color: #ffefe0;
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+    overflow-y: auto; /* Mengaktifkan scroll kebawah */
+    display: flex;
+    flex-direction: column; /* Mengatur susunan card secara vertikal */
+    align-items: flex-start;
+    gap: 24px; /* Jarak antara card */
+    font-size: 24px;
+    max-height: 500px; /* Atur tinggi maksimal agar memunculkan scroll */
+}
+
+.ucapan-mobile-inner {
+    width: 376px;
+    border-radius: 16px;
+    background-color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 16px 0;
+    max-width: 100%;
+}
+
+.ahmad-parent {
+    align-self: stretch;
+    align-items: flex-start;
+    gap: 16px 0;
+}
+
+.ahmad-parent,
+.ucapan-mobile,
+.ucapan-mobile-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pertemuan {
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.devider {
+    align-self: stretch;
+    position: relative;
+    background-color: var(--color-peachpuff);
+    height: 1px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.rsvp5 {
+    width: 1920px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    gap: 0 48px;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+    color: #bb8554;
+}
+.jika-kamu-tidak7,
+.kirim-hadiah18 {
+    align-self: stretch;
+    position: relative;
+    line-height: 130%;
+    font-size: 24px;
+}
+.jika-kamu-tidak7 {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 600;
+}
+.transfer-rekening-button-label {
+    align-self: stretch;
+    border-radius: 0 0 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.vector-icon42 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div71 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge47 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail37 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.transfer-ke-no6 {
+    overflow: hidden;
+    flex: 1;
+    position: relative;
+    white-space: nowrap;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    display: inline-block;
+    max-width: 100%;
+    font-size: 16px;
+    text-overflow: ellipsis;
+}
+.add-icon37 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button62 {
+    height: 56px;
+    flex: 1;
+    border-radius: 32px;
+    background-color: #bb8554;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 48px;
+    box-sizing: border-box;
+    gap: 0 16px;
+    min-width: 311px;
+    max-width: 100%;
+}
+.vector-icon43 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div72 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge48 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail38 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.kirim-kado-ke7 {
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Cormorant Infant";
+    color: #bb8554;
+    text-align: center;
+    display: inline-block;
+    max-width: calc(100% - 0px);
+}
+.add-icon38 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button63 {
+    cursor: pointer;
+    border: 1px solid #bb8554;
+    padding: 16px 47px;
+    background-color: transparent;
+    height: 56px;
+    flex: 1;
+    border-radius: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 16px;
+    min-width: 311px;
+    max-width: 100%;
+}
+.button-parent4,
+.question8 {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.button-parent4 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 10px;
+    color: #fff;
+    font-family: Optima;
+}
+.question8 {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.bca7,
+.copy5 {
+    position: relative;
+    line-height: 140%;
+}
+.bca7 {
+    width: 341px;
+    display: flex;
+    align-items: center;
+    max-width: 108%;
+    flex-shrink: 0;
+}
+.copy5 {
+    font-weight: 600;
+}
+.copy-icon10 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.an-rudi-hermina14,
+.body18 {
+    display: flex;
+    align-items: center;
+}
+.body18 {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0 7px;
+}
+.an-rudi-hermina14 {
+    width: 341px;
+    position: relative;
+    line-height: 140%;
+    max-width: 108%;
+    flex-shrink: 0;
+}
+.card35 {
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid #bb8554;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 16px;
+}
+.div73,
+.mandiri7 {
+    position: relative;
+    line-height: 140%;
+}
+.mandiri7 {
+    width: 341px;
+    display: flex;
+    align-items: center;
+    max-width: 108%;
+    flex-shrink: 0;
+}
+.div73 {
+    font-weight: 600;
+}
+.copy-icon11 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ellipse-div {
+    width: 449px;
+    top: calc(50% - 224px);
+    left: calc(50% - 224px);
+    height: 449px;
+    z-index: 2;
+}
+
+.frame-inner {
+    width: 410px;
+    border: 1px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    height: 410px;
+    z-index: 1;
+}
+
+.frame-inner2 {
+    width: 420px;
+    border: 1px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    height: 420px;
+    z-index: 1;
+}
+.an-rudi-hermina15,
+.body19 {
+    display: flex;
+    align-items: center;
+}
+.body19 {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0 7px;
+}
+.an-rudi-hermina15 {
+    width: 341px;
+    position: relative;
+    line-height: 140%;
+    max-width: 108%;
+    flex-shrink: 0;
+}
+.card-list17,
+.card36 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.card36 {
+    width: 365px;
+    border-radius: 24px;
+    border: 1px solid #bb8554;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px 0;
+    min-width: 237px;
+}
+.card-list17 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    text-align: left;
+    font-size: 24px;
+    display: grid;
+    overflow-x: auto;
+    grid-template-areas: "a a a";
+}
+.kirim-hadiah17 {
+    flex: 1;
+    border-radius: 48px;
+    background-color: #fff;
+    border: 6px solid #ffcf9c;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+    gap: 48px 0;
+    max-width: 100%;
+    text-align: center;
+    font-size: 32px;
+    color: #bb8554;
+    font-family: "Cormorant Infant";
+}
+.hadiah3,
+.home5,
+.kirim-hadiah17 {
+    display: flex;
+    justify-content: flex-start;
+}
+.hadiah3 {
+    align-self: stretch;
+    border-radius: 80px 80px 0 0;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 80px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.home5 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px 0;
+    letter-spacing: normal;
+    text-align: center;
+    font-size: 24px;
+    color: #bb8554;
+    font-family: "Cormorant Infant";
+}
+
+@media screen and (max-width: 1536px) {
+    .button-icon {
+        height: 1176px;
+        width: 2090px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -407px;
+        object-fit: cover;
+        transform: scale(1.2);
+    }
+
+    
+
+    .button61 {
+        width: 80px;
+        right: 50px;
+        top: 550px;
+        height: 80px;
+        position: fixed;
+        border-radius: 120px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-image: url(./assets/piringan-1@2x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        z-index: 999;
+    }
+
+    .piringan-1-icon3 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    .card-b-c-a {
+        gap: 0 20px;
+    }
+
+    .anak-dari-bapak6 {
+        width: 300px;
+    }
+
+    .card-list16 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 370px 0 20px;
+    }
+
+  
+
+    .gallery {
+        width: 1536px;
+    }
+
+    .caption-parent {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        text-align: center;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    
+
+    .ucapan-mobile-inner {
+        width: 376px;
+        border-radius: 16px;
+        background-color: #fff;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px;
+        box-sizing: border-box;
+        gap: 16px 0;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    
+    
+    .button-icon {
+        height: 1176px;
+        width: 2090px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -407px;
+        object-fit: cover;
+        transform: scale(1.2);
+    }
+   
+    .button61 {
+        width: 80px;
+        right: 80px;
+        top: 550px;
+        height: 80px;
+        position: fixed;
+        border-radius: 120px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-image: url(./assets/piringan-1@2x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        z-index: 999;
+    }
+
+    .piringan-1-icon3 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+    .card-b-c-a {
+        gap: 0 70px;
+    }
+    .anak-dari-bapak6 {
+        width: 260px;
+    }
+
+    .anak-dari-bapak7 {
+        width: 290px;
+        position: relative;
+        line-height: 140%;
+        font-family: Cormorant;
+        display: inline-block;
+    }
+
+    .caption-parent {
+        flex-direction: column;
+    }
+
+    
+
+    .frame-parent17,
+    .frame-parent18 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom yang setara */
+        grid-auto-rows: auto; /* Tinggi baris disesuaikan dengan konten */
+        gap: 24px; /* Jarak antar gambar */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aku-tak-pernah-caption {
+        width: 550px;
+        /* margin-left: 200px; */
+    }
+    
+
+    .ucapan-mobile-inner {
+        width: 864px;
+        border-radius: 16px;
+        background-color: #fff;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px;
+        box-sizing: border-box;
+        gap: 16px 0;
+        max-width: 100%;
+    }
+
+    .banner6 {
+        padding: 64px;
+    }
+
+    .mempelai6 {
+        padding: 64px;
+    }
+
+    .jadwal9 {
+        padding: 64px;
+    }
+
+    .gallery {
+        padding: 64px;
+    }
+
+    .cerita-cinta4 {
+        padding: 64px;
+    }
+
+    .rsvp5 {
+        padding: 64px;
+    }
+
+    .hadiah3{
+        padding: 64px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .button-icon {
+        height: 1176px;
+        width: 2090px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -407px;
+        left: -900px;
+        object-fit: cover;
+        transform: scale(1.2);
+    }
+
+ 
+    .button61 {
+        width: 80px;
+        right: 80px;
+        top: 550px;
+        height: 80px;
+        position: fixed;
+        border-radius: 120px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background-image: url(./assets/piringan-1@2x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        z-index: 999;
+    }
+
+    .piringan-1-icon3 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    .card-b-c-a {
+        flex-direction: column;
+    }
+
+    .jl-ir-h7,
+    .jl-ir-h6 {
+        width: 500px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .aku-tak-pernah-caption {
+        width: 550px;
+    }
+
+    .frame-child6 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tidak-ada-yang3 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .seiring-berjalannya-waktu3 {
+        width: 520px;
+    }
+
+    .atas-kehendak-allah3 {
+        width: 650px;
+    }
+
+    .kami-memutuskan-untuk3 {
+        width: 500px;
+    }
+
+    .rsvp5 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ucapan-mobile-inner {
+        border-radius: 16px;
+        background-color: #fff;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px;
+        box-sizing: border-box;
+        gap: 16px 0;
+        max-width: 100%;
+    }
+
+    .button62,
+    .button63 {
+        height: 65px;
+    }
+
+    .card-list17 {
+        flex-wrap: nowrap;
+    }
+
+    .frame-parent17, .frame-parent18 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .button-icon {
+        height: 1176px;
+        width: 2090px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -407px;
+        left: -880px;
+        object-fit: cover;
+        transform: scale(1.2);
+    }
+   
+
+    .button61 {
+        right: 50px;
+    }
+
+    .undangan-pernikahan-parent2 {
+        max-width: 500px;
+    }
+
+    .image-placeholder {
+        width: 500px;
+    }
+
+    .link-button {
+        left: 200px;
+    }
+
+    .card-mandiri {
+        flex-direction: column-reverse;
+    }
+
+    .jamaludin3 {
+        text-align: center;
+    }
+
+    .anak-dari-bapak6 {
+        text-align: center;
+        width: 500px;
+    }
+
+    .card-mandiri1 {
+        flex-direction: column;
+        margin-top: 24px;
+    }
+
+    .maryam-parent1 {
+        text-align: center;
+    }
+
+    
+
+    .asset-2-53 {
+        top: -10px;
+        left: -132px;
+        object-fit: cover;
+    }
+
+    .asset-2-63 {
+        right: -153px;
+        bottom: 103px;
+        object-fit: contain;
+    }
+
+    .gallery-frame-wrapper {
+        margin-bottom: 24px;
+    }
+
+    .frame-wrapper11 {
+        width: 500px;
+        padding: 14px 18px;
+    }
+    .frame-wrapper13 {
+        margin-top: 24px;
+        width: 500px;
+        padding: 14px 18px;
+    }
+
+    .jl-ir-h7,
+    .jl-ir-h6 {
+        width: 450px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .frame-parent17,
+    .frame-parent18 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom yang setara */
+        grid-auto-rows: auto; /* Tinggi baris disesuaikan dengan konten */
+        gap: 24px; /* Jarak antar gambar */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .seiring-berjalannya-waktu3 {
+        width: unset;
+    }
+
+    .atas-kehendak-allah3 {
+        width: unset;
+    }
+
+    .ucapan-mobile-inner {
+        margin-bottom: unset;
+        overflow-y: auto;
+    }
+
+    .kami-memutuskan-untuk3 {
+        width: 380px;
+    }
+
+    .button62 {
+        margin-bottom: 24px;
+    }
+
+    .card-list17 {
+        max-width: 500px;
+    }
+
+   
+
+    .ucapan-mobile-inner {
+        width: 376px;
+        border-radius: 16px;
+        background-color: #fff;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px;
+        box-sizing: border-box;
+        gap: 16px 0;
+        max-width: 100%;
+    }
+
+    .jadwal10 {
+        padding: 24px;
+    }
+
+    .ucapan-mobile {
+        margin-top: 24px;
+        flex-direction: row;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    .banner6 {
+        padding: 16px;
+    }
+
+    .mempelai6 {
+        padding: 16px;
+    }
+
+    .jadwal9 {
+        padding: 16px;
+    }
+
+    .gallery {
+        padding: 16px;
+    }
+
+    .cerita-cinta4 {
+        padding: 16px;
+    }
+
+    .rsvp5 {
+        padding: 16px;
+    }
+
+    .hadiah3{
+        padding: 16px;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+
+
+    .jl-ir-h7,
+    .jl-ir-h6 {
+        width: 300px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .sabtu-11-november6 {
+        width: 250px;
+    }
+
+    .sabtu-11-november7 {
+        width: 250px;
+    }
+
+    .frame-parent17,
+    .frame-parent18 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .r-s-v-p-nope-button,
+    .r-s-v-p-frame-title-child,
+    .r-s-v-p-frame-title-item,
+    .r-s-v-p-frame-title-inner {
+        width: 260px;
+        height: 260px;
+        min-height: unset;
+    }
+
+    .card-list17 {
+        max-width: 420px;
+        /* margin: auto 0; */
+    }
+
+    .card35 {
+        width: 200px;
+        border-radius: 24px;
+        border: 1px solid #bb8554;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 24px;
+        gap: 16px 0;
+        min-width: unset;
+    }
+
+    .card36 {
+        width: 200px;
+        border-radius: 24px;
+        border: 1px solid #bb8554;
+        box-sizing: border-box;
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px 0;
+        min-width: unset;
+    }
+
+    .kami-memutuskan-untuk3 {
+        width: unset;
+    }
+
+    .aku-tak-pernah1 {
+        padding: 120px;
+    }
+
+    .caption {
+        width: 560px;
+        height: 528.61px;
+    }
+
+    .frame-child6 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header-section-icon {
+        width: 230px;
+        height: 230px;
+    }
+
+    .mempelai6 {
+        padding: 16px;
+    }
+
+    /* .play-icon {
+        width: 40px;
+        height: 40px;
+    } */
+
+
+
+    .frame-inner {
+        width: 240px;
+        height: 240px;
+    }
+
+    .frame-inner2 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image-placeholder {
+        width: unset;
+    }
+
+    .link-button {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .input-text,
+    .wrapper38,
+    .wrapper39,
+    .wrapper40 {
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+    }
+
+    
+
+    .card-b-c-a {
+        flex-direction: row;
+    }
+
+    .container-frame-icon,
+    .card-mandiri-child {
+        width: 250px;
+        height: 250px;
+    }
+
+    .jadwal-wrapper {
+        justify-content: center;
+        align-self: center;
+    }
+
+    .jadwal9 {
+        padding: 16px;
+    }
+
+    .jadwal11 {
+        padding: 16px;
+    }
+
+    .asset-2-53 {
+        top: -10px;
+        left: -175px;
+        object-fit: cover;
+    }
+
+    .text-frame,
+    .resepsi-parent3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .akad9,
+    .resepsi8 {
+        font-size: 24px;
+    }
+
+    .jl-ir-h6,
+    .jl-ir-h7 {
+        width: 200px;
+    }
+
+    .map-button-icon,
+    .frame-child41 {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tambah-ke-kalender6,
+    .tambah-ke-kalender7 {
+        font-size: 16px;
+    }
+    .buka-map6,
+    .buka-map7 {
+        font-size: 16px;
+    }
+
+    .gallery-frame-wrapper {
+        margin-bottom: unset;
+    }
+
+    .frame-wrapper11,
+    .gallery-frame-wrapper {
+        padding: 6px;
+    }
+
+    .frame-parent144 {
+        width: 80%;
+        margin-bottom: 24px;
+    }
+
+    .aku-tak-pernah1 {
+        padding: 60px;
+    }
+
+    .gallery {
+        padding: 16px;
+    }
+    .galeri {
+        font-size: 24px;
+    }
+
+    .caption {
+        width: 350px;
+        height: 330.38px;
+    }
+
+    .frame-child6 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .r-s-v-p-frame-title {
+        align-items: flex-start;
+    }
+
+    .r-s-v-p-nope-button,
+    .r-s-v-p-frame-title-child,
+    .r-s-v-p-frame-title-item,
+    .r-s-v-p-frame-title-inner {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cerita-cinta-kami3 {
+        padding: 16px;
+    }
+
+    .hadiah3 {
+        justify-content: center;
+        max-width: unset;
+        padding: 16px;
+    }
+
+    .button62,
+    .button63 {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .rsvp5 {
+        padding: 16px;
+    }
+
+    .r-s-v-pbutton {
+        align-items: flex-start;
+        width: 298px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .radio_group {
+        flex-direction: column;
+    }
+
+    .asset-2-63 {
+        right: -170px;
+        bottom: 103px;
+        object-fit: contain;
+    }
+}
+
+/* @media screen and (max-width: 1525px) {
+    .banner6 {
+        flex-wrap: wrap;
+    }
+    .rsvp-mobile3 {
+        min-width: 100%;
+    }
+    .ucapan-mobile3 {
+        flex: 1;
+        min-width: 100%;
+    }
+    .rsvp5 {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 1225px) {
+    .r-s-v-p-mobile1 {
+        padding-top: 542px;
+    }
+    .banner6,
+    .mempelai6,
+    .r-s-v-p-mobile1 {
+        box-sizing: border-box;
+    }
+    .banner6 {
+        padding-left: 358px;
+        padding-top: 81px;
+        padding-bottom: 20px;
+    }
+    .mempelai6 {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .jadwal11 {
+        padding: 52px 37px;
+    }
+    .jadwal10,
+    .jadwal11,
+    .jadwal9 {
+        box-sizing: border-box;
+    }
+    .jadwal10 {
+        gap: 0 154px;
+        padding-top: 26px;
+        padding-right: 22px;
+        padding-bottom: 26px;
+    }
+    .jadwal9 {
+        gap: 157px 0;
+        padding: 52px 40px;
+    }
+    .jadwal-wrapper {
+        padding-bottom: 52px;
+        box-sizing: border-box;
+    }
+    .card-list16 {
+        padding-right: 374px;
+        box-sizing: border-box;
+    }
+    .r-s-v-p-nope-button {
+        flex: 1;
+    }
+    .r-s-v-p-frame-title {
+        flex-wrap: wrap;
+    }
+    .r-s-v-p-frame-title-child {
+        flex: 1;
+    }
+    .r-s-v-p-frame-title1 {
+        flex-wrap: wrap;
+    }
+    .r-s-v-p-frame-title-item {
+        flex: 1;
+    }
+    .r-s-v-p-frame-title2 {
+        flex-wrap: wrap;
+    }
+    .r-s-v-p-frame-title-inner {
+        flex: 1;
+    }
+    .r-s-v-p-frame-title3 {
+        flex-wrap: wrap;
+    }
+    .cerita-cinta4 {
+        padding-top: 52px;
+        padding-bottom: 52px;
+        box-sizing: border-box;
+    }
+    .rsvp5 {
+        padding-left: 202px;
+        padding-right: 196px;
+        box-sizing: border-box;
+    }
+    .hadiah3,
+    .kirim-hadiah17 {
+        padding-left: 37px;
+        padding-right: 37px;
+        box-sizing: border-box;
+    }
+    .hadiah3 {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .jamaludin-maryam5 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .b49,
+    .b50,
+    .b51,
+    .b52,
+    .b53,
+    .b54,
+    .label {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .link-button {
+        flex-wrap: wrap;
+    }
+    .banner6 {
+        padding-left: 179px;
+        padding-top: 53px;
+        box-sizing: border-box;
+    }
+    .jamaludin3,
+    .mempelai7 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .container-frame-icon {
+        flex: 1;
+    }
+    .card-mandiri {
+        flex-wrap: wrap;
+        min-width: 100%;
+    }
+    .frame3 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .card-mandiri-child {
+        flex: 1;
+    }
+    .maryam3 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .card-mandiri1 {
+        flex-wrap: wrap;
+        min-width: 100%;
+    }
+    .card-b-c-a {
+        gap: 0 80px;
+    }
+    .mempelai6 {
+        gap: 32px 0;
+        padding-top: 52px;
+        padding-bottom: 52px;
+        box-sizing: border-box;
+    }
+    .akad9 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .frame-parent145 {
+        flex-wrap: wrap;
+    }
+    .resepsi8 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .frame-parent148 {
+        flex-wrap: wrap;
+    }
+    .jadwal10,
+    .jadwal11 {
+        padding-top: 34px;
+        padding-bottom: 34px;
+        box-sizing: border-box;
+    }
+    .jadwal10 {
+        gap: 0 154px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .jadwal9 {
+        gap: 157px 0;
+        padding-top: 34px;
+    }
+    .jadwal-wrapper,
+    .jadwal9 {
+        padding-bottom: 34px;
+        box-sizing: border-box;
+    }
+    .galeri3 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .frame-child44,
+    .frame-child45,
+    .frame-child46 {
+        width: 100%;
+    }
+    .frame-parent149 {
+        justify-content: center;
+        grid-template-columns: minmax(240px, 1fr);
+    }
+    .r-s-v-p-frame {
+        padding-bottom: 52px;
+        box-sizing: border-box;
+    }
+    .cerita-cinta-kami3 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .lamaran-parent1,
+    .pendekatan-parent1,
+    .pernikahan-parent1,
+    .r-s-v-p-name-field {
+        min-width: 100%;
+    }
+    .cerita-cinta4 {
+        padding-top: 34px;
+        padding-bottom: 34px;
+        box-sizing: border-box;
+    }
+    .rsvp6 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+    .rsvp-mobile3,
+    .ucapan-mobile3 {
+        padding-top: 26px;
+        padding-bottom: 26px;
+        box-sizing: border-box;
+    }
+    .ucapan-mobile3 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .rsvp5 {
+        gap: 0 48px;
+        padding: 52px 98px 52px 101px;
+        box-sizing: border-box;
+    }
+    .kirim-hadiah18 {
+        font-size: 26px;
+        line-height: 33px;
+    }
+    .button62,
+    .button63 {
+        padding-left: 24px;
+        padding-right: 24px;
+        box-sizing: border-box;
+    }
+    .button63 {
+        padding-left: 23px;
+        padding-right: 23px;
+    }
+    .hadiah3,
+    .kirim-hadiah17 {
+        gap: 48px 0;
+        padding-top: 52px;
+        padding-bottom: 52px;
+        box-sizing: border-box;
+    }
+    .hadiah3 {
+        gap: 0 37px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .undangan-pernikahan5 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .jamaludin-maryam5 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .b49,
+    .b50,
+    .b51,
+    .b52,
+    .b53,
+    .b54,
+    .days-until-we3,
+    .detik8,
+    .hari11,
+    .jam8,
+    .label,
+    .menit8 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .r-s-v-p-mobile1 {
+        padding-top: 352px;
+        box-sizing: border-box;
+    }
+    .jamaludin3,
+    .mempelai7 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .anak-dari-bapak6 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .frame3,
+    .maryam3 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .anak-dari-bapak7 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .card-b-c-a {
+        gap: 0 80px;
+    }
+    .aku-tak-pernah-container3 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .akad9 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .sabtu-11-november6,
+    .tanggal6,
+    .tempat6,
+    .waktu6,
+    .wib-selesai6 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .buka-map6,
+    .jl-ir-h6 {
+        font-size: 19px;
+    }
+    .buka-map6 {
+        line-height: 27px;
+    }
+    .gallery-frame2 {
+        flex-wrap: wrap;
+    }
+    .tambah-ke-kalender6 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .text-frame {
+        gap: 48px 0;
+    }
+    .resepsi8 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .buka-map7,
+    .jl-ir-h7,
+    .sabtu-11-november7,
+    .tanggal7,
+    .tempat7,
+    .waktu7,
+    .wib-selesai7 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .frame-parent147 {
+        flex-wrap: wrap;
+    }
+    .tambah-ke-kalender7 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .text-frame2 {
+        gap: 47px 0;
+    }
+    .jadwal10 {
+        gap: 0 154px;
+    }
+    .jadwal9 {
+        gap: 157px 0;
+    }
+    .jadwal-wrapper {
+        padding-bottom: 22px;
+        box-sizing: border-box;
+    }
+    .galeri3 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .card-list16 {
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+    .r-s-v-p-frame {
+        padding-bottom: 34px;
+        box-sizing: border-box;
+    }
+    .cerita-cinta-kami3 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .pertemuan3 {
+        line-height: 27px;
+    }
+    .pertemuan3,
+    .tidak-ada-yang3 {
+        font-size: 19px;
+    }
+    .atas-kehendak-allah3,
+    .kami-memutuskan-untuk-container3,
+    .lamaran3,
+    .pendekatan3,
+    .pernikahan3,
+    .seiring-berjalannya-waktu3 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .cerita-cinta4 {
+        padding-top: 22px;
+        padding-bottom: 22px;
+        box-sizing: border-box;
+    }
+    .rsvp6 {
+        font-size: 29px;
+        line-height: 43px;
+    }
+    .nama-lengkap3 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .masukkan-nama-kamu9 {
+        font-size: 19px;
+        line-height: 29px;
+    }
+    .bersedia-hadir-di3,
+    .kirim-ucapan5,
+    .tidak5,
+    .ucapan-doa9,
+    .ya5 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+    .cardlist {
+        flex-wrap: wrap;
+    }
+    .rsvp5 {
+        padding-top: 34px;
+        padding-bottom: 34px;
+        box-sizing: border-box;
+    }
+    .kirim-hadiah18 {
+        font-size: 19px;
+        line-height: 25px;
+    }
+    .jika-kamu-tidak7 {
+        font-size: 19px;
+        line-height: 29px;
+    }
+    .an-rudi-hermina14,
+    .an-rudi-hermina15,
+    .bca7,
+    .copy5,
+    .div73,
+    .kirim-kado-ke7,
+    .mandiri7,
+    .transfer-ke-no6 {
+        font-size: 19px;
+        line-height: 27px;
+    }
+} */

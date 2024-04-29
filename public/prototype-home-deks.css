@@ -1,0 +1,143 @@
+.asset-3-1,
+.asset-4-icon1 {
+  position: absolute;
+  top: 641px;
+  object-fit: cover;
+}
+.asset-4-icon1 {
+  left: -33px;
+  width: 460px;
+  height: 508px;
+  opacity: 0.2;
+}
+.asset-3-1 {
+  left: 1697px;
+  width: 254px;
+  height: 460px;
+}
+.asset-2-11,
+.asset-4-3 {
+  position: absolute;
+  object-fit: contain;
+}
+.asset-2-11 {
+  top: -302px;
+  left: 1537px;
+  width: 446px;
+  height: 874px;
+  opacity: 0.1;
+}
+.asset-4-3 {
+  top: -69.2px;
+  left: -32.7px;
+  width: 234.1px;
+  height: 433.4px;
+}
+.jamaludin-maryam1 {
+  position: relative;
+  font-size: 48px;
+  line-height: 150%;
+  font-family: "Rouge Script";
+}
+.undangan-pernikahan-group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.ellipse-icon {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: -0.12%;
+  bottom: 0;
+  left: 0.13%;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.asset-1-4,
+.asset-2-3,
+.ellipse-icon {
+  position: absolute;
+  object-fit: cover;
+}
+.asset-1-4 {
+  height: 26.5%;
+  width: 87%;
+  top: 79.46%;
+  right: 6.38%;
+  bottom: -5.96%;
+  left: 6.63%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.asset-2-3 {
+  top: 0;
+  left: 0;
+  width: 82px;
+  height: 164px;
+  display: none;
+}
+.ellipse-group {
+  width: 560px;
+  position: relative;
+  border-radius: 400px;
+  height: 560px;
+}
+.isra-rafi-shidqi {
+  position: relative;
+  line-height: 140%;
+}
+.yth-bapakibusaudarai-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px 0;
+}
+.buka-undangan-wrapper {
+  border-radius: 40px;
+  background-color: #c79d70;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  height: 56px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.frame-parent87,
+.frame-parent88 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px 0;
+}
+.frame-parent87 {
+  position: absolute;
+  top: calc(50% - 490px);
+  left: calc(50% - 640px);
+  width: 1280px;
+  gap: 48px 0;
+}
+.prototype-home-deks {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 24px;
+  color: #bb8554;
+  font-family: "Cormorant Infant";
+}

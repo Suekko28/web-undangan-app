@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('./assets/bg-mufli.png');
+    background-position: center;
+    background-size: cover;
+    /* z-index: 999; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    font-size: 16px;
+    font-family: Lora;
+    color: #fff;
+    text-align: center;
+    line-height: 150%;
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+}
+
+
+.yang-diundang {
+    font-weight: bold;
+    margin: 16px;
+}
+
+.alexnor-exafator {
+    font-size: 24px;
+    margin: 24px 0px;
+    line-height: 150%;
+}
+
+.Secondary-button {
+    cursor: pointer;
+    border: 0;
+    padding: 11px;
+    background-color: #fff;
+    border-radius: 80px;
+    width: 276px;
+    gap: 16px;
+    font-size: 16px;
+    font-family: Lora;
+    color: #605a4c;
+    text-align: center;
+    line-height: 150%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.Secondary-button:hover {
+    cursor: pointer;
+    background-color: #D3D2C5;
+    color: #605a4c;
+}
+
+.buka-undangan4 {
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: Lora;
+    color: #605a4c;
+    text-align: left;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+

@@ -1,0 +1,122 @@
+body {
+    background-image: url("./assets/bg-screen.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.undangan-pernikahan {
+    position: relative;
+    line-height: 140%;
+    font-size: 16px;
+}
+.jamaludin-maryam {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: var(--font-rouge-script);
+}
+.undangan-pernikahan-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.frame-child {
+    height: 320px;
+    width: 320px;
+    top: 0;
+    right: -0.12%;
+    bottom: 0;
+    /* left: 0.13%; */
+    border-radius: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.asset-1-4,
+.asset-2-3,
+.frame-child {
+    position: absolute;
+    object-fit: cover;
+}
+.asset-1-4 {
+    height: 26.5%;
+    width: 87%;
+    top: 260px;
+    right: 6.38%;
+    bottom: -5.96%;
+    left: 6.63%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.ellipse-parent {
+    width: 300px;
+    position: relative;
+    border-radius: 400px;
+    height: 300px;
+}
+.yth-bapakibusaudarai-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+    margin-top: 24px;
+}
+.buka-undangan-wrapper {
+    border-radius: 40px;
+    background-color: #c79d70;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 48px;
+    box-sizing: border-box;
+    color: var(--color-white);
+}
+.frame-group,
+.frame-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px 0;
+}
+.frame-parent {
+    /* position: absolute;
+    top: calc(50% - 490px);
+    left: calc(50% - 640px);
+    width: 1280px; */
+    gap: 24px;
+    padding: 24px;
+}
+.prototype-home-deks {
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    color: var(--color-peru);
+    font-family: var(--font-cormorant-infant);
+}
+
+
+
+
+

@@ -1,0 +1,1461 @@
+.asset-4-6,
+.asset-4-icon1 {
+    position: absolute;
+    display: none;
+}
+.asset-4-icon1 {
+    top: 0;
+    left: 0;
+    width: 799px;
+    height: 879px;
+    object-fit: cover;
+    opacity: 0.2;
+}
+.asset-4-6 {
+    top: -245px;
+    left: 1197px;
+    width: 1254.1px;
+    height: 1493.2px;
+    object-fit: contain;
+}
+.icon {
+    position: absolute;
+    top: calc(50% - 649px);
+    left: calc(50% - 973px);
+    height: 1298px;
+    object-fit: cover;
+}
+.bg,
+.image-14-icon {
+    position: absolute;
+    width: 1920px;
+}
+.bg {
+    top: -1px;
+    left: 0;
+    background-color: var(--neutral-0);
+    height: 1080px;
+    overflow: hidden;
+}
+
+.icon1 {
+    position: relative;
+    top: -461px;
+    left: -540px;
+    width: 3000px;
+    height: 2000px;
+    object-fit: cover;
+}
+.undangan-pernikahan1 {
+    position: relative;
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    font-family: var(--font-cormorant-infant);
+}
+.b1 {
+    width: 55px;
+    position: relative;
+    display: none;
+    color: var(--neutral-0);
+}
+.ust-isra-rafi {
+    font-size: 14px;
+    font-family: var(--font-marck-script);
+}
+.anda-diundang-dengan,
+.ust-isra-rafi {
+    position: relative;
+}
+.yth-bapakibusaudarai-group {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--neutral-0);
+}
+.undangan-pernikahan-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-5xs);
+}
+.ellipse-div,
+.frame-inner,
+.frame-item {
+    position: absolute;
+    margin: 0 !important;
+    border-radius: 50%;
+}
+.frame-item {
+    width: 411px;
+    top: calc(50% - 205px);
+    left: calc(50% - 205px);
+    height: 411px;
+    object-fit: cover;
+    z-index: 0;
+}
+.ellipse-div,
+.frame-inner {
+    width: 433px;
+    top: calc(50% - 216px);
+    left: calc(50% - 216px);
+    border: 1px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    height: 433px;
+    z-index: 1;
+}
+.ellipse-div {
+    width: 449px;
+    top: calc(50% - 224px);
+    left: calc(50% - 224px);
+    height: 449px;
+    z-index: 2;
+}
+.ellipse-group {
+    width: 489px;
+    height: 489px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    gap: 0 10px;
+}
+.days-until-we {
+    position: relative;
+    line-height: 140%;
+}
+.wrapper {
+    width: 74px;
+    border-radius: var(--br-13xl);
+    background-color: var(--color-salmon);
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base);
+    box-sizing: border-box;
+}
+.hari {
+    position: relative;
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    color: var(--color-salmon);
+    text-align: left;
+}
+.container,
+.frame-parent1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.frame-parent1 {
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.container {
+    height: 74px;
+    justify-content: center;
+    padding: var(--padding-sm) 0;
+    box-sizing: border-box;
+    text-align: left;
+    color: var(--color-salmon);
+    font-family: var(--font-cormorant);
+}
+.frame-div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 24px;
+    text-align: center;
+    font-size: var(--font-size-13xl);
+    color: var(--neutral-0);
+}
+.days-until-we-are-parent,
+.frame-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.days-until-we-are-parent {
+    justify-content: flex-start;
+    gap: 24px 0;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.frame-container {
+    position: absolute;
+    top: calc(50% - 414.5px);
+    left: calc(50% - 265px);
+    width: 531px;
+    justify-content: center;
+    gap: var(--gap-5xl);
+}
+.banner {
+    width: 1920px;
+    position: relative;
+    height: 1080px;
+    overflow: hidden;
+    flex-shrink: 0;
+    text-align: left;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-cormorant-garamond);
+}
+.mempelai1 {
+    width: 312px;
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+}
+.anak-dari-bapak,
+.jamaludin {
+    align-self: stretch;
+    position: relative;
+    line-height: 150%;
+}
+.anak-dari-bapak {
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    font-family: var(--font-cormorant);
+}
+.jamaludin-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.frame-icon {
+    width: 320px;
+    position: relative;
+    border-radius: var(--br-13xl);
+    height: 320px;
+    object-fit: cover;
+}
+.frame-parent6 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+}
+.div {
+    position: relative;
+    line-height: 150%;
+    text-align: center;
+}
+.frame-child1 {
+    width: 320px;
+    position: relative;
+    height: 320px;
+    object-fit: cover;
+}
+.frame-parent7 {
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 24px;
+    text-align: left;
+}
+.frame-parent5,
+.frame-parent7,
+.mempelai {
+    display: flex;
+    align-items: center;
+}
+.frame-parent5 {
+    width: 1652px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 80px;
+    text-align: right;
+}
+.mempelai {
+    width: 1920px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    gap: 32px 0;
+}
+.akad {
+    position: relative;
+    font-size: var(--font-size-29xl);
+    line-height: 150%;
+    font-family: var(--font-rouge-script);
+}
+.tanggal-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.jl-ir-h {
+    align-self: stretch;
+    position: relative;
+    text-align: center;
+}
+.akad-parent,
+.tempat-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tempat-parent {
+    align-self: stretch;
+    gap: 16px 0;
+}
+.akad-parent {
+    width: 880px;
+    gap: 24px 0;
+}
+.frame-child2 {
+    width: 36px;
+    position: relative;
+    height: 36px;
+}
+.buka-map {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.frame-parent10 {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 6px;
+}
+.frame-parent11,
+.frame-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+.frame-wrapper {
+    width: 320px;
+    border-radius: var(--br-221xl);
+    background-color: var(--color-burlywood);
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--padding-7xs) var(--padding-lg);
+    box-sizing: border-box;
+}
+.frame-parent11 {
+    flex-direction: row;
+    align-items: center;
+    gap: 0 6px;
+}
+.frame-parent9,
+.frame-wrapper1 {
+    display: flex;
+    justify-content: center;
+}
+.frame-wrapper1 {
+    width: 320px;
+    border-radius: var(--br-221xl);
+    background-color: var(--color-burlywood);
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-7xs) var(--padding-lg);
+    box-sizing: border-box;
+}
+.frame-parent9 {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 8px;
+    color: var(--neutral-0);
+}
+.frame-parent8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 48px 0;
+}
+.frame-icon1 {
+    width: 370px;
+    position: relative;
+    height: 28px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.tanggal-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.jl-ir-h1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+    text-align: center;
+}
+.resepsi-parent,
+.tempat-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tempat-group {
+    align-self: stretch;
+    gap: 8px 0;
+}
+.resepsi-parent {
+    width: 880px;
+    gap: 16px 0;
+}
+.frame-parent13 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0 16px;
+    color: var(--neutral-0);
+}
+.frame-parent12 {
+    flex-direction: column;
+    align-items: center;
+    gap: 47px 0;
+}
+.frame-parent12,
+.jadwal1,
+.jadwal2 {
+    display: flex;
+    justify-content: flex-start;
+}
+.jadwal2 {
+    border-radius: var(--br-21xl);
+    border: 6px solid var(--color-navajowhite);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-61xl);
+    gap: 24px 0;
+}
+.jadwal1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-29xl);
+    background-color: var(--neutral-0);
+    border: 4px solid var(--color-burlywood);
+    flex-direction: row;
+    align-items: flex-start;
+    padding: var(--padding-21xl);
+}
+.asset-2-5,
+.asset-2-6 {
+    position: absolute;
+    top: 40px;
+    left: -132px;
+    width: 240px;
+    height: 480px;
+    object-fit: cover;
+}
+.asset-2-6 {
+    top: 742px;
+    left: 1013px;
+    object-fit: contain;
+}
+.frame1 {
+    width: 1120px;
+    position: relative;
+    height: 1325px;
+}
+.jadwal {
+    width: 1920px;
+    border-radius: var(--br-61xl);
+    background-color: var(--color-seashell);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.galeri {
+    position: relative;
+    line-height: 150%;
+}
+.caption-child,
+.caption-inner,
+.caption-item,
+.polygon-3-stroke,
+.polygon-4-stroke,
+.polygon-5-stroke {
+    position: absolute;
+    height: 122.39%;
+    width: 126.56%;
+    top: -11.19%;
+    right: -15.11%;
+    bottom: -11.2%;
+    left: -11.44%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+}
+.caption-inner,
+.caption-item,
+.polygon-3-stroke,
+.polygon-4-stroke,
+.polygon-5-stroke {
+    height: 125.12%;
+    width: 129.37%;
+    top: -12.56%;
+    right: -15%;
+    bottom: -12.56%;
+    left: -14.37%;
+}
+.caption-inner,
+.caption-item,
+.polygon-4-stroke,
+.polygon-5-stroke {
+    height: 107.18%;
+    width: 115.92%;
+    top: -3.58%;
+    right: -9.6%;
+    bottom: -3.6%;
+    left: -6.33%;
+}
+.caption-inner,
+.polygon-4-stroke,
+.polygon-5-stroke {
+    height: 109.56%;
+    width: 118.51%;
+    top: -4.77%;
+    right: -9.71%;
+    bottom: -4.79%;
+    left: -8.8%;
+}
+.caption-inner,
+.polygon-5-stroke {
+    height: 128.63%;
+    width: 128.63%;
+    top: -14.31%;
+    right: -14.57%;
+    bottom: -14.32%;
+    left: -14.06%;
+}
+.polygon-5-stroke {
+    height: 131.49%;
+    width: 131.49%;
+    top: -15.74%;
+    right: -15.74%;
+    bottom: -15.75%;
+    left: -15.75%;
+}
+.aku-tak-pernah {
+    margin: 0;
+}
+.aku-tak-pernah-container {
+    position: absolute;
+    top: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+    left: 40%; /* Sesuaikan dengan posisi yang diinginkan */
+    transform: translate(-50%, -50%); /* Untuk menengahkan elemen */
+    line-height: 140%;
+    display: inline-block;
+    width: auto; /* Sesuaikan dengan lebar konten */
+    height: auto; /* Sesuaikan dengan tinggi konten */
+}
+
+.caption,
+.frame-child6 {
+    width: 703.4px;
+    position: relative;
+    height: 664px;
+}
+.frame-child6 {
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.frame-child6,
+.frame-parent17 {
+    border-radius: var(--br-5xl);
+    overflow: hidden;
+}
+.frame-parent17,
+.frame-parent18 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+}
+.frame-parent16 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px 0;
+}
+.caption-parent,
+.frame-parent16,
+.gallery {
+    display: flex;
+    align-items: center;
+}
+.caption-parent {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0 24px;
+    text-align: center;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.gallery {
+    width: 1920px;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    gap: 24px 0;
+    text-align: left;
+}
+.pertemuan,
+.tidak-ada-yang {
+    align-self: stretch;
+    position: relative;
+}
+.pertemuan {
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tidak-ada-yang {
+    white-space: pre-wrap;
+}
+.pertemuan-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.frame-parent20 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 24px;
+}
+.seiring-berjalannya-waktu {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.pendekatan-parent {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.frame-parent21 {
+    text-align: left;
+}
+.frame-parent21,
+.frame-parent22 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 24px;
+}
+.cerita-cinta,
+.frame-parent19,
+.pernikahan-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pernikahan-parent {
+    align-self: stretch;
+    flex: 1;
+    align-items: flex-start;
+    gap: 8px 0;
+}
+.cerita-cinta,
+.frame-parent19 {
+    align-items: center;
+    gap: 24px 0;
+}
+.frame-parent19 {
+    align-self: stretch;
+    text-align: right;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.cerita-cinta {
+    width: 1920px;
+    border-radius: var(--br-61xl);
+    background-color: var(--color-seashell);
+    backdrop-filter: blur(10px);
+    padding: var(--padding-61xl) 400px;
+    box-sizing: border-box;
+}
+.rsvp1 {
+    align-self: stretch;
+    position: relative;
+    font-size: var(--font-size-29xl);
+    line-height: 150%;
+    font-family: var(--font-rouge-script);
+}
+.nama-lengkap {
+    width: 149.5px;
+    position: relative;
+    line-height: 140%;
+    font-weight: 500;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.masukkan-nama-kamu {
+    flex: 1;
+    position: relative;
+    line-height: 150%;
+}
+.field,
+.nama-lengkap-parent {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.field {
+    border-radius: var(--br-5xs);
+    border: 1px solid var(--color-burlywood);
+    flex-direction: row;
+    padding: var(--padding-3xs) var(--padding-base);
+    text-align: left;
+    color: var(--color-lightgray);
+}
+.nama-lengkap-parent {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.ya {
+    position: relative;
+    line-height: 140%;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.frame-parent25,
+.ya-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ya-wrapper {
+    border-radius: var(--br-81xl);
+    background-color: var(--neutral-0);
+    border: 0.6px solid var(--color-peru);
+    overflow: hidden;
+    justify-content: center;
+    padding: var(--padding-6xs) var(--padding-33xl);
+}
+.frame-parent25 {
+    justify-content: flex-start;
+    gap: 0 8px;
+}
+.bersedia-hadir-di-acara-kami-parent,
+.frame-parent24 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px 0;
+}
+.frame-parent24 {
+    gap: 16px 0;
+    text-align: justify;
+}
+.frame-parent26,
+.rsvp-mobile {
+    display: flex;
+    align-items: center;
+}
+.frame-parent26 {
+    align-self: stretch;
+    border-radius: var(--br-13xl);
+    background-color: var(--color-peru);
+    height: 56px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 12px;
+    text-align: left;
+    color: var(--neutral-0);
+}
+.rsvp-mobile {
+    width: 652px;
+    border-radius: var(--br-base);
+    background-color: var(--neutral-0);
+    border: 6px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-21xl);
+    gap: 24px 0;
+}
+.devider {
+    align-self: stretch;
+    position: relative;
+    background-color: var(--color-peachpuff);
+    height: 1px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.ahmad-parent,
+.ucapan-mobile,
+.ucapan-mobile-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.ahmad-parent {
+    align-self: stretch;
+    align-items: flex-start;
+    gap: 16px 0;
+}
+.ucapan-mobile,
+.ucapan-mobile-inner {
+    padding: var(--padding-5xl);
+}
+.ucapan-mobile-inner {
+    width: 376px;
+    border-radius: var(--br-base);
+    background-color: var(--neutral-0);
+    box-shadow: -10px 10px 10px rgba(187, 133, 84, 0.08);
+    border: 1px solid var(--color-peru);
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: flex-start;
+}
+.ucapan-mobile {
+    align-self: stretch;
+    border-radius: var(--br-5xl);
+    background-color: #ffefe0;
+    overflow-x: auto;
+    align-items: center;
+    gap: 24px 0;
+    text-align: justify;
+}
+.rsvp {
+    width: 1920px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    gap: 0 48px;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-cormorant-infant);
+}
+.jika-kamu-tidak,
+.kirim-hadiah1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 130%;
+}
+.jika-kamu-tidak {
+    font-size: var(--font-size-5xl);
+    line-height: 150%;
+    font-weight: 600;
+}
+.kirim-hadiah-parent {
+    align-self: stretch;
+    border-radius: 0 0 var(--br-13xl) var(--br-13xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.vector-icon {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div1 {
+    width: 16px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: var(--br-xl);
+    background-color: var(--secondary-600-brand-identity);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-12xs) var(--padding-11xs);
+}
+.mail {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    display: none;
+}
+.transfer-ke-no {
+    flex: 1;
+    position: relative;
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    font-weight: 600;
+    font-family: var(--font-cormorant-infant);
+}
+.add-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button {
+    flex: 1;
+    border-radius: var(--br-13xl);
+    background-color: var(--color-peru);
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-base) var(--padding-29xl);
+    box-sizing: border-box;
+    gap: 0 16px;
+}
+.kirim-kado-ke {
+    flex: 1;
+    position: relative;
+    font-size: var(--font-size-5xl);
+    line-height: 140%;
+    font-weight: 600;
+    font-family: var(--font-cormorant-infant);
+    color: var(--color-peru);
+}
+.button1 {
+    flex: 1;
+    border-radius: var(--br-13xl);
+    border: 1px solid var(--color-peru);
+    box-sizing: border-box;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base) var(--padding-29xl);
+    gap: 0 16px;
+}
+.button-parent,
+.question {
+    display: flex;
+    justify-content: flex-start;
+}
+.button-parent {
+    width: 974px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 16px;
+    font-size: var(--optima-label-label-s-size);
+    color: var(--neutral-0);
+    font-family: var(--optima-label-label-s);
+}
+.question {
+    align-self: stretch;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px 0;
+}
+.bca,
+.copy-icon {
+    position: relative;
+}
+.bca {
+    width: 341px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+}
+.copy-icon {
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.card,
+.card-list {
+    align-items: flex-start;
+}
+.card {
+    flex: 1;
+    border-radius: var(--br-5xl);
+    border: 1px solid var(--color-peru);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-5xl);
+    gap: 16px 0;
+}
+.card-list {
+    width: 754px;
+    flex-direction: row;
+    gap: 0 24px;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+}
+.body,
+.card-list,
+.hadiah,
+.kirim-hadiah {
+    display: flex;
+    justify-content: flex-start;
+}
+.kirim-hadiah {
+    width: 1760px;
+    border-radius: var(--br-29xl);
+    background-color: var(--neutral-0);
+    border: 6px solid var(--color-navajowhite);
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--padding-61xl);
+    gap: 48px 0;
+}
+.body,
+.hadiah {
+    align-items: flex-start;
+}
+.hadiah {
+    border-radius: var(--br-61xl) var(--br-61xl) 0 0;
+    background-color: var(--color-seashell);
+    backdrop-filter: blur(10px);
+    flex-direction: row;
+    padding: var(--padding-61xl);
+    font-size: var(--font-size-13xl);
+    font-family: var(--font-cormorant-infant);
+}
+.body {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 1080px;
+    flex-direction: column;
+}
+.whatsapp-video-2024-02-12-at-1 {
+    position: absolute;
+    top: 0;
+    left: -880px;
+    width: 960px;
+    height: 544px;
+}
+.button2,
+.piringan-1-icon {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+}
+.piringan-1-icon {
+    right: 0;
+    object-fit: cover;
+}
+.button2 {
+    top: 959px;
+    left: 1800px;
+    border-radius: 120px;
+    overflow: hidden;
+}
+.icon-home {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button3,
+.navbar-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.button3 {
+    border-radius: var(--br-13xl);
+    align-items: flex-start;
+    padding: var(--padding-5xs);
+    cursor: pointer;
+}
+.navbar-mobile {
+    position: fixed;
+    bottom: 40px;
+    left: calc(50% - 185px);
+    border-radius: var(--br-81xl);
+    background-color: #d8bd99;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px var(--padding-base);
+    gap: 3px 8px;
+    z-index: 999;
+}
+.prototype-content-deks {
+    width: 100%;
+    position: relative;
+    height: 1080px;
+    text-align: center;
+    font-size: var(--font-size-29xl);
+    color: var(--color-peru);
+    font-family: var(--font-rouge-script);
+}
+
+body {
+    border-radius: var(--br-61xl);
+    background-image: url("./assets/5447182-1-1@2x.png");
+    background-size: cover; /* atau background-size: 100% 100%; */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Background tetap di tempat ketika di-scroll */
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+
+/* Tata letak untuk rentang lebar layar antara 1537px dan 1920px */
+
+
+
+
+
+
+@media only screen and (min-width: 1536px) and (min-width: 1921px) {
+    body {
+        border-radius: var(--br-61xl);
+        background-image: url("./assets/5447182-1-1@2x.png");
+        background-size: cover; /* atau background-size: 100% 100%; */
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Background tetap di tempat ketika di-scroll */
+        position: absolute;
+        width: 1536px;
+        height: 1080px;
+    }
+
+    .icon {
+        position: absolute;
+        object-fit: cover;
+    }
+    .banner {
+        width: 1536px;
+        position: relative;
+        height: 1080px;
+        overflow: hidden;
+        flex-shrink: 0;
+        text-align: left;
+        font-size: var(--font-size-xs);
+        font-family: var(--font-cormorant-garamond);
+    }
+
+    .mempelai {
+        width: 1536px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 32px 0;
+    }
+
+    .frame-parent5 {
+        width: 1536px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0 80px;
+        text-align: right;
+    }
+
+    .jadwal {
+        width: 1536px;
+        border-radius: var(--br-61xl);
+        background-color: var(--color-seashell);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        text-align: left;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    .gallery {
+        width: 1536px;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 24px 0;
+        text-align: left;
+    }
+
+    .caption-parent {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0 12px;
+        text-align: center;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    .aku-tak-pernah-container {
+        position: absolute;
+        top: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+        left: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+        transform: translate(-50%, -50%); /* Untuk menengahkan elemen */
+        line-height: 140%;
+        display: inline-block;
+        width: auto; /* Sesuaikan dengan lebar konten */
+        height: auto; /* Sesuaikan dengan tinggi konten */
+    }
+    .frame-parent16 {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px 0;
+    }
+
+    .caption,
+    .frame-child6 {
+        width: 700px;
+        position: relative;
+        height: 664px;
+    }
+    .frame-child6 {
+        width: 240px;
+        height: 240px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .cerita-cinta {
+        width: 1536px;
+        border-radius: var(--br-61xl);
+        background-color: var(--color-seashell);
+        backdrop-filter: blur(10px);
+        padding: var(--padding-61xl) 400px;
+        box-sizing: border-box;
+    }
+
+    .rsvp {
+        width: 1536px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 0 48px;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    /* .hadiah {
+  border-radius: var(--br-61xl) var(--br-61xl) 0 0;
+  background-color: var(--color-seashell);
+  backdrop-filter: blur(10px);
+  flex-direction: row;
+  padding: var(--padding-29xl);
+  font-size: var(--font-size-13xl);
+  font-family: var(--font-cormorant-infant);
+}
+
+.kirim-hadiah {
+  width: 1536px;
+  border-radius: var(--br-29xl);
+  background-color: var(--neutral-0);
+  border: 6px solid var(--color-navajowhite);
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-61xl);
+  gap: 48px 0;
+} */
+}
+
+@media only screen and (max-width: 640px) and (max-width: 1280px) {
+
+
+    body {
+        border-radius: var(--br-61xl);
+        background-image: url("./assets/5447182-1-1@2x.png");
+        background-size: cover; /* atau background-size: 100% 100%; */
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Background tetap di tempat ketika di-scroll */
+        position: absolute;
+        width: 1024px;
+        height: 1080px;
+    }
+
+    .icon {
+        position: absolute;
+        object-fit: cover;
+    }
+    .banner {
+        width: 1024px;
+        position: relative;
+        height: 1080px;
+        overflow: hidden;
+        flex-shrink: 0;
+        text-align: left;
+        font-size: var(--font-size-xs);
+        font-family: var(--font-cormorant-garamond);
+    }
+
+    .mempelai {
+        width: 1024px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 32px 0;
+    }
+
+    .frame-parent5 {
+        width: 1024px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0 80px;
+        text-align: right;
+    }
+
+    .jadwal {
+        width: 1024px;
+        border-radius: var(--br-61xl);
+        background-color: var(--color-seashell);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        text-align: left;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    .gallery {
+        width: 1024px;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 24px 0;
+        text-align: left;
+    }
+
+    .caption-parent {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0 12px;
+        text-align: center;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+    .aku-tak-pernah-container {
+        position: absolute;
+        top: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+        left: 50%; /* Sesuaikan dengan posisi yang diinginkan */
+        transform: translate(-50%, -50%); /* Untuk menengahkan elemen */
+        line-height: 140%;
+        display: inline-block;
+        width: auto; /* Sesuaikan dengan lebar konten */
+        height: auto; /* Sesuaikan dengan tinggi konten */
+    }
+    .frame-parent16 {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px 0;
+    }
+
+    .caption,
+    .frame-child6 {
+        width: 700px;
+        position: relative;
+        height: 664px;
+    }
+    .frame-child6 {
+        width: 240px;
+        height: 240px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .cerita-cinta {
+        width: 1024px;
+        border-radius: var(--br-61xl);
+        background-color: var(--color-seashell);
+        backdrop-filter: blur(10px);
+        padding: var(--padding-61xl) 400px;
+        box-sizing: border-box;
+    }
+
+    .rsvp {
+        width: 1024px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        gap: 0 48px;
+        font-size: var(--font-size-5xl);
+        font-family: var(--font-cormorant-infant);
+    }
+
+}
+
+
+

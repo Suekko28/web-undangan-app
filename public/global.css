@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+:root {
+    /* fonts */
+    --font-cormorant-infant: "Cormorant Infant";
+    --font-rouge-script: "Rouge Script";
+    --optima-label-label-s: Optima;
+    --font-cormorant: Cormorant;
+    --font-cormorant-garamond: "Cormorant Garamond";
+    --font-marck-script: "Marck Script";
+
+    /* font sizes */
+    --font-size-5xl: 24px;
+    --font-size-29xl: 48px;
+    --optima-label-label-s-size: 10px;
+    --font-size-13xl: 32px;
+    --font-size-xs: 12px;
+
+    /* Colors */
+    --neutral-0: #fff;
+    --color-burlywood: #c79d70;
+    --color-peru: #bb8554;
+    --color-seashell: rgba(255, 245, 235, 0.2);
+    --color-navajowhite: #ffcf9c;
+    --secondary-600-brand-identity: #ed1c24;
+    --color-peachpuff: #edccae;
+    --color-lightgray: #dbcdbf;
+    --color-salmon: #fd856c;
+
+    /* Gaps */
+    --gap-29xl: 48px;
+    --gap-5xl: 24px;
+    --gap-xs: 12px;
+    --gap-0: 0px;
+    --gap-base: 16px;
+    --gap-5xs: 8px;
+
+    /* Paddings */
+    --padding-base: 16px;
+    --padding-29xl: 48px;
+    --padding-5xs: 8px;
+    --padding-61xl: 80px;
+    --padding-5xl: 24px;
+    --padding-12xs: 1px;
+    --padding-11xs: 2px;
+    --padding-21xl: 40px;
+    --padding-3xs: 10px;
+    --padding-6xs: 7px;
+    --padding-33xl: 52px;
+    --padding-7xs: 6px;
+    --padding-lg: 18px;
+    --padding-sm: 14px;
+
+    /* Border radiuses */
+    --br-21xl: 40px;
+    --br-81xl: 100px;
+    --br-13xl: 32px;
+    --br-61xl: 80px;
+    --br-29xl: 48px;
+    --br-5xl: 24px;
+    --br-xl: 20px;
+    --br-base: 16px;
+    --br-5xs: 8px;
+    --br-221xl: 240px;
+}
