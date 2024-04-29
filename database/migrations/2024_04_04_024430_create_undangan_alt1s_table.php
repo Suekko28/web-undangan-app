@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             // $table->text('nama_undangan');
             $table->string('banner_img');
+            $table->string('foto_prewedding');
             $table->string('foto_mempelai_laki');
             $table->string('nama_mempelai_laki');
             $table->string('putra_dari_bpk');

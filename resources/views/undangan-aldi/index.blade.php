@@ -40,7 +40,7 @@
                         data-scroll-to="buttonImage" /> --}}
 
                     <img class="header-section-icon" loading="lazy" alt=""
-                        src="{{ Storage::url('' . $data->banner_img) }}" />
+                        src="{{ Storage::url('' . $data->foto_prewedding) }}" />
 
                     <div class="frame-inner"></div>
                     <div class="frame-inner2"></div>

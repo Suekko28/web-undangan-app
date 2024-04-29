@@ -20,6 +20,7 @@ class UndanganAlt1 extends Model
     protected $fillable = [
         // 'nama_undangan',
         'banner_img',
+        'foto_prewedding',
         'foto_mempelai_laki',
         'nama_mempelai_laki',
         'putra_dari_bpk',

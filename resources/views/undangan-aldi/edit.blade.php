@@ -47,12 +47,16 @@
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="banner_img">Foto Prewedding <span class="mandatory">*</span></label>
+                                <label for="banner_img">Foto Opening <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="" value="{{$data->banner_img}}">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="music">Music <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="music" name="music" accept=".mp3">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="foto_prewedding">Foto Prewedding <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_prewedding" name="foto_prewedding" placeholder="">
                             </div>
                             
                         </div>
@@ -212,53 +216,80 @@
                         <div class="mempelai text-center fw-bold fs-5">Cerita Cinta Kami</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="foto_pertemuan">Foto Pertemuan <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="foto_pertemuan" name="foto_pertemuan"
-                                    placeholder="" value="{{$data->foto_pertemuan}}">
+                                <label for="judul_cerita1">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita1" name="judul_cerita1"
+                                    placeholder="Masukkan Judul Ceritamu">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="pertemuan">Petemuan <span class="mandatory">*</span> <span
+                                <label for="foto_pertemuan">Foto <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="foto_pertemuan" name="foto_pertemuan"
+                                    placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="pertemuan">Cerita <span class="fst-italic">(Opsional)</span><span
                                         class="fst-italic">(Maksimal 200 Karakter)</span>
                                 </label>
                                 <textarea class="form-control" rows="5" id="pertemuan" name="pertemuan"
-                                    placeholder="Ceritakan pertemuan kamu dengan pasanganmu">{{$data->pertemuan}}</textarea>
+                                    placeholder="Ceritakan pertemuan kamu dengan pasanganmu"></textarea>
                             </div>
+
                             <div class="form-group mb-3">
-                                <label for="foto_pendekatan">Foto Pendekatan <span class="mandatory">*</span></label>
+                                <label for="judul_cerita2">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita2" name="judul_cerita2"
+                                    placeholder="Masukkan Judul Ceritamu">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="foto_pendekatan">Foto <span class="fst-italic">(Opsional)</span></label>
                                 <input type="file" class="form-control" id="foto_pendekatan" name="foto_pendekatan"
-                                    placeholder="" value="{{$data->foto_pendekatan}}">
+                                    placeholder="">
                             </div>
+
+
                             <div class="form-group mb-3">
-                                <label for="pendekatan">Pendekatan <span class="mandatory">*</span> <span
+                                <label for="pendekatan">Cerita <span class="fst-italic">(Opsional)</span><span
                                         class="fst-italic">(Maksimal 200 Karakter)</span>
                                 </label>
                                 <textarea class="form-control" rows="5" id="pendekatan" name="pendekatan"
-                                    placeholder="Ceritakan pendekatan kamu dengan pasanganmu " value="{{$data->pendekatan}}"></textarea>
-                            </div>
-
-                            
-                            <div class="form-group mb-3">
-                                <label for="foto_lamaran">Foto Lamaran <span class="mandatory">*</span></label>
-                                <input value="{{$data->foto_lamaran}}" type="file" class="form-control" id="foto_lamaran" name="foto_lamaran" placeholder="">
+                                    placeholder="Ceritakan pendekatan kamu dengan pasanganmu "></textarea>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="lamaran">Lamaran <span class="mandatory">*</span><span
-                                        class="fst-italic">(Maksimal 200 Karakter)</span></label>
+                                <label for="judul_cerita3">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita3" name="judul_cerita3"
+                                    placeholder="Masukkan Judul Ceritamu">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="foto_lamaran">Foto <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="foto_lamaran" name="foto_lamaran"
+                                    placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="lamaran">Cerita <span class="fst-italic">(Opsional)</span></label>
                                 <textarea class="form-control" rows="5" id="lamaran" name="lamaran"
-                                    placeholder="Ceritakan lamaran kamu dengan pasanganmu" value="{{$data->lamaran}}"></textarea>
+                                    placeholder="Ceritakan lamaran kamu dengan pasanganmu"></textarea>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="foto_pernikahan">Foto Pernikahan <span class="mandatory">*</span></label>
-                                <input value="{{$data->foto_pernikahan}}" type="file" class="form-control" id="foto_pernikahan" name="foto_pernikahan" placeholder="">
+                                <label for="judul_cerita4">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita4" name="judul_cerita4"
+                                    placeholder="Masukkan Judul Ceritamu">
+                            </div>
+
+
+                            <div class="form-group mb-3">
+                                <label for="foto_pernikahan">Foto <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="foto_pernikahan" name="foto_pernikahan"
+                                    placeholder="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="pernikahan">Pernihakan <span class="mandatory">*</span><span
-                                        class="fst-italic">(Maksimal 200 Karakter)</span></label>
+                                <label for="pernikahan">Cerita <span class="fst-italic">(Opsional)</span></label>
                                 <textarea class="form-control" rows="5" id="pernikahan" name="pernikahan"
-                                    placeholder="Ceritakan rencana pernikahan kamu dengan pasanganmu">{{$data->pernikahan}}</textarea>
+                                    placeholder="Ceritakan rencana pernikahan kamu dengan pasanganmu"></textarea>
                             </div>
                         </div>
                     </div>

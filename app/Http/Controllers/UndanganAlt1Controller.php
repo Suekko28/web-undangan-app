@@ -46,12 +46,14 @@ class UndanganAlt1Controller extends Controller
     {
         // Simpan gambar ke penyimpanan
         $banner_img = $request->file('banner_img');
+        $foto_prewedding = $request->file('foto_prewedding');
         $foto_mempelai_laki = $request->file('foto_mempelai_laki');
         $foto_mempelai_perempuan = $request->file('foto_mempelai_perempuan');
         $music = $request->file('music');
 
         // Simpan jalur penyimpanan untuk gambar utama
         $banner_img_path = $banner_img->storeAs('public/images', $banner_img->hashName());
+        $foto_prewedding_path = $foto_prewedding->storeAs('public/images', $foto_prewedding->hashName());
         $foto_mempelai_laki_path = $foto_mempelai_laki->storeAs('public/images', $foto_mempelai_laki->hashName());
         $foto_mempelai_perempuan_path = $foto_mempelai_perempuan->storeAs('public/images', $foto_mempelai_perempuan->hashName());
         $music_path = $music->storeAs('public/images', $music->hashName());
@@ -62,6 +64,7 @@ class UndanganAlt1Controller extends Controller
         // Buat entri baru untuk setiap nama undangan dengan ID yang berbeda
         $data = [
             'banner_img' => $banner_img_path,
+            'foto_prewedding' => $foto_prewedding_path,
             'foto_mempelai_laki' => $foto_mempelai_laki_path,
             'nama_mempelai_laki' => $request->nama_mempelai_laki,
             'putra_dari_bpk' => $request->putra_dari_bpk,
@@ -166,7 +169,7 @@ class UndanganAlt1Controller extends Controller
 
         // Simpan jalur gambar lama
         // Simpan jalur gambar lama
-        $gambarFields = ['banner_img', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'galeri_img6', 'music', 'foto_pertemuan', 'foto_pendekatan', 'foto_lamaran', 'foto_pernikahan'];
+        $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'galeri_img6', 'music', 'foto_pertemuan', 'foto_pendekatan', 'foto_lamaran', 'foto_pernikahan'];
         foreach ($gambarFields as $field) {
             $oldImagePaths[$field] = $data->$field;
         }

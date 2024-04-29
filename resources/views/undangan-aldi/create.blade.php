@@ -66,8 +66,8 @@
                                 <input type="file" class="form-control" id="music" name="music" accept=".mp3">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="banner_img">Foto Prewedding <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="">
+                                <label for="foto_prewedding">Foto Prewedding <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_prewedding" name="foto_prewedding" placeholder="">
                             </div>
 
                         </div>

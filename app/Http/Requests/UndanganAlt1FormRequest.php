@@ -23,6 +23,7 @@ class UndanganAlt1FormRequest extends FormRequest
         return [
             // 'nama_undangan' => ['required', 'string', ''],
             'banner_img' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+            'foto_prewedding' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'foto_mempelai_laki' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'nama_mempelai_laki' => ['required', 'string', 'max:100'],
             'putra_dari_bpk' => ['required', 'string', 'max:100'],
