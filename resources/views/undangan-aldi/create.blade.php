@@ -1,4 +1,4 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 
 @section('navbar-admin')
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/assets/img/favicon/favicon.ico') }}" />
@@ -58,12 +58,16 @@
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="banner_img">Foto Prewedding <span class="mandatory">*</span></label>
+                                <label for="banner_img">Foto Opening <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="music">Music <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="music" name="music" accept=".mp3">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="banner_img">Foto Prewedding <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="">
                             </div>
 
                         </div>
