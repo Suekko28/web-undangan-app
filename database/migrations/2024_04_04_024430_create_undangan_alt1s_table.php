@@ -34,12 +34,12 @@ return new class extends Migration {
             $table->string('lokasi_gmaps_akad');
             $table->string('lokasi_gmaps_resepsi');
             $table->text('caption');
-            $table->string('galeri_img1');
-            $table->string('galeri_img2');
-            $table->string('galeri_img3');
-            $table->string('galeri_img4');
-            $table->string('galeri_img5');
-            $table->string('galeri_img6');
+            $table->string('galeri_img1')->nullable();
+            $table->string('galeri_img2')->nullable();
+            $table->string('galeri_img3')->nullable();
+            $table->string('galeri_img4')->nullable();
+            $table->string('galeri_img5')->nullable();
+            $table->string('galeri_img6')->nullable();
             $table->text('pertemuan')->nullable();
             $table->text('pendekatan')->nullable();
             $table->text('lamaran')->nullable();
@@ -55,10 +55,10 @@ return new class extends Migration {
             $table->string('atas_nama3')->nullable();
             $table->text('alamat_tertera')->nullable();
             $table->string('music');
-            $table->string('foto_pertemuan');
-            $table->string('foto_pendekatan');
-            $table->string('foto_lamaran');
-            $table->string('foto_pernikahan');
+            $table->string('foto_pertemuan')->nullable();
+            $table->string('foto_pendekatan')->nullable();
+            $table->string('foto_lamaran')->nullable();
+            $table->string('foto_pernikahan')->nullable();
             $table->string('judul_cerita1')->nullable();
             $table->string('judul_cerita2')->nullable();
             $table->string('judul_cerita3')->nullable();
@@ -67,7 +67,7 @@ return new class extends Migration {
             
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */

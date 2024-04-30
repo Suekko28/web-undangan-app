@@ -3,12 +3,11 @@
 @section('navbar-admin')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create', ['id' => $undanganAlt1->id]) }}">+ Buat
-                Undangan</a>
+            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create', ['id' => $undanganAlt1->id]) }}">+ Nama Undangan</a>
             @include('layouts.message')
             <!-- Responsive Table -->
             <div class="card">
-                <h5 class="card-header">Undangan Alternative 1</h5>
+                <h5 class="card-header">List Nama Undangan</h5>
                 <div class="p-3">
                     <div class="mb-3">
                         <input type="text" id="searchInput" class="form-control" placeholder="Cari...">

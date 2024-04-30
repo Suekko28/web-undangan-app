@@ -67,9 +67,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/undangan-alt1', function () {
-//     return view('undangan-aldi.home');
-// });
+
 
 Route::resource('/nama-undangan', NamaUndanganController::class);
 Route::get('/nama-undangan/{id}/list', [NamaUndanganController::class, 'index'])->name('nama-undangan-list');
@@ -91,6 +89,14 @@ Route::resource('/undangan-alt1/index', Alt1Controller::class)->only(['index', '
 
 
 
+
+Route::get('/undangan-alt1', function () {
+    return view('undangan-aldi.home-preview');
+});
+
+Route::get('/undangan-alt1/index', function () {
+    return view('undangan-aldi.preview');
+});
 
 Route::get('/undangan-alt2', function () {
     return view('undangan-mufli.home');
