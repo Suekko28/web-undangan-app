@@ -66,7 +66,6 @@
                     </li>
 
                     <!-- Undangan -->
-                    <!-- Undangan -->
                     <li class="menu-item">
                         <a href="#" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -79,7 +78,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="layouts-without-navbar.html" class="menu-link">
+                                <a href="{{ route('undangan-alternative2') }}" class="menu-link">
                                     <div data-i18n="Without navbar">Alternative 2</div>
                                 </a>
                             </li>

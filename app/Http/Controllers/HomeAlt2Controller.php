@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UndanganAlt1;
-use Carbon\Carbon;
+use App\Models\UndanganAlt2;
 use Illuminate\Http\Request;
 
-class HomeAlt1Controller extends Controller
+class HomeAlt2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = UndanganAlt1::orderBy('id', 'desc')->paginate(10);
+        $data = UndanganAlt2::orderBy('id', 'desc')->paginate(10);
         return view('admin.view-alt1', compact('data'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         //
@@ -35,18 +37,13 @@ class HomeAlt1Controller extends Controller
      */
     public function show(string $nama_mempelai_laki, string $nama_mempelai_perempuan)
     {
-        $data = UndanganAlt1::where('nama_mempelai_laki', $nama_mempelai_laki)
+        $data = UndanganAlt2::where('nama_mempelai_laki', $nama_mempelai_laki)
             ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
             ->firstOrFail();
-        return view('admin.home-alt1', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
+        return view('admin.home-alt2', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
     }
 
-
    
-
-
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -74,13 +71,13 @@ class HomeAlt1Controller extends Controller
 
     public function showDetail(string $nama_mempelai_laki, string $nama_mempelai_perempuan, string $nama_undangan)
     {
-        $data = UndanganAlt1::where('nama_mempelai_laki', $nama_mempelai_laki)
+        $data = UndanganAlt2::where('nama_mempelai_laki', $nama_mempelai_laki)
             ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
             ->whereHas('namaUndangan', function ($query) use ($nama_undangan) {
                 $query->where('nama_undangan', $nama_undangan);
             })
             ->firstOrFail();
 
-        return view('undangan-aldi.home', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
+        return view('undangan-mufli.home', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
     }
 }

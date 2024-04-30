@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\alt1FormRequest;
-use App\Models\alt1model;
-use App\Models\UndanganAlt1;
+use App\Http\Requests\alt2FormRequest;
+use App\Models\alt2model;
+use App\Models\UndanganAlt2;
 use Illuminate\Http\Request;
 
-class IndexAlt1Controller extends Controller
+class IndexAlt2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = alt1model::orderBy('id', 'desc')->get();
-        return view('undangan-aldi.index', compact('data'));
+        $data = alt2model::orderBy('id', 'desc')->get();
+        return view('undangan-mufli.index', compact('data'));
     }
 
     /**
@@ -23,34 +23,33 @@ class IndexAlt1Controller extends Controller
      */
     public function create()
     {
-        // return view('undangan-aldi.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(alt1FormRequest $request, $nama_mempelai_laki, $nama_mempelai_perempuan, $nama_undangan)
+    public function store(alt2FormRequest $request, $nama_mempelai_laki, $nama_mempelai_perempuan, $nama_undangan)
     {
         // Temukan undangan berdasarkan nama_mempelai_laki, nama_mempelai_perempuan, dan nama_undangan
-        $undanganAlt1 = UndanganAlt1::where('nama_mempelai_laki', $nama_mempelai_laki)
+        $undanganAlt1 = UndanganAlt2::where('nama_mempelai_laki', $nama_mempelai_laki)
             ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
             ->whereHas('namaUndangan', function ($query) use ($nama_undangan) {
                 $query->where('nama_undangan', $nama_undangan);
             })
             ->firstOrFail();
 
-        // Buat instance baru dari Alt1Model dan isi dengan data yang diberikan
-        $alt1Model = new Alt1Model();
-        $alt1Model->fill($request->validated());
+        // Buat instance baru dari alt2Model dan isi dengan data yang diberikan
+        $alt2Model = new alt2model();
+        $alt2Model->fill($request->validated());
 
-        // Simpan Alt1Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai
-        $undanganAlt1->alt1Models()->save($alt1Model);
+        // Simpan alt2Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai
+        $undanganAlt1->alt2Models()->save($alt2Model);
 
         // Redirect kembali ke halaman showDetail dengan parameter yang sesuai
-        return redirect()->route('undangan-alt1-index', compact('nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'))
+        return redirect()->route('undangan-alt2-index', compact('nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'))
             ->with('success', 'Berhasil menambahkan data');
     }
-
 
 
     /**
@@ -58,16 +57,12 @@ class IndexAlt1Controller extends Controller
      */
     public function show(string $nama_mempelai_laki, string $nama_mempelai_perempuan)
     {
-        $data = UndanganAlt1::where('nama_mempelai_laki', $nama_mempelai_laki)
+        $data = UndanganAlt2::where('nama_mempelai_laki', $nama_mempelai_laki)
             ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
             ->firstOrFail();
 
-        return view('admin.index-alt1 ', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
+        return view('admin.index-alt2 ', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
     }
-
-
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -95,7 +90,7 @@ class IndexAlt1Controller extends Controller
 
     public function showDetail(string $nama_mempelai_laki, string $nama_mempelai_perempuan, string $nama_undangan)
     {
-        $data = UndanganAlt1::where('nama_mempelai_laki', $nama_mempelai_laki)
+        $data = UndanganAlt2::where('nama_mempelai_laki', $nama_mempelai_laki)
             ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
             ->whereHas('namaUndangan', function ($query) use ($nama_undangan) {
                 $query->where('nama_undangan', $nama_undangan);
@@ -106,7 +101,6 @@ class IndexAlt1Controller extends Controller
         $alt1models = $data->alt1Models;
 
         // Pass both $data (UndanganAlt1) and $alt1models (related Alt1Model instances) to the view
-        return view('undangan-aldi.index', compact('data', 'alt1models', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
+        return view('undangan-mufli.index', compact('data', 'alt1models', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
     }
-
 }

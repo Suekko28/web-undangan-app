@@ -130,7 +130,6 @@ input {
     width: 208px;
     height: 240px;
     position: absolute;
-    background-image: url("./assets/Profile\ pict\ man.jpg");
     border-radius: 200px 200px 40px 40px;
 }
 .profile-pict-woman {
@@ -533,7 +532,7 @@ input {
     font-size: 16px;
     color: #fff;
     font-family: Lora;
-    background-image: url("./assets/Banner-Image-new.jpg");
+    /* background-image: url("./assets/Banner-Image-new.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
 }

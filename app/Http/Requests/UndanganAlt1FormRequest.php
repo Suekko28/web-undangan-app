@@ -42,7 +42,7 @@ class UndanganAlt1FormRequest extends FormRequest
             'galeri_img1' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
             'galeri_img2' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
             'galeri_img3' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
-            'galeri_img4' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
+            'galeri_img4' => ['nullable','image', 'mimes:jpeg,png,jpg', 'max:5000'],
             'galeri_img5' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
             'galeri_img6' => ['image', 'mimes:jpeg,png,jpg', 'max:5000'],
             'pertemuan' => [],

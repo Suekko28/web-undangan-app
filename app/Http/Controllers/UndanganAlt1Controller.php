@@ -105,30 +105,29 @@ class UndanganAlt1Controller extends Controller
             'judul_cerita4' => $request->judul_cerita4,
         ];
 
-        // // Periksa apakah file galeri diunggah sebelum menyimpannya
-        // foreach (range(1, 6) as $index) {
-        //     $galeri_field = 'galeri_img' . $index;
-        //     if ($request->hasFile($galeri_field)) {
-        //         $galeri_img = $request->file($galeri_field);
-        //         $galeri_img_path = $galeri_img->storeAs('public/images', $galeri_img->hashName());
-        //         $data[$galeri_field] = $galeri_img_path;
-        //     } else {
-        //         // Jika file galeri tidak diunggah, set bidang galeri menjadi default
-        //         $data[$galeri_field] = 'default.jpg'; // Atur default.jpg sesuai kebutuhan Anda
-        //     }
-        // }
+        // Periksa apakah file galeri diunggah sebelum menyimpannya
+        foreach (range(1, 6) as $index) {
+            $galeri_field = 'galeri_img' . $index;
+            if ($request->hasFile($galeri_field)) {
+                $galeri_img = $request->file($galeri_field);
+                $galeri_img_path = $galeri_img->storeAs('public/images', $galeri_img->hashName());
+                $data[$galeri_field] = $galeri_img_path;
+            } else {
+                // Jika file galeri tidak diunggah, set bidang galeri menjadi default
+                $data[$galeri_field] = NULL; // Atur default.jpg sesuai kebutuhan Anda
+            }
+        }
 
         // Check if files are uploaded before saving them
-        // Check if files are uploaded before saving them
-        // foreach (['foto_pertemuan', 'foto_pendekatan', 'foto_lamaran', 'foto_pernikahan'] as $file) {
-        //     if ($request->hasFile($file)) {
-        //         $fileInstance = $request->file($file);
-        //         $filePath = $fileInstance->storeAs('public/images', $fileInstance->hashName());
-        //         $data[$file] = $filePath;
-        //     } else {
-        //         $data[$file] = 'default.jpg'; // or set it to null if preferred
-        //     }
-        // }
+        foreach (['foto_pertemuan', 'foto_pendekatan', 'foto_lamaran', 'foto_pernikahan'] as $file) {
+            if ($request->hasFile($file)) {
+                $fileInstance = $request->file($file);
+                $filePath = $fileInstance->storeAs('public/images', $fileInstance->hashName());
+                $data[$file] = $filePath;
+            } else {
+                $data[$file] = NULL; // or set it to null if preferred
+            }
+        }
 
 
         UndanganAlt1::create($data);
@@ -167,7 +166,6 @@ class UndanganAlt1Controller extends Controller
         // Validasi data yang diterima dari formulir
         $validatedData = $request->validated();
 
-        // Simpan jalur gambar lama
         // Simpan jalur gambar lama
         $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'galeri_img6', 'music', 'foto_pertemuan', 'foto_pendekatan', 'foto_lamaran', 'foto_pernikahan'];
         foreach ($gambarFields as $field) {

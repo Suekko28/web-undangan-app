@@ -40,7 +40,7 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('undangan-alternative1') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('undangan-alternative2') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     {{-- <div class="card-body container bg-white mt-5">
@@ -58,6 +58,11 @@
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
+                                <label for="background_img">Background Image <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="background_img" name="background_img"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="banner_img">Foto Opening <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="">
                             </div>
@@ -67,7 +72,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="foto_prewedding">Foto Prewedding <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="foto_prewedding" name="foto_prewedding" placeholder="">
+                                <input type="file" class="form-control" id="foto_prewedding" name="foto_prewedding"
+                                    placeholder="">
                             </div>
 
                         </div>
@@ -247,7 +253,7 @@
                                 <input type="time" class="form-control" id="mulai_akad" name="mulai_akad"
                                     placeholder="">
                             </div>
-                        
+
                             <div class="form-group mb-3">
                                 <label for="alamat_akad">Alamat Akad <span class="mandatory">*</span></label>
                                 <textarea class="form-control" rows="5" id="alamat_akad" name="alamat_akad"
@@ -264,7 +270,7 @@
                                 <input type="time" class="form-control" id="mulai_resepsi" name="mulai_resepsi"
                                     placeholder="">
                             </div>
-                          
+
 
                             <div class="form-group mb-3">
                                 <label for="alamat_resepsi">Alamat Resepsi <span class="mandatory">*</span></label>
@@ -273,10 +279,9 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="lokasi_gmaps">Lokasi Maps <span
-                                        class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="lokasi_gmaps"
-                                    name="lokasi_gmaps" placeholder="Masukkan link alamat maps">
+                                <label for="lokasi_gmaps">Lokasi Maps <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="lokasi_gmaps" name="lokasi_gmaps"
+                                    placeholder="Masukkan link alamat maps">
                             </div>
 
                         </div>
@@ -286,7 +291,7 @@
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Galeri Foto</div>
                         <div class="fs-6">
-                           
+
                             <div class="form-group mb-3">
                                 <label for="galeri_img1">Foto 1 <span class="fst-italic">(Opsional)</span></label>
                                 <input type="file" class="form-control" id="galeri_img1" name="galeri_img1"
@@ -322,7 +327,7 @@
 
                     </div>
 
-                  
+
 
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Kirim Hadiah</div>
@@ -370,7 +375,7 @@
 
                         <div class="d-flex flex-row-reverse mt-5">
                             <button type="submit" class="btn btn-primary ml-3 ms-3">Simpan</button>
-                            <a href="{{ route('undangan-alternative1') }}" class="btn btn-danger">Batal</a>
+                            <a href="{{ route('undangan-alternative2') }}" class="btn btn-danger">Batal</a>
                         </div>
 
                     </div>
