@@ -86,8 +86,11 @@ Route::put('/nama-undangan/{undanganAlt1Id}/{id}', [NamaUndanganController::clas
 Route::delete('/nama-undangan/{id}', [NamaUndanganController::class, 'destroy'])->name('nama-undangan.destroy');
 
 
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/preview', [HomeAlt1Controller::class, 'show'])->name('undangan-alt1-home');
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/preview/index', [IndexAlt1Controller::class, 'show'])->name('undangan-alt1-preview');
+// Route undangan alternative 1
+Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}')->group(function () {
+    Route::get('/preview', [HomeAlt1Controller::class, 'show'])->name('undangan-alt1-home');
+    Route::get('/preview/index', [IndexAlt1Controller::class, 'show'])->name('undangan-alt1-preview');
+});
 
 Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}', [HomeAlt1Controller::class, 'showDetail'])->name('undangan-alt1-first');
 Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}/index', [IndexAlt1Controller::class, 'showDetail'])->name('undangan-alt1-index');
@@ -95,8 +98,11 @@ Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}/inde
 Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}/index', [IndexAlt1Controller::class, 'store'])->name('undangan-alt1-post');
 
 
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/preview', [HomeAlt2Controller::class, 'show'])->name('undangan-alt2-home');
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/preview/index', [IndexAlt2Controller::class, 'show'])->name('undangan-alt2-preview');
+// Route undangan alternative 2
+Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/alt2')->group(function () {
+    Route::get('/preview', [HomeAlt2Controller::class, 'show'])->name('undangan-alt2-home');
+    Route::get('/preview/index', [IndexAlt2Controller::class, 'show'])->name('undangan-alt2-preview');
+});
 
 // Route::resource('/undangan-alt1/index', Alt1Controller::class)->only(['index', 'store']);
 

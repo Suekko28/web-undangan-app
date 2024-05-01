@@ -54,7 +54,8 @@
                             <div class="form-group mb-3">
                                 <label for="nama_mempelai_laki">Nama Mempelai Laki <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="nama_mempelai_laki" name="nama_mempelai_laki"
-                                    placeholder="Masukan nama mempelai laki-laki" value="{{ $data->nama_mempelai_laki }}" disabled>
+                                    placeholder="Masukan nama mempelai laki-laki" value="{{ $data->nama_mempelai_laki }}"
+                                    disabled>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="putra_dari_bpk">Putra dari Bapak <span class="mandatory">*</span></label>
@@ -128,42 +129,42 @@
                             <div class="form-group mb-3">
                                 <label for="tgl_akad">Tanggal Akad <span class="mandatory">*</span></label>
                                 <input type="date" class="form-control" id="tgl_akad" name="tgl_akad"
-                                    placeholder=""  value="{{ $data->tgl_akad }}" disabled>
+                                    placeholder="" value="{{ $data->tgl_akad }}" disabled>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="mulai_akad">Mulai Akad <span class="mandatory">*</span></label>
                                 <input type="time" class="form-control" id="mulai_akad" name="mulai_akad"
-                                    placeholder="" value="{{$data->mulai_akad}}" disabled>
+                                    placeholder="" value="{{ $data->mulai_akad }}" disabled>
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="alamat_akad">Alamat Akad <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="alamat_akad" name="alamat_akad"
-                                    placeholder="Masukan alamat akad" disabled>{{$data->alamat_akad}}</textarea>
+                                <textarea class="form-control" rows="5" id="alamat_akad" name="alamat_akad" placeholder="Masukan alamat akad"
+                                    disabled>{{ $data->alamat_akad }}</textarea>
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="tgl_resepsi">Tanggal Resepsi <span class="mandatory">*</span></label>
                                 <input type="date" class="form-control" id="tgl_resepsi" name="tgl_resepsi"
-                                    placeholder=""  value="{{ $data->tgl_resepsi }}" disabled>
+                                    placeholder="" value="{{ $data->tgl_resepsi }}" disabled>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="mulai_resepsi">Mulai Resepsi <span class="mandatory">*</span></label>
                                 <input type="time" class="form-control" id="mulai_resepsi" name="mulai_resepsi"
-                                    placeholder="" value="{{$data->mulai_resepsi}}" disabled>
+                                    placeholder="" value="{{ $data->mulai_resepsi }}" disabled>
                             </div>
 
 
                             <div class="form-group mb-3">
                                 <label for="alamat_resepsi">Alamat Resepsi <span class="mandatory">*</span></label>
                                 <textarea class="form-control" rows="5" id="alamat_resepsi" name="alamat_resepsi"
-                                    placeholder="Masukan alamat resepsi" disabled>{{$data->alamat_resepsi}}</textarea>
+                                    placeholder="Masukan alamat resepsi" disabled>{{ $data->alamat_resepsi }}</textarea>
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="lokasi_gmaps">Lokasi Maps <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="lokasi_gmaps" name="lokasi_gmaps"
-                                    placeholder="Masukkan link alamat maps"  value="{{ $data->lokasi_gmaps }}" disabled>
+                                    placeholder="Masukkan link alamat maps" value="{{ $data->lokasi_gmaps }}" disabled>
                             </div>
 
                         </div>
@@ -171,7 +172,27 @@
 
                 </form>
 
+                <table class="table table-bordered">
+                    {{-- <h6>Daftar Tamu Undangan <a href="{{ route('nama-undangan-list', ['id' => $data]) }}" target="_blank"
+                            rel="noopener noreferrer" class="link-underline-primary"><u>Sharelink</u></a></h6> --}}
+                    <thead>
+                        <tr class="text-nowrap text-center">
+                            <th>No</th>
+                            <th>Nama Undangan</th>
+                            {{-- <th>Template Message</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{-- @foreach ($nama_undangan as $item)
+                            <tr class="text-center">
+                                <td scope="row">{{ $i }}</td>
+                                <td scope="row">{{ $item->nama_undangan }}</td>
+                                {{-- Other table cells --}}
+                        </tr>
+                        {{-- @endforeach --}}
+                    </tbody>
 
+                </table>
                 <div class="d-flex flex-row-reverse mt-5 mb-3">
                     <a href="{{ route('undangan-alternative2') }}" class="btn btn-primary ">Kembali</a>
                 </div>

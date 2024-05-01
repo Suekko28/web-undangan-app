@@ -50,11 +50,12 @@
         </div>
         <section class="banner-image" data-scroll-to='BannerImage'>
             <img class="banner-image" loading="lazy" alt=""
-                        src="{{ Storage::url('' . $data->foto_prewedding) }}" />
+                src="{{ Storage::url('' . $data->foto_prewedding) }}" />
             <div class="card-list12">
                 <div class="card-item">
                     <div class="the-wedding-of2">THE WEDDING OF</div>
-                    <h1 class="alexnor-exafator1">{{$data->nama_mempelai_laki}} & {{$data->nama_mempelai_perempuan}}</h1>
+                    <h1 class="alexnor-exafator1">{{ $data->nama_mempelai_laki }} & {{ $data->nama_mempelai_perempuan }}
+                    </h1>
                 </div>
                 <!-- <button class="Primary-button">Lihat Detail
                     <div class="mail27">
@@ -99,13 +100,14 @@
                     <div class="mempelai-pria">
                         <div class="mempelai-info">
                             <div class="day-of-week">
-                                <h1 class="alexnor">{{$data->nama_mempelai_laki}}</h1>
+                                <h1 class="alexnor">{{ $data->nama_mempelai_laki }}</h1>
                                 <div class="putra-pertama-dari">
-                                    Putra pertama dari bapak {{$data->putra_dari_bpk}} & ibu {{$data->putra_dari_ibu}}
+                                    Putra pertama dari bapak {{ $data->putra_dari_bpk }} & ibu
+                                    {{ $data->putra_dari_ibu }}
                                 </div>
                             </div>
-                            <a target="_blank" class="button-link" href="{{$data->link_instagram1}}" target="_blank"
-                                style="text-direction:none;">
+                            <a target="_blank" class="button-link" href="{{ $data->link_instagram1 }}"
+                                target="_blank" style="text-direction:none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
                                     viewBox="0 0 20 21" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -117,12 +119,13 @@
                                     <path
                                         d="M15.6875 5.8125C15.6875 6.36478 15.2398 6.8125 14.6875 6.8125C14.1352 6.8125 13.6875 6.36478 13.6875 5.8125C13.6875 5.26022 14.1352 4.8125 14.6875 4.8125C15.2398 4.8125 15.6875 5.26022 15.6875 5.8125Z" />
                                 </svg>
-                                {{$data->nama_instagram1}}
+                                {{ $data->nama_instagram1 }}
                             </a>
                         </div>
                         <div class="profile-container">
                             <div class="profile-pict-man">
-                                <img class="profile-pict-man" src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" alt="">
+                                <img class="profile-pict-man"
+                                    src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -133,13 +136,14 @@
                         </div>
                         <div class="info-mempelai-wanita">
                             <div class="venue-name">
-                                <h1 class="nama-wanita">{{$data->nama_mempelai_perempuan}}</h1>
+                                <h1 class="nama-wanita">{{ $data->nama_mempelai_perempuan }}</h1>
                                 <div class="putra-pertama-dari1">
-                                    Putra pertama dari Bapak {{$data->putri_dari_bpk}} & Ibu {{$data->putri_dari_ibu}}
+                                    Putra pertama dari Bapak {{ $data->putri_dari_bpk }} & Ibu
+                                    {{ $data->putri_dari_ibu }}
                                 </div>
                             </div>
-                            <a target="_blank" class="button-link" href="{{$data->link_instagram2}}" target="_blank"
-                                style="text-direction:none;">
+                            <a target="_blank" class="button-link" href="{{ $data->link_instagram2 }}"
+                                target="_blank" style="text-direction:none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
                                     viewBox="0 0 20 21" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -151,7 +155,7 @@
                                     <path
                                         d="M15.6875 5.8125C15.6875 6.36478 15.2398 6.8125 14.6875 6.8125C14.1352 6.8125 13.6875 6.36478 13.6875 5.8125C13.6875 5.26022 14.1352 4.8125 14.6875 4.8125C15.2398 4.8125 15.6875 5.26022 15.6875 5.8125Z" />
                                 </svg>
-                                {{$data->nama_instagram2}}
+                                {{ $data->nama_instagram2 }}
                             </a>
                         </div>
                     </div>
@@ -161,48 +165,64 @@
                 <div class="content">
                     <b class="love-story3">Love Story</b>
                     <div class="card-story-list">
-                        <div class="card-story">
-                            <span class="title-story">{{$data->judul_cerita1}}</span>
-                            <div class="body-card">
-                                <span class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita1)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
-                                <span class="detail-story">
-                                    {{$data->perkenalan}}
-                                </span>
+                        @if (!empty($data->perkenalan) && !empty($data->tgl_cerita1) && !empty($data->judul_cerita1))
+                            <div class="card-story">
+                                <span class="title-story">{{ $data->judul_cerita1 }}</span>
+                                <div class="body-card">
+                                    <span
+                                        class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita1)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
+                                    <span class="detail-story">
+                                        {{ $data->perkenalan }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-story">
-                            <span class="title-story">{{$data->jadian}}</span>
-                            <div class="body-card">
-                                <span class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita2)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
-                                <span class="detail-story">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam.
-                                </span>
+                        @else
+                            <div class="card-story" style="display: none"></div>
+                        @endif
+                        @if (!empty($data->jadian) && !empty($data->tgl_cerita2) && !empty($data->judul_cerita2))
+                            <div class="card-story">
+                                <span class="title-story">{{ $data->judul_cerita2 }}</span>
+                                <div class="body-card">
+                                    <span
+                                        class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita2)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
+                                    <span class="detail-story">
+                                        {{ $data->pendekatan }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-story">
-                            <span class="title-story">Tunangan</span>
-                            <div class="body-card">
-                                <span class="story-date">January, 2013</span>
-                                <span class="detail-story">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam.
-                                </span>
+                        @else
+                            <div class="card-story" style="display: none"></div>
+                        @endif
+
+                        @if (!empty($data->tunangan) && !empty($data->tgl_cerita3) && !empty($data->judul_cerita3))
+                            <div class="card-story">
+                                <span class="title-story">{{ $data->judul_cerita3 }}</span>
+                                <div class="body-card">
+                                    <span
+                                        class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita3)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
+                                    <span class="detail-story">
+                                        {{ $data->tunangan }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-story">
-                            <span class="title-story">Pernikahan</span>
-                            <div class="body-card">
-                                <span class="story-date">January, 2013</span>
-                                <span class="detail-story">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam.
-                                </span>
+                        @else
+                            <div class="card-story" style="display: none"></div>
+                        @endif
+
+                        @if (!empty($data->pernikahan) && !empty($data->tgl_cerita4) && !empty($data->judul_cerita4))
+                            <div class="card-story">
+                                <span class="title-story">{{ $data->judul_cerita4 }}</span>
+                                <div class="body-card">
+                                    <span
+                                        class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita4)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
+                                    <span class="detail-story">
+                                        {{ $data->pernikahan }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="card-story" style="display: none"></div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -216,10 +236,12 @@
                 <div class="info-akad">
                     <span class="title">Akad Nikah</span>
                     <span class="paragraph">
-                        Sabtu, 20 Januari 2024 | 08:00 WIB
+                        {{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_akad)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
+                        | {{ \Carbon\Carbon::parse($data->mulai_akad)->format('H:i') }} WIB
+
                     </span>
                     <span class="paragraph">
-                        Jln. Dr. Samratulangi, Gg. Bungsu 6 Penengahan, Kota Bandar Lampung
+                        {{ $data->alamat_akad }}
                     </span>
                 </div>
                 <img class="layer-2-icon" loading="lazy" alt=""
@@ -227,13 +249,14 @@
                 <div class="info-resepsi">
                     <span class="title">Resepsi</span>
                     <span class="paragraph">
-                        Sabtu, 20 Januari 2024 | 10:00 WIB
+                        {{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_resepsi)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
+                        | {{ \Carbon\Carbon::parse($data->mulai_resepsi)->format('H:i') }} WIB
                     </span>
                     <span class="paragraph">
-                        Jln. Dr. Samratulangi, Gg. Bungsu 6 Penengahan, Kota Bandar Lampung
+                        {{ $data->alamat_resepsi }}
                     </span>
                 </div>
-                <a target="_blank" class="Primary-button" href="https://www.google.com/maps" target="_blank">
+                <a target="_blank" class="Primary-button" href="{{ $data->lokasi_gmaps }}" target="_blank">
                     Lihat Lokasi
                     <!-- <a class="lihat-lokasi2" href="https://www.google.com/maps" target="_blank">Lihat
                                 Lokasi</a> -->
@@ -247,23 +270,44 @@
         <section class="gallery-foto" data-scroll-to="GalleryFoto">
             <span class="title">Galeri Foto</span>
             <div class="noapplicabledataforthesenodes">
-                <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-14@2x.png') }}" />
+                @if ($data->galeri_img1 && Storage::exists($data->galeri_img1))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img1) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
+                @if ($data->galeri_img2 && Storage::exists($data->galeri_img2))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img2) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
 
-                <img class="noapplicabledataforthesenodes-icon1" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-15@2x.png') }}" />
+                @if ($data->galeri_img3 && Storage::exists($data->galeri_img3))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img3) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
 
-                <img class="noapplicabledataforthesenodes-icon2" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-16@2x.png') }}" />
-
-                <img class="noapplicabledataforthesenodes-icon3" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-17@2x.png') }}" />
-
-                <img class="noapplicabledataforthesenodes-icon4" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-18@2x.png') }}" />
-
-                <img class="noapplicabledataforthesenodes-icon5" loading="lazy" alt=""
-                    src="{{ asset('./assets/frame-19@2x.png') }}" />
+                @if ($data->galeri_img4 && Storage::exists($data->galeri_img4))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img4) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
+                @if ($data->galeri_img5 && Storage::exists($data->galeri_img5))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img5) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
+                @if ($data->galeri_img6 && Storage::exists($data->galeri_img6))
+                    <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
+                        src="{{ Storage::url($data->galeri_img6) }}" />
+                @else
+                    <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
+                @endif
             </div>
         </section>
 
@@ -292,9 +336,10 @@
                         </div>
                     </div>
                 </div>
+                @if (!empty($data->nama_rek1) || !empty($data->no_rek1) || !empty($data->atas_nama1))
                 <div class="card-list15">
                     <div class="card">
-                        <span class="title">BCA</span>
+                        <span class="title">{{$data->nama_rek1}}</span>
                         <div class="rekening-no">
                             <button class="button-link" onclick="myFunction()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -305,43 +350,43 @@
                                         d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
                                 </svg>
                             </button>
-                            <input type="text" disabled="disabled" value="1223242442" id="myInput">
+                            <input type="text" disabled="disabled" value="{{$data->no_rek1}}" id="myInput">
                         </div>
-                        <!-- <div class="body16">
-                            <b class="copyan-rudi-hermina" id="copyText">1223242442</b>
-                            <img class="copy" alt="Copy" src="{{ asset('./assets/copy.svg') }}"
-                                id="copyButton" />
-                        </div> -->
-
-                        <span class="paragraph">an Rudi Hermina</span>
+                        <span class="paragraph">{{$data->atas_nama1}}</span>
+                        @else
+                        <div class="card-list15" style="display: none"></div>
                     </div>
-                    <div class="card">
-                        <span class="title">Mandiri</span>
-                        <div class="rekening-no">
-                            <button class="button-link" onclick="myFunction()">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4.25 6.5C4.25 5.25736 5.25736 4.25 6.5 4.25H16C17.2426 4.25 18.25 5.25736 18.25 6.5V16C18.25 17.2426 17.2426 18.25 16 18.25H6.5C5.25736 18.25 4.25 17.2426 4.25 16V6.5ZM6.5 5.75C6.08579 5.75 5.75 6.08579 5.75 6.5V16C5.75 16.4142 6.08579 16.75 6.5 16.75H16C16.4142 16.75 16.75 16.4142 16.75 16V6.5C16.75 6.08579 16.4142 5.75 16 5.75H6.5Z" />
-                                    <path
-                                        d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
-                                </svg>
-                            </button>
-                            <input type="text" disabled="disabled" value="1223242442" id="myInput">
+                    @endif
+
+                    @if (!empty($data->nama_rek2) || !empty($data->no_rek2) || !empty($data->atas_nama2))
+                    <div class="card-list15">
+                        <div class="card">
+                            <span class="title">{{$data->nama_rek2}}</span>
+                            <div class="rekening-no">
+                                <button class="button-link" onclick="myFunction()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.25 6.5C4.25 5.25736 5.25736 4.25 6.5 4.25H16C17.2426 4.25 18.25 5.25736 18.25 6.5V16C18.25 17.2426 17.2426 18.25 16 18.25H6.5C5.25736 18.25 4.25 17.2426 4.25 16V6.5ZM6.5 5.75C6.08579 5.75 5.75 6.08579 5.75 6.5V16C5.75 16.4142 6.08579 16.75 6.5 16.75H16C16.4142 16.75 16.75 16.4142 16.75 16V6.5C16.75 6.08579 16.4142 5.75 16 5.75H6.5Z" />
+                                        <path
+                                            d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
+                                    </svg>
+                                </button>
+                                <input type="text" disabled="disabled" value="{{$data->no_rek2}}" id="myInput">
+                            </div>
+                            <span class="paragraph">{{$data->atas_nama2}}</span>
+                            @else
+                            <div class="card-list15" style="display: none"></div>
                         </div>
-                        <!-- <div class="body16">
-                            <b class="copyan-rudi-hermina" id="copyText">1223242442</b>
-                            <img class="copy" alt="Copy" src="{{ asset('./assets/copy.svg') }}"
-                                id="copyButton" />
-                        </div> -->
-
-                        <span class="paragraph">an Rudi Hermina</span>
-                    </div>
+                        @endif
+    
+                    
                 </div>
 
 
             </div>
-            <form class="send-prayers" method="POST" action="{{url('/undangan-alt2/index')}}" data-scroll-to="SendPrayers">
+            <form class="send-prayers" method="POST" action="{{ url('/undangan-alt2/index') }}"
+                data-scroll-to="SendPrayers">
                 @csrf
                 <b class="kirimkan-doa-dan">Kirimkan Doa dan Ucapan</b>
                 @include('message')
@@ -349,7 +394,8 @@
                     <div class="frame-nama-pesan">
                         <div class="nama6">Nama</div>
                         <div class="field24">
-                            <input class="masukkan-nama" placeholder="Masukkan nama" type="text" name="nama" />
+                            <input class="masukkan-nama" placeholder="Masukkan nama" type="text"
+                                name="nama" />
                         </div>
                     </div>
                     <div class="ucapan-doa-container">
@@ -674,7 +720,7 @@
         kirimAlamatButton.addEventListener('click', function() {
             // Mengubah konten elemen cardList menjadi alamat
             cardList.innerHTML =
-                '<div class="card"><span class="title">Alamat</span><span class="paragraph">Jl. Rancamaya Utama, RT.01/RW.06, Kertamaya, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16139</span></div>';
+                '<div class="card"><span class="title">Alamat</span><span class="paragraph">{{$data->alamat_tertera}}</span></div>';
             // Mengubah warna latar belakang tombol kirimAlamatButton
             kirimAlamatButton.style.backgroundColor = '#605a4c';
             // Mengubah warna teks tombol kirimAlamatButtonText menjadi putih
