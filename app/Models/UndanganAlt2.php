@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class UndanganAlt2 extends Model
 {
@@ -60,5 +61,7 @@ class UndanganAlt2 extends Model
         'tgl_cerita3',
         'tgl_cerita4',
     ];
+
+  
 
 }

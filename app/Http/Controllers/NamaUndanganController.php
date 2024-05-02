@@ -68,7 +68,7 @@ class NamaUndanganController extends Controller
             $namaUndangan = new NamaUndangan($data);
     
             // Simpan model NamaUndangan terkait dengan UndanganAlt1
-            $undanganAlt1->namaUndangan()->save($namaUndangan);
+            $undanganAlt1->namaUndangan1()->save($namaUndangan);
         }
     
         // Redirect ke halaman index dengan pesan sukses

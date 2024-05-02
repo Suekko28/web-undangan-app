@@ -48,9 +48,8 @@
                 <img class="image-icon3" loading="lazy" alt="" src="{{ asset('./assets/vector-1.svg') }}" />
             </div>
         </div>
-        <section class="banner-image" data-scroll-to='BannerImage'>
-            <img class="banner-image" loading="lazy" alt=""
-                src="{{ Storage::url('' . $data->foto_prewedding) }}" />
+        <section class="banner-image" data-scroll-to='BannerImage' style="background-image: url('{{ Storage::url('' . $data->foto_prewedding) }}');">
+          
             <div class="card-list12">
                 <div class="card-item">
                     <div class="the-wedding-of2">THE WEDDING OF</div>
@@ -161,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            <div class="love-story">
+            <div class="love-story" style="background-image: url('{{ Storage::url('' . $data->background_img) }}');">
                 <div class="content">
                     <b class="love-story3">Love Story</b>
                     <div class="card-story-list">
