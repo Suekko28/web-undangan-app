@@ -71,7 +71,7 @@ class UndanganAlt1 extends Model
         'judul_cerita4',
     ];
 
-    public function namaUndangan1(): HasMany
+    public function namaUndangan(): HasMany
     {
         return $this->hasMany(NamaUndangan::class, 'undangan_alt1_id', 'id');
     }
