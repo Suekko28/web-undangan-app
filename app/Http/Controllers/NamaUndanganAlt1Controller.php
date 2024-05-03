@@ -7,7 +7,7 @@ use App\Models\UndanganAlt1;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class NamaUndanganController extends Controller
+class NamaUndanganAlt1Controller extends Controller
 {
     /**
      * Display a listing of the resource.

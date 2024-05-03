@@ -8,7 +8,7 @@ use App\Http\Controllers\HomeAlt1Controller;
 use App\Http\Controllers\HomeAlt2Controller;
 use App\Http\Controllers\IndexAlt1Controller;
 use App\Http\Controllers\IndexAlt2Controller;
-use App\Http\Controllers\NamaUndanganController;
+use App\Http\Controllers\NamaUndanganAlt1Controller;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UndanganAlt1Controller;
 use App\Http\Controllers\UndanganAlt2Controller;
@@ -78,12 +78,12 @@ Route::get('/', function () {
 
 
 
-Route::resource('/nama-undangan', NamaUndanganController::class);
-Route::get('/nama-undangan/{id}/list', [NamaUndanganController::class, 'index'])->name('nama-undangan-list');
-Route::get('/nama-undangan/{id}/create', [NamaUndanganController::class, 'create'])->name('nama-undangan-create');
-Route::post('/nama-undangan/{id}/list', [NamaUndanganController::class, 'store'])->name('nama-undangan-store');
-Route::put('/nama-undangan/{undanganAlt1Id}/{id}', [NamaUndanganController::class, 'update'])->name('nama-undangan-update');
-Route::delete('/nama-undangan/{id}', [NamaUndanganController::class, 'destroy'])->name('nama-undangan.destroy');
+Route::resource('/nama-undangan', NamaUndanganAlt1Controller::class);
+Route::get('/nama-undangan/{id}/list', [NamaUndanganAlt1Controller::class, 'index'])->name('nama-undangan-list');
+Route::get('/nama-undangan/{id}/create', [NamaUndanganAlt1Controller::class, 'create'])->name('nama-undangan-create');
+Route::post('/nama-undangan/{id}/list', [NamaUndanganAlt1Controller::class, 'store'])->name('nama-undangan-store');
+Route::put('/nama-undangan/{undanganAlt1Id}/{id}', [NamaUndanganAlt1Controller::class, 'update'])->name('nama-undangan-update');
+Route::delete('/nama-undangan/{id}', [NamaUndanganAlt1Controller::class, 'destroy'])->name('nama-undangan.destroy');
 
 
 // Route undangan alternative 1
