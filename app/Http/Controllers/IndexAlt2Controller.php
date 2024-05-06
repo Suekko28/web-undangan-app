@@ -98,9 +98,9 @@ class IndexAlt2Controller extends Controller
             ->firstOrFail();
 
         // Retrieve alt1models related to the UndanganAlt1 instance
-        $alt1models = $data->alt1Models;
+        $alt2models = $data->alt2Models;
 
         // Pass both $data (UndanganAlt1) and $alt1models (related Alt1Model instances) to the view
-        return view('undangan-mufli.index', compact('data', 'alt1models', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
+        return view('undangan-mufli.index', compact('data', 'alt2models', 'nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'));
     }
 }

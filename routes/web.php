@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeAlt2Controller;
 use App\Http\Controllers\IndexAlt1Controller;
 use App\Http\Controllers\IndexAlt2Controller;
 use App\Http\Controllers\NamaUndanganAlt1Controller;
+use App\Http\Controllers\NamaUndanganAlt2Controller;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UndanganAlt1Controller;
 use App\Http\Controllers\UndanganAlt2Controller;
@@ -78,13 +79,6 @@ Route::get('/', function () {
 
 
 
-Route::resource('/nama-undangan', NamaUndanganAlt1Controller::class);
-Route::get('/nama-undangan/{id}/list', [NamaUndanganAlt1Controller::class, 'index'])->name('nama-undangan-list');
-Route::get('/nama-undangan/{id}/create', [NamaUndanganAlt1Controller::class, 'create'])->name('nama-undangan-create');
-Route::post('/nama-undangan/{id}/list', [NamaUndanganAlt1Controller::class, 'store'])->name('nama-undangan-store');
-Route::put('/nama-undangan/{undanganAlt1Id}/{id}', [NamaUndanganAlt1Controller::class, 'update'])->name('nama-undangan-update');
-Route::delete('/nama-undangan/{id}', [NamaUndanganAlt1Controller::class, 'destroy'])->name('nama-undangan.destroy');
-
 
 // Route undangan alternative 1
 Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/=')->group(function () {
@@ -92,9 +86,17 @@ Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/=')->group(functi
     Route::get('/preview/index', [IndexAlt1Controller::class, 'show'])->name('undangan-alt1-preview');
 });
 
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}', [HomeAlt1Controller::class, 'showDetail'])->name('undangan-alt1-first');
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}/index', [IndexAlt1Controller::class, 'showDetail'])->name('undangan-alt1-index');
-Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/{nama_undangan}/index', [IndexAlt1Controller::class, 'store'])->name('undangan-alt1-post');
+Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}', [HomeAlt1Controller::class, 'showDetail'])->name('undangan-alt1-first');
+Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}/index', [IndexAlt1Controller::class, 'showDetail'])->name('undangan-alt1-index');
+Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}/index', [IndexAlt1Controller::class, 'store'])->name('undangan-alt1-post');
+
+Route::resource('/nama-undangan', NamaUndanganAlt1Controller::class);
+Route::get('/nama-undangan/alt1/{id}/list', [NamaUndanganAlt1Controller::class, 'index'])->name('nama-undangan-list');
+Route::get('/nama-undangan/alt1/{id}/create', [NamaUndanganAlt1Controller::class, 'create'])->name('nama-undangan-create');
+Route::get('/nama-undangan/alt1/{id}/edit', [NamaUndanganAlt1Controller::class, 'edit'])->name('nama-undangan-edit');
+Route::post('/nama-undangan/alt1/{id}/list', [NamaUndanganAlt1Controller::class, 'store'])->name('nama-undangan-store');
+Route::put('/nama-undangan/alt1/{undanganAlt1Id}/{id}', [NamaUndanganAlt1Controller::class, 'update'])->name('nama-undangan-update');
+Route::delete('/nama-undangan/alt1/{id}', [NamaUndanganAlt1Controller::class, 'destroy'])->name('nama-undangan.destroy');
 
 
 // Route undangan alternative 2
@@ -102,6 +104,19 @@ Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/to=')->group(func
     Route::get('/preview', [HomeAlt2Controller::class, 'show'])->name('undangan-alt2-home');
     Route::get('/preview/index', [IndexAlt2Controller::class, 'show'])->name('undangan-alt2-preview');
 });
+
+Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/to={nama_undangan}', [HomeAlt2Controller::class, 'showDetail'])->name('undangan-alt1-first');
+Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/to={nama_undangan}/index', [IndexAlt2Controller::class, 'showDetail'])->name('undangan-alt2-index');
+Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/to={nama_undangan}/index', [IndexAlt2Controller::class, 'store'])->name('undangan-alt2-post');
+
+Route::resource('/nama-undangan', NamaUndanganAlt2Controller::class);
+Route::get('/nama-undangan/alt2/{id}/list', [NamaUndanganAlt2Controller::class, 'index'])->name('nama-undangan-list2');
+Route::get('/nama-undangan/alt2/{id}/create', [NamaUndanganAlt2Controller::class, 'create'])->name('nama-undangan-create2');
+Route::get('/nama-undangan/alt2/{id}/edit', [NamaUndanganAlt2Controller::class, 'edit'])->name('nama-undangan-edit2');
+Route::post('/nama-undangan/alt2/{id}/list', [NamaUndanganAlt2Controller::class, 'store'])->name('nama-undangan-store2');
+Route::put('/nama-undangan/alt2/{undanganAlt2Id}/{id}', [NamaUndanganAlt2Controller::class, 'update'])->name('nama-undangan-update2');
+Route::delete('/nama-undangan/alt2/{id}', [NamaUndanganAlt2Controller::class, 'destroy'])->name('nama-undangan.destroy2');
+
 
 // Route::resource('/undangan-alt1/index', Alt1Controller::class)->only(['index', 'store']);
 

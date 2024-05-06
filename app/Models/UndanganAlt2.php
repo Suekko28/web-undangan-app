@@ -61,7 +61,15 @@ class UndanganAlt2 extends Model
         'tgl_cerita3',
         'tgl_cerita4',
     ];
+    public function namaUndangan(): HasMany
+    {
+        return $this->hasMany(NamaUndanganAlt2::class, 'undangan_alt2_id', 'id');
+    }
 
+    public function alt2Models(): HasMany
+    {
+        return $this->hasMany(alt2model::class, 'id_alt2_rsvp', 'id');
+    }
   
 
 }

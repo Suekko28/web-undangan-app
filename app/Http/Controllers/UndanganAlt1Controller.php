@@ -175,6 +175,11 @@ class UndanganAlt1Controller extends Controller
         // Update setiap gambar jika ada perubahan
         foreach ($gambarFields as $field) {
             if ($request->hasFile($field)) {
+                // Hapus gambar lama jika ada
+                if ($data->$field) {
+                    Storage::delete($data->$field);
+                }
+
                 // Upload gambar yang baru
                 $image = $request->file($field);
                 $imagePath = $image->storeAs('public/images', $image->hashName());
@@ -189,7 +194,6 @@ class UndanganAlt1Controller extends Controller
                 $data->$field = $oldImagePaths[$field];
             }
         }
-
         // Update data dengan informasi yang diperbarui
         $data->update([
             // 'nama_undangan' => $validatedData['nama_undangan'],

@@ -63,11 +63,13 @@
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Mempelai</div>
                         <div class="fs-6">
-                            {{-- <div class="form-group mb-3">
+                            <div class="form-group mb-3">
                                 <label for="foto_mempelai_laki">Foto Mempelai Laki <span class="mandatory">*</span></label>
-                                <input disabled type="file" class="form-control" id="foto_mempelai_laki" name="foto_mempelai_laki"
-                                    placeholder="">
-                            </div> --}}
+                                <div class="img-fluid">
+                                    <img src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" class="img-fluid"
+                                        alt="Foto Mempelai Laki" width="200" height="200">
+                                </div>
+                            </div>
                             <div class="form-group mb-3">
                                 <label for="nama_mempelai_laki">Nama Mempelai Laki <span class="mandatory">*</span></label>
                                 <input disabled type="text" class="form-control" id="nama_mempelai_laki"
@@ -87,12 +89,14 @@
                             </div>
 
 
-                            {{-- <div class="form-group mb-3">
+                            <div class="form-group mb-3">
                                 <label for="foto_mempelai_perempuan">Foto Mempelai Perempuan <span
                                         class="mandatory">*</span></label>
-                                <input disabled type="file" class="form-control" id="foto_mempelai_perempuan"
-                                    name="foto_mempelai_perempuan" placeholder="">
-                            </div> --}}
+                                <div class="img-fluid">
+                                    <img src="{{ Storage::url('' . $data->foto_mempelai_perempuan) }}" class="img-fluid"
+                                        alt="Foto Mempelai Perempuan" width="200" height="200">
+                                </div>
+                            </div>
                             <div class="form-group mb-3">
                                 <label for="nama_mempelai_perempuan">Nama Mempelai Perempuan <span
                                         class="mandatory">*</span></label>
@@ -109,7 +113,8 @@
                             <div class="form-group mb-3">
                                 <label for="putri_dari_ibu">Putri dari Ibu <span class="mandatory">*</span></label>
                                 <input disabled type="text" class="form-control" id="putri_dari_ibu"
-                                    name="putri_dari_ibu" placeholder="Putri dari ibu" value="{{ $data->putri_dari_ibu }}">
+                                    name="putri_dari_ibu" placeholder="Putri dari ibu"
+                                    value="{{ $data->putri_dari_ibu }}">
                             </div>
 
                         </div>
@@ -191,14 +196,14 @@
                     <tbody>
                         <?php $i = 1; ?>
                         @foreach ($nama_undangan as $item)
-                        <tr class="text-center">
-                            <td scope="row">{{ $i }}</td>
-                            <td scope="row">{{ $item->nama_undangan }}</td>
-                            {{-- Other table cells --}}
-                        </tr>
-                        <?php $i++; ?>
-                    @endforeach
-                    
+                            <tr class="text-center">
+                                <td scope="row">{{ $i }}</td>
+                                <td scope="row">{{ $item->nama_undangan }}</td>
+                                {{-- Other table cells --}}
+                            </tr>
+                            <?php $i++; ?>
+                        @endforeach
+
                     </tbody>
 
                 </table>

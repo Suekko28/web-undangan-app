@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('./assets/bg-mufli.png');
+    /* background-image: url('./assets/bg-mufli.png'); */
     background-position: center;
     background-size: cover;
     /* z-index: 999; */

@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nama_undangans', function (Blueprint $table) {
+        Schema::create('alt3models', function (Blueprint $table) {
             $table->id();
-            $table->text('nama_undangan');
-            $table->unsignedBigInteger('undangan_alt1_id');
-            $table->foreign('undangan_alt1_id')
-            ->references('id')
-            ->on('undangan_alt1s')
-            ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nama_undangans');
+        Schema::dropIfExists('alt3models');
     }
 };

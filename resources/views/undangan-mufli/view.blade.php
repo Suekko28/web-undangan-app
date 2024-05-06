@@ -40,7 +40,7 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ url('undangan-alternative1', $data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('undangan-alternative2', $data->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -65,8 +65,10 @@
                         <div class="fs-6">
                             <div class="form-group mb-3">
                                 <label for="foto_mempelai_laki">Foto Mempelai Laki <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="foto_mempelai_laki" name="foto_mempelai_laki"
-                                    placeholder="" value="{{ $data->foto_mempelai_laki }}" disabled>
+                                <div class="img-fluid">
+                                    <img src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" alt="Foto Mempelai Laki"
+                                        class="img-fluid" width="200" height="200">
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="nama_mempelai_laki">Nama Mempelai Laki <span class="mandatory">*</span></label>
@@ -101,9 +103,10 @@
                             <div class="form-group mb-3">
                                 <label for="foto_mempelai_perempuan">Foto Mempelai Perempuan <span
                                         class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="foto_mempelai_perempuan"
-                                    name="foto_mempelai_perempuan" placeholder=""
-                                    value="{{ $data->foto_mempelai_perempuan }}" disabled>
+                                <div class="img-fluid">
+                                    <img src="{{ Storage::url('' . $data->foto_mempelai_perempuan) }}" class="img-fluid"
+                                        alt="Foto Mempelai Perempuan" width="200" height="200">
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="nama_mempelai_perempuan">Nama Mempelai Perempuan <span
@@ -181,73 +184,14 @@
                                 <input type="text" class="form-control" id="lokasi_gmaps" name="lokasi_gmaps"
                                     placeholder="Masukkan link alamat maps" value="{{ $data->lokasi_gmaps }}" disabled>
                             </div>
-
-                        </div>
-                        <div class="mempelai text-center fw-bold fs-5">Akad</div>
-                        <div class="fs-6">
-                            <div class="form-group mb-3">
-                                <label for="tgl_akad">Tanggal Akad <span class="mandatory">*</span></label>
-                                <input disabled type="date" class="form-control" id="tgl_akad" name="tgl_akad"
-                                    placeholder="" value="{{ $data->tgl_akad }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="mulai_akad">Mulai Akad <span class="mandatory">*</span></label>
-                                <input disabled type="time" class="form-control" id="mulai_akad" name="mulai_akad"
-                                    placeholder="" value="{{ $data->mulai_akad }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="selesai_akad">Selesai Akad <span class="mandatory">*</span></label>
-                                <input disabled type="time" class="form-control" id="selesai_akad"
-                                    name="selesai_akad" placeholder="" value="{{ $data->selesai_akad }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="alamat_akad">Alamat Akad <span class="mandatory">*</span></label>
-                                <textarea disabled class="form-control" rows="5" id="alamat_akad" name="alamat_akad"
-                                    placeholder="Masukan alamat akad">{{ $data->alamat_akad }}</textarea>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="$data->lokasi_gmaps_akad">Lokasi Maps Resepsi <span
-                                        class="mandatory">*</span></label>
-                                <input disabled type="text" class="form-control" id="lokasi_gmaps_akad"
-                                    name="lokasi_gmaps_akad" placeholder="Masukkan link alamat maps"
-                                    value="{{ $data->lokasi_gmaps_akad }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="tgl_resepsi">Tanggal Resepsi <span class="mandatory">*</span></label>
-                                <input disabled type="date" class="form-control" id="tgl_resepsi" name="tgl_resepsi"
-                                    placeholder="" value="{{ $data->tgl_resepsi }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="mulai_resepsi">Mulai Resepsi <span class="mandatory">*</span></label>
-                                <input disabled type="time" class="form-control" id="mulai_resepsi"
-                                    name="mulai_resepsi" placeholder="" value="{{ $data->mulai_resepsi }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="selesai_resepsi">Selesai Resepsi <span class="mandatory">*</span></label>
-                                <input disabled type="time" class="form-control" id="selesai_resepsi"
-                                    name="selesai_resepsi" placeholder="" value="{{ $data->selesai_resepsi }}">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="alamat_resepsi">Alamat Resepsi <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="alamat_resepsi" name="alamat_resepsi"
-                                    placeholder="Masukan alamat resepsi" disabled>{{ $data->alamat_resepsi }}</textarea>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="$data->lokasi_gmaps_resepsi">Lokasi Maps Resepsi <span
-                                        class="mandatory">*</span></label>
-                                <input disabled type="text" class="form-control" id="lokasi_gmaps"
-                                    name="$data->lokasi_gmaps_resepsi" placeholder="Masukkan link alamat maps"
-                                    value="{{ $data->lokasi_gmaps_resepsi }}">
-                            </div>
-
                         </div>
 
                 </form>
 
                 <table class="table table-bordered">
-                    <h6>Daftar Tamu Undangan <a href="{{ route('nama-undangan-list', ['id' => $data]) }}" target="_blank"
-                            rel="noopener noreferrer" class="link-underline-primary"><u>Sharelink</u></a></h6>
+                    <h6>Daftar Tamu Undangan <a href="{{ route('nama-undangan-list2', ['id' => $data]) }}"
+                            target="_blank" rel="noopener noreferrer" class="link-underline-primary"><u>Sharelink</u></a>
+                    </h6>
                     <thead>
                         <tr class="text-nowrap text-center">
                             <th>No</th>
@@ -270,7 +214,7 @@
                 </table>
 
                 <div class="d-flex flex-row-reverse mt-5 mb-3">
-                    <a href="{{ route('undangan-alternative1') }}" class="btn btn-primary ">Kembali</a>
+                    <a href="{{ route('undangan-alternative2') }}" class="btn btn-primary ">Kembali</a>
                 </div>
             </div>
 

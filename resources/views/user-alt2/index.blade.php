@@ -3,7 +3,8 @@
 @section('navbar-admin')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create', ['id' => $undanganAlt1->id]) }}">+ Nama Undangan</a>
+            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create2', ['id' => $undanganAlt2->id]) }}">+ Nama
+                Undangan</a>
             @include('layouts.message')
             <!-- Responsive Table -->
             <div class="card">
@@ -18,7 +19,7 @@
                 </div>
 
                 <div class="table-responsive text-nowrap p-3">
-                    <form id="deleteForm" action="{{ route('nama-undangan.destroy', ['id' => $undanganAlt1->id]) }}"
+                    <form id="deleteForm" action="{{ route('nama-undangan.destroy2', ['id' => $undanganAlt2->id]) }}"
                         method="POST">
                         @csrf
                         @method('DELETE')
@@ -43,7 +44,7 @@
                                         <td scope="row">{{ $item->nama_undangan }}</td>
                                         <td>
                                             <div class="btn-group-vertical">
-                                                <a href="{{ url('nama-undangan/' . $item->id) . '/edit' }}"
+                                                <a href="{{ url('nama-undangan/alt2/' . $item->id) . '/edit' }}"
                                                     class="btn btn-warning mb-2 rounded"><i class="fa fa-pen-to-square"
                                                         style="color:white;"></i></a>
                                                 <button class="btn btn-danger delete-btn rounded mb-2"
@@ -128,7 +129,7 @@
                                     <p>Content of your modal goes here...</p>
                                     <div>
                                         <button class="btn btn-primary"
-                                            onclick="copyLink('{{ $item->id }}', '{{ $undanganAlt1->nama_mempelai_laki }}', '{{ $undanganAlt1->nama_mempelai_perempuan }}', '{{ $item->nama_undangan }}')">
+                                            onclick="copyLink('{{ $item->id }}', '{{ $undanganAlt2->nama_mempelai_laki }}', '{{ $undanganAlt2->nama_mempelai_perempuan }}', '{{ $item->nama_undangan }}')">
                                             <i class="fas fa-copy"></i> Copy Link
                                         </button>
                                         <a href="#" class="btn btn-primary" id="shareOptionWhatsApp"
@@ -187,7 +188,7 @@
                     "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                     namaUndangan + "\n\n" +
                     "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                    "127.0.0.1:8000/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/" +
+                    "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
                     namaUndangan + "\n\n" +
                     "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                     "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
@@ -199,14 +200,22 @@
                     "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                     namaUndangan + "\n\n" +
                     "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                    "127.0.0.1:8000/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/" +
+                    "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
                     namaUndangan + "\n\n" +
                     "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                     "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
                     "\n\n" +
                     "Terima Kasih.";
             } else if (radioButton === '3') {
-                message = "Pesanan untuk radio button 3";
+                message =
+                    "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i Aldi untuk menghadiri acara kami.\n\n" + 
+                    "Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :\n\n" +
+                    "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
+                    namaUndangan + "\n\n" +
+                    "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
+                    "Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.\n\n" +
+                    "Dan agar selalu menjaga kesehatan bersama serta datang pada waktu yang telah ditentukan.*\n\n" +
+                    "Terima kasih banyak atas perhatiannya.";
             }
 
             document.getElementById('nama_undangan' + itemId).value = message;
@@ -264,7 +273,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             document.getElementById('deleteForm').action =
-                                "{{ route('nama-undangan.destroy', ['id' => ':id']) }}"
+                                "{{ route('nama-undangan.destroy2', ['id' => ':id']) }}"
                                 .replace(':id', itemId);
                             document.getElementById('deleteForm').submit();
                             Swal.fire(

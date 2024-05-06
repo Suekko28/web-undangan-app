@@ -22,26 +22,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" />
 </head>
 
-<body>
+<body style="background-image: url('{{ Storage::url('' . $data->banner_img) }}');">
 
     <main>
         <div class="container">
             <div class="content">
                 <div class="kepada-bapak-ibu-content">Kepada Bapak/Ibu/Saudara/i</div>
-                <div class="yang-diundang">Mufli & Keluarga</div>
+                <div class="yang-diundang">{{$nama_undangan}}</div>
                 <div class="kami-dengan-senang">
                     Kami dengan senang hati mengundang Anda untuk menghadiri hari pernikahan
                     kami
                 </div>
-                <div class="alexnor-exafator">Alexnor & Exafator</div>
-                <button  class="Secondary-button" href="undangan-alt2/index" id="button">
+                <div class="alexnor-exafator">{{ $data->nama_mempelai_laki }} & {{ $data->nama_mempelai_perempuan }}
+                </div>
+                <a class="Secondary-button"
+                    href="{{ route('undangan-alt2-index', [
+                        'nama_mempelai_laki' => $nama_mempelai_laki,
+                        'nama_mempelai_perempuan' => $nama_mempelai_perempuan,
+                        'nama_undangan' => $nama_undangan // Pastikan $nama_undangan telah diberikan nilai sebelumnya
+                    ]) }}"
+                    >
                     Buka Undangan
                     <!-- <a class="buka-undangan4" style="text-decoration: none" href="undangan-alt3/index">Buka Undangan</a> -->
-                </button>
+            </a>
             </div>
         </div>
     </main>
-    <script>
+    {{-- <script>
         var button = document.getElementById("button");
         if (button) {
             button.addEventListener("click", function(e) {
@@ -49,7 +56,7 @@
                 // Please sync "Home" to the project
             });
         }
-    </script>
+    </script> --}}
 </body>
 
 </html>

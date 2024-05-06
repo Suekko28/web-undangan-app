@@ -384,9 +384,8 @@
 
 
             </div>
-            <form class="send-prayers" method="POST" action="{{ url('/undangan-alt2/index') }}"
+            <form class="send-prayers" disabled
                 data-scroll-to="SendPrayers">
-                @csrf
                 <b class="kirimkan-doa-dan">Kirimkan Doa dan Ucapan</b>
                 @include('message')
                 <div class="input-name-pesan">
@@ -394,12 +393,12 @@
                         <div class="nama6">Nama</div>
                         <div class="field24">
                             <input class="masukkan-nama" placeholder="Masukkan nama" type="text"
-                                name="nama" />
+                                name="nama"  disabled/>
                         </div>
                     </div>
                     <div class="ucapan-doa-container">
                         <div class="ucapan-doa9">Pesan Untuk Mempelai</div>
-                        <textarea class="field35" name="ucapan" placeholder="Kirim pesan untuk mempelai" rows="6" cols="28"></textarea>
+                        <textarea class="field35" name="ucapan" placeholder="Kirim pesan untuk mempelai" rows="6" cols="28" disabled></textarea>
                     </div>
                     <div class="akan-hadir">
                         <div class="akan-hadir1">Akan Hadir?</div>
@@ -736,44 +735,44 @@
         });
 
 
-        function updateTimer() {
-            future = Date.parse("June 11, 2024 11:30:00");
+        function updateTimer(tgl_akad) {
+            future = Date.parse(tgl_akad);
             now = new Date();
             diff = future - now;
 
-            days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            hours = Math.floor(diff / (1000 * 60 * 60));
-            mins = Math.floor(diff / (1000 * 60));
-            secs = Math.floor(diff / 1000);
+            if (diff <= 0) {
+                // Waktu telah berlalu, atur semua nilai menjadi 0
+                document.getElementById("timer").innerHTML =
+                    '<div>00<span>Hari</span></div>' +
+                    '<div>00<span>Jam</span></div>' +
+                    '<div>00<span>Menit</span></div>' +
+                    '<div>00<span>Detik</span></div>';
+                return;
+            }
 
-            d = days;
-            h = hours - days * 24;
-            m = mins - hours * 60;
-            s = secs - mins * 60;
+            days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Format nilai untuk menambahkan angka 0 di depan jika nilainya < 10
+            days = (days < 10) ? "0" + days : days;
+            hours = (hours < 10) ? "0" + hours : hours;
+            mins = (mins < 10) ? "0" + mins : mins;
+            secs = (secs < 10) ? "0" + secs : secs;
 
             document.getElementById("timer")
                 .innerHTML =
-                '<div>' + d + '<span>Hari</span></div>' +
-                '<div>' + h + '<span>Jam</span></div>' +
-                '<div>' + m + '<span>Menit</span></div>' +
-                '<div>' + s + '<span>Detik</span></div>';
+                '<div>' + days + '<span>Hari</span></div>' +
+                '<div>' + hours + '<span>Jam</span></div>' +
+                '<div>' + mins + '<span>Menit</span></div>' +
+                '<div>' + secs + '<span>Detik</span></div>';
         }
-        setInterval('updateTimer()', 1000);
 
-        function myFunction() {
-            // Get the text field
-            var copyText = document.getElementById("myInput");
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            navigator.clipboard.writeText(copyText.value);
-
-            // Alert the copied text
-            alert("Copied the text: " + copyText.value);
-        }
+        // Memanggil updateTimer() saat halaman dimuat dengan tanggal akad dari PHP
+        updateTimer("{{ $data->tgl_akad }}");
+        setInterval(updateTimer.bind(null, "{{ $data->tgl_akad }}"), 1000); // Memperbarui setiap detik
+        
     </script>
 </body>
 

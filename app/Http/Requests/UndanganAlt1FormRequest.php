@@ -42,7 +42,7 @@ class UndanganAlt1FormRequest extends FormRequest
             'galeri_img1' => ['image', 'mimes:jpeg,png,jpg'],
             'galeri_img2' => ['image', 'mimes:jpeg,png,jpg'],
             'galeri_img3' => ['image', 'mimes:jpeg,png,jpg'],
-            'galeri_img4' => ['nullable','image', 'mimes:jpeg,png,jpg'],
+            'galeri_img4' => ['nullable', 'image', 'mimes:jpeg,png,jpg'],
             'galeri_img5' => ['image', 'mimes:jpeg,png,jpg'],
             'galeri_img6' => ['image', 'mimes:jpeg,png,jpg'],
             'pertemuan' => [],
@@ -91,6 +91,10 @@ class UndanganAlt1FormRequest extends FormRequest
             'integer' => 'Field :attribute harus berupa angka.',
             'music.required' => 'Bidang musik harus diisi.',
             'music.mimes' => 'Bidang musik harus dalam format MP3.',
+            'mulai_akad.date_format' => 'Format :attribute harus sesuai dengan format H:i (jam:menit).',
+            'selesai_akad.date_format' => 'Format :attribute harus sesuai dengan format H:i (jam:menit).',
+            'mulai_resepsi.date_format' => 'Format :attribute harus sesuai dengan format H:i (jam:menit).',
+            'selesai_resepsi.date_format' => 'Format :attribute harus sesuai dengan format H:i (jam:menit).',
         ];
     }
 }

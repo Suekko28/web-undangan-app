@@ -369,9 +369,8 @@
 
 
     <section class="rsvp5" data-scroll-to="rSVP">
-        <form class="rsvp-mobile3" method="POST"
+        <form class="rsvp-mobile3" disabled
             action="">
-            @csrf
             <h1 class="rsvp6">RSVP</h1>
             <div class="frame-parent151">
                 <div class="nama-lengkap-container">
