@@ -83,7 +83,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="layouts-container.html" class="menu-link">
+                                <a href="{{ route('undangan-alternative3') }}" class="menu-link">
                                     <div data-i18n="Container">Alternavite 3</div>
                                 </a>
                             </li>

@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/draft2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style-admin.css">
+    <link rel="stylesheet" href="{{ asset('style-admin.css') }}">
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{ asset('assets/admin/assets/vendor/fonts/boxicons.draft') }}" />
@@ -42,18 +42,6 @@
                 <!-- Small boxes (Stat box) -->
                 <form action="{{ route('undangan-alternative3') }}" method="post" enctype="multipart/form-data">
                     @csrf
-
-                    {{-- <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Nama Undangan</div>
-                        <div class="fs-6">
-                            <div class="form-group mb-3">
-                                <label for="nama_undangan">Nama Undangan <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="nama_undangan" name="nama_undangan"
-                                    placeholder="Masukan nama-nama undangan"></textarea>
-                            </div>
-                        </div>
-                    </div> --}}
-
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
@@ -248,7 +236,7 @@
                             <div class="form-group mb-3">
                                 <label for="video">Video <span class="fst-italic">(Opsional)</span></label>
                                 <input type="file" class="form-control" id="video" name="video"
-                                    placeholder="">
+                                    placeholder="" accept=".mp4">
                             </div>
 
                             <div class="form-group mb-3">
@@ -276,11 +264,7 @@
                                 <input type="file" class="form-control" id="galeri_img5" name="galeri_img5"
                                     placeholder="">
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img6">Foto 6 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img6" name="galeri_img6"
-                                    placeholder="">
-                            </div>
+                           
 
                         </div>
 
@@ -290,12 +274,12 @@
                         <div class="mempelai text-center fw-bold fs-5">Akad</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="gambar1">Gambar 1 <span class="fst-italic">(Opsional)</span></label>
+                                <label for="gambar1">Gambar 1 <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="gambar1" name="gambar1"
                                     placeholder="">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="gambar2">Gambar 2 <span class="fst-italic">(Opsional)</span></label>
+                                <label for="gambar2">Gambar 2 <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="gambar2" name="gambar2"
                                     placeholder="">
                             </div>

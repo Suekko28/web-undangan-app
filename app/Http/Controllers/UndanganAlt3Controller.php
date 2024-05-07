@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UndanganAlt3FormRequest;
 use App\Models\UndanganAlt3;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -22,7 +23,7 @@ class UndanganAlt3Controller extends Controller
         $data = UndanganAlt3::orderBy('id', 'asc')->paginate(10);
 
         // Mengirimkan data ke view bersama dengan variabel
-        return view('undangan-mufli.admin', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
+        return view('undangan-nanang.admin', compact('data', 'nama_mempelai_laki', 'nama_mempelai_perempuan'));
 
     }
 
@@ -31,36 +32,39 @@ class UndanganAlt3Controller extends Controller
      */
     public function create()
     {
-        return view('undangan-mufli.create');
+        return view('undangan-nanang.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UndanganAlt3FormRequest $request)
     {
         // Simpan gambar ke penyimpanan
-        $background_img = $request->file('background_img');
         $banner_img = $request->file('banner_img');
         $foto_prewedding = $request->file('foto_prewedding');
         $foto_mempelai_laki = $request->file('foto_mempelai_laki');
         $foto_mempelai_perempuan = $request->file('foto_mempelai_perempuan');
         $music = $request->file('music');
+        $gambar1 = $request->file('gambar1');
+        $gambar2 = $request->file('gambar2');
 
         // Simpan jalur penyimpanan untuk gambar utama
-        $background_img_path = $background_img->storeAs('public/images', $background_img->hashName());
         $banner_img_path = $banner_img->storeAs('public/images', $banner_img->hashName());
         $foto_prewedding_path = $foto_prewedding->storeAs('public/images', $foto_prewedding->hashName());
         $foto_mempelai_laki_path = $foto_mempelai_laki->storeAs('public/images', $foto_mempelai_laki->hashName());
         $foto_mempelai_perempuan_path = $foto_mempelai_perempuan->storeAs('public/images', $foto_mempelai_perempuan->hashName());
         $music_path = $music->storeAs('public/images', $music->hashName());
+        $gambar1_path = $gambar1->storeAs('public/images', $gambar1->hashName());
+        $gambar2_path = $gambar2->storeAs('public/images', $gambar2->hashName());
 
         // Memisahkan nama undangan yang dipisahkan oleh baris menjadi array
         // $nama_undangans = explode("\n", $request->nama_undangan);
 
         // Buat entri baru untuk setiap nama undangan dengan ID yang berbeda
         $data = [
-            'background_img' => $background_img_path,
+            'gambar1' => $gambar1_path,
+            'gambar2' => $gambar2_path,
             'banner_img' => $banner_img_path,
             'foto_prewedding' => $foto_prewedding_path,
             'foto_mempelai_laki' => $foto_mempelai_laki_path,
@@ -102,10 +106,11 @@ class UndanganAlt3Controller extends Controller
             'tgl_cerita2' => $request->tgl_cerita2,
             'tgl_cerita3' => $request->tgl_cerita3,
             'tgl_cerita4' => $request->tgl_cerita4,
+            'caption' => $request->caption,
         ];
 
         // Periksa apakah file galeri diunggah sebelum menyimpannya
-        foreach (range(1, 6) as $index) {
+        foreach (range(1, 5) as $index) {
             $galeri_field = 'galeri_img' . $index;
             if ($request->hasFile($galeri_field)) {
                 $galeri_img = $request->file($galeri_field);
@@ -160,7 +165,7 @@ class UndanganAlt3Controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UndanganAlt3FormRequest $request, string $id)
     {
         // Temukan data dengan ID yang diberikan
         $data = UndanganAlt3::findOrFail($id);
@@ -169,7 +174,7 @@ class UndanganAlt3Controller extends Controller
         $validatedData = $request->validated();
 
         // Simpan jalur gambar lama
-        $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'galeri_img6', 'music', 'video'];
+        $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'music', 'video'];
         foreach ($gambarFields as $field) {
             $oldImagePaths[$field] = $data->$field;
         }
@@ -207,18 +212,14 @@ class UndanganAlt3Controller extends Controller
             'putri_dari_ibu' => $validatedData['putri_dari_ibu'],
             'tgl_akad' => $validatedData['tgl_akad'],
             'mulai_akad' => $validatedData['mulai_akad'],
-            'selesai_akad' => $validatedData['selesai_akad'],
             'alamat_akad' => $validatedData['alamat_akad'],
             'tgl_resepsi' => $validatedData['tgl_resepsi'],
             'mulai_resepsi' => $validatedData['mulai_resepsi'],
-            'selesai_resepsi' => $validatedData['selesai_resepsi'],
             'alamat_resepsi' => $validatedData['alamat_resepsi'],
-            'lokasi_gmaps_akad' => $validatedData['lokasi_gmaps_akad'],
-            'lokasi_gmaps_resepsi' => $validatedData['lokasi_gmaps_resepsi'],
-            'caption' => $validatedData['caption'],
-            'pertemuan' => $validatedData['pertemuan'],
-            'pendekatan' => $validatedData['pendekatan'],
-            'lamaran' => $validatedData['lamaran'],
+            'lokasi_gmaps' => $validatedData['lokasi_gmaps'],
+            'perkenalan' => $validatedData['perkenalan'],
+            'jadian' => $validatedData['jadian'],
+            'tunangan' => $validatedData['tunangan'],
             'pernikahan' => $validatedData['pernikahan'],
             'nama_rek1' => $validatedData['nama_rek1'],
             'no_rek1' => $validatedData['no_rek1'],
@@ -234,6 +235,15 @@ class UndanganAlt3Controller extends Controller
             'judul_cerita2' => $validatedData['judul_cerita2'],
             'judul_cerita3' => $validatedData['judul_cerita3'],
             'judul_cerita4' => $validatedData['judul_cerita4'],
+            'nama_instagram1' => $validatedData['nama_instagram1'],
+            'nama_instagram2' => $validatedData['nama_instagram2'],
+            'link_instagram1' => $validatedData['link_instagram1'],
+            'link_instagram2' => $validatedData['link_instagram2'],
+            'tgl_cerita1' => $validatedData['tgl_cerita1'],
+            'tgl_cerita2' => $validatedData['tgl_cerita2'],
+            'tgl_cerita3' => $validatedData['tgl_cerita3'],
+            'tgl_cerita4' => $validatedData['tgl_cerita4'],
+            'caption' => $validatedData['caption'],
         ]);
 
         return redirect()->route('undangan-alternative3')->with('success', 'Data berhasil diperbarui');

@@ -11,7 +11,6 @@ class UndanganAlt3 extends Model
 
     protected $fillable = [
         // 'nama_undangan',
-        'caption',
         'banner_img',
         'foto_prewedding',
         'foto_mempelai_laki',
@@ -36,7 +35,6 @@ class UndanganAlt3 extends Model
         'galeri_img3',
         'galeri_img4',
         'galeri_img5',
-        'galeri_img6',
         'perkenalan',
         'jadian',
         'tunangan',
@@ -62,6 +60,8 @@ class UndanganAlt3 extends Model
         'video',
         'gambar1',
         'gambar2',
+        'caption',
+
     ];
 
     

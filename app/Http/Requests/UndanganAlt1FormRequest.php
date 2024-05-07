@@ -82,13 +82,13 @@ class UndanganAlt1FormRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'required' => 'Field :attribute wajib diisi.',
-            'image' => 'Field :attribute harus berupa file gambar.',
-            'mimes' => 'Field :attribute harus dalam format jpeg, png, atau jpg.',
-            'max' => 'Ukuran field :attribute tidak boleh melebihi :max kb.',
-            'date' => 'Field :attribute harus dalam format tanggal yang valid.',
-            'string' => 'Field :attribute harus berupa teks.',
-            'integer' => 'Field :attribute harus berupa angka.',
+            'required' => 'Kolom :attribute wajib diisi.',
+            'image' => 'Kolom :attribute harus berupa file gambar.',
+            'mimes' => 'Kolom :attribute harus dalam format jpeg, png, atau jpg.',
+            'max' => 'Ukuran Kolom :attribute tidak boleh melebihi :max kb.',
+            'date' => 'Kolom :attribute harus dalam format tanggal yang valid.',
+            'string' => 'Kolom :attribute harus berupa teks.',
+            'integer' => 'Kolom :attribute harus berupa angka.',
             'music.required' => 'Bidang musik harus diisi.',
             'music.mimes' => 'Bidang musik harus dalam format MP3.',
             'mulai_akad.date_format' => 'Format :attribute harus sesuai dengan format H:i (jam:menit).',
