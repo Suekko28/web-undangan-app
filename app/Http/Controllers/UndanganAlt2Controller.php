@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UndanganAlt2FormRequest;
 use App\Models\UndanganAlt2;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UndanganAlt2Controller extends Controller
 {
@@ -57,7 +58,7 @@ class UndanganAlt2Controller extends Controller
         $music_path = $music->storeAs('public/images', $music->hashName());
 
         // Memisahkan nama undangan yang dipisahkan oleh baris menjadi array
-        $nama_undangans = explode("\n", $request->nama_undangan);
+        // $nama_undangans = explode("\n", $request->nama_undangan);
 
         // Buat entri baru untuk setiap nama undangan dengan ID yang berbeda
         $data = [
@@ -114,7 +115,7 @@ class UndanganAlt2Controller extends Controller
                 $data[$galeri_field] = $galeri_img_path;
             } else {
                 // Jika file galeri tidak diunggah, set bidang galeri menjadi default
-                $data[$galeri_field] = 'default.jpg'; // Atur default.jpg sesuai kebutuhan Anda
+                $data[$galeri_field] = NULL; // Atur default.jpg sesuai kebutuhan Anda
             }
         }
 
@@ -165,6 +166,11 @@ class UndanganAlt2Controller extends Controller
         // Update setiap gambar jika ada perubahan
         foreach ($gambarFields as $field) {
             if ($request->hasFile($field)) {
+                // Hapus gambar lama jika ada
+                if ($data->$field) {
+                    Storage::delete($data->$field);
+                }
+
                 // Upload gambar yang baru
                 $image = $request->file($field);
                 $imagePath = $image->storeAs('public/images', $image->hashName());

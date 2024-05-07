@@ -13,6 +13,7 @@ use App\Http\Controllers\NamaUndanganAlt2Controller;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UndanganAlt1Controller;
 use App\Http\Controllers\UndanganAlt2Controller;
+use App\Http\Controllers\UndanganAlt3Controller;
 use App\Http\Controllers\UndanganController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ViewAlt1Controller;
@@ -63,6 +64,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/undangan-alternative2', [UndanganAlt2Controller::class, 'index'])->name('undangan-alternative2');
     Route::get('/undangan-alternative2/{id}/view', [UndanganAlt2Controller::class, 'show'])->name('undangan-alternative2-view');
     Route::delete('/undangan-alternative2', [UndanganAlt2Controller::class, 'destroy'])->name('undangan-alternative2.destroy');
+
+
+    Route::resource('/undangan-alternative3', UndanganAlt3Controller::class);
+    Route::get('/undangan-alternative3', [UndanganAlt3Controller::class, 'index'])->name('undangan-alternative3');
+    Route::get('/undangan-alternative3/{id}/view', [UndanganAlt3Controller::class, 'show'])->name('undangan-alternative3-view');
+    Route::delete('/undangan-alternative3', [UndanganAlt3Controller::class, 'destroy'])->name('undangan-alternative3.destroy');
 
 
 });
@@ -149,9 +156,13 @@ Route::get('/undangan-alt2/index', function () {
 
 
 
-// Route::get('/undangan-alt3', function () {
-//     return view('undangan-nanang.home');
-// });
+Route::get('/undangan-alt3', function () {
+    return view('undangan-nanang.home-preview');
+});
+
+Route::get('/undangan-alt3/index', function () {
+    return view('undangan-nanang.index-preview');
+});
 
 
 // Route::resource('/undangan-alt3/index', Alt3Controller::class)->only(['index', 'store']);

@@ -59,7 +59,7 @@ class UndanganAlt1Controller extends Controller
         $music_path = $music->storeAs('public/images', $music->hashName());
 
         // Memisahkan nama undangan yang dipisahkan oleh baris menjadi array
-        $nama_undangans = explode("\n", $request->nama_undangan);
+        // $nama_undangans = explode("\n", $request->nama_undangan);
 
         // Buat entri baru untuk setiap nama undangan dengan ID yang berbeda
         $data = [

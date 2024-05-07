@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alt3_models', function (Blueprint $table) {
+        Schema::create('undangan_alt3s', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('ucapan');
-            $table->text('alamat');
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alt3_models');
+        Schema::dropIfExists('undangan_alt3s');
     }
 };

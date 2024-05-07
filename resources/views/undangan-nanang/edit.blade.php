@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/draft2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('style-admin.css') }}">
+    <link rel="stylesheet" href="style-admin.css">
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{ asset('assets/admin/assets/vendor/fonts/boxicons.draft') }}" />
@@ -40,27 +40,17 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('undangan-alternative2') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('undangan-alternative3', $data->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-
-                    {{-- <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Nama Undangan</div>
-                        <div class="fs-6">
-                            <div class="form-group mb-3">
-                                <label for="nama_undangan">Nama Undangan <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="nama_undangan" name="nama_undangan"
-                                    placeholder="Masukan nama-nama undangan"></textarea>
-                            </div>
-                        </div>
-                    </div> --}}
-
+                    @method('PUT')
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="background_img">Background Image <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="background_img" name="background_img"
-                                    placeholder="">
+                                <label for="caption">Caption <span class="mandatory">*</span></label>
+                                <span class="fst-italic">(Maksimal 288 Karakter)</span>
+                                <textarea class="form-control" rows="5" id="caption" name="caption"
+                                    placeholder="Aku tak pernah menunggumu. Kamu tak pernah sengaja datang. Tapi kita sengaja dipertemukan Tuhan."></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="banner_img">Foto Opening <span class="mandatory">*</span></label>
@@ -157,19 +147,20 @@
                     </div>
 
                     <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Love Story</div>
+                        <div class="mempelai text-center fw-bold fs-5">Our Love Story</div>
                         <div class="fs-6">
+                            <div class="form-group mb-3">
+                                <label for="tgl_cerita1">Tanggal <span class="fst-italic">(Opsional)</span></label>
+                                <input type="date" class="form-control" id="tgl_cerita1" name="tgl_cerita1"
+                                    placeholder="">
+                            </div>
+
                             <div class="form-group mb-3">
                                 <label for="judul_cerita1">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
                                 <input type="text" class="form-control" id="judul_cerita1" name="judul_cerita1"
                                     placeholder="Masukkan Judul Ceritamu">
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="tgl_cerita1">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita1" name="tgl_cerita1"
-                                    placeholder="">
-                            </div>
 
                             <div class="form-group mb-3">
                                 <label for="perkenalan">Cerita <span class="fst-italic">(Opsional)</span><span
@@ -180,15 +171,15 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="judul_cerita2">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita2" name="judul_cerita2"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-                            <div class="form-group mb-3">
                                 <label for="tgl_cerita2">Tanggal <span class="fst-italic">(Opsional)</span></label>
                                 <input type="date" class="form-control" id="tgl_cerita2" name="tgl_cerita2"
                                     placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="judul_cerita2">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita2" name="judul_cerita2"
+                                    placeholder="Masukkan Judul Ceritamu">
                             </div>
 
 
@@ -201,15 +192,15 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="judul_cerita3">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita3" name="judul_cerita3"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-                            <div class="form-group mb-3">
                                 <label for="tgl_cerita3">Tanggal <span class="fst-italic">(Opsional)</span></label>
                                 <input type="date" class="form-control" id="tgl_cerita3" name="tgl_cerita3"
                                     placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="judul_cerita3">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita3" name="judul_cerita3"
+                                    placeholder="Masukkan Judul Ceritamu">
                             </div>
 
 
@@ -220,16 +211,16 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="judul_cerita4">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita4" name="judul_cerita4"
-                                    placeholder="Masukkan Judul Ceritamu">
+                                <label for="tgl_cerita4">Tanggal <span class="fst-italic">(Opsional)</span></label>
+                                <input type="date" class="form-control" id="tgl_cerita4" name="tgl_cerita4"
+                                    placeholder="">
                             </div>
 
 
                             <div class="form-group mb-3">
-                                <label for="tgl_cerita4">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita4" name="tgl_cerita4"
-                                    placeholder="">
+                                <label for="judul_cerita4">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
+                                <input type="text" class="form-control" id="judul_cerita4" name="judul_cerita4"
+                                    placeholder="Masukkan Judul Ceritamu">
                             </div>
 
                             <div class="form-group mb-3">
@@ -241,8 +232,63 @@
                     </div>
 
                     <div class="card-body container bg-white mt-5">
+                        <div class="mempelai text-center fw-bold fs-5">Our Moment</div>
+                        <div class="fs-6">
+                            <div class="form-group mb-3">
+                                <label for="video">Video <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="video" name="video"
+                                    placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="galeri_img1">Foto 1 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img1" name="galeri_img1"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="galeri_img2">Foto 2 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img2" name="galeri_img2"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="galeri_img3">Foto 3 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img3" name="galeri_img3"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="galeri_img4">Foto 4 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img4" name="galeri_img4"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="galeri_img5">Foto 5 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img5" name="galeri_img5"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="galeri_img6">Foto 6 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img6" name="galeri_img6"
+                                    placeholder="">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Akad</div>
                         <div class="fs-6">
+                            <div class="form-group mb-3">
+                                <label for="gambar1">Gambar 1 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="gambar1" name="gambar1"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="gambar2">Gambar 2 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="gambar2" name="gambar2"
+                                    placeholder="">
+                            </div>
+
                             <div class="form-group mb-3">
                                 <label for="tgl_akad">Tanggal Akad <span class="mandatory">*</span></label>
                                 <input type="date" class="form-control" id="tgl_akad" name="tgl_akad"
@@ -286,48 +332,6 @@
 
                         </div>
                     </div>
-
-
-                    <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Galeri Foto</div>
-                        <div class="fs-6">
-
-                            <div class="form-group mb-3">
-                                <label for="galeri_img1">Foto 1 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img1" name="galeri_img1"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img2">Foto 2 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img2" name="galeri_img2"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img3">Foto 3 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img3" name="galeri_img3"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img4">Foto 4 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img4" name="galeri_img4"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img5">Foto 5 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img5" name="galeri_img5"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="galeri_img6">Foto 6 <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="galeri_img6" name="galeri_img6"
-                                    placeholder="">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
 
                     <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Kirim Hadiah</div>
@@ -375,7 +379,7 @@
 
                         <div class="d-flex flex-row-reverse mt-5">
                             <button type="submit" class="btn btn-primary ml-3 ms-3">Simpan</button>
-                            <a href="{{ route('undangan-alternative2') }}" class="btn btn-danger">Batal</a>
+                            <a href="{{ route('undangan-alternative3') }}" class="btn btn-danger">Batal</a>
                         </div>
 
                     </div>
@@ -386,8 +390,6 @@
                 <!-- /.row (main row) -->
             </div><!-- /.container-fluid -->
         </section>
-
-
         <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
         <script>
             CKEDITOR.replace('isi_artikel');
