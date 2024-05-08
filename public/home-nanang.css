@@ -242,14 +242,14 @@
     width: 480px;
     height: 480px;
     background-position: center;
-    background-image: url("./assets/mempelai-pria-rudi.jpg");
+    /* background-image: url("./assets/mempelai-pria-rudi.jpg"); */
     background-repeat: no-repeat;
 }
 .foto-mempelai-wanita {
     width: 480px;
     height: 480px;
     background-position: center;
-    background-image: url("./assets/mempelai-wanita-arum.jpg");
+    /* background-image: url("./assets/mempelai-wanita-arum.jpg"); */
     background-repeat: no-repeat;
 }
 .button-link:hover {
@@ -919,7 +919,7 @@ audio {
     font-size: 32px;
     color: #fff;
     font-family: "DM Serif Display";
-    background-image: url(./assets/BannerImage.jpg);
+    /* background-image: url(./assets/BannerImage.jpg); */
     background-position: right;
     background-size: cover;
 }
@@ -1890,7 +1890,7 @@ audio {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    background-image: url("./assets/Foto-depan.jpg");
+    /* background-image: url("./assets/Foto-depan.jpg"); */
     width: 80%;
     height: 80%;
     background-position: center;
@@ -1901,7 +1901,7 @@ audio {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: url("./assets/Foto-belakang.jpg");
+    /* background-image: url("./assets/Foto-belakang.jpg"); */
     width: 80%;
     height: 80%;
     background-position: center;

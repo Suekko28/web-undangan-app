@@ -46,20 +46,25 @@
                 <img class="image-icon" alt="" src="{{ asset('./assets/vector-1.svg') }}" />
             </button>
         </div>
-        <section class="banner" data-scroll-to="youngJapaneseCouple1Image">
+        <section class="banner" data-scroll-to="youngJapaneseCouple1Image"
+            style="background-image: url('{{ Storage::url('' . $data->foto_prewedding) }}');">
             {{-- <img class="young-japanese-couple-1-icon1" alt=""
                 src="{{ asset('./assets/BannerImage.jpg') }}" data-scroll-to="youngJapaneseCouple1Image" /> --}}
 
             <div class="card4">
-                <div class="quotes">
-                    <span class="title">“Pertemuan yang kuimpikan Kini jadi kenyataan Pertemuan yang kudambakan
-                        Ternyata bukan khayalan”</span>
-                    <span class="paragraph">Rhoma Irama</span>
-                </div>
+                @if (!empty($data->caption) && !empty($data->nama_pengarang))
+                    <div class="quotes">
+                        <span class="title">{{ $data->caption }}</span>
+                        <span class="paragraph">{{ $data->nama_pengarang }}</span>
+                    </div>
+                @else
+                    <div class="quotes" style="display: none"></div>
+                @endif
                 <div class="wedding-timer">
                     <div id="timer"></div>
                     <div class="wedding-date-info">
-                        <span class="paragraph">Kamis, 21 Oktober 2024</span>
+                        <span
+                            class="paragraph">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_akad)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
                     </div>
                 </div>
             </div>
@@ -75,14 +80,17 @@
 
         <section class="kedua-mempelai" data-scroll-to="textBlockQuote">
             <div class="mempelai-pria">
-                <div class="foto-mempelai-pria"></div>
+                <div class="foto-mempelai-pria">
+                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" alt="">
+                </div>
                 <div class="info-mempelai-pria">
                     <div class="detail">
                         <span class="label">THE GROOM</span>
-                        <span class="title">Rudi Wibowo</span>
-                        <span class="paragraph">Bapak Akbar S.kom dan Ibu Siti maimunah dari jakarta, Indonesia</span>
+                        <span class="title">{{ $data->nama_mempelai_laki }}</span>
+                        <span class="paragraph">Bapak {{ $data->putra_dari_bpk }} dan Ibu
+                            {{ $data->putra_dari_ibu }}</span>
                     </div>
-                    <a target="_blank" class="button-link" href="https://www.instagram.com/" target="_blank"
+                    <a target="_blank" class="button-link" href="{{ $data->link_instagram1 }}" target="_blank"
                         style="text-direction:none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
                             fill="none">
@@ -95,7 +103,7 @@
                             <path
                                 d="M15.6875 5.8125C15.6875 6.36478 15.2398 6.8125 14.6875 6.8125C14.1352 6.8125 13.6875 6.36478 13.6875 5.8125C13.6875 5.26022 14.1352 4.8125 14.6875 4.8125C15.2398 4.8125 15.6875 5.26022 15.6875 5.8125Z" />
                         </svg>
-                        RWibowo
+                        {{ $data->nama_instagram1 }}
                     </a>
                 </div>
             </div>
@@ -103,10 +111,11 @@
                 <div class="info-mempelai-wanita">
                     <div class="detail">
                         <span class="label">THE BRIDGE</span>
-                        <span class="title">Arum Kurniawati</span>
-                        <span class="paragraph">Bapak Akbar S.kom dan Ibu Siti maimunah dari jakarta, Indonesia</span>
+                        <span class="title">{{ $data->nama_mempelai_perempuan }}</span>
+                        <span class="paragraph">Bapak {{ $data->putri_dari_bpk }} dan Ibu
+                            {{ $data->putri_dari_ibu }}</span>
                     </div>
-                    <a target="_blank" class="button-link" href="https://www.instagram.com/" target="_blank"
+                    <a target="_blank" class="button-link" href="{{ $data->link_instagram2 }}" target="_blank"
                         style="text-direction:none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
                             fill="none">
@@ -119,10 +128,12 @@
                             <path
                                 d="M15.6875 5.8125C15.6875 6.36478 15.2398 6.8125 14.6875 6.8125C14.1352 6.8125 13.6875 6.36478 13.6875 5.8125C13.6875 5.26022 14.1352 4.8125 14.6875 4.8125C15.2398 4.8125 15.6875 5.26022 15.6875 5.8125Z" />
                         </svg>
-                        Arum46
+                        {{ $data->nama_instagram2 }}
                     </a>
                 </div>
-                <div class="foto-mempelai-wanita"></div>
+                <div class="foto-mempelai-wanita"> 
+                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_perempuan) }}" alt="">
+                </div>
             </div>
         </section>
 
@@ -130,9 +141,71 @@
             <span class="paragraph">OUR LOVE STORY</span>
             <div class="timeline-container">
                 <div class="timeline">
-                    <div class="container left">
+                    @if (!empty($data->perkenalan) && !empty($data->tgl_cerita1) && !empty($data->judul_cerita1))
+                        <div class="container left">
+                            <div class="content">
+                                <!-- <div class="foto-story-1"></div> -->
+                                <div class="detail-story">
+                                    <span
+                                        class="label">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita1)->locale('id')->isoFormat('MMM DD, YYYY') }}</span>
+                                    <span class="title">{{ $data->judul_cerita1 }}</span>
+                                    <span class="paragraph"> {{ $data->perkenalan }}</span>
+                                </div>
+                            </div>
+                        @else
+                            <div class="content" style="display: none"></div>
+                            <div class="container" style="display: none"></div>
+                        </div>
+                    @endif
+                    @if (!empty($data->jadian) && !empty($data->tgl_cerita2) && !empty($data->judul_cerita2))
+                        <div class="container right">
+                            <div class="content">
+                                <div class="detail-story">
+                                    <span
+                                        class="label">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita2)->locale('id')->isoFormat('MMM DD, YYYY') }}</span>
+                                    <span class="title">{{ $data->judul_cerita2 }}</span>
+                                    <span class="paragraph"> {{ $data->jadian }}</span>
+                                </div>
+                            </div>
+                        @else
+                            <div class="content" style="display: none"></div>
+                            <div class="container" style="display: none"></div>
+                        </div>
+                    @endif
+                    @if (!empty($data->tunangan) && !empty($data->tgl_cerita3) && !empty($data->judul_cerita3))
+                        <div class="container left">
+                            <div class="content">
+                                <div class="detail-story">
+                                    <span
+                                        class="label">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita3)->locale('id')->isoFormat('MMM DD, YYYY') }}</span>
+                                    <span class="title">{{ $data->judul_cerita3 }}</span>
+                                    <span class="paragraph"> {{ $data->tunangan }}</span>
+                                </div>
+                            </div>
+                        @else
+                            <div class="content" style="display: none"></div>
+                            <div class="container" style="display: none"></div>
+
+                        </div>
+                    @endif
+                    @if (!empty($data->pernikahan) && !empty($data->tgl_cerita4) && !empty($data->judul_cerita4))
+                        <div class="container right">
+                            <div class="content">
+                                <div class="detail-story">
+                                    <span
+                                        class="label">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita4)->locale('id')->isoFormat('MMM DD, YYYY') }}</span>
+                                    <span class="title">{{ $data->judul_cerita4 }}</span>
+                                    <span class="paragraph"> {{ $data->pernikahan }}</span>
+                                </div>
+                            </div>
+                        @else
+                            <div class="content" style="display: none"></div>
+                            <div class="container" style="display: none"></div>
+
+                        </div>
+                    @endif
+                    {{-- <div class="container left">
                         <div class="content">
-                            <!-- <div class="foto-story-1"></div> -->
                             <div class="detail-story">
                                 <span class="label">JAN 01, 2019</span>
                                 <span class="title">Pertama Bertemu</span>
@@ -152,182 +225,67 @@
                                     expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="container left">
-                        <div class="content">
-                            <div class="detail-story">
-                                <span class="label">JAN 01, 2019</span>
-                                <span class="title">Pertama Bertemu</span>
-                                <span class="paragraph">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-                                    expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container right">
-                        <div class="content">
-                            <div class="detail-story">
-                                <span class="label">JAN 01, 2019</span>
-                                <span class="title">Pertama Bertemu</span>
-                                <span class="paragraph">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-                                    expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container left">
-                        <div class="content">
-                            <div class="detail-story">
-                                <span class="label">JAN 01, 2019</span>
-                                <span class="title">Pertama Bertemu</span>
-                                <span class="paragraph">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-                                    expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container right">
-                        <div class="content">
-                            <div class="detail-story">
-                                <span class="label">JAN 01, 2019</span>
-                                <span class="title">Pertama Bertemu</span>
-                                <span class="paragraph">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-                                    admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-                                    expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div> --}}
                 </div>
-                <!-- <div class="card-list3">
-                    <div class="card6">
-                        <img class="visual-icon2" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-2@2x.png') }}" />
-
-                        <div class="card-inner">
-                            <div class="frame-parent44">
-                                <div class="jan-01-2019-parent">
-                                    <b class="jan-01-2019">JAN 01, 2019</b>
-                                    <div class="pertama-bertemu">Pertama Bertemu</div>
-                                </div>
-                                <b class="kita-bertemu-pertama">Kita bertemu pertama kali di sma kelas 1</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card7">
-                        <img class="visual-icon3" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-3@2x.png') }}" />
-
-                        <div class="card-child">
-                            <div class="frame-parent45">
-                                <div class="jan-01-2019-group">
-                                    <b class="jan-01-20191">Jan 01, 2019</b>
-                                    <div class="pertama-bertemu1">Pertama Bertemu</div>
-                                </div>
-                                <b class="kita-bertemu-pertama1">Kita bertemu pertama kali di sma kelas 1</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card8">
-                        <img class="visual-icon4" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-4@2x.png') }}" />
-
-                        <div class="text-block">
-                            <div class="rectangle">
-                                <div class="icon3">
-                                    <b class="des-01-2019">DES 01, 2019</b>
-                                    <div class="tunangan">Tunangan</div>
-                                </div>
-                                <div class="kita-bertemu-pertama2">
-                                    Kita bertemu pertama kali di sma kelas 1
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="justify-content">
-                    <div class="container1">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="progress"></div>
-                    <div class="container2">
-                        <div class="dot1"></div>
-                    </div>
-                    <div class="progress1"></div>
-                    <div class="container3">
-                        <div class="dot2"></div>
-                    </div>
-                </div>
-                <div class="card-list4">
-                    <div class="card9">
-                        <img class="visual-icon5" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-5@2x.png') }}" />
-
-                        <div class="card-inner1">
-                            <div class="frame-parent46">
-                                <div class="jan-01-2019-container">
-                                    <b class="jan-01-20192">Jan 01, 2019</b>
-                                    <div class="pertama-bertemu2">Pertama Bertemu</div>
-                                </div>
-                                <b class="kita-bertemu-pertama3">Kita bertemu pertama kali di sma kelas 1</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card10">
-                        <img class="visual-icon6" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-6@2x.png') }}" />
-
-                        <div class="card-inner2">
-                            <div class="frame-parent47">
-                                <div class="mar-20-2019-parent">
-                                    <b class="mar-20-2019">MAR 20, 2019</b>
-                                    <div class="jadian">Jadian</div>
-                                </div>
-                                <div class="kita-bertemu-pertama4">
-                                    Kita bertemu pertama kali di sma kelas 1
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card11">
-                        <img class="visual-icon7" loading="eager" alt=""
-                            src="{{ asset('./assets/visual-7@2x.png') }}" />
-
-                        <div class="card-inner3">
-                            <div class="frame-parent48">
-                                <div class="jan-01-2019-parent1">
-                                    <b class="jan-01-20193">Jan 01, 2019</b>
-                                    <div class="pertama-bertemu3">Pertama Bertemu</div>
-                                </div>
-                                <b class="kita-bertemu-pertama5">Kita bertemu pertama kali di sma kelas 1</b>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
 
 
         <section class="spacer" data-scroll-to="spacer">
             <span class="paragraph">OUR MOMENT</span>
+            @if (!empty($data->caption) && !empty($data->nama_pengarang)  && !empty($data->video))
             <div class="rectangle-path">
                 <div class="column">
                     <span class="title">
-                        “Pertemuan yang kuimpikan Kini jadi kenyataan Pertemuan yang kudambakan Ternyata bukan khayalan”
+                        {{ $data->caption }}
                     </span>
-                    <span class="paragraph">Rhoma Irama<span>
+                    <span class="paragraph">{{$data->nama_pengarang}}<span>
                 </div>
                 <div class="frame-video">
-                    <video autoplay muted loop controls src="{{ asset('./assets/video.mp4') }}"></video>
+                    <video autoplay muted loop controls src="{{ Storage::url('' . $data->video) }}"></video>
                 </div>
+                <div class="frame-video" style="display: none"></div>
             </div>
+            @else 
+            <div class="rectangle-path" style="display: none"></div>
+            @endif
             <div class="scroll">
                 <ul>
-                    <li> <img class="foto-ganjil" src="{{ asset('./assets/foto-1@2x.png') }}" alt=""> </li>
-                    <li> <img class="foto-genep" src="{{ asset('./assets/foto-2@2x.png') }}" alt=""> </li>
-                    <li> <img class="foto-ganjil" class="foto-ganjil" src="{{ asset('./assets/foto@2x.png') }}"
-                            alt=""> </li>
-                    <li> <img class="foto-genep" src="{{ asset('./assets/foto-3@2x.png') }}" alt=""> </li>
-                    <li> <img class="foto-ganjil" src="{{ asset('./assets/foto-4@2x.png') }}" alt=""> </li>
+                    <li>
+                        @if ($data->galeri_img1 && Storage::exists($data->galeri_img1))
+                            <img class="foto-ganjil" src="{{ Storage::url($data->galeri_img1) }}" alt="">
+                        @else
+                            <div class="foto-ganjil" style="display: none"></div>
+                        @endif
+                    </li>
+                    <li>
+                        @if ($data->galeri_img2 && Storage::exists($data->galeri_img2))
+                            <img class="foto-genep" src="{{ Storage::url($data->galeri_img2) }}" alt="">
+                        @else
+                            <div class="foto-genap" style="display: none"></div>
+                        @endif
+                    </li>
+                    <li>
+                        @if ($data->galeri_img3 && Storage::exists($data->galeri_img3))
+                            <img class="foto-ganjil" src="{{ Storage::url($data->galeri_img3) }}" alt="">
+                        @else
+                            <div class="foto-ganjil" style="display: none"></div>
+                        @endif
+                    </li>
+                    <li>
+                        @if ($data->galeri_img4 && Storage::exists($data->galeri_img4))
+                            <img class="foto-genep" src="{{ Storage::url($data->galeri_img4) }}" alt="">
+                        @else
+                            <div class="foto-genap" style="display: none"></div>
+                        @endif
+                    </li>
+                    <li>
+                        @if ($data->galeri_img5 && Storage::exists($data->galeri_img5))
+                            <img class="foto-ganjil" src="{{ Storage::url($data->galeri_img5) }}" alt="">
+                        @else
+                            <div class="foto-ganjil" style="display: none"></div>
+                        @endif
+                    </li>
                 </ul>
             </div>
         </section>
@@ -335,75 +293,42 @@
 
         <section class="wedding-date-address" data-scroll-to="rekeningField">
             <div class="photo-mix">
-                <div class="foto-depan"></div>
-                <div class="foto-belakang"></div>
+                <div class="foto-depan">
+                    <img class="foto-depan" src="{{ Storage::url('' . $data->gambar1) }}" alt="">
+                </div>
+                <div class="foto-belakang">
+                    <img class="foto-belakang" src="{{ Storage::url('' . $data->gambar2) }}" alt="">
+                </div>
+                {{-- <img src="{{ Storage::url($data->gambar2) }}" alt=""> --}}
             </div>
             <div class="resepsi-akad">
                 <div class="info-akad">
                     <span class="title">Akad Nikah</span>
                     <div class="detail-waktu">
-                        <span class="paragpraph">JUMAT, 28 APRIL 2023</span>
-                        <span class="paragraph">PUKUL 09:00 WIB - SELESAI</span>
+                        <span
+                            class="paragpraph">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_akad)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
+                        <span class="paragraph">PUKUL {{ \Carbon\Carbon::parse($data->mulai_akad)->format('H:i') }}
+                            WIB - SELESAI</span>
                     </div>
-                    <span class="paragraph">Plataran Menteng, Jalan HOS. Cokroaminoto, RT.6/RW.4,
-                        Gondangdia, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta,
-                        Indonesia
+                    <span class="paragraph">{{ $data->alamat_akad }}
                     </span>
                 </div>
                 <div class="devider5"></div>
                 <div class="info-resepsi">
-                    <span class="title">Akad Nikah</span>
+                    <span class="title">Resepsi</span>
                     <div class="detail-waktu">
-                        <span class="paragpraph">JUMAT, 28 APRIL 2023</span>
-                        <span class="paragraph">PUKUL 09:00 WIB - SELESAI</span>
+                        <span
+                            class="paragpraph">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_resepsi)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
+                        <span class="paragraph">PUKUL {{ \Carbon\Carbon::parse($data->mulai_resepsi)->format('H:i') }}
+                            WIB - SELESAI</span>
                     </div>
-                    <span class="paragraph">Plataran Menteng, Jalan HOS. Cokroaminoto, RT.6/RW.4,
-                        Gondangdia, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta,
-                        Indonesia
+                    <span class="paragraph">{{ $data->alamat_resepsi }}
                     </span>
                 </div>
-                <a target="_blank" class="outline-button" href="https://www.google.com/maps">
+                <a target="_blank" class="outline-button" href="{{ $data->lokasi_gmaps }}">
                     Lihat Lokasi
                 </a>
             </div>
-
-            {{-- <div class="frame-parent50">
-                <form class="frame-form">
-                    <div class="frame-parent51">
-                        <div class="the-groom-group">
-                            <b class="the-groom3">THE GROOM</b>
-                            <div class="konfirmasi-kehadiran">Konfirmasi Kehadiran</div>
-                            <b class="silahkan-isi-form">Silahkan isi form kehadiran, ya!</b>
-                        </div>
-                        <div class="row-input1">
-                            <div class="input8">
-                                <div class="nama">Nama</div>
-                                <div class="field4">
-                                    <input class="masukkan-nama-kamu2" placeholder="Masukkan nama kamu"
-                                        type="text" />
-                                </div>
-                            </div>
-                            <div class="input9">
-                                <div class="apakah-kamu-akan">Apakah kamu akan hadir?</div>
-                                <button class="field5" href="#">Ya, saya akan hadir</button>
-                                <button class="field6">Tidak, saya tidak bisa hadir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="button19">
-                        <div class="mail7">
-                            <img class="vector-icon8" alt="" src="{{ asset('./assets/vector.svg') }}" />
-                            <div class="badge9">
-                                <div class="div18">12</div>
-                            </div>
-                        </div>
-                        <b class="kirim">Kirim</b>
-                        <img class="add-icon7" alt="" src="{{ asset('./assets/add.svg') }}" />
-                    </button>
-                </form>
-                <img class="foto-icon7" loading="eager" alt=""
-                    src="{{ asset('./assets/foto-7@2x.png') }}" />
-            </div> --}}
 
         </section>
 
@@ -425,25 +350,35 @@
                     </div>
                 </div>
                 <div class="card-list5">
-                    <div class="card12">
-                        <span class="title">BCA</span>
-                        <div class="body5">
-                            <b class="b20" id="copyText">1223242442</b>
-                            <img class="copy" alt="" id="copyButton"
-                                src="{{ asset('./assets/copy.svg') }}" />
+                    @if (!empty($data->nama_rek1) || !empty($data->no_rek1) || !empty($data->atas_nama1))
+                        <div class="card12">
+                            <span class="title">{{ $data->nama_rek1 }}</span>
+                            <div class="body5">
+                                <b class="b20" id="copyText">{{ $data->no_rek1 }}</b>
+                                <img class="copy" alt="" id="copyButton"
+                                    src="{{ asset('./assets/copy.svg') }}" />
+                            </div>
+                            <div class="an-rudi-hermina4">an {{ $data->atas_nama1 }}</div>
                         </div>
-                        <div class="an-rudi-hermina4">an Rudi Hermina</div>
-                    </div>
-                    <div class="card13">
-                        <span class="title">Mandiri</span>
-                        <div class="body6">
-                            <b class="b21" id="copyText2">1223242442</b>
-                            <img class="copy2" alt="" id="copyButton2"
-                                src="{{ asset('./assets/copy.svg') }}" />
+                    @else
+                        <div class="card12" style="display: none"></div>
+                    @endif
+
+                    @if (!empty($data->nama_rek2) || !empty($data->no_rek2) || !empty($data->atas_nama2))
+                        <div class="card13">
+                            <span class="title">{{ $data->nama_rek2 }}</span>
+                            <div class="body6">
+                                <b class="b21" id="copyText2">{{ $data->no_rek2 }}</b>
+                                <img class="copy2" alt="" id="copyButton2"
+                                    src="{{ asset('./assets/copy.svg') }}" />
+                            </div>
+                            <div class="an-rudi-hermina5">an {{ $data->atas_nama2 }}</div>
                         </div>
-                        <div class="an-rudi-hermina5">an Rudi Hermina</div>
-                    </div>
-                    
+                    @else
+                        <div class="card13" style="display: none"></div>
+                    @endif
+
+
                 </div>
             </div>
         </section>
@@ -735,7 +670,7 @@
         kirimAlamatButton.addEventListener('click', function() {
             // Mengubah konten elemen substitutePresent menjadi alamat
             substitutePresent.innerHTML =
-                '<div class="alamat"><span class="title">Alamat</span><span class="paragraph">Kedung Waringin, Kecamatan Bojonggede, Kabupaten Bogor, Jawa Barat 16923</span></div>';
+                '<div class="alamat"><span class="title">Alamat</span><span class="paragraph">{{ $data->alamat_tertera }}</span></div>';
 
             kirimAlamatButton.style.backgroundColor = '#3b3b3b';
             kirimAlamatButton.style.color = 'white';
@@ -761,29 +696,43 @@
             });
         });
 
-        function updateTimer() {
-            future = Date.parse("June 11, 2024 11:30:00");
+        function updateTimer(tgl_akad) {
+            future = Date.parse(tgl_akad);
             now = new Date();
             diff = future - now;
 
-            days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            hours = Math.floor(diff / (1000 * 60 * 60));
-            mins = Math.floor(diff / (1000 * 60));
-            secs = Math.floor(diff / 1000);
+            if (diff <= 0) {
+                // Waktu telah berlalu, atur semua nilai menjadi 0
+                document.getElementById("timer").innerHTML =
+                    '<div>00<span>Hari</span></div>' +
+                    '<div>00<span>Jam</span></div>' +
+                    '<div>00<span>Menit</span></div>' +
+                    '<div>00<span>Detik</span></div>';
+                return;
+            }
 
-            d = days;
-            h = hours - days * 24;
-            m = mins - hours * 60;
-            s = secs - mins * 60;
+            days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Format nilai untuk menambahkan angka 0 di depan jika nilainya < 10
+            days = (days < 10) ? "0" + days : days;
+            hours = (hours < 10) ? "0" + hours : hours;
+            mins = (mins < 10) ? "0" + mins : mins;
+            secs = (secs < 10) ? "0" + secs : secs;
 
             document.getElementById("timer")
                 .innerHTML =
-                '<div>' + d + '<span>Hari</span></div>' +
-                '<div>' + h + '<span>Jam</span></div>' +
-                '<div>' + m + '<span>Menit</span></div>' +
-                '<div>' + s + '<span>Detik</span></div>';
+                '<div>' + days + '<span>Hari</span></div>' +
+                '<div>' + hours + '<span>Jam</span></div>' +
+                '<div>' + mins + '<span>Menit</span></div>' +
+                '<div>' + secs + '<span>Detik</span></div>';
         }
-        setInterval('updateTimer()', 1000);
+
+        // Memanggil updateTimer() saat halaman dimuat dengan tanggal akad dari PHP
+        updateTimer("{{ $data->tgl_akad }}");
+        setInterval(updateTimer.bind(null, "{{ $data->tgl_akad }}"), 1000); // Memperbarui setiap detik
     </script>
 </body>
 

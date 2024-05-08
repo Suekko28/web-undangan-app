@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class UndanganAlt3 extends Model
 {
@@ -61,8 +62,20 @@ class UndanganAlt3 extends Model
         'gambar1',
         'gambar2',
         'caption',
+        'nama_pengarang',
 
     ];
+
+
+    public function namaUndangan(): HasMany
+    {
+        return $this->hasMany(NamaUndanganAlt3::class, 'undangan_alt3_id', 'id');
+    }
+
+    // public function alt3Models(): HasMany
+    // {
+    //     return $this->hasMany(alt3models::class, 'id_alt3_rsvp', 'id');
+    // }
 
     
 }

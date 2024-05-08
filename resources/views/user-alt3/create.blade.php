@@ -40,36 +40,40 @@
             <div class="container-fluid">
                 @include('layouts.message')
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('undangan-alternative3') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('nama-undangan-store3', ['id' => $undanganAlt3Id]) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="undangan_alt3_id" value="{{ $undanganAlt3->id }}">
                     <div class="card-body container bg-white mt-5">
+                        <div class="mempelai text-center fw-bold fs-5">Nama Undangan</div>
+                        <div class="fs-6">
+                            <div class="form-group mb-3">
+                                <label for="nama_undangan">Nama Undangan <span class="mandatory">*</span></label>
+                                <textarea class="form-control" rows="5" id="nama_undangan" name="nama_undangan"
+                                    placeholder="Masukan nama-nama undangan"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-row-reverse mt-5">
+                            <button type="submit" class="btn btn-primary ml-3 ms-3">Simpan</button>
+                            <a href="{{ route('nama-undangan-list3', ['id' => $undanganAlt3Id]) }}" class="btn btn-danger">Batal</a>
+                        </div>
+
+                    </div>
+
+
+
+                    {{-- <div class="card-body container bg-white mt-5">
                         <div class="mempelai text-center fw-bold fs-5">Banner Image & Music</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="caption">Caption <span class="fst-italic">(Opsional)</span></label>
-                                <span class="fst-italic">(Maksimal 288 Karakter)</span>
-                                <textarea class="form-control" rows="5" id="caption" name="caption"
-                                    placeholder="Aku tak pernah menunggumu. Kamu tak pernah sengaja datang. Tapi kita sengaja dipertemukan Tuhan."></textarea>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="nama_pengarang">Nama Pengarang <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="nama_pengarang" name="nama_pengarang"
-                                    placeholder="Rhoma Irama">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="banner_img">Foto Opening <span class="mandatory">*</span></label>
+                                <label for="banner_img">Foto Prewedding <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="banner_img" name="banner_img" placeholder="">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="music">Music <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="music" name="music" accept=".mp3">
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="foto_prewedding">Foto Prewedding <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="foto_prewedding" name="foto_prewedding"
-                                    placeholder="">
-                            </div>
-
+                            
                         </div>
                     </div>
 
@@ -98,19 +102,6 @@
                                     placeholder="Putra dari ibu">
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="nama_instagram1">Nama Instagram <span class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="nama_instagram1" name="nama_instagram1"
-                                    placeholder="Masukkan nama instagram">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="link_instagram1">Link Instagram <span class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="link_instagram1" name="link_instagram1"
-                                    placeholder="Masukkan link instagram">
-                            </div>
-
-
 
                             <div class="form-group mb-3">
                                 <label for="foto_mempelai_perempuan">Foto Mempelai Perempuan <span
@@ -135,115 +126,80 @@
                                     placeholder="Putri dari ibu">
                             </div>
 
+                        </div>
+                    </div>
+
+                    <div class="card-body container bg-white mt-5">
+                        <div class="mempelai text-center fw-bold fs-5">Akad</div>
+                        <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="nama_instagram2">Nama Instagram <span class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="nama_instagram2" name="nama_instagram2"
-                                    placeholder="Masukkan nama instagram">
+                                <label for="tgl_akad">Tanggal Akad <span class="mandatory">*</span></label>
+                                <input type="date" class="form-control" id="tgl_akad" name="tgl_akad"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="mulai_akad">Mulai Akad <span class="mandatory">*</span></label>
+                                <input type="time" class="form-control" id="mulai_akad" name="mulai_akad"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="selesai_akad">Selesai Akad <span class="mandatory">*</span></label>
+                                <input type="time" class="form-control" id="selesai_akad" name="selesai_akad"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="alamat_akad">Alamat Akad <span class="mandatory">*</span></label>
+                                <textarea class="form-control" rows="5" id="alamat_akad" name="alamat_akad"
+                                    placeholder="Masukan alamat akad"></textarea>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="link_instagram2">Link Instagram <span class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="link_instagram2" name="link_instagram2"
-                                    placeholder="Masukkan link instagram">
+                                <label for="lokasi_gmaps_akad">Lokasi Maps Akad <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="lokasi_gmaps_akad" name="lokasi_gmaps_akad"
+                                    placeholder="Masukkan link alamat maps">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="tgl_resepsi">Tanggal Resepsi <span class="mandatory">*</span></label>
+                                <input type="date" class="form-control" id="tgl_resepsi" name="tgl_resepsi"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="mulai_resepsi">Mulai Resepsi <span class="mandatory">*</span></label>
+                                <input type="time" class="form-control" id="mulai_resepsi" name="mulai_resepsi"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="selesai_resepsi">Selesai Resepsi <span class="mandatory">*</span></label>
+                                <input type="time" class="form-control" id="selesai_resepsi" name="selesai_resepsi"
+                                    placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="alamat_resepsi">Alamat Resepsi <span class="mandatory">*</span></label>
+                                <textarea class="form-control" rows="5" id="alamat_resepsi" name="alamat_resepsi"
+                                    placeholder="Masukan alamat resepsi"></textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="lokasi_gmaps_resepsi">Lokasi Maps Resepsi <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="lokasi_gmaps_resepsi" name="lokasi_gmaps_resepsi"
+                                    placeholder="Masukkan link alamat maps">
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Our Love Story</div>
-                        <div class="fs-6">
-                            <div class="form-group mb-3">
-                                <label for="tgl_cerita1">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita1" name="tgl_cerita1"
-                                    placeholder="">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="judul_cerita1">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita1" name="judul_cerita1"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-
-                            <div class="form-group mb-3">
-                                <label for="perkenalan">Cerita <span class="fst-italic">(Opsional)</span><span
-                                        class="fst-italic">(Maksimal 200 Karakter)</span>
-                                </label>
-                                <textarea class="form-control" rows="5" id="perkenalan" name="perkenalan"
-                                    placeholder="Ceritakan perkenalan kamu dengan pasanganmu"></textarea>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="tgl_cerita2">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita2" name="tgl_cerita2"
-                                    placeholder="">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="judul_cerita2">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita2" name="judul_cerita2"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-
-                            <div class="form-group mb-3">
-                                <label for="jadian">Cerita <span class="fst-italic">(Opsional)</span><span
-                                        class="fst-italic">(Maksimal 200 Karakter)</span>
-                                </label>
-                                <textarea class="form-control" rows="5" id="jadian" name="jadian"
-                                    placeholder="Ceritakan jadian kamu dengan pasanganmu "></textarea>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="tgl_cerita3">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita3" name="tgl_cerita3"
-                                    placeholder="">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="judul_cerita3">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita3" name="judul_cerita3"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-
-                            <div class="form-group mb-3">
-                                <label for="tunangan">Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <textarea class="form-control" rows="5" id="tunangan" name="tunangan"
-                                    placeholder="Ceritakan tunangan kamu dengan pasanganmu"></textarea>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="tgl_cerita4">Tanggal <span class="fst-italic">(Opsional)</span></label>
-                                <input type="date" class="form-control" id="tgl_cerita4" name="tgl_cerita4"
-                                    placeholder="">
-                            </div>
-
-
-                            <div class="form-group mb-3">
-                                <label for="judul_cerita4">Judul Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <input type="text" class="form-control" id="judul_cerita4" name="judul_cerita4"
-                                    placeholder="Masukkan Judul Ceritamu">
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="pernikahan">Cerita <span class="fst-italic">(Opsional)</span></label>
-                                <textarea class="form-control" rows="5" id="pernikahan" name="pernikahan"
-                                    placeholder="Ceritakan rencana pernikahan kamu dengan pasanganmu"></textarea>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Our Moment</div>
+                        <div class="mempelai text-center fw-bold fs-5">Galeri Foto</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="video">Video <span class="fst-italic">(Opsional)</span></label>
-                                <input type="file" class="form-control" id="video" name="video"
-                                    placeholder="" accept=".mp4">
+                                <label for="caption">Caption <span class="mandatory">*</span></label>
+                                <span class="fst-italic">(Maksimal 288 Karakter)</span>
+                                <textarea class="form-control" rows="5" id="caption" name="caption"
+                                    placeholder="Aku tak pernah menunggumu. Kamu tak pernah sengaja datang. Tapi kita sengaja dipertemukan Tuhan."></textarea>
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="galeri_img1">Foto 1 <span class="fst-italic">(Opsional)</span></label>
                                 <input type="file" class="form-control" id="galeri_img1" name="galeri_img1"
@@ -269,67 +225,70 @@
                                 <input type="file" class="form-control" id="galeri_img5" name="galeri_img5"
                                     placeholder="">
                             </div>
-                           
+                            <div class="form-group mb-3">
+                                <label for="galeri_img6">Foto 6 <span class="fst-italic">(Opsional)</span></label>
+                                <input type="file" class="form-control" id="galeri_img6" name="galeri_img6"
+                                    placeholder="">
+                            </div>
 
                         </div>
 
                     </div>
 
                     <div class="card-body container bg-white mt-5">
-                        <div class="mempelai text-center fw-bold fs-5">Akad</div>
+                        <div class="mempelai text-center fw-bold fs-5">Cerita Cinta Kami</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="gambar1">Gambar 1 <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="gambar1" name="gambar1"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="gambar2">Gambar 2 <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="gambar2" name="gambar2"
+                                <label for="foto_pertemuan">Foto Pertemuan <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_pertemuan" name="foto_pertemuan"
                                     placeholder="">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="tgl_akad">Tanggal Akad <span class="mandatory">*</span></label>
-                                <input type="date" class="form-control" id="tgl_akad" name="tgl_akad"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="mulai_akad">Mulai Akad <span class="mandatory">*</span></label>
-                                <input type="time" class="form-control" id="mulai_akad" name="mulai_akad"
-                                    placeholder="">
+                                <label for="pertemuan">Petemuan <span class="mandatory">*</span> <span
+                                        class="fst-italic">(Maksimal 200 Karakter)</span>
+                                </label>
+                                <textarea class="form-control" rows="5" id="pertemuan" name="pertemuan"
+                                    placeholder="Ceritakan pertemuan kamu dengan pasanganmu"></textarea>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="alamat_akad">Alamat Akad <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="alamat_akad" name="alamat_akad"
-                                    placeholder="Masukan alamat akad"></textarea>
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label for="tgl_resepsi">Tanggal Resepsi <span class="mandatory">*</span></label>
-                                <input type="date" class="form-control" id="tgl_resepsi" name="tgl_resepsi"
-                                    placeholder="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="mulai_resepsi">Mulai Resepsi <span class="mandatory">*</span></label>
-                                <input type="time" class="form-control" id="mulai_resepsi" name="mulai_resepsi"
+                                <label for="foto_pendekatan">Foto Pendekatan <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_pendekatan" name="foto_pendekatan"
                                     placeholder="">
                             </div>
 
-
                             <div class="form-group mb-3">
-                                <label for="alamat_resepsi">Alamat Resepsi <span class="mandatory">*</span></label>
-                                <textarea class="form-control" rows="5" id="alamat_resepsi" name="alamat_resepsi"
-                                    placeholder="Masukan alamat resepsi"></textarea>
+                                <label for="pendekatan">Pendekatan <span class="mandatory">*</span> <span
+                                        class="fst-italic">(Maksimal 200 Karakter)</span>
+                                </label>
+                                <textarea class="form-control" rows="5" id="pendekatan" name="pendekatan"
+                                    placeholder="Ceritakan pendekatan kamu dengan pasanganmu "></textarea>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="lokasi_gmaps">Lokasi Maps <span class="mandatory">*</span></label>
-                                <input type="text" class="form-control" id="lokasi_gmaps" name="lokasi_gmaps"
-                                    placeholder="Masukkan link alamat maps">
+                                <label for="foto_lamaran">Foto Lamaran <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_lamaran" name="foto_lamaran" placeholder="">
                             </div>
 
+                            <div class="form-group mb-3">
+                                <label for="lamaran">Lamaran <span class="mandatory">*</span><span
+                                        class="fst-italic">(Maksimal 200 Karakter)</span></label>
+                                <textarea class="form-control" rows="5" id="lamaran" name="lamaran"
+                                    placeholder="Ceritakan lamaran kamu dengan pasanganmu"></textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="foto_pernikahan">Foto Pernikahan <span class="mandatory">*</span></label>
+                                <input type="file" class="form-control" id="foto_pernikahan" name="foto_pernikahan" placeholder="">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="pernikahan">Pernikahan <span class="mandatory">*</span><span
+                                        class="fst-italic">(Maksimal 200 Karakter)</span></label>
+                                <textarea class="form-control" rows="5" id="pernikahan" name="pernikahan"
+                                    placeholder="Ceritakan rencana pernikahan kamu dengan pasanganmu"></textarea>
+                            </div>
                         </div>
                     </div>
 
@@ -337,52 +296,63 @@
                         <div class="mempelai text-center fw-bold fs-5">Kirim Hadiah</div>
                         <div class="fs-6">
                             <div class="form-group mb-3">
-                                <label for="nama_rek1">Nama Rek Tertera <span class="fst-italic">(Opsional)</span></label>
+                                <label for="nama_rek1">Nama Rek Tertera <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="nama_rek1" name="nama_rek1"
                                     placeholder="BCA, BRI, Dll">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="no_rek1">No. Rek Tertera <span class="fst-italic">(Opsional)</span></label>
+                                <label for="no_rek1">No. Rek Tertera <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="no_rek1" name="no_rek1"
                                     placeholder="Masukkan nomor rekening">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="atas_nama1">Atas Nama <span class="fst-italic">(Opsional)</span></label>
+                                <label for="atas_nama1">Atas Nama <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="atas_nama1" name="atas_nama1"
                                     placeholder="Rudi Hermawan">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="nama_rek2">Nama Rek Tertera <span class="fst-italic">(Opsional)</span></label>
+                                <label for="nama_rek2">Nama Rek Tertera <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="nama_rek2" name="nama_rek2"
                                     placeholder="BCA, BRI, Dll">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="no_rek2">No. Rek Tertera <span class="fst-italic">(Opsional)</span></label>
+                                <label for="no_rek2">No. Rek Tertera <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="no_rek2" name="no_rek2"
                                     placeholder="Masukkan nomor rekening">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="atas_nama2">Atas Nama <span class="fst-italic">(Opsional)</span></label>
+                                <label for="atas_nama2">Atas Nama <span class="mandatory">*</span></label>
                                 <input type="text" class="form-control" id="atas_nama2" name="atas_nama2"
                                     placeholder="Rudi Hermawan">
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="alamat_tertera">Alamat Tertera <span
-                                        class="fst-italic">(Opsional)</span></label>
+                                <label for="nama_rek3">Nama Rek Tertera <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="nama_rek3" name="nama_rek3"
+                                    placeholder="BCA, BRI, Dll">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="no_rek3">No. Rek Tertera <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="no_rek3" name="no_rek3"
+                                    placeholder="Masukkan nomor rekening">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="atas_nama3">Atas Nama <span class="mandatory">*</span></label>
+                                <input type="text" class="form-control" id="atas_nama3" name="atas_nama3"
+                                    placeholder="Rudi Hermawan">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="alamat_tertera">Alamat Tertera <span class="mandatory">*</span></label>
                                 <textarea class="form-control" rows="5" id="alamat_tertera" name="alamat_tertera"
                                     placeholder="Masukan alamat tertera kirim hadiah"></textarea>
                             </div>
                         </div>
 
 
-                        <div class="d-flex flex-row-reverse mt-5">
-                            <button type="submit" class="btn btn-primary ml-3 ms-3">Simpan</button>
-                            <a href="{{ route('undangan-alternative3') }}" class="btn btn-danger">Batal</a>
-                        </div>
+                       
 
-                    </div>
+                    </div> --}}
 
                     <!-- /.card-body -->
 

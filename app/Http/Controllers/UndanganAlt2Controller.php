@@ -228,6 +228,13 @@ class UndanganAlt2Controller extends Controller
             'tgl_cerita2' => $validatedData['tgl_cerita2'],
             'tgl_cerita3' => $validatedData['tgl_cerita3'],
             'tgl_cerita4' => $validatedData['tgl_cerita4'],
+            'galeri_img1' => $request->hasFile('galeri_img1') ? $data->galeri_img1 : null,
+            'galeri_img2' => $request->hasFile('galeri_img2') ? $data->galeri_img2 : null,
+            'galeri_img3' => $request->hasFile('galeri_img3') ? $data->galeri_img3 : null,
+            'galeri_img4' => $request->hasFile('galeri_img4') ? $data->galeri_img4 : null,
+            'galeri_img5' => $request->hasFile('galeri_img5') ? $data->galeri_img5 : null,
+            'galeri_img6' => $request->hasFile('galeri_img6') ? $data->galeri_img6 : null,
+
         ]);
 
         return redirect()->route('undangan-alternative2')->with('success', 'Data berhasil diperbarui');

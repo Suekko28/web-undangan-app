@@ -59,10 +59,11 @@ return new class extends Migration
             $table->date('tgl_cerita2')->nullable();
             $table->date('tgl_cerita3')->nullable();
             $table->date('tgl_cerita4')->nullable();
-            $table->string('caption');
+            $table->string('caption')->nullable();
             $table->string('gambar1');
             $table->string('gambar2');
-            $table->string('video');
+            $table->string('video')->nullable();
+            $table->string('nama_pengarang')->nullable();
             $table->timestamps();
 
         });

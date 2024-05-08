@@ -12,6 +12,7 @@ use App\Http\Controllers\IndexAlt2Controller;
 use App\Http\Controllers\IndexAlt3Controller;
 use App\Http\Controllers\NamaUndanganAlt1Controller;
 use App\Http\Controllers\NamaUndanganAlt2Controller;
+use App\Http\Controllers\NamaUndanganAlt3Controller;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\UndanganAlt1Controller;
 use App\Http\Controllers\UndanganAlt2Controller;
@@ -137,13 +138,13 @@ Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/untuk={nama_undangan
 Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/untuk={nama_undangan}/index', [IndexAlt3Controller::class, 'showDetail'])->name('undangan-alt3-index');
 Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/untuk={nama_undangan}/index', [IndexAlt3Controller::class, 'store'])->name('undangan-alt3-post');
 
-Route::resource('/nama-undangan', NamaUndanganAlt2Controller::class);
-Route::get('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt2Controller::class, 'index'])->name('nama-undangan-list2');
-Route::get('/nama-undangan/alt3/{id}/create', [NamaUndanganAlt2Controller::class, 'create'])->name('nama-undangan-create2');
-Route::get('/nama-undangan/alt3/{id}/edit', [NamaUndanganAlt2Controller::class, 'edit'])->name('nama-undangan-edit2');
-Route::post('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt2Controller::class, 'store'])->name('nama-undangan-store2');
-Route::put('/nama-undangan/alt3/{undanganAlt2Id}/{id}', [NamaUndanganAlt2Controller::class, 'update'])->name('nama-undangan-update2');
-Route::delete('/nama-undangan/alt3/{id}', [NamaUndanganAlt2Controller::class, 'destroy'])->name('nama-undangan.destroy2');
+Route::resource('/nama-undangan', NamaUndanganAlt3Controller::class);
+Route::get('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt3Controller::class, 'index'])->name('nama-undangan-list3');
+Route::get('/nama-undangan/alt3/{id}/create', [NamaUndanganAlt3Controller::class, 'create'])->name('nama-undangan-create3');
+Route::get('/nama-undangan/alt3/{id}/edit', [NamaUndanganAlt3Controller::class, 'edit'])->name('nama-undangan-edit3');
+Route::post('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt3Controller::class, 'store'])->name('nama-undangan-store3');
+Route::put('/nama-undangan/alt3/{undanganAlt2Id}/{id}', [NamaUndanganAlt3Controller::class, 'update'])->name('nama-undangan-update3');
+Route::delete('/nama-undangan/alt3/{id}', [NamaUndanganAlt3Controller::class, 'destroy'])->name('nama-undangan.destroy3');
 
 
 

@@ -64,10 +64,16 @@ class UndanganAlt3FormRequest extends FormRequest
             'judul_cerita2' => 'max:255',
             'judul_cerita3' => 'max:255',
             'judul_cerita4' => 'max:255',
-            'caption' => 'required|string|max:255',
+            'caption' => 'max:255',
             'gambar1' => 'required|image|mimes:jpeg,png,jpg',
             'gambar2' => 'required|image|mimes:jpeg,png,jpg',
-            'video' => 'required|mimes:mp4',
+            'video' => 'mimes:mp4',
+            'tgl_cerita1' => '',
+            'tgl_cerita2' => '',
+            'tgl_cerita3' => '',
+            'tgl_cerita4' => '',
+            'nama_pengarang'=> 'max:255',
+
         ];
     }
 

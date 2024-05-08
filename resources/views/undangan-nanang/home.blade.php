@@ -21,9 +21,9 @@
         href="https://fonts.googleapis.com/css2?family=NanumMyeongjo:wght@400;700;800&display=swap" />
 </head>
 
-<body>
+<body style="background-image: url('{{ Storage::url('' . $data->banner_img) }}');">
     <div class="first1">
-    
+
         {{-- <img class="young-japanese-couple-1-11" alt=""
             src="./assets/youngjapanesecouple-1-1@2x.png" /> --}}
 
@@ -31,22 +31,23 @@
         <div class="first-item"></div>
         <div class="frame-parent119">
             <span class="paragraph">THE WEDDING OF</span>
-            <span class="title">Rudi & Arum</span>
+            <span class="title">{{ $data->nama_mempelai_laki }} & {{ $data->nama_mempelai_perempuan }}</span>
             <div class="small-devider"></div>
-            <span class="paragraph">21 Oktober 2024</span>
-            <button target="_blank" class="primary-button" id="buttonContainer">Buka Undangan</button>
+            <span
+                class="paragraph">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_akad)->locale('id')->isoFormat('D MMMM YYYY') }}
+            </span>
+            <a class="primary-button" id="buttonContainer"
+                href="{{ route('undangan-alt3-index', [
+                    'nama_mempelai_laki' => $nama_mempelai_laki,
+                    'nama_mempelai_perempuan' => $nama_mempelai_perempuan,
+                    'nama_undangan' => $nama_undangan, // Pastikan $nama_undangan telah diberikan nilai sebelumnya
+                ]) }}">Buka
+                Undangan</a>
 
         </div>
     </div>
 
-    <script>
-        var buttonContainer = document.getElementById("buttonContainer");
-        if (buttonContainer) {
-            buttonContainer.addEventListener("click", function(e) {
-                window.location.href = "./undangan-alt3/index";
-            });
-        }
-    </script>
+
 </body>
 
 </html>

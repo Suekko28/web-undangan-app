@@ -232,6 +232,17 @@ class UndanganAlt1Controller extends Controller
             'judul_cerita2' => $validatedData['judul_cerita2'],
             'judul_cerita3' => $validatedData['judul_cerita3'],
             'judul_cerita4' => $validatedData['judul_cerita4'],
+            'galeri_img1' => $request->hasFile('galeri_img1') ? $data->galeri_img1 : null,
+            'galeri_img2' => $request->hasFile('galeri_img2') ? $data->galeri_img2 : null,
+            'galeri_img3' => $request->hasFile('galeri_img3') ? $data->galeri_img3 : null,
+            'galeri_img4' => $request->hasFile('galeri_img4') ? $data->galeri_img4 : null,
+            'galeri_img5' => $request->hasFile('galeri_img5') ? $data->galeri_img5 : null,
+            'galeri_img6' => $request->hasFile('galeri_img6') ? $data->galeri_img6 : null,
+            'foto_perkenalan' => $request->hasFile('foto_perkenalan') ? $data->foto_perkenalan : null,
+            'foto_pendekatan' => $request->hasFile('foto_pendekatan') ? $data->foto_pendekatan : null,
+            'foto_lamaran' => $request->hasFile('foto_lamaran') ? $data->foto_lamaran : null,
+            'foto_pernikahan' => $request->hasFile('foto_pernikahan') ? $data->foto_pernikahan : null,
+
         ]);
 
         return redirect()->route('undangan-alternative1')->with('success', 'Data berhasil diperbarui');

@@ -52,7 +52,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group-vertical">
-                                                <a href="{{ url('undangan-alternative2/' . $item->id) . '/edit' }}"
+                                                <a href="{{ url('undangan-alternative3/' . $item->id) . '/edit' }}"
                                                     class="btn btn-warning mb-2 rounded"><i class="fa fa-pen-to-square"
                                                         style="color:white;"></i></a>
                                                 <button class="btn btn-danger delete-btn rounded mb-2"

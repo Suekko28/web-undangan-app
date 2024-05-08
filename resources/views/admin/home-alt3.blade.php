@@ -21,7 +21,7 @@
         href="https://fonts.googleapis.com/css2?family=NanumMyeongjo:wght@400;700;800&display=swap" />
 </head>
 
-<body>
+<body style="background-image: url('{{ Storage::url('' . $data->banner_img) }}');">
     <div class="first1">
 
         {{-- <img class="young-japanese-couple-1-11" alt=""
@@ -33,7 +33,7 @@
             <span class="paragraph">THE WEDDING OF</span>
             <span class="title">Rudi & Arum</span>
             <div class="small-devider"></div>
-            <span class="paragraph">21 Oktober 2024</span>
+            <span class="paragraph">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_akad)->locale('id')->isoFormat('D MMMM YYYY') }} </span>
             <a class="primary-button" id="buttonContainer"
                 href="{{ route('undangan-alt3-preview', [
                     'nama_mempelai_laki' => $nama_mempelai_laki,

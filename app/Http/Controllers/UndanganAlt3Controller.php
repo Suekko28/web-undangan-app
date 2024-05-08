@@ -107,6 +107,7 @@ class UndanganAlt3Controller extends Controller
             'tgl_cerita3' => $request->tgl_cerita3,
             'tgl_cerita4' => $request->tgl_cerita4,
             'caption' => $request->caption,
+            'nama_pengarang' => $request->nama_pengarang,
         ];
 
         // Periksa apakah file galeri diunggah sebelum menyimpannya
@@ -129,7 +130,7 @@ class UndanganAlt3Controller extends Controller
                 $filePath = $fileInstance->storeAs('public/images', $fileInstance->hashName());
                 $data[$file] = $filePath;
             } else {
-                $data[$file] = NULL; // or set it to null if preferred
+                $data[$file] = NULL; 
             }
         }
 
@@ -174,7 +175,7 @@ class UndanganAlt3Controller extends Controller
         $validatedData = $request->validated();
 
         // Simpan jalur gambar lama
-        $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'music', 'video'];
+        $gambarFields = ['banner_img', 'foto_prewedding', 'foto_mempelai_laki', 'foto_mempelai_perempuan', 'galeri_img1', 'galeri_img2', 'galeri_img3', 'galeri_img4', 'galeri_img5', 'music', 'video', 'gambar1', 'gambar2'];
         foreach ($gambarFields as $field) {
             $oldImagePaths[$field] = $data->$field;
         }
@@ -227,9 +228,6 @@ class UndanganAlt3Controller extends Controller
             'nama_rek2' => $validatedData['nama_rek2'],
             'no_rek2' => $validatedData['no_rek2'],
             'atas_nama2' => $validatedData['atas_nama2'],
-            'nama_rek3' => $validatedData['nama_rek3'],
-            'no_rek3' => $validatedData['no_rek3'],
-            'atas_nama3' => $validatedData['atas_nama3'],
             'alamat_tertera' => $validatedData['alamat_tertera'],
             'judul_cerita1' => $validatedData['judul_cerita1'],
             'judul_cerita2' => $validatedData['judul_cerita2'],
@@ -244,6 +242,13 @@ class UndanganAlt3Controller extends Controller
             'tgl_cerita3' => $validatedData['tgl_cerita3'],
             'tgl_cerita4' => $validatedData['tgl_cerita4'],
             'caption' => $validatedData['caption'],
+            'nama_pengarang' =>$validatedData['nama_pengarang'],
+            'video' => $request->hasFile('video') ? $data->video : null,
+            'galeri_img1' => $request->hasFile('galeri_img1') ? $data->galeri_img1 : null,
+            'galeri_img2' => $request->hasFile('galeri_img2') ? $data->galeri_img2 : null,
+            'galeri_img3' => $request->hasFile('galeri_img3') ? $data->galeri_img3 : null,
+            'galeri_img4' => $request->hasFile('galeri_img4') ? $data->galeri_img4 : null,
+            'galeri_img5' => $request->hasFile('galeri_img5') ? $data->galeri_img5 : null,
         ]);
 
         return redirect()->route('undangan-alternative3')->with('success', 'Data berhasil diperbarui');

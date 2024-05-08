@@ -48,8 +48,9 @@
                 <img class="image-icon3" loading="lazy" alt="" src="{{ asset('./assets/vector-1.svg') }}" />
             </div>
         </div>
-        <section class="banner-image" data-scroll-to='BannerImage' style="background-image: url('{{ Storage::url('' . $data->foto_prewedding) }}');">
-          
+        <section class="banner-image" data-scroll-to='BannerImage'
+            style="background-image: url('{{ Storage::url('' . $data->foto_prewedding) }}');">
+
             <div class="card-list12">
                 <div class="card-item">
                     <div class="the-wedding-of2">THE WEDDING OF</div>
@@ -185,7 +186,7 @@
                                     <span
                                         class="story-date">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $data->tgl_cerita2)->locale('id')->isoFormat('MMMM, YYYY') }}</span>
                                     <span class="detail-story">
-                                        {{ $data->pendekatan }}
+                                        {{ $data->jadian }}
                                     </span>
                                 </div>
                             </div>
@@ -336,31 +337,9 @@
                     </div>
                 </div>
                 @if (!empty($data->nama_rek1) || !empty($data->no_rek1) || !empty($data->atas_nama1))
-                <div class="card-list15">
-                    <div class="card">
-                        <span class="title">{{$data->nama_rek1}}</span>
-                        <div class="rekening-no">
-                            <button class="button-link" onclick="myFunction()">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4.25 6.5C4.25 5.25736 5.25736 4.25 6.5 4.25H16C17.2426 4.25 18.25 5.25736 18.25 6.5V16C18.25 17.2426 17.2426 18.25 16 18.25H6.5C5.25736 18.25 4.25 17.2426 4.25 16V6.5ZM6.5 5.75C6.08579 5.75 5.75 6.08579 5.75 6.5V16C5.75 16.4142 6.08579 16.75 6.5 16.75H16C16.4142 16.75 16.75 16.4142 16.75 16V6.5C16.75 6.08579 16.4142 5.75 16 5.75H6.5Z" />
-                                    <path
-                                        d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
-                                </svg>
-                            </button>
-                            <input type="text" disabled="disabled" value="{{$data->no_rek1}}" id="myInput">
-                        </div>
-                        <span class="paragraph">{{$data->atas_nama1}}</span>
-                        @else
-                        <div class="card-list15" style="display: none"></div>
-                    </div>
-                    @endif
-
-                    @if (!empty($data->nama_rek2) || !empty($data->no_rek2) || !empty($data->atas_nama2))
                     <div class="card-list15">
                         <div class="card">
-                            <span class="title">{{$data->nama_rek2}}</span>
+                            <span class="title">{{ $data->nama_rek1 }}</span>
                             <div class="rekening-no">
                                 <button class="button-link" onclick="myFunction()">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -371,58 +350,82 @@
                                             d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
                                     </svg>
                                 </button>
-                                <input type="text" disabled="disabled" value="{{$data->no_rek2}}" id="myInput">
+                                <input type="text" disabled="disabled" value="{{ $data->no_rek1 }}"
+                                    id="myInput">
                             </div>
-                            <span class="paragraph">{{$data->atas_nama2}}</span>
-                            @else
+                            <span class="paragraph">{{ $data->atas_nama1 }}</span>
+                        @else
                             <div class="card-list15" style="display: none"></div>
                         </div>
-                        @endif
-    
-                    
-                </div>
+                @endif
+
+                @if (!empty($data->nama_rek2) || !empty($data->no_rek2) || !empty($data->atas_nama2))
+                    <div class="card-list15">
+                        <div class="card">
+                            <span class="title">{{ $data->nama_rek2 }}</span>
+                            <div class="rekening-no">
+                                <button class="button-link" onclick="myFunction()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4.25 6.5C4.25 5.25736 5.25736 4.25 6.5 4.25H16C17.2426 4.25 18.25 5.25736 18.25 6.5V16C18.25 17.2426 17.2426 18.25 16 18.25H6.5C5.25736 18.25 4.25 17.2426 4.25 16V6.5ZM6.5 5.75C6.08579 5.75 5.75 6.08579 5.75 6.5V16C5.75 16.4142 6.08579 16.75 6.5 16.75H16C16.4142 16.75 16.75 16.4142 16.75 16V6.5C16.75 6.08579 16.4142 5.75 16 5.75H6.5Z" />
+                                        <path
+                                            d="M5.5 1.75H10.5C10.9142 1.75 11.25 2.08579 11.25 2.5C11.25 2.91421 10.9142 3.25 10.5 3.25H5.5C4.25736 3.25 3.25 4.25736 3.25 5.5V10.5C3.25 10.9142 2.91421 11.25 2.5 11.25C2.08579 11.25 1.75 10.9142 1.75 10.5V5.5C1.75 3.42893 3.42893 1.75 5.5 1.75Z" />
+                                    </svg>
+                                </button>
+                                <input type="text" disabled="disabled" value="{{ $data->no_rek2 }}"
+                                    id="myInput">
+                            </div>
+                            <span class="paragraph">{{ $data->atas_nama2 }}</span>
+                        @else
+                            <div class="card-list15" style="display: none"></div>
+                        </div>
+                @endif
 
 
             </div>
-            <form class="send-prayers" disabled
-                data-scroll-to="SendPrayers">
-                <b class="kirimkan-doa-dan">Kirimkan Doa dan Ucapan</b>
-                @include('message')
-                <div class="input-name-pesan">
-                    <div class="frame-nama-pesan">
-                        <div class="nama6">Nama</div>
-                        <div class="field24">
-                            <input class="masukkan-nama" placeholder="Masukkan nama" type="text"
-                                name="nama"  disabled/>
-                        </div>
-                    </div>
-                    <div class="ucapan-doa-container">
-                        <div class="ucapan-doa9">Pesan Untuk Mempelai</div>
-                        <textarea class="field35" name="ucapan" placeholder="Kirim pesan untuk mempelai" rows="6" cols="28" disabled></textarea>
-                    </div>
-                    <div class="akan-hadir">
-                        <div class="akan-hadir1">Akan Hadir?</div>
-                        <div class="radio_group">
-                            <input type="radio" name="kehadiran" value="1" id="radio1">
-                            <label for="radio1" class="radio_label">Ya</label>
 
-                            <input type="radio" name="kehadiran" value="0" id="radio2">
-                            <label for="radio2" class="radio_label">Tidak</label>
-                        </div>
-                    </div>
+
+    </div>
+    <form class="send-prayers" disabled data-scroll-to="SendPrayers">
+        <b class="kirimkan-doa-dan">Kirimkan Doa dan Ucapan</b>
+        @include('message')
+        <div class="input-name-pesan">
+            <div class="frame-nama-pesan">
+                <div class="nama6">Nama</div>
+                <div class="field24">
+                    <input class="masukkan-nama" placeholder="Masukkan nama" type="text" name="nama"
+                        disabled />
                 </div>
-                <button class="button50" type="submit">
-                    <div class="mail31">
-                        <img class="vector-icon35" alt="" src="./public/vector.svg" />
+            </div>
+            <div class="ucapan-doa-container">
+                <div class="ucapan-doa9">Pesan Untuk Mempelai</div>
+                <textarea class="field35" name="ucapan" placeholder="Kirim pesan untuk mempelai" rows="6" cols="28"
+                    disabled></textarea>
+            </div>
+            <div class="akan-hadir">
+                <div class="akan-hadir1">Akan Hadir?</div>
+                <div class="radio_group">
+                    <input type="radio" name="kehadiran" value="1" id="radio1">
+                    <label for="radio1" class="radio_label">Ya</label>
 
-                        <div class="badge39">
-                            <div class="div60">12</div>
-                        </div>
-                    </div>
-                    <div class="kirim6">Kirim</div>
-                    <img class="add-icon31" alt="" src="./public/add.svg" />
-                </button>
-                {{-- <div class="gallery-title">
+                    <input type="radio" name="kehadiran" value="0" id="radio2">
+                    <label for="radio2" class="radio_label">Tidak</label>
+                </div>
+            </div>
+        </div>
+        <button class="button50" type="submit">
+            <div class="mail31">
+                <img class="vector-icon35" alt="" src="./public/vector.svg" />
+
+                <div class="badge39">
+                    <div class="div60">12</div>
+                </div>
+            </div>
+            <div class="kirim6">Kirim</div>
+            <img class="add-icon31" alt="" src="./public/add.svg" />
+        </button>
+        {{-- <div class="gallery-title">
                     <b class="kata-mereka">Kata Mereka</b>
                     <div class="card-parent">
                         @foreach ($data as $item)
@@ -438,12 +441,12 @@
                      
                     </div>
                 </div> --}}
-                <footer class="atas-doa-container">
-                    <p class="atas-doa">Atas doa & ucapan bapak/ibu/saudara/i, Kami</p>
-                    <p class="mengucapkan-terima-kasih">mengucapkan terima kasih.</p>
-                </footer>
-            </form>
-        </section>
+        <footer class="atas-doa-container">
+            <p class="atas-doa">Atas doa & ucapan bapak/ibu/saudara/i, Kami</p>
+            <p class="mengucapkan-terima-kasih">mengucapkan terima kasih.</p>
+        </footer>
+    </form>
+    </section>
 
     </div>
 
@@ -718,7 +721,7 @@
         kirimAlamatButton.addEventListener('click', function() {
             // Mengubah konten elemen cardList menjadi alamat
             cardList.innerHTML =
-                '<div class="card"><span class="title">Alamat</span><span class="paragraph">{{$data->alamat_tertera}}</span></div>';
+                '<div class="card"><span class="title">Alamat</span><span class="paragraph">{{ $data->alamat_tertera }}</span></div>';
             // Mengubah warna latar belakang tombol kirimAlamatButton
             kirimAlamatButton.style.backgroundColor = '#605a4c';
             // Mengubah warna teks tombol kirimAlamatButtonText menjadi putih
@@ -772,7 +775,6 @@
         // Memanggil updateTimer() saat halaman dimuat dengan tanggal akad dari PHP
         updateTimer("{{ $data->tgl_akad }}");
         setInterval(updateTimer.bind(null, "{{ $data->tgl_akad }}"), 1000); // Memperbarui setiap detik
-        
     </script>
 </body>
 
