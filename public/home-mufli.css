@@ -32,7 +32,6 @@ input {
     color: #1d1c16;
 }
 
-
 #timer {
     display: flex;
     gap: 16px;
@@ -1456,10 +1455,10 @@ a {
 .noapplicabledataforthesenodes-icon {
     height: 360px;
     width: 328px;
-    position: absolute;
+    /* position: absolute; */
     margin: 0 !important;
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
     border-radius: 200px 200px 32px 32px;
     overflow: hidden;
     flex-shrink: 0;
@@ -1507,14 +1506,12 @@ a {
     max-width: 100%;
 }
 .noapplicabledataforthesenodes {
-    width: 1160px;
-    height: 840px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    position: relative;
-    gap: 40px 36px;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom yang setara */
+    grid-auto-rows: auto; /* Tinggi baris disesuaikan dengan konten */
+    gap: 24px; /* Jarak antar gambar */
+    align-items: center;
+    justify-content: center;
 }
 .gallery-foto {
     align-self: stretch;
@@ -2475,13 +2472,10 @@ label {
     }
 
     .noapplicabledataforthesenodes {
-        width: 1160px;
-        height: 840px;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
-        align-items: flex-start;
-        position: relative;
-        gap: 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         overflow-x: auto;
     }
 
@@ -2615,17 +2609,10 @@ label {
     }
 
     .noapplicabledataforthesenodes {
-        width: 1160px;
-        height: 840px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        position: relative;
-        gap: 0 0;
-        overflow-x: auto;
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .noapplicabledataforthesenodes-icon {
+    /* .noapplicabledataforthesenodes-icon {
         height: 360px;
         width: 328px;
         position: absolute;
@@ -2634,7 +2621,7 @@ label {
         overflow: hidden;
         flex-shrink: 0;
         object-fit: cover;
-    }
+    } */
 
     .noapplicabledataforthesenodes-icon1 {
         height: 360px;
