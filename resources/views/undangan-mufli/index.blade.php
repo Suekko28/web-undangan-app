@@ -267,6 +267,7 @@
             </div>
         </section>
 
+
         <section class="gallery-foto" data-scroll-to="GalleryFoto">
             <span class="title">Galeri Foto</span>
             <div class="noapplicabledataforthesenodes">
@@ -276,32 +277,35 @@
                 @else
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
+            
                 @if ($data->galeri_img2 && Storage::exists($data->galeri_img2))
                     <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
                         src="{{ Storage::url($data->galeri_img2) }}" />
                 @else
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
-
+            
                 @if ($data->galeri_img3 && Storage::exists($data->galeri_img3))
                     <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
                         src="{{ Storage::url($data->galeri_img3) }}" />
                 @else
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
-
+            
                 @if ($data->galeri_img4 && Storage::exists($data->galeri_img4))
                     <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
                         src="{{ Storage::url($data->galeri_img4) }}" />
                 @else
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
+            
                 @if ($data->galeri_img5 && Storage::exists($data->galeri_img5))
                     <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
                         src="{{ Storage::url($data->galeri_img5) }}" />
                 @else
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
+            
                 @if ($data->galeri_img6 && Storage::exists($data->galeri_img6))
                     <img class="noapplicabledataforthesenodes-icon" loading="lazy" alt=""
                         src="{{ Storage::url($data->galeri_img6) }}" />
@@ -309,6 +313,8 @@
                     <div class="noapplicabledataforthesenodes-icon" style="display: none"></div>
                 @endif
             </div>
+            
+
         </section>
 
         <section class="doa-hadiah" data-scroll-to="DoaHadiah">
@@ -431,21 +437,20 @@
             <img class="add-icon31" alt="" src="./public/add.svg" />
         </button>
         <div class="gallery-title">
-                    <b class="kata-mereka">Kata Mereka</b>
-                    <div class="card-parent">
-                        @foreach ($alt2models as $item)
-                        <div class="card32">
-                            <b class="mufli-ahmad">{{$item->nama}}</b>
-                            <div class="selamat-ya-boy-container">
-                                <p class="selamat-ya-boy">{{$item->ucapan}}</p>
-                                <p class="blank-line19">&nbsp;</p>
-                            </div>
+            <b class="kata-mereka">Kata Mereka</b>
+            <div class="card-parent">
+                @foreach ($alt2models as $item)
+                    <div class="card32">
+                        <b class="mufli-ahmad">{{ $item->nama }}</b>
+                        <div class="selamat-ya-boy-container">
+                            <p class="selamat-ya-boy">{{ $item->ucapan }}</p>
+                            <p class="blank-line19">&nbsp;</p>
                         </div>
-
-                        @endforeach
-                     
                     </div>
-                </div>
+                @endforeach
+
+            </div>
+        </div>
         <footer class="atas-doa-container">
             <p class="atas-doa">Atas doa & ucapan bapak/ibu/saudara/i, Kami</p>
             <p class="mengucapkan-terima-kasih">mengucapkan terima kasih.</p>

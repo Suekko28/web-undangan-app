@@ -1,9 +1,61 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('navbar-admin')
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Undangan Digital</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/assets/img/favicon/favicon.ico') }}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/assets/vendor/fonts/boxicons.css') }}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/assets/vendor/css/core.css') }}"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/assets/vendor/css/theme-default.css') }}"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/assets/css/demo.css') }}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet"
+        href="{{ asset('assets/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+
+    <!-- Page CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Helpers -->
+    <script src="{{ asset('assets/admin/assets/vendor/js/helpers.js') }}"></script>
+
+    <!-- Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!-- Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+    <script src="{{ asset('assets/admin/assets/js/config.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+
+<body>
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create3', ['id' => $undanganAlt3->id]) }}">+ Nama
+            <a class="btn btn-primary mb-3" href="{{ route('nama-undangan-create3', ['id' => $undanganAlt3->id]) }}">+
+                Nama
                 Undangan</a>
             @include('layouts.message')
             <!-- Responsive Table -->
@@ -154,195 +206,198 @@
 
     </main>
 
-    @include('layouts.footer')
+</body>
+
+</html>
+
+@include('layouts.footer')
 
 
-    <script>
-        document.querySelectorAll('input[name="kehadiran"]').forEach(function(radio) {
-            radio.addEventListener('change', function() {
-                var radioButton = this.value;
-                var namaUndangan = this.getAttribute('data-nama-undangan');
-                var itemId = this.getAttribute('data-item-id');
+<script>
+    document.querySelectorAll('input[name="kehadiran"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            var radioButton = this.value;
+            var namaUndangan = this.getAttribute('data-nama-undangan');
+            var itemId = this.getAttribute('data-item-id');
 
-                updateMessage(radioButton, namaUndangan, itemId);
-                toggleShareButton(itemId); // Panggil fungsi untuk menyesuaikan status tombol "Share"
+            updateMessage(radioButton, namaUndangan, itemId);
+            toggleShareButton(itemId); // Panggil fungsi untuk menyesuaikan status tombol "Share"
+        });
+    });
+
+    function toggleShareButton(itemId) {
+        var shareButton = document.getElementById('shareButton' + itemId);
+        var selectedRadio = document.querySelector('input[name="kehadiran"]:checked');
+        if (selectedRadio) {
+            shareButton.removeAttribute('disabled');
+        } else {
+            shareButton.setAttribute('disabled', 'disabled');
+        }
+    }
+
+    function updateMessage(radioButton, namaUndangan, itemId) {
+        var message = '';
+        if (radioButton === '1') {
+            message = "Assalamu'alaikum Wr. Wb\n" +
+                "Bismillahirahmanirrahim\n" +
+                "Yth. " + namaUndangan + ",\n\n" +
+                "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
+                namaUndangan + "\n\n" +
+                "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
+                "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
+                namaUndangan + "\n\n" +
+                "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
+                "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
+                "\n\n" +
+                "Terima Kasih.";
+        } else if (radioButton === '2') {
+            message = "Shalom\n" +
+                "Yth. " + namaUndangan + ",\n\n" +
+                "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
+                namaUndangan + "\n\n" +
+                "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
+                "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
+                namaUndangan + "\n\n" +
+                "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
+                "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
+                "\n\n" +
+                "Terima Kasih.";
+        } else if (radioButton === '3') {
+            message =
+                "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i Aldi untuk menghadiri acara kami.\n\n" +
+                "Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :\n\n" +
+                "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
+                namaUndangan + "\n\n" +
+                "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
+                "Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.\n\n" +
+                "Dan agar selalu menjaga kesehatan bersama serta datang pada waktu yang telah ditentukan.*\n\n" +
+                "Terima kasih banyak atas perhatiannya.";
+        }
+
+        document.getElementById('nama_undangan' + itemId).value = message;
+    }
+
+    function shareOnWhatsApp(namaUndangan, itemId) {
+        var message = document.getElementById('nama_undangan' + itemId).value;
+        var encodedMessage = encodeURIComponent(message);
+        var whatsappLink = "https://wa.me/?text=" + encodedMessage;
+        window.open(whatsappLink, '_blank');
+    }
+
+    function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
+        var link = "127.0.0.1:8000/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                alert("Link berhasil disalin: " + link);
+            })
+            .catch(function(error) {
+                console.error("Gagal menyalin link: ", error);
+            });
+    }
+</script>
+
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
+    integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous">
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fungsi untuk menangani pemilihan semua checkbox
+        document.getElementById('selectAll').addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('.delete-checkbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = document.getElementById('selectAll').checked;
             });
         });
 
-        function toggleShareButton(itemId) {
-            var shareButton = document.getElementById('shareButton' + itemId);
-            var selectedRadio = document.querySelector('input[name="kehadiran"]:checked');
-            if (selectedRadio) {
-                shareButton.removeAttribute('disabled');
-            } else {
-                shareButton.setAttribute('disabled', 'disabled');
-            }
-        }
-
-        function updateMessage(radioButton, namaUndangan, itemId) {
-            var message = '';
-            if (radioButton === '1') {
-                message = "Assalamu'alaikum Wr. Wb\n" +
-                    "Bismillahirahmanirrahim\n" +
-                    "Yth. " + namaUndangan + ",\n\n" +
-                    "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
-                    namaUndangan + "\n\n" +
-                    "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                    "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
-                    namaUndangan + "\n\n" +
-                    "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
-                    "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
-                    "\n\n" +
-                    "Terima Kasih.";
-            } else if (radioButton === '2') {
-                message = "Shalom\n" +
-                    "Yth. " + namaUndangan + ",\n\n" +
-                    "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
-                    namaUndangan + "\n\n" +
-                    "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                    "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
-                    namaUndangan + "\n\n" +
-                    "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
-                    "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
-                    "\n\n" +
-                    "Terima Kasih.";
-            } else if (radioButton === '3') {
-                message =
-                    "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i Aldi untuk menghadiri acara kami.\n\n" + 
-                    "Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :\n\n" +
-                    "127.0.0.1:8000/{{ $undanganAlt3->nama_mempelai_laki }}&{{ $undanganAlt3->nama_mempelai_perempuan }}/untuk=" +
-                    namaUndangan + "\n\n" +
-                    "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
-                    "Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.\n\n" +
-                    "Dan agar selalu menjaga kesehatan bersama serta datang pada waktu yang telah ditentukan.*\n\n" +
-                    "Terima kasih banyak atas perhatiannya.";
-            }
-
-            document.getElementById('nama_undangan' + itemId).value = message;
-        }
-
-        function shareOnWhatsApp(namaUndangan, itemId) {
-            var message = document.getElementById('nama_undangan' + itemId).value;
-            var encodedMessage = encodeURIComponent(message);
-            var whatsappLink = "https://wa.me/?text=" + encodedMessage;
-            window.open(whatsappLink, '_blank');
-        }
-
-        function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
-            var link = "127.0.0.1:8000/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
-            navigator.clipboard.writeText(link)
-                .then(function() {
-                    alert("Link berhasil disalin: " + link);
-                })
-                .catch(function(error) {
-                    console.error("Gagal menyalin link: ", error);
-                });
-        }
-    </script>
-
-
-
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
-        integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous">
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fungsi untuk menangani pemilihan semua checkbox
-            document.getElementById('selectAll').addEventListener('change', function() {
-                var checkboxes = document.querySelectorAll('.delete-checkbox');
-                checkboxes.forEach(function(checkbox) {
-                    checkbox.checked = document.getElementById('selectAll').checked;
-                });
-            });
-
-            // Menangani klik pada tombol delete
-            var deleteButtons = document.querySelectorAll('.delete-btn');
-            deleteButtons.forEach(function(button) {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    var itemId = this.getAttribute('namaUndangans-id');
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            document.getElementById('deleteForm').action =
-                                "{{ route('nama-undangan.destroy3', ['id' => ':id']) }}"
-                                .replace(':id', itemId);
-                            document.getElementById('deleteForm').submit();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            );
-                        }
-                    });
-                });
-            });
-
-            // Menangani penghapusan saat tombol "Hapus yang Dipilih" ditekan
-            document.getElementById('deleteSelected').addEventListener('click', function(event) {
+        // Menangani klik pada tombol delete
+        var deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
                 event.preventDefault();
-
-                // Cek apakah ada setidaknya satu checkbox yang dicentang
-                var anyChecked = false;
-                var checkboxes = document.querySelectorAll('.delete-checkbox');
-                checkboxes.forEach(function(checkbox) {
-                    if (checkbox.checked) {
-                        anyChecked = true;
+                var itemId = this.getAttribute('namaUndangans-id');
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('deleteForm').action =
+                            "{{ route('nama-undangan.destroy3', ['id' => ':id']) }}"
+                            .replace(':id', itemId);
+                        document.getElementById('deleteForm').submit();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        );
                     }
                 });
+            });
+        });
 
-                if (anyChecked) {
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            document.getElementById('deleteForm').submit();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your files have been deleted.',
-                                'success'
-                            );
-                        }
-                    });
-                } else {
-                    Swal.fire(
-                        'No checkbox selected',
-                        'Please select at least one item to delete',
-                        'error'
-                    );
+        // Menangani penghapusan saat tombol "Hapus yang Dipilih" ditekan
+        document.getElementById('deleteSelected').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Cek apakah ada setidaknya satu checkbox yang dicentang
+            var anyChecked = false;
+            var checkboxes = document.querySelectorAll('.delete-checkbox');
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    anyChecked = true;
                 }
             });
 
-            function copyLink(url) {
-                // Membuat elemen input untuk menampung URL
-                var tempInput = document.createElement('input');
-                tempInput.value = url;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                tempInput.setSelectionRange(0, 99999); // Untuk perangkat mobile
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-
-                // Memberikan umpan balik kepada pengguna
-                alert('Link berhasil disalin!');
+            if (anyChecked) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('deleteForm').submit();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your files have been deleted.',
+                            'success'
+                        );
+                    }
+                });
+            } else {
+                Swal.fire(
+                    'No checkbox selected',
+                    'Please select at least one item to delete',
+                    'error'
+                );
             }
         });
-    </script>
-@endsection
+
+        function copyLink(url) {
+            // Membuat elemen input untuk menampung URL
+            var tempInput = document.createElement('input');
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Untuk perangkat mobile
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Memberikan umpan balik kepada pengguna
+            alert('Link berhasil disalin!');
+        }
+    });
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

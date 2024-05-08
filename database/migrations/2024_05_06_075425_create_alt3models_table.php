@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('alt3models', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->integer('id_alt3_rsvp');
+            $table->string('alamat');
+            $table->text('ucapan');
             $table->timestamps();
         });
     }

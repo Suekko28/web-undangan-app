@@ -54,7 +54,7 @@
         <div class="layout-container">
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                {{-- Your menu content here --}}
+                <img src="{{ asset('./assets/love.jpg') }}" alt="..." width="80" class="mx-auto">
                 <div class="menu-inner-shadow"></div>
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->

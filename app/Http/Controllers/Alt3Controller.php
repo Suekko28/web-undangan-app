@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\alt3FormRequest;
+use App\Models\alt2model;
 use App\Models\Alt3Model;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class Alt3Controller extends Controller
     public function index()
     {
       
-        $data = Alt3Model::orderBy('id', 'desc')->get();
+        $data = alt3model::orderBy('id', 'desc')->get();
         return view('undangan-nanang.index', compact('data'));
     }
 
@@ -32,8 +33,8 @@ class Alt3Controller extends Controller
     public function store(alt3FormRequest $request)
     {
         $data = $request->validated();
-        Alt3Model::create($data);
-        return redirect()->to('/undangan-alt3/index');
+        alt3model::create($data);
+        return redirect()->to('/undangan-alt2/index');
     }
 
     /**

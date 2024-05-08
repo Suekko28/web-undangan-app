@@ -24,8 +24,8 @@ class alt3FormRequest extends FormRequest
         return [
 
             'nama' => ['required', 'max:100'],
+            'alamat' => ['required'],
             'ucapan' => ['required'],
-            'alamat' => ['required']
             //
         ];
     }

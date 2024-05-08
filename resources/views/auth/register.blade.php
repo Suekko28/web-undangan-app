@@ -59,7 +59,7 @@
                         <div class="app-brand justify-content-center">
                             <a href="#" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
-                                    <img src="{{ asset('assets/img/A Food.png') }}" alt="..." width="50">
+                                    <img src="{{ asset('./assets/love.jpg') }}" alt="..." width="80">
                                 </span>
                             </a>
                         </div>

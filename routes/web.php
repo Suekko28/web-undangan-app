@@ -143,7 +143,7 @@ Route::get('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt3Controller::class, 
 Route::get('/nama-undangan/alt3/{id}/create', [NamaUndanganAlt3Controller::class, 'create'])->name('nama-undangan-create3');
 Route::get('/nama-undangan/alt3/{id}/edit', [NamaUndanganAlt3Controller::class, 'edit'])->name('nama-undangan-edit3');
 Route::post('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt3Controller::class, 'store'])->name('nama-undangan-store3');
-Route::put('/nama-undangan/alt3/{undanganAlt2Id}/{id}', [NamaUndanganAlt3Controller::class, 'update'])->name('nama-undangan-update3');
+Route::put('/nama-undangan/alt3/{undanganAlt3Id}/{id}', [NamaUndanganAlt3Controller::class, 'update'])->name('nama-undangan-update3');
 Route::delete('/nama-undangan/alt3/{id}', [NamaUndanganAlt3Controller::class, 'destroy'])->name('nama-undangan.destroy3');
 
 

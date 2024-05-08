@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\alt3models;
+use App\Http\Requests\alt3FormRequest;
+use App\Models\alt3model;
 use App\Models\UndanganAlt3;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class IndexAlt3Controller extends Controller
      */
     public function index()
     {
-        $data = alt3models::orderBy('id', 'desc')->get();
+        $data = alt3model::orderBy('id', 'desc')->get();
         return view('undangan-nanang.index', compact('data'));
     }
 
@@ -28,9 +29,26 @@ class IndexAlt3Controller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(alt3FormRequest $request, $nama_mempelai_laki, $nama_mempelai_perempuan, $nama_undangan)
     {
-        //
+        // Temukan undangan berdasarkan nama_mempelai_laki, nama_mempelai_perempuan, dan nama_undangan
+        $undanganAlt3 = UndanganAlt3::where('nama_mempelai_laki', $nama_mempelai_laki)
+            ->where('nama_mempelai_perempuan', $nama_mempelai_perempuan)
+            ->whereHas('namaUndangan', function ($query) use ($nama_undangan) {
+                $query->where('nama_undangan', $nama_undangan);
+            })
+            ->firstOrFail();
+
+        // Buat instance baru dari alt3Model dan isi dengan data yang diberikan
+        $alt3Model = new alt3model();
+        $alt3Model->fill($request->validated());
+
+        // Simpan alt3Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai
+        $undanganAlt3->alt3Models()->save($alt3Model);
+
+        // Redirect kembali ke halaman showDetail dengan parameter yang sesuai
+        return redirect()->route('undangan-alt3-index', compact('nama_mempelai_laki', 'nama_mempelai_perempuan', 'nama_undangan'))
+            ->with('success', 'Berhasil menambahkan data');
     }
 
     /**

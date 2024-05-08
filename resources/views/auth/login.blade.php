@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 
-    <title>Masuk About Food</title>
+    <title>Undangan Digital</title>
 
     <meta name="description" content="" />
 
@@ -51,12 +51,12 @@
                         <div class="app-brand justify-content-center">
                             <a href="#" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
-                                    <img src="{{ asset('assets/img/A Food.png') }}" alt="..." width="50">
+                                    <img src="{{ asset('./assets/love.jpg') }}" alt="..." width="80">
                                 </span>
                             </a>
                         </div>
                         <!-- /Logo -->
-                        <h4 class="mb-2">Welcome to admin Undangan</h4>
+                        <h4 class="mb-2">Welcome to Undangan Digital</h4>
                         <p class="mb-4"></p>
                         @include('layouts.message')
                         <form id="formAuthentication" class="mb-3"  action="{{ route('login.submit') }}" method="POST">

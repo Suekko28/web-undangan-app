@@ -238,7 +238,7 @@ class UndanganAlt1Controller extends Controller
             'galeri_img4' => $request->hasFile('galeri_img4') ? $data->galeri_img4 : null,
             'galeri_img5' => $request->hasFile('galeri_img5') ? $data->galeri_img5 : null,
             'galeri_img6' => $request->hasFile('galeri_img6') ? $data->galeri_img6 : null,
-            'foto_perkenalan' => $request->hasFile('foto_perkenalan') ? $data->foto_perkenalan : null,
+            'foto_pertemuan' => $request->hasFile('foto_pertemuan') ? $data->foto_pertemuan : null,
             'foto_pendekatan' => $request->hasFile('foto_pendekatan') ? $data->foto_pendekatan : null,
             'foto_lamaran' => $request->hasFile('foto_lamaran') ? $data->foto_lamaran : null,
             'foto_pernikahan' => $request->hasFile('foto_pernikahan') ? $data->foto_pernikahan : null,

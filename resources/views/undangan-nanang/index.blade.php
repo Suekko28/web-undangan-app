@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="text1">
-                <audio autoplay loop controls id="myAudio" src="{{ asset('./assets/lagu-nanang.mp3') }}"></audio>
+                <audio autoplay loop controls id="myAudio" src="{{ Storage::url('' . $data->music) }}"></audio>
 
                 <button class="floating-button" id="floatingButton">
                     <img class="play-icon" alt="" src="{{ asset('./assets/untitled1-1@2x.png') }}" />
@@ -81,7 +81,8 @@
         <section class="kedua-mempelai" data-scroll-to="textBlockQuote">
             <div class="mempelai-pria">
                 <div class="foto-mempelai-pria">
-                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_laki) }}" alt="">
+                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_laki) }}"
+                        alt="">
                 </div>
                 <div class="info-mempelai-pria">
                     <div class="detail">
@@ -131,8 +132,9 @@
                         {{ $data->nama_instagram2 }}
                     </a>
                 </div>
-                <div class="foto-mempelai-wanita"> 
-                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_perempuan) }}" alt="">
+                <div class="foto-mempelai-wanita">
+                    <img class="foto-mempelai-wanita" src="{{ Storage::url('' . $data->foto_mempelai_perempuan) }}"
+                        alt="">
                 </div>
             </div>
         </section>
@@ -233,21 +235,21 @@
 
         <section class="spacer" data-scroll-to="spacer">
             <span class="paragraph">OUR MOMENT</span>
-            @if (!empty($data->caption) && !empty($data->nama_pengarang)  && !empty($data->video))
-            <div class="rectangle-path">
-                <div class="column">
-                    <span class="title">
-                        {{ $data->caption }}
-                    </span>
-                    <span class="paragraph">{{$data->nama_pengarang}}<span>
+            @if (!empty($data->caption) && !empty($data->nama_pengarang) && !empty($data->video))
+                <div class="rectangle-path">
+                    <div class="column">
+                        <span class="title">
+                            {{ $data->caption }}
+                        </span>
+                        <span class="paragraph">{{ $data->nama_pengarang }}<span>
+                    </div>
+                    <div class="frame-video">
+                        <video autoplay muted loop controls src="{{ Storage::url('' . $data->video) }}"></video>
+                    </div>
+                    <div class="frame-video" style="display: none"></div>
                 </div>
-                <div class="frame-video">
-                    <video autoplay muted loop controls src="{{ Storage::url('' . $data->video) }}"></video>
-                </div>
-                <div class="frame-video" style="display: none"></div>
-            </div>
-            @else 
-            <div class="rectangle-path" style="display: none"></div>
+            @else
+                <div class="rectangle-path" style="display: none"></div>
             @endif
             <div class="scroll">
                 <ul>
@@ -385,7 +387,12 @@
 
         <section class="request-prayers" data-scroll-to="requestPrayers">
             <div class="our-moment2">OUR MOMENT</div>
-            <form class="frame-parent52" method="POST" action="{{ url('/undangan-alt3/index') }}">
+            <form class="frame-parent52" method="POST"
+                action="{{ route('undangan-alt3-post', [
+                    'nama_mempelai_laki' => $nama_mempelai_laki,
+                    'nama_mempelai_perempuan' => $nama_mempelai_perempuan,
+                    'nama_undangan' => $nama_undangan,
+                ]) }}">
                 @csrf
                 <div class="frame-parent53">
                     <div class="frame-parent54">
@@ -398,7 +405,7 @@
                             <div class="input10">
                                 <div class="nama1">Nama</div>
                                 <div class="field7">
-                                    <input name="nama" class="masukkan-nama-kamu3"
+                                <input name="nama" class="masukkan-nama-kamu3"
                                         placeholder="Masukkan nama kamu" type="text" />
                                 </div>
                             </div>
@@ -427,8 +434,9 @@
                         <img class="add-icon9" alt="" src="./assets/add.svg" />
                     </button>
                 </div>
-                {{-- <div class="button-kirim">
-                    @foreach ($data as $item)
+
+                @foreach ($alt3models as $item)
+                <div class="button-kirim">
                         <div class="frame-parent55">
                             <div class="hari-parent">
                                 <div class="title2">{{ $item->nama }}</div>
@@ -439,7 +447,7 @@
                     @endforeach
 
 
-                </div> --}}
+                </div>
             </form>
         </section>
 

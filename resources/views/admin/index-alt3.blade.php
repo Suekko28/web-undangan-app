@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="text1">
-                <audio autoplay loop controls id="myAudio" src="{{ asset('./assets/lagu-nanang.mp3') }}"></audio>
+                <audio autoplay loop controls id="myAudio" src="{{ Storage::url('' . $data->music) }}"></audio>
 
                 <button class="floating-button" id="floatingButton">
                     <img class="play-icon" alt="" src="{{ asset('./assets/untitled1-1@2x.png') }}" />
