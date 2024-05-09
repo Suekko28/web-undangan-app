@@ -1,0 +1,2932 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.navigation3 {
+    align-self: stretch;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: -11px 13px 42px rgba(105, 102, 90, 0.2);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 16px;
+    gap: 20px;
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    bottom: 24px;
+    left: 50%; /* Mengatur posisi awal menjadi di tengah */
+    transform: translateX(-50%);
+}
+.info-mempelai-wanita {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+input {
+    background-color: transparent;
+    border: none;
+    font-family: Lora;
+    font-size: 16px;
+    color: #1d1c16;
+}
+
+
+#timer {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+#timer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1d1c16;
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    position: relative;
+}
+
+#timer > div span {
+    color: #1d1c16;
+    position: absolute;
+    bottom: -32px;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.wedding-date {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d3d2c5;
+    padding: 64px;
+    gap: 24px;
+    box-sizing: border-box;
+}
+.floating-button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: #fff;
+    height: 64px;
+    bottom: 120px;
+    right: 40px;
+    width: 64px;
+    position: fixed;
+    border-radius: 240px;
+    box-shadow: -9px 9px 42px rgba(105, 102, 90, 0.32);
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-link {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    display: flex;
+    color: #1d1c16;
+    fill: #1d1c16;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: Lora;
+}
+.rekening-no {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.button-link:hover {
+    color: #5b5746;
+    fill: #5b5746;
+}
+.profile-container {
+    height: 360px;
+    width: 360px;
+    background-image: url("./assets/Wing.png");
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-pict-man {
+    width: 208px;
+    height: 240px;
+    position: absolute;
+    background-image: url("./assets/Profile\ pict\ man.jpg");
+    border-radius: 200px 200px 40px 40px;
+}
+.profile-pict-woman {
+    width: 208px;
+    height: 240px;
+    position: absolute;
+    background-image: url("./assets/profile-pict-woman.jpg");
+    border-radius: 200px 200px 40px 40px;
+}
+.side-view-bride-groom-embraced-icon {
+    width: 2426px;
+    height: 2426px;
+    position: absolute;
+    margin: 0 !important;
+    right: -278px;
+    bottom: -1300px;
+    object-fit: cover;
+}
+.hero-section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(152, 149, 119, 0.4);
+    backdrop-filter: blur(20px);
+    /* z-index: 1; */
+}
+.alexnor-exafator1,
+.the-wedding-of2 {
+    position: relative;
+    line-height: 140%;
+    z-index: 2;
+}
+.the-wedding-of2 {
+    width: auto;
+    letter-spacing: 0.26em;
+    display: inline-block;
+}
+.alexnor-exafator1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: inherit;
+}
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px 0;
+}
+.vector-icon30 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div51 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge33 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail27 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.lihat-detail {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: Lora;
+    color: #f6f6f6;
+    text-align: left;
+}
+.add-icon27 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.Primary-button {
+    cursor: pointer;
+    border: 0;
+    padding: 11px;
+    background-color: #605a4c;
+    max-width: 328px;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 16px;
+    height: 40px;
+    font-size: 16px;
+    font-family: Lora;
+    color: #fff;
+    padding: 0px 24px;
+    box-shadow: -10px 10px 25px 0px rgba(29, 28, 22, 0.25);
+}
+.Primary-button:hover {
+    background-color: #87836b;
+    cursor: pointer;
+}
+.call-to-action,
+.card-list12 {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.card-list12 {
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+}
+.call-to-action {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.home-icon3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu {
+    border-radius: 16px;
+    background-color: #605a4c;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+    cursor: pointer;
+}
+.menu:hover {
+    background-color: #87836b;
+    cursor: pointer;
+}
+.vector-stroke-icon3 {
+    position: absolute;
+    height: 61.25%;
+    width: 67.5%;
+    top: 19.5%;
+    right: 16.25%;
+    bottom: 19.25%;
+    left: 16.25%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div52 {
+    width: 16px;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge34 {
+    position: absolute;
+    top: calc(50% - 16px);
+    left: calc(50% - 0px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.love3 {
+    height: 40px;
+    width: 40px;
+    flex: 1;
+    position: relative;
+}
+.calendar-icon3,
+.menu16 {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu16 {
+    width: 56px;
+    border-radius: 16px;
+    background-color: #605a4c;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.calendar-icon3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+.menu17 {
+    border-radius: 16px;
+    background-color: #605a4c;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.image-icon3 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu18 {
+    border-radius: 16px;
+    background-color: #605a4c;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.vector-icon31 {
+    position: absolute;
+    height: 63.5%;
+    width: 67.5%;
+    top: 16.75%;
+    right: 15.75%;
+    bottom: 19.75%;
+    left: 16.75%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div53 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge35 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.chat3 {
+    height: 40px;
+    flex: 1;
+    position: relative;
+}
+.menu19 {
+    width: 56px;
+    border-radius: 16px;
+    background-color: #605a4c;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.input-message-field {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.whatsapp-video-2024-01-30-at-1 {
+    position: absolute;
+    top: calc(50% - 180px);
+    left: calc(50% - 320px);
+    width: 640px;
+    height: 360px;
+    display: none;
+}
+.play-icon {
+    position: absolute;
+    top: calc(50% - 65px);
+    left: calc(50% - 65px);
+    width: 130px;
+    height: 130px;
+}
+
+.pause-1-icon {
+    width: 160%;
+    height: auto;
+}
+.play-icon {
+    overflow: hidden;
+    display: none;
+}
+.pause-1-icon {
+    object-fit: cover;
+    z-index: 1;
+}
+.floating-button4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: #fff;
+    height: 80px;
+    bottom: 90px;
+    left: 1750px;
+    width: 80px;
+    position: fixed;
+    border-radius: 240px;
+    box-shadow: -9px 9px 42px rgba(105, 102, 90, 0.32);
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 3;
+}
+
+.play-icon {
+    transition: transform 0.3s ease; /* Animasi transformasi */
+}
+
+.play.icon {
+    transform: rotate(360deg); /* Putar 360 derajat */
+}
+.banner-image,
+.input-name-field {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    text-align: center;
+    font-size: 10px;
+    font-family: Optima;
+}
+.banner-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 840px;
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #fff;
+    font-family: Lora;
+    background-image: url("./assets/Banner-Image-new.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner-image:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 840px;
+    background-color: rgba(152, 149, 119, 0.4);
+    position: absolute;
+    bottom: 0;
+}
+.assalamualaikum-wrwb,
+.b40 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.assalamualaikum-wrwb {
+    font-size: 24px;
+}
+.year-selection {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.sekalian-untuk-menghadiri,
+.tanpa-mengurangi-rasa {
+    margin: 0;
+}
+.tanpa-mengurangi-rasa-container {
+    position: relative;
+    line-height: 140%;
+    max-width: 560px;
+}
+.month-selection {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+.alexnor {
+    margin: 0;
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 400;
+    font-family: inherit;
+}
+.putra-pertama-dari {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: right;
+}
+.day-of-week {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+    max-width: 100%;
+}
+.ig-icon6 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.alexnor32 {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    z-index: 999;
+}
+
+#myAudio {
+    display: none;
+}
+
+.mempelai-info {
+    display: flex;
+    justify-content: center;
+}
+.mempelai-info {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-end;
+    box-sizing: border-box;
+    gap: 24px;
+    width: 100%;
+}
+.location-details-icon {
+    height: 560px;
+    width: 560px;
+    position: relative;
+    max-width: 100%;
+}
+.mempelai-pria {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 100%;
+}
+.event-title-child {
+    height: 560px;
+    width: 560px;
+    position: relative;
+    max-width: 100%;
+}
+.nama-wanita {
+    margin: 0;
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 400;
+    font-family: inherit;
+}
+.putra-pertama-dari1 {
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+}
+.venue-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    max-width: 100%;
+}
+.ig-icon7 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.exafator1 {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.button-link8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 24px;
+}
+.mempelai-wanita,
+.header-frame,
+.venue-name-parent {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+.venue-name-parent {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+    box-sizing: border-box;
+    gap: 24px;
+    min-width: 764px;
+}
+.mempelai-wanita,
+.header-frame {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+.header-frame {
+    margin-bottom: -5px;
+    flex-direction: column;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 24px;
+    z-index: 5;
+    max-width: 1024px;
+}
+.kedua-mempelai-child {
+    position: absolute;
+    max-width: 124%;
+    flex-shrink: 0;
+}
+.kedua-mempelai {
+    align-self: stretch;
+    background-color: #d3d2c5;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    z-index: 1;
+    background-image: url("./assets/bg-kedua-mempelai.png");
+    background-position: center;
+}
+.side-view-bride-groom-hiding-f-icon {
+    width: 2518px;
+    height: 1679px;
+    position: absolute;
+    margin: 0 !important;
+    bottom: -487.5px;
+    left: -329px;
+    object-fit: cover;
+}
+.love-story3 {
+    position: relative;
+    line-height: 140%;
+}
+.title-story {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: rgba(176, 174, 151, 0.85);
+    align-self: stretch;
+    height: 64px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: Lora;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    justify-content: flex-start;
+}
+.january-2013,
+.lorem-ipsum-dolor {
+    position: relative;
+    line-height: 140%;
+}
+.story-date {
+    align-self: stretch;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    text-align: left;
+}
+.detail-story {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: left;
+    color: #746f5e;
+}
+.lorem-ipsum-dolor {
+    width: 816px;
+    color: #746f5e;
+    display: inline-block;
+}
+.doa-hadiah-form,
+.input-field {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.card-story .body-card {
+    border-radius: 0 0 32px 32px;
+    background-color: rgba(235, 235, 229, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.card-story {
+    border-radius: 24px;
+    box-shadow: -11px 13px 42px rgba(105, 102, 90, 0.2);
+    overflow: hidden;
+}
+.input-field-child {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: rgba(176, 174, 151, 0.85);
+    align-self: stretch;
+    height: 96px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: Lora;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    min-width: 250px;
+}
+.january-20131 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.lorem-ipsum-dolor1 {
+    width: 816px;
+    position: relative;
+    line-height: 140%;
+    color: #746f5e;
+    display: inline-block;
+}
+.input-field1,
+.january-2013-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.january-2013-parent {
+    border-radius: 0 0 32px 32px;
+    background-color: rgba(235, 235, 229, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 16px 0;
+}
+.input-field1 {
+    border-radius: 24px;
+    box-shadow: -11px 13px 42px rgba(105, 102, 90, 0.2);
+    overflow: hidden;
+}
+.input-field-item {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: rgba(176, 174, 151, 0.85);
+    align-self: stretch;
+    height: 96px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: Lora;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    min-width: 250px;
+}
+.january-20132 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.lorem-ipsum-dolor2 {
+    width: 816px;
+    position: relative;
+    line-height: 140%;
+    color: #746f5e;
+    display: inline-block;
+}
+.input-field2,
+.january-2013-group {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.january-2013-group {
+    border-radius: 0 0 32px 32px;
+    background-color: rgba(235, 235, 229, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 16px 0;
+}
+.input-field2 {
+    border-radius: 24px;
+    box-shadow: -11px 13px 42px rgba(105, 102, 90, 0.2);
+    overflow: hidden;
+}
+.love-story .content {
+    gap: 24px;
+}
+.card-story-list {
+    max-width: 864px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 24px;
+    color: #1d1c16;
+    gap: 24px;
+}
+.love-story .content {
+    align-items: center;
+    padding: 64px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.doa-hadiah-container,
+.love-story,
+.content {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.love-story {
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    color: #fff;
+    height: auto;
+    background-image: url("./assets/sideviewbridegroomhidingfacesbouquetflowers-1-1@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.doa-hadiah-container {
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    text-align: left;
+    font-size: 48px;
+    color: #1d1c16;
+    font-family: Lora;
+}
+.wedding-time {
+    text-align: center;
+    font-size: 24px;
+    color: #1d1c16;
+}
+.wedding-time,
+.yes-no-fields {
+    position: relative;
+    line-height: 150%;
+}
+.nama-pesan {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 24px;
+    background-color: #1d1c16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.hari9 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #292721;
+    text-align: left;
+}
+.layout-container {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.b41 {
+    position: relative;
+    line-height: 150%;
+}
+.layout-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 13px 0;
+    text-align: left;
+    color: #292721;
+}
+.div54 {
+    position: relative;
+    line-height: 150%;
+}
+.wrapper32 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 24px;
+    background-color: #1d1c16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.jam6 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #292721;
+    text-align: left;
+}
+.layout-container2 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.b42 {
+    position: relative;
+    line-height: 150%;
+}
+.layout-container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 13px 0;
+    text-align: left;
+    color: #292721;
+}
+.div55 {
+    position: relative;
+    line-height: 150%;
+}
+.wrapper33 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 24px;
+    background-color: #1d1c16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.menit6 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #292721;
+    text-align: left;
+}
+.layout-container4 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.b43 {
+    position: relative;
+    line-height: 150%;
+}
+.layout-container5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 13px 0;
+    text-align: left;
+    color: #292721;
+}
+.div56 {
+    position: relative;
+    line-height: 150%;
+}
+.wrapper34 {
+    align-self: stretch;
+    height: 74px;
+    border-radius: 24px;
+    background-color: #1d1c16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.detik6 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    color: #292721;
+    text-align: left;
+}
+.layout-container6 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.lihat-lokasi {
+    width: 608px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 100%;
+    color: #fff;
+}
+.akad-nikah3,
+.sabtu-20-januari {
+    align-self: stretch;
+    position: relative;
+}
+.title {
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 700;
+}
+.paragraph {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+}
+.sabtu-20-januari {
+    line-height: 140%;
+    white-space: nowrap;
+}
+.jln-dr-samratulangi,
+.penengahan-kota-bandar {
+    margin: 0;
+}
+.jln-dr-samratulangi-container {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.info-akad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.info-resepsi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.vector-icon32 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div57 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge36 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail28 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.lihat-lokasi1 {
+    height: 56px;
+    flex: 1;
+    position: relative;
+    font-size: 40px;
+    line-height: 140%;
+    font-weight: 500;
+    font-family: Cormorant;
+    text-align: left;
+    display: inline-block;
+}
+.add-icon28 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button46 {
+    width: 292px;
+    border-radius: 80px;
+    background-color: #292721;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 48px;
+    box-sizing: border-box;
+    gap: 0 16px;
+    font-size: 10px;
+    color: #fff;
+    font-family: Optima;
+}
+.galeri-foto-frame {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 48px 0;
+}
+.layer-2-icon {
+    width: 146.6px;
+    height: 16px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.resepsi6,
+.sabtu-20-januari1 {
+    align-self: stretch;
+    position: relative;
+}
+.resepsi6 {
+    font-size: 32px;
+    line-height: 150%;
+}
+.sabtu-20-januari1 {
+    line-height: 140%;
+    white-space: nowrap;
+}
+.jln-dr-samratulangi1,
+.penengahan-kota-bandar1 {
+    margin: 0;
+}
+.jln-dr-samratulangi-container1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.resepsi-parent1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.vector-icon33 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div58 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge37 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail29 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.lihat-lokasi2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: Lora;
+    color: #fff;
+    text-align: left;
+}
+.add-icon29 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button47,
+.galeri-foto-frame1 {
+    display: flex;
+    align-items: center;
+}
+.button47 {
+    cursor: pointer;
+    border: 0;
+    padding: 16px 48px;
+    background-color: #605a4c;
+    height: 56px;
+    border-radius: 80px;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 0 16px;
+}
+.galeri-foto-frame1 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 48px 0;
+}
+.flower-right {
+    position: absolute;
+    height: 80%;
+    z-index: 1;
+    right: -108px;
+}
+.flower-left {
+    position: absolute;
+    height: 80%;
+    z-index: 1;
+    left: -108px;
+}
+
+.main-frame-child2 {
+    transform: rotate(180deg);
+    height: calc(100% - 14px);
+    position: absolute;
+    margin: 0 !important;
+    top: 5px;
+    bottom: 9px;
+    right: calc(50% - 619px);
+    max-height: 100%;
+    z-index: 1;
+}
+.frame-wrapper10,
+.main-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px 0;
+}
+.main-frame {
+    border-radius: 48px;
+    background-color: #ebebe5;
+    justify-content: center;
+    padding: 64px;
+    position: relative;
+    font-size: 48px;
+    color: #292721;
+    max-width: 800px;
+}
+.frame-wrapper10 {
+    width: 1000px;
+    justify-content: flex-start;
+    padding: 0 20px 80px;
+    box-sizing: border-box;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+.galeri-foto {
+    position: relative;
+    line-height: 150%;
+}
+.noapplicabledataforthesenodes-icon {
+    height: 360px;
+    width: 328px;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    left: 0;
+    border-radius: 200px 200px 32px 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.noapplicabledataforthesenodes-icon1,
+.noapplicabledataforthesenodes-icon2,
+.noapplicabledataforthesenodes-icon3,
+.noapplicabledataforthesenodes-icon4,
+.noapplicabledataforthesenodes-icon5 {
+    height: 360px;
+    width: 328px;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    left: 400px;
+    border-radius: 200px 200px 32px 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.noapplicabledataforthesenodes-icon2,
+.noapplicabledataforthesenodes-icon3,
+.noapplicabledataforthesenodes-icon4,
+.noapplicabledataforthesenodes-icon5 {
+    left: 800px;
+}
+.noapplicabledataforthesenodes-icon3,
+.noapplicabledataforthesenodes-icon4,
+.noapplicabledataforthesenodes-icon5 {
+    top: 440px;
+    left: 0;
+}
+.noapplicabledataforthesenodes-icon4,
+.noapplicabledataforthesenodes-icon5 {
+    left: 400px;
+}
+.noapplicabledataforthesenodes-icon5 {
+    left: 800px;
+}
+.gallery-foto,
+.noapplicabledataforthesenodes {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.noapplicabledataforthesenodes {
+    width: 1160px;
+    height: 840px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+    gap: 40px 36px;
+    overflow-x: auto;
+}
+.gallery-foto {
+    align-self: stretch;
+    background-color: #ebebe5;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 24px;
+    text-align: left;
+    font-size: 24px;
+    color: #1d1c16;
+    font-family: Lora;
+}
+.kirim-hadiah16 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.jika-kamu-tidak6 {
+    width: 634px;
+    position: relative;
+    line-height: 140%;
+    color: #746f5e;
+    display: inline-block;
+}
+.button48,
+.noapplicabledataforthesenodes1 {
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-start;
+}
+.noapplicabledataforthesenodes1 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.button48 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #605a4c;
+    height: 40px;
+    border-radius: 80px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    box-sizing: border-box;
+    font-family: Lora;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+}
+.vector-icon34 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div59 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge38 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.kirim-kado-ke6,
+.mail30 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.kirim-kado-ke6 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-weight: 400;
+    font-family: Lora;
+    font-size: 16px;
+    background-color: transparent;
+    height: 40px;
+    flex: 1;
+    line-height: 140%;
+    color: #605a4c;
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+    cursor: pointer;
+}
+.add-icon30 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button49,
+.payment-methods,
+.question7 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.button49 {
+    align-self: stretch;
+    height: 40px;
+    border-radius: 80px;
+    border: 1px solid #605a4c;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 16px;
+}
+.payment-methods,
+.question7 {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.payment-methods {
+    align-self: stretch;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    gap: 16px;
+    font-family: Optima;
+}
+
+.ya {
+    pointer-events: none;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.question7 {
+    gap: 24px;
+}
+.card-list14 {
+    height: 388px;
+    width: 1px;
+    position: relative;
+    background-color: #1d1c16;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.bca6 {
+    align-self: stretch;
+}
+.bca6,
+.copyan-rudi-hermina {
+    position: relative;
+    line-height: 140%;
+}
+.copy3 {
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.body16 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 7px;
+}
+.an-rudi-hermina12 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.card-list15 .card {
+    align-self: stretch;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 16px;
+    background-color: #fff;
+    box-shadow: 10px 10px 25px 0px rgba(29, 28, 22, 0.1);
+}
+.mandiri6 {
+    align-self: stretch;
+    line-height: 140%;
+}
+.b44,
+.copy4,
+.mandiri6 {
+    position: relative;
+}
+.b44 {
+    line-height: 140%;
+}
+.copy4 {
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.body17 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 7px;
+}
+.an-rudi-hermina13 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.card-list15,
+.card31,
+.kirim-hadiah15 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.card31 {
+    align-self: stretch;
+    border-radius: 24px;
+    border: 1px solid #1d1c16;
+    flex-direction: column;
+    padding: 24px 23px;
+    gap: 16px 0;
+}
+.card-list15,
+.kirim-hadiah15 {
+    max-width: 100%;
+}
+.card-list15 {
+    width: auto;
+    flex-direction: column;
+    gap: 24px;
+    font-family: Besley;
+    padding: 24px;
+    background-color: #e3e4dd;
+    border-radius: 32px;
+}
+.kirim-hadiah15 {
+    max-width: 1280px;
+    border-radius: 80px;
+    background-color: #fff;
+    flex-direction: row;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 48px;
+    width: 100%;
+}
+.kirimkan-doa-dan {
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+    font-size: 24px;
+    max-width: 100%;
+}
+.masukkan-nama,
+.nama6 {
+    position: relative;
+    line-height: 140%;
+}
+.nama6 {
+    align-self: stretch;
+}
+.masukkan-nama {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-family: "Lora";
+    font-size: 16px;
+    background-color: transparent;
+    height: 36px;
+    flex: 1;
+    line-height: 150%;
+    color: black;
+    text-align: left;
+}
+.field24,
+.frame-nama-pesan {
+    align-self: stretch;
+    display: flex;
+    max-width: 100%;
+}
+.field24 {
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #b0b0b0;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lora";
+    padding: 16px 23px;
+}
+
+.field24::placeholder {
+    font-size: 16px;
+}
+.frame-nama-pesan {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px 0;
+}
+.pesan-untuk-mempelai {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.masukkan-pesan {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-family: Lora;
+    font-size: 24px;
+    background-color: transparent;
+    height: 34px;
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+    color: #9f9f9f;
+    text-align: left;
+    display: inline-block;
+    min-width: 250px;
+    max-width: 100%;
+}
+.field25,
+.frame-nama-pesan1 {
+    align-self: stretch;
+    display: flex;
+    max-width: 100%;
+}
+.field25 {
+    height: 64px;
+    border-radius: 8px;
+    border: 1px solid #b0b0b0;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 23px;
+}
+.frame-nama-pesan1 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px 0;
+}
+.akan-hadir1,
+.ya3 {
+    position: relative;
+    line-height: 140%;
+}
+.akan-hadir1 {
+    align-self: stretch;
+}
+.ya3 {
+    flex: 1;
+}
+
+.ya3:focus {
+    background-color: #605a4c;
+    color: white;
+    box-shadow: none;
+}
+.field26 {
+    height: 40px;
+    width: 160px;
+    border-radius: 320px;
+    border: 1px solid #b0b0b0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 23px;
+}
+
+.field26:target {
+    background-color: #605a4c;
+    color: white;
+    box-shadow: none;
+}
+
+/* .field26:hover {
+    transition: ease-in 0.5ms;
+} */
+
+.tidak3 {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+}
+.field27 {
+    height: 40px;
+    width: 160px;
+    border-radius: 320px;
+    border: 1px solid #b0b0b0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 23px;
+}
+.mungkin {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+}
+.field28 {
+    height: 40px;
+    width: 160px;
+    border-radius: 320px;
+    border: 1px solid #b0b0b0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 23px;
+}
+.noapplicabledataforthesenodes2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 12px;
+    text-align: center;
+    color: #616161;
+}
+.akan-hadir,
+.input-name-pesan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.akan-hadir {
+    align-self: stretch;
+    gap: 4px 0;
+}
+.input-name-pesan {
+    width: 928px;
+    gap: 24px 0;
+    max-width: 100%;
+    font-size: 16px;
+}
+.vector-icon35 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div60 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge39 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.kirim6,
+.mail31 {
+    position: relative;
+}
+.mail31 {
+    height: 30px;
+    width: 30px;
+    display: none;
+}
+.kirim6 {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: Lora;
+    color: #fff;
+    text-align: left;
+}
+.add-icon31 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button50 {
+    cursor: pointer;
+    border: 0;
+    padding: 16px 48px;
+    background-color: #605a4c;
+    width: 480px;
+    height: 56px;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 0 16px;
+    max-width: 100%;
+}
+.kata-mereka,
+.mufli-ahmad {
+    position: relative;
+    line-height: 150%;
+}
+.mufli-ahmad {
+    align-self: stretch;
+    line-height: 140%;
+}
+.blank-line19,
+.selamat-ya-boy {
+    margin: 0;
+}
+.selamat-ya-boy-container {
+    align-self: stretch;
+    height: 102px;
+    position: relative;
+    line-height: 140%;
+    color: black;
+    display: inline-block;
+}
+.card32 {
+    width: 864px;
+    border-radius: 16px;
+    background-color: #d3d2c5;
+    flex-shrink: 0;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 25px 1px rgba(1, 1, 1, 0.1);
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 16px 0;
+    font-family: Lora;
+}
+.mufli-ahmad1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.blank-line20,
+.selamat-ya-boy1 {
+    margin: 0;
+}
+.selamat-ya-boy-container1 {
+    align-self: stretch;
+    height: 102px;
+    position: relative;
+    line-height: 140%;
+    font-family: Lora;
+    color: #746f5e;
+    display: inline-block;
+}
+.card33 {
+    width: 864px;
+    border-radius: 16px;
+    background-color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 16px 0;
+    max-width: 100%;
+}
+.mufli-ahmad2 {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.blank-line21,
+.selamat-ya-boy2 {
+    margin: 0;
+}
+.selamat-ya-boy-container2 {
+    align-self: stretch;
+    height: 102px;
+    position: relative;
+    line-height: 140%;
+    font-family: Lora;
+    color: #746f5e;
+    display: inline-block;
+}
+.card34 {
+    width: 864px;
+    border-radius: 16px;
+    background-color: #fff;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 16px 0;
+}
+.card-parent,
+.card34,
+.gallery-title {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.card-parent {
+    border-radius: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 24px;
+}
+.gallery-title {
+    align-self: stretch;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px 0;
+}
+.atas-doa,
+.mengucapkan-terima-kasih {
+    margin: 0;
+}
+.atas-doa-container {
+    align-self: stretch;
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: Lora;
+    color: #605a4c;
+    text-align: center;
+}
+.doa-hadiah,
+.home3,
+.send-prayers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.radio_group {
+    display: flex;
+    gap: 16px;
+}
+
+.radio_group label {
+    padding: 7px 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.6px solid #b0b0b0;
+    border-radius: 100px;
+}
+
+.radio_group input:checked + .radio_label {
+    background: #605a4c;
+    color: white;
+}
+
+.radio_group input {
+    display: none;
+}
+
+label {
+    font-size: 16px;
+}
+
+.field35,
+.frame-parent151,
+.ucapan-doa-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.frame-parent151,
+.ucapan-doa-container {
+    flex-direction: column;
+}
+
+.ucapan-doa-container {
+    align-self: stretch;
+    gap: 8px 0;
+}
+
+.field35 {
+    border: 1px solid #b0b0b0;
+    background-color: transparent;
+    height: 128px;
+    width: auto;
+    font-size: 16px;
+    outline: 0;
+    align-self: stretch;
+    border-radius: 8px;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 16px;
+    font-family: "Lora";
+    color: black;
+}
+
+.send-prayers {
+    align-self: stretch;
+    gap: 48px 0;
+    padding: 64px;
+    max-width: 100%;
+    font-size: 24px;
+    background-color: #fff;
+    border-radius: 48px;
+}
+.doa-hadiah,
+.home3 {
+    color: #1d1c16;
+    font-family: Lora;
+}
+.doa-hadiah {
+    align-self: stretch;
+    background-color: #ebebe5;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 80px;
+    max-width: 100%;
+    flex-shrink: 0;
+    text-align: left;
+    font-size: 24px;
+}
+.home3 {
+    width: 100%;
+    position: relative;
+    background-color: #d3d2c5;
+    overflow: hidden;
+    letter-spacing: normal;
+    text-align: center;
+    font-size: 32px;
+}
+@media screen and (max-width: 1536px) {
+    .side-view-bride-groom-hiding-f-icon {
+        left: unset;
+    }
+
+    .side-view-bride-groom-embraced-icon {
+        width: 2426px;
+        height: 2426px;
+        position: absolute;
+        margin: 0 !important;
+        right: -408px;
+        bottom: -1500px;
+        object-fit: cover;
+    }
+
+    /* .hero-section {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(152, 149, 119, 0.4);
+        backdrop-filter: blur(20px);
+        z-index: 1;
+    } */
+
+    .card-list12 {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .kedua-mempelai-child {
+        margin-left: -200px;
+        width: 2400px;
+        top: 1000px;
+        position: absolute;
+        max-width: 124%;
+        flex-shrink: 0;
+        z-index: 1;
+    }
+    .location-details-icon {
+        flex: 1;
+    }
+    .mempelai-pria {
+        flex-wrap: wrap;
+    }
+    .event-title-child {
+        flex: 1;
+    }
+    .mempelai-wanita {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .side-view-bride-groom-embraced-icon {
+        width: 2426px;
+        height: 2426px;
+        position: absolute;
+        margin: 0 !important;
+        right: -500px;
+        bottom: -1500px;
+        object-fit: cover;
+    }
+
+    .floating-button4 {
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        background-color: #fff;
+        height: 80px;
+        bottom: 90px;
+        left: 1100px;
+        width: 80px;
+        position: fixed;
+        border-radius: 240px;
+        box-shadow: -9px 9px 42px rgba(105, 102, 90, 0.32);
+        overflow: hidden;
+        flex-shrink: 0;
+        z-index: 3;
+    }
+
+    .card-list12 {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .kedua-mempelai-child {
+        margin-left: -200px;
+        width: 2400px;
+        top: 1200px;
+        position: absolute;
+        max-width: 124%;
+        flex-shrink: 0;
+        z-index: 1;
+    }
+    .mempelai-pria {
+        flex-wrap: nowrap;
+    }
+
+    .mempelai-wanita {
+        flex-wrap: nowrap;
+    }
+
+    .kirim-hadiah15 {
+        max-width: 1280px;
+        border-radius: 80px;
+        background-color: #fff;
+        flex-direction: row;
+        padding: 48px;
+        box-sizing: border-box;
+        gap: 24px;
+    }
+
+    .send-prayers {
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .side-view-bride-groom-embraced-icon {
+        width: 100%;
+        height: auto;
+        right: 0;
+        bottom: -200px;
+        transform: scale(1);
+    }
+
+    .floating-button4 {
+        left: 900px;
+    }
+
+    .card-list12 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mempelai-pria {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .mempelai-wanita {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .kedua-mempelai-child {
+        margin-left: -130px;
+        width: 2400px;
+        top: 1200px;
+        position: absolute;
+        max-width: 124%;
+        flex-shrink: 0;
+        z-index: 1;
+    }
+
+    .noapplicabledataforthesenodes {
+        width: 1160px;
+        height: 840px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
+        gap: 0 0;
+        overflow-x: auto;
+    }
+
+    .question7 {
+        width: 100%;
+        gap: 24px;
+    }
+    .kirim-hadiah16 {
+        align-self: stretch;
+        position: relative;
+        line-height: 140%;
+        text-align: center;
+    }
+    .jika-kamu-tidak6 {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        line-height: 140%;
+        color: #746f5e;
+        display: inline-block;
+    }
+
+    .payment-methods {
+        align-self: stretch;
+        gap: 16px 0;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        font-family: Optima;
+    }
+
+    .card-list14 {
+        height: 700px;
+        transform: rotate(90deg);
+        margin: auto;
+        width: 1px;
+        top: -300px;
+        position: relative;
+        background-color: #1d1c16;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .card-list15 {
+        width: auto;
+        flex-direction: column;
+        gap: 24px;
+        font-family: Besley;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kirim-hadiah15 {
+        padding: 24px;
+        border-radius: 48px;
+        display: flex;
+        flex-direction: column;
+    }
+    .question7 {
+        gap: 24px;
+    }
+    .card-list15 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .doa-hadiah {
+        padding: 16px;
+    }
+    .gallery-foto {
+        padding: 16px;
+    }
+    .flower-right {
+        height: 50%;
+        z-index: 1;
+        right: -54px;
+    }
+    .flower-left {
+        height: 50%;
+        z-index: 1;
+        left: -54px;
+    }
+    .wedding-date {
+        padding: 24px 16px;
+    }
+    .love-story .content {
+        padding: 24px 16px;
+    }
+    .side-view-bride-groom-embraced-icon {
+        height: 2426px;
+        width: 2426px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -1200px;
+        left: calc(50% - 1213px);
+        object-fit: cover;
+    }
+
+    .card-list12 {
+        flex-direction: column;
+        align-items: center;
+        margin: auto 0;
+        position: absolute;
+    }
+
+    .floating-button4 {
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        background-color: #fff;
+        height: 80px;
+        bottom: 90px;
+        left: 650px;
+        width: 80px;
+        position: fixed;
+        border-radius: 240px;
+        box-shadow: -9px 9px 42px rgba(105, 102, 90, 0.32);
+        overflow: hidden;
+        flex-shrink: 0;
+        z-index: 3;
+    }
+
+    .main-frame {
+        align-self: stretch;
+        border-radius: 48px;
+        background-color: #ebebe5;
+        justify-content: center;
+        padding: 40px;
+        position: relative;
+        font-size: 24px;
+        color: #292721;
+    }
+
+    .noapplicabledataforthesenodes {
+        width: 1160px;
+        height: 840px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
+        gap: 0 0;
+        overflow-x: auto;
+    }
+
+    .noapplicabledataforthesenodes-icon {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .noapplicabledataforthesenodes-icon1 {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .noapplicabledataforthesenodes-icon2 {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .noapplicabledataforthesenodes-icon3 {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .noapplicabledataforthesenodes-icon4 {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .noapplicabledataforthesenodes-icon5 {
+        height: 360px;
+        width: 328px;
+        position: absolute;
+        margin: 0 !important;
+        border-radius: 200px 200px 32px 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .mempelai-pria {
+        align-self: center;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-right: unset;
+        gap: 0px;
+    }
+
+    .mempelai-info {
+        flex: 1;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .info-mempelai-wanita {
+        text-align: center;
+        align-items: center;
+    }
+
+    .day-of-week {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        max-width: 100%;
+    }
+
+    .alexnor {
+        margin: 0;
+        position: relative;
+        font-size: 24px;
+        line-height: 140%;
+        font-weight: 400;
+        font-family: inherit;
+        text-align: center;
+    }
+
+    .putra-pertama-dari {
+        position: relative;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: right;
+    }
+
+    .mempelai-wanita {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: unset;
+    }
+
+    .venue-name-parent {
+        flex: 1;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        gap: 24px;
+        width: 100%;
+        margin-top: -32px;
+    }
+
+    .venue-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px 0;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .exafator {
+        margin: 0;
+        text-align: center;
+        position: relative;
+        font-size: inherit;
+        line-height: 115%;
+        font-weight: 400;
+        font-family: inherit;
+    }
+
+    .putra-pertama-dari1 {
+        position: relative;
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    .button-link8 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0 8px;
+        font-size: 24px;
+    }
+
+    .lorem-ipsum-dolor,
+    .lorem-ipsum-dolor1,
+    .lorem-ipsum-dolor2 {
+        width: 500px;
+    }
+
+    .lihat-lokasi {
+        width: 608px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        max-width: 100%;
+        color: #fff;
+    }
+
+    .frame-wrapper10 {
+        width: 650px;
+        justify-content: flex-start;
+        padding: 0 20px 80px;
+        box-sizing: border-box;
+        max-width: 100%;
+        flex-shrink: 0;
+    }
+
+    .main-frame-child {
+        left: calc(50% - 500px);
+        -webkit-box-reflect: right 520px;
+    }
+
+    .card-list14 {
+        height: 420px;
+        transform: rotate(90deg);
+        margin: auto;
+        width: 1px;
+        top: -170px;
+        position: relative;
+        background-color: #1d1c16;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .send-prayers {
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .side-view-bride-groom-embraced-icon {
+        height: 2426px;
+        width: 2426px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -1500px;
+        left: calc(50% - 1250px);
+        object-fit: cover;
+    }
+
+    .side-view-bride-groom-hiding-f-icon {
+        bottom: unset;
+    }
+
+    .card-list12 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .floating-button4 {
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        background-color: #fff;
+        height: 80px;
+        bottom: 150px;
+        left: 550px;
+        width: 80px;
+        position: fixed;
+        border-radius: 240px;
+        box-shadow: -9px 9px 42px rgba(105, 102, 90, 0.32);
+        overflow: hidden;
+        flex-shrink: 0;
+        z-index: 3;
+    }
+
+    .lorem-ipsum-dolor,
+    .lorem-ipsum-dolor1,
+    .lorem-ipsum-dolor2 {
+        width: 400px;
+    }
+
+    .lihat-lokasi {
+        width: 608px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        max-width: 100%;
+        color: #fff;
+    }
+
+    .frame-wrapper10 {
+        width: 500px;
+        justify-content: flex-start;
+        padding: 0 20px 80px;
+        box-sizing: border-box;
+        max-width: 100%;
+        flex-shrink: 0;
+    }
+
+    .main-frame-child {
+        left: calc(50% - 450px);
+        -webkit-box-reflect: right 370px;
+    }
+
+    .question7 {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .card-list14 {
+        height: 480px;
+        top: -190px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .radio_group {
+        flex-direction: column;
+    }
+}

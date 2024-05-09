@@ -1,0 +1,4477 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: "";
+    height: 100%;
+    top: 0px;
+    position: absolute;
+    width: 4px;
+    background-color: white;
+    margin: 0 auto; /* Mengatur margin menjadi auto untuk posisi horizontal di tengah */
+    left: 50%; /* Mengatur posisi awal menjadi di tengah */
+    transform: translateX(
+        -50%
+    ); /* Menggeser posisi sejauh setengah dari lebar elemen */
+}
+.scroll {
+    margin: auto;
+    width: 100%;
+    overflow: visible;
+}
+
+.scroll ul {
+    padding: 0;
+    display: flex;
+    border-radius: 10px;
+    animation: scroll 40s infinite linear;
+    gap: 24px;
+    display: flex;
+}
+
+.scroll ul:hover {
+    animation-play-state: paused;
+}
+
+.scroll li {
+    margin: 0px;
+    gap: 24px;
+    list-style: none;
+    position: relative;
+}
+
+.scroll img {
+    height: auto;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    max-width: fit-content;
+}
+
+.scroll img:hover {
+    transform: scale(1.04);
+}
+.foto-ganjil {
+    margin-top: 40px;
+}
+.foto-genep {
+    margin-bottom: 40px;
+}
+@keyframes scroll {
+    from {
+        margin-left: 0%;
+    }
+
+    to {
+        margin-left: -100%;
+    }
+}
+/* Container around content */
+.container {
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.content .title {
+    color: #1d1c16;
+    text-align: start;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: "";
+    border-radius: 0px !important;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #ffc436;
+    border: 8px solid #ffffff;
+    /* outline: 16px solid #9E9C98; */
+    /* top: 45%; */
+    border-radius: 50%;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Place the container to the left */
+.left {
+    justify-content: flex-start;
+}
+
+/* Place the container to the right */
+.right {
+    justify-content: flex-end;
+}
+
+/* Add arrows to the left container (pointing right) */
+/* .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  } */
+
+/* Add arrows to the right container (pointing left) */
+/* .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  } */
+
+/* Fix the circle for containers on the right side */
+
+/* The actual content */
+.content {
+    padding: 24px;
+    background-color: white;
+    position: relative;
+    border-radius: 0px;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.foto-story-1 {
+    width: 298px;
+    height: 298px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("./assets/foto-story-1.jpg");
+}
+.detail-story {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.detail-story .paragraph {
+    color: #1d1c16;
+    letter-spacing: normal !important;
+    text-align: start;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 16px;
+    }
+    .content {
+        width: 100% !important;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: auto;
+        padding-left: 70px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+.mempelai-wanita {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.button-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #3b3b3b;
+    fill: #3b3b3b;
+    font-size: 16px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    border: none;
+    background: transparent;
+    gap: 8px;
+    cursor: pointer;
+}
+.foto-mempelai-pria {
+    width: 480px;
+    height: 480px;
+    background-position: center;
+    background-image: url("./assets/mempelai-pria-rudi.jpg");
+    background-repeat: no-repeat;
+}
+.foto-mempelai-wanita {
+    width: 480px;
+    height: 480px;
+    background-position: center;
+    background-image: url("./assets/mempelai-wanita-arum.jpg");
+    background-repeat: no-repeat;
+}
+.button-link:hover {
+    color: #5d5d5d;
+    fill: #5d5d5d;
+    cursor: pointer;
+}
+.info-mempelai-pria .button-link {
+    justify-content: start;
+    text-decoration: none;
+}
+.info-mempelai-wanita .button-link {
+    justify-content: start;
+    text-decoration: none;
+}
+.wedding-timer {
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.floating-button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    border-radius: 120px;
+    box-shadow: -8px 8px 9.8px rgba(0, 0, 0, 0.07);
+    /* overflow: hidden; */
+    flex-shrink: 0;
+    z-index: 1;
+    bottom: 120px;
+    right: 40px;
+}
+.wedding-date-info {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    border: 1px solid #fff;
+}
+
+.title2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 140%;
+    font-family: "DM Serif Display";
+    color: #b0aea9;
+}
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 140%;
+    font-family: "DM Serif Display";
+    color: #fff;
+}
+
+.paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+}
+.paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+}
+#timer {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+#timer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3b3b3b;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    position: relative;
+}
+
+#timer > div > span {
+    color: #fff;
+    position: absolute;
+    bottom: -32px;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: NanumMyeongjo;
+}
+
+.young-japanese-couple-1-icon1 {
+    height: 1285px;
+    width: 2283px;
+    position: absolute;
+    margin: 0 !important;
+    bottom: -102.5px;
+    left: -363px;
+    object-fit: cover;
+}
+.kini-jadi-kenyataan,
+.pertemuan-yang-kudambakan,
+.pertemuan-yang-kuimpikan,
+.ternyata-bukan-khayalan {
+    margin: 0;
+}
+.pertemuan-yang-kuimpikan-kini-container {
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+    max-width: 100%;
+}
+.rhoma-irama {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+}
+.quotes {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    text-align: left;
+}
+.text {
+    position: relative;
+    line-height: 130%;
+}
+.text-wrapper {
+    align-self: stretch;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.hari2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    text-align: left;
+}
+.input1 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b17 {
+    position: relative;
+    line-height: 140%;
+}
+.input2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 24px;
+    font-family: Cormorant;
+}
+.div11 {
+    position: relative;
+    line-height: 130%;
+}
+.wrapper8 {
+    align-self: stretch;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.jam2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    text-align: left;
+}
+.input3 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b18 {
+    position: relative;
+    line-height: 140%;
+}
+.input4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 24px;
+    font-family: Cormorant;
+}
+.div12 {
+    position: relative;
+    line-height: 130%;
+}
+.wrapper9 {
+    align-self: stretch;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.menit2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    text-align: left;
+}
+.input5 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.b19 {
+    position: relative;
+    line-height: 140%;
+}
+.input6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 24px;
+    font-family: Cormorant;
+}
+.div13 {
+    position: relative;
+    line-height: 130%;
+}
+.wrapper10 {
+    align-self: stretch;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.detik2 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    text-align: left;
+}
+.input7 {
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px 0;
+}
+.input {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+.vector-icon5 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div14 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge5 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail5 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.kamis-21-oktober {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    text-align: left;
+}
+.add-icon5 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+
+.button17 {
+    align-self: stretch;
+    height: 64px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 48px;
+    gap: 0 16px;
+    font-size: 10px;
+    font-family: Optima;
+}
+.row-input {
+    width: 455px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+    max-width: 100%;
+}
+.home-icon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu {
+    cursor: pointer;
+    border: 0;
+    padding: 8px;
+    background-color: #3b3b3b;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 56px;
+    height: 56px;
+}
+.menu:hover {
+    background-color: #606060;
+}
+.vector-stroke-icon {
+    position: absolute;
+    height: 61.25%;
+    width: 67.5%;
+    top: 19.5%;
+    right: 16.25%;
+    bottom: 19.25%;
+    left: 16.25%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div15 {
+    width: 16px;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge6 {
+    position: absolute;
+    top: calc(50% - 16px);
+    left: calc(50% - 0px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.love {
+    height: 40px;
+    flex: 1;
+    position: relative;
+}
+.menu1 {
+    cursor: pointer;
+    border: 0;
+    padding: 8px;
+    background-color: #3b3b3b;
+    flex: 1;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 36px;
+}
+.image-icon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu2 {
+    cursor: pointer;
+    border: 0;
+    padding: 8px;
+    background-color: #3b3b3b;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.calendar-icon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.menu3 {
+    cursor: pointer;
+    border: 0;
+    padding: 8px;
+    background-color: #3b3b3b;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.vector-icon6 {
+    position: absolute;
+    height: 63.5%;
+    width: 67.5%;
+    top: 16.75%;
+    right: 15.75%;
+    bottom: 19.75%;
+    left: 16.75%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div16 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge7 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.chat {
+    height: 40px;
+    flex: 1;
+    position: relative;
+}
+.menu4,
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.menu4 {
+    flex: 1;
+    background-color: #3b3b3b;
+    box-shadow: -4px 4px 7px rgba(105, 102, 90, 0.1);
+    overflow: hidden;
+    align-items: center;
+    padding: 8px;
+    min-width: 36px;
+    cursor: pointer;
+}
+.navigation {
+    margin: 0 auto; /* Mengatur margin menjadi auto untuk posisi horizontal di tengah */
+    position: fixed;
+    bottom: 40px;
+    left: 50%; /* Mengatur posisi awal menjadi di tengah */
+    transform: translateX(
+        -50%
+    ); /* Menggeser posisi sejauh setengah dari lebar elemen */
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    align-items: flex-start;
+    padding: 12px 24px;
+    gap: 0 24px;
+    max-width: 100%;
+    z-index: 2;
+    font-size: 10px;
+    padding: 8px;
+}
+
+.card-list2,
+.card4 {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.card4 {
+    align-self: stretch;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 840px;
+    position: relative;
+    z-index: 1;
+}
+.card-list2 {
+    width: 960px;
+    align-items: center;
+    justify-content: center;
+}
+.untitled-1-1-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.y2matecom-sampai-jadi-debu {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    width: 854px;
+    height: 480px;
+    display: none;
+}
+
+.play-icon {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+}
+
+.pause-1-icon {
+    position: unset;
+    top: calc(50% - 65px);
+    left: calc(50% - 65px);
+    width: 100%;
+    height: auto;
+}
+.play-icon {
+    overflow: hidden;
+    display: none;
+}
+.pause-1-icon {
+    object-fit: cover;
+    z-index: 1;
+}
+
+.play-icon {
+    transition: transform 0.3s ease; /* Animasi transformasi */
+}
+
+.play.icon {
+    transform: rotate(360deg); /* Putar 360 derajat */
+}
+
+audio {
+    display: none;
+}
+.text1 {
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.banner,
+.visual-icon {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+.banner {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 840px;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    font-family: "DM Serif Display";
+    background-image: url(./assets/BannerImage.jpg);
+    background-position: right;
+    background-size: cover;
+}
+.visual-icon {
+    height: 512px;
+    width: 512px;
+    object-fit: cover;
+}
+.the-groom {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.rudi-wibowo {
+    align-self: stretch;
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.icon2 {
+    width: 198px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.bapak-akbar-skom,
+.dari-jakarta-indonesia,
+.ibu-siti-maimunah {
+    margin: 0;
+}
+.bapak-akbar-skom-container {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+}
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.ig-icon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.rudi-wibowo1 {
+    position: relative;
+    line-height: 140%;
+}
+.button-primary,
+.question3 {
+    display: flex;
+    justify-content: flex-start;
+}
+.question3 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+    box-sizing: border-box;
+    gap: 24px 0;
+    min-width: 258px;
+}
+.mempelai-pria {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: 100%;
+    display: flex;
+}
+.info-mempelai-pria {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: auto;
+}
+.info-mempelai-pria .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: start;
+}
+.detail .label {
+    color: #b0aea9;
+    letter-spacing: 0.26em;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+}
+.label {
+    color: #b0aea9;
+    letter-spacing: 0.26em;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+    text-transform: uppercase;
+}
+.detail .title {
+    color: #3b3b3b;
+}
+.detail .paragraph {
+    color: #3b3b3b;
+    text-align: start;
+}
+.info-mempelai-wanita .detail .paragraph {
+    color: #3b3b3b;
+    text-align: end;
+}
+.the-bridge {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.arum-kurniawati {
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.bapak-akbar-skom1,
+.dari-jakarta-indonesia1,
+.ibu-siti-maimunah1 {
+    margin: 0;
+}
+.bapak-akbar-skom-container1 {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+    text-align: right;
+}
+.info-mempelai-wanita .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.ig-icon1 {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.rudi-wibowo2 {
+    position: relative;
+    line-height: 140%;
+}
+.button-link1,
+.card-parent {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.button-link1 {
+    flex-direction: row;
+    gap: 0 8px;
+    font-size: 24px;
+    color: #3b3b3b;
+}
+.info-mempelai-wanita {
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 24px;
+    align-items: flex-end;
+    display: flex;
+}
+.visual-icon1 {
+    height: 512px;
+    width: 512px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+}
+.button-primary1,
+.text-block-quote {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    max-width: 100%;
+}
+.kedua-mempelai {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 48px;
+    text-align: left;
+    font-size: 16px;
+    color: #b0aea9;
+    font-family: NanumMyeongjo;
+    width: 100%;
+}
+.our-love-story {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 130%;
+}
+.visual-icon2 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.jan-01-2019,
+.pertama-bertemu {
+    align-self: stretch;
+    position: relative;
+}
+.jan-01-2019 {
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.pertama-bertemu {
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.jan-01-2019-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama {
+    align-self: stretch;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+}
+.frame-parent44 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.card-inner,
+.card6 {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+.card-inner {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 265px;
+}
+.card6 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+}
+.visual-icon3 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.jan-01-20191,
+.pertama-bertemu1 {
+    align-self: stretch;
+    position: relative;
+}
+.jan-01-20191 {
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.pertama-bertemu1 {
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.jan-01-2019-group {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama1 {
+    align-self: stretch;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+}
+.frame-parent45 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.card-child,
+.card7 {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+.card-child {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 265px;
+}
+.card7 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+    opacity: 0;
+}
+.visual-icon4 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.des-01-2019 {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.des-01-2019,
+.icon3,
+.tunangan {
+    align-self: stretch;
+}
+.tunangan {
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.icon3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama2 {
+    align-self: stretch;
+    height: 72px;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+    display: inline-block;
+}
+.rectangle,
+.text-block {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.rectangle {
+    align-self: stretch;
+    display: flex;
+    gap: 16px 0;
+}
+.text-block {
+    flex: 1;
+    min-width: 265px;
+}
+.card-list3,
+.card8,
+.text-block {
+    display: flex;
+    max-width: 100%;
+}
+.card8 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+}
+.card-list3 {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px 0;
+    min-width: 520px;
+}
+.dot {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    background-color: #ffc436;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.container1 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px;
+}
+.dot1,
+.progress {
+    position: relative;
+    overflow: hidden;
+}
+.progress {
+    width: 4px;
+    flex: 1;
+    background-color: #fff;
+}
+.dot1 {
+    height: 24px;
+    width: 24px;
+    background-color: #ffc436;
+    flex-shrink: 0;
+}
+.container2 {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px;
+}
+.dot2,
+.progress1 {
+    width: 4px;
+    height: 356px;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.dot2 {
+    height: 24px;
+    width: 24px;
+    background-color: #ffc436;
+}
+.container3,
+.justify-content {
+    display: flex;
+    justify-content: flex-start;
+}
+.container3 {
+    background-color: #fff;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px;
+}
+.justify-content {
+    height: 912px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    gap: 16px 0;
+}
+.visual-icon5 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.jan-01-20192,
+.pertama-bertemu2 {
+    align-self: stretch;
+    position: relative;
+}
+.jan-01-20192 {
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.pertama-bertemu2 {
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.jan-01-2019-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama3 {
+    align-self: stretch;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+}
+.frame-parent46 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.card-inner1,
+.card9 {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+.card-inner1 {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 265px;
+}
+.card9 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+    opacity: 0;
+}
+.visual-icon6 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.jadian,
+.mar-20-2019 {
+    align-self: stretch;
+    position: relative;
+}
+.mar-20-2019 {
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.jadian {
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.mar-20-2019-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama4 {
+    align-self: stretch;
+    height: 72px;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #3b3b3b;
+    display: inline-block;
+}
+.frame-parent47 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 0;
+}
+.card-inner2,
+.card10 {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+.card-inner2 {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 265px;
+}
+.card10 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+}
+.visual-icon7 {
+    height: 320px;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.jan-01-20193,
+.pertama-bertemu3 {
+    align-self: stretch;
+    position: relative;
+}
+.jan-01-20193 {
+    letter-spacing: 0.26em;
+    line-height: 140%;
+}
+.pertama-bertemu3 {
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #3b3b3b;
+}
+.jan-01-2019-parent1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.kita-bertemu-pertama5 {
+    align-self: stretch;
+    height: 72px;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    display: inline-block;
+    color: #3b3b3b;
+}
+.card-inner3,
+.frame-parent48 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.frame-parent48 {
+    align-self: stretch;
+    display: flex;
+    gap: 16px 0;
+}
+.card-inner3 {
+    flex: 1;
+    min-width: 265px;
+}
+.card-inner3,
+.card-list4,
+.card11 {
+    display: flex;
+    max-width: 100%;
+}
+.card11 {
+    align-self: stretch;
+    background-color: #fff;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 0 24px;
+    opacity: 0;
+}
+.card-list4 {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px 0;
+    min-width: 520px;
+}
+.card-list-parent,
+.our-love-story-parent {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.card-list-parent {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 16px;
+    gap: 0 48px;
+    text-align: left;
+    font-size: 16px;
+    color: #b0aea9;
+}
+.our-love-story-parent {
+    background-color: #9e9c98;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 64px;
+    gap: 48px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-family: NanumMyeongjo;
+}
+.our-love-story-parent .paragraph {
+    letter-spacing: 0.26em;
+    width: 100%;
+}
+.our-moment {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 130%;
+}
+.our-moment-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 16px;
+    flex-shrink: 0;
+}
+.y2matecom-wedding-free-sto {
+    position: absolute;
+    top: calc(50% - 281.15px);
+    left: calc(50% - 500px);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.frame-video {
+    max-width: 996px;
+    width: 75%;
+    position: absolute;
+    right: 0px;
+    position: absolute;
+}
+.kini-jadi-kenyataan1,
+.pertemuan-yang-kudambakan1,
+.pertemuan-yang-kuimpikan1,
+.ternyata-bukan-khayalan1 {
+    margin: 0;
+}
+.pertemuan-yang-kuimpikan-kini-container1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 150%;
+}
+.rhoma-irama1 {
+    position: relative;
+    line-height: 150%;
+}
+.fill-space {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 24px;
+    font-family: NanumMyeongjo;
+}
+
+.rectangle-path,
+.text-block-path {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.column {
+    background-color: rgba(59, 59, 59, 0.8);
+    backdrop-filter: blur(6px);
+    flex-direction: column;
+    align-items: self-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 16px;
+    z-index: 1;
+    width: 50%;
+    display: flex;
+}
+.rectangle-path,
+.text-block-path {
+    flex-direction: row;
+    align-items: flex-start;
+}
+.text-block-path {
+    width: 800px;
+    position: relative;
+}
+.rectangle-path {
+    align-self: stretch;
+    flex-shrink: 0;
+    text-align: left;
+    font-size: 32px;
+    color: #fff;
+    font-family: "DM Serif Display";
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.foto-icon,
+.foto-icon1 {
+    height: 400px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.foto-icon {
+    flex: 1;
+    min-width: 368px;
+}
+.foto-icon1 {
+    align-self: stretch;
+    flex-shrink: 0;
+}
+.inner-frame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 0 0;
+    box-sizing: border-box;
+    min-width: 368px;
+    max-width: 100%;
+}
+.foto-icon2 {
+    height: 400px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.foto-icon3 {
+    height: 400px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.foto-icon2 {
+    flex: 1;
+    min-width: 368px;
+}
+.foto-icon3 {
+    align-self: stretch;
+    flex-shrink: 0;
+}
+.foto-container,
+.inner-frame1 {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+}
+.inner-frame1 {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 0 0;
+    box-sizing: border-box;
+    min-width: 368px;
+}
+.foto-container {
+    align-self: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    position: relative;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.foto-icon4 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    margin: 0 !important;
+    right: -440px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.spacer {
+    align-self: stretch;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 64px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 256px;
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #3b3b3b;
+    font-family: NanumMyeongjo;
+}
+.spacer .paragraph {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 140%;
+    letter-spacing: 0.26em;
+}
+.our-moment-wrapper .paragraph {
+    letter-spacing: 0.26em;
+    width: 100%;
+}
+.foto-depan {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-image: url("./assets/Foto-depan.jpg");
+    width: 80%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.foto-belakang {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url("./assets/Foto-belakang.jpg");
+    width: 80%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.foto-icon5,
+.foto-icon6 {
+    position: absolute;
+    top: -0.5px;
+    left: 0;
+    width: 497px;
+    height: 884px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.foto-icon6 {
+    top: 225.5px;
+    left: 223px;
+    z-index: 1;
+}
+.doa-input-row {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.photo-mix {
+    height: 1110px;
+    width: 50%;
+    position: relative;
+}
+.the-groom1 {
+    width: 140px;
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+    display: none;
+}
+.akad-nikah {
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #fff;
+}
+.the-groom-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.jumat-28-april,
+.pukul-0900-wib {
+    margin: 0;
+}
+.jumat-28-april-container {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #fff;
+}
+.frame-parent49 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+    max-width: 100%;
+}
+.plataran-menteng-jalan {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: 0.01em;
+    line-height: 140%;
+    color: #fff;
+}
+.devider5 {
+    align-self: stretch;
+}
+.info-akad {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+.info-akad .detail-waktu {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: flex-start;
+}
+.info-akad .paragraph {
+    color: white;
+    text-align: start;
+}
+.detail-waktu .paragraph {
+    text-transform: uppercase;
+}
+video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 1 !important;
+}
+.info-resepsi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+.info-resepsi .detail-waktu {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: flex-start;
+}
+.info-resepsi .paragraph {
+    color: white;
+    text-align: start;
+}
+.detail-waktu .paragraph {
+    text-transform: uppercase;
+}
+.devider5 {
+    height: 1px;
+    position: relative;
+    background-color: #797979;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100%;
+}
+.the-groom2 {
+    width: 140px;
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+    display: none;
+}
+.resepsi2 {
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #fff;
+}
+.input-u-capan-doa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.jumat-28-april1,
+.pukul-1500-wib {
+    margin: 0;
+}
+.jumat-28-april-container1 {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    color: #fff;
+}
+.ucapan-doa2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+    max-width: 100%;
+}
+.doubletree-by-hilton {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: 0.01em;
+    line-height: 140%;
+    color: #fff;
+}
+.akad3 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px 0;
+    max-width: 100%;
+}
+.vector-icon7 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div17 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge8 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail6 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.simpan-acara-ke {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #fff;
+    text-align: left;
+}
+.add-icon6 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.input-alamat {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.outline-button {
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 0px 24px;
+    background-color: transparent;
+    min-width: 328px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: NanumMyeongjo;
+    height: 40px;
+    color: #fff;
+    max-width: 560px;
+    text-decoration: none;
+    display: flex;
+}
+.outline-button:hover {
+    border: 2px solid #fff;
+    font-weight: 600;
+}
+.resepsi-akad {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    display: flex;
+    width: 50%;
+}
+.anonym-card-list,
+.the-groom3 {
+    font-size: 16px;
+    color: #b0aea9;
+    text-align: left;
+}
+.anonym-card-list {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 48px;
+    max-width: 100%;
+}
+.the-groom3 {
+    width: 140px;
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+    display: none;
+    font-family: NanumMyeongjo;
+}
+.konfirmasi-kehadiran,
+.silahkan-isi-form {
+    position: relative;
+    font-size: 32px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #fff;
+    text-align: left;
+}
+.silahkan-isi-form {
+    font-size: 24px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+}
+.the-groom-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+    max-width: 100%;
+}
+.masukkan-nama-kamu2,
+.nama {
+    width: 239px;
+    position: relative;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+    color: #fff;
+    text-align: left;
+    display: inline-block;
+}
+.masukkan-nama-kamu2 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    height: 36px;
+    flex: 1;
+    color: #9f9f9f;
+    min-width: 250px;
+    max-width: 100%;
+}
+.field4,
+.input8 {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.field4 {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 17px 10px 15px;
+}
+.input8 {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.apakah-kamu-akan {
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+    color: #fff;
+    text-align: left;
+}
+.field5,
+.field6,
+.frame-parent51,
+.input9,
+.row-input1 {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.field5,
+.field6 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #fff;
+    height: 56px;
+    flex-direction: row;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    font-family: NanumMyeongjo;
+    font-size: 24px;
+    color: #000;
+    min-width: 250px;
+}
+
+.field5:focus,
+.field6:focus {
+    background-color: #3b3b3b;
+    color: white;
+    box-shadow: none;
+}
+.frame-parent51,
+.input9,
+.row-input1 {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.frame-parent51,
+.row-input1 {
+    gap: 16px 0;
+    max-width: 100%;
+}
+.frame-parent51 {
+    gap: 24px 0;
+}
+.vector-icon8 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div18 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge9 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.kirim,
+.mail7 {
+    position: relative;
+}
+.mail7 {
+    height: 30px;
+    width: 30px;
+    display: none;
+}
+.kirim {
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #3b3b3b;
+    text-align: left;
+}
+.add-icon7 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button19 {
+    cursor: pointer;
+    border: 0;
+    padding: 16px 47px;
+    background-color: #ffc436;
+    align-self: stretch;
+    height: 66px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 0 16px;
+}
+.frame-form {
+    margin: 0;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 48px 0;
+    min-width: 520px;
+    max-width: 100%;
+}
+.foto-icon7 {
+    height: 520px;
+    width: 924.9px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+}
+.frame-parent50 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 48px;
+    max-width: 100%;
+}
+.wedding-date-address {
+    align-self: stretch;
+    display: flex;
+    background-color: #606060;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 64px;
+    box-sizing: border-box;
+    gap: 48px;
+    flex-shrink: 0;
+    text-align: center;
+    color: #3b3b3b;
+    font-family: NanumMyeongjo;
+    z-index: 0;
+    align-items: center;
+}
+.kirim-hadiah-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.kirim-hadiah-container .title {
+    color: #1d1c16;
+}
+.hadiah-area .kirim-hadiah-container .paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    letter-spacing: normal;
+    text-transform: none;
+}
+.button20 {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #3b3b3b;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    box-sizing: border-box;
+    font-family: NanumMyeongjo;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    min-width: 250px;
+    cursor: pointer;
+}
+.button20:hover {
+    background-color: #606060;
+}
+.vector-icon9 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div19 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge10 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.kirim-kado-ke2,
+.mail8 {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.kirim-kado-ke2 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    font-family: NanumMyeongjo;
+    font-size: 16px;
+    background-color: transparent;
+    height: 34px;
+    flex: 1;
+    line-height: 140%;
+    font-weight: 700;
+    color: #3b3b3b;
+    text-align: left;
+    cursor: pointer;
+}
+.add-icon8 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button21,
+.question4,
+.substitute-present {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.button21 {
+    align-self: stretch;
+    height: 40px;
+    border: 1px solid #3b3b3b;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    gap: 16px;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.button21:hover {
+    background-color: #b0aea9;
+}
+.question4,
+.substitute-present {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.substitute-present {
+    align-self: stretch;
+    gap: 16px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.question4 {
+    width: 65%;
+    gap: 24px;
+}
+.bca2 {
+    width: 341px;
+    line-height: 140%;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+.b20,
+.bca2,
+.copy {
+    position: relative;
+}
+.b20 {
+    line-height: 140%;
+}
+.copy {
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.body5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 8px;
+}
+.an-rudi-hermina4 {
+    width: 341px;
+    position: relative;
+    line-height: 140%;
+    align-items: center;
+}
+.an-rudi-hermina4,
+.card12,
+.mandiri2 {
+    display: flex;
+    max-width: 100%;
+}
+.card12 {
+    align-self: stretch;
+    border: 1px solid #1d1c16;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 16px;
+}
+.card12 .title {
+    color: #1d1c16;
+}
+.card13 .title {
+    color: #1d1c16;
+}
+.mandiri2 {
+    width: 341px;
+    line-height: 140%;
+    font-weight: 800;
+    align-items: center;
+}
+.b21,
+.copy1,
+.mandiri2 {
+    position: relative;
+}
+.b21 {
+    line-height: 140%;
+}
+.copy1 {
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.an-rudi-hermina5,
+.body6 {
+    display: flex;
+    align-items: center;
+}
+.body6 {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0 8px;
+}
+.an-rudi-hermina5 {
+    width: 341px;
+    position: relative;
+    line-height: 140%;
+    max-width: 100%;
+}
+.card-list5,
+.card13 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.card13 {
+    align-self: stretch;
+    border: 1px solid #1d1c16;
+    box-sizing: border-box;
+    padding: 24px;
+    gap: 16px 0;
+}
+.card-list5 {
+    width: 35%;
+    gap: 24px;
+    font-size: 16px;
+    color: #1d1c16;
+    font-family: NanumMyeongjo;
+    padding-left: 48px;
+    border-left: 1px solid #1d1c16;
+    min-height: 328px;
+}
+.hadiah-area,
+.kirim-hadiah5 {
+    align-self: stretch;
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+.kirim-hadiah5 {
+    border: 1px solid #3b3b3b;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 64px;
+    gap: 48px;
+    text-align: left;
+    font-size: 24px;
+    font-family: "DM Serif Display";
+    width: 100%;
+}
+.hadiah-area {
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 64px;
+    gap: 48px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #3b3b3b;
+    font-family: NanumMyeongjo;
+}
+.hadiah-area .paragraph {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+}
+.our-moment2,
+.the-groom4 {
+    width: 238px;
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 130%;
+    display: none;
+}
+.the-groom4 {
+    width: 140px;
+    line-height: 140%;
+}
+.ucapan-doa3 {
+    position: relative;
+    font-size: 24px;
+    line-height: 130%;
+    font-family: "DM Serif Display";
+    color: #fff;
+}
+.the-groom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.masukkan-nama-kamu3,
+.nama1 {
+    width: 239px;
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+}
+.masukkan-nama-kamu3 {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-family: NanumMyeongjo;
+    font-size: 16px;
+    background-color: transparent;
+    height: 36px;
+    flex: 1;
+    color: white;
+    text-align: left;
+    min-width: 250px;
+    max-width: 100%;
+}
+.field7,
+.input10 {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.field7 {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 17px 10px 15px;
+}
+.input10 {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.masukkan-alamat {
+    width: 400px;
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+}
+.alamat {
+    align-self: stretch;
+    border: 1px solid #1d1c16;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 16px;
+    display: flex;
+}
+.alamat .title {
+    color: #1d1c16;
+}
+.hadiah-area .alamat .paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    letter-spacing: normal;
+    text-transform: none;
+}
+.masukkan-alamat {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-family: NanumMyeongjo;
+    font-size: 24px;
+    background-color: transparent;
+    height: 36px;
+    flex: 1;
+    color: #9f9f9f;
+    text-align: left;
+    min-width: 250px;
+    max-width: 100%;
+}
+.field8,
+.input11 {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.field8 {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 10px 17px 10px 15px;
+}
+.input11 {
+    flex-direction: column;
+    gap: 8px 0;
+}
+.ucapan-doa4 {
+    width: 239px;
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+}
+.blank-line14,
+.masukkan-ucapan {
+    margin: 0;
+}
+.masukkan-ucapan-container {
+    height: 108px;
+    flex: 1;
+    position: relative;
+    line-height: 150%;
+    display: inline-block;
+    max-width: 100%;
+}
+.field9 {
+    align-self: stretch;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 17px 10px 15px;
+    max-width: 100%;
+    color: #9f9f9f;
+}
+.input12 {
+    gap: 8px 0;
+}
+.frame-parent54,
+.input12,
+.row-input2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+.row-input2 {
+    gap: 16px 0;
+    font-size: 16px;
+    color: #fff;
+}
+.frame-parent54 {
+    gap: 24px 0;
+}
+.vector-icon10 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div20 {
+    align-self: stretch;
+    height: 10px;
+    position: relative;
+    font-size: 10px;
+    line-height: 100%;
+    font-family: Optima;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.badge11 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.kirim1,
+.mail9 {
+    position: relative;
+}
+.mail9 {
+    height: 30px;
+    width: 30px;
+    display: none;
+}
+.kirim1 {
+    font-size: 16px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #3b3b3b;
+    text-align: left;
+}
+.add-icon9 {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button22,
+.frame-parent53 {
+    display: flex;
+    box-sizing: border-box;
+}
+.button22 {
+    cursor: pointer;
+    border: 0;
+    padding: 16px 47px;
+    background-color: #ffc436;
+    align-self: stretch;
+    height: 67px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 16px;
+}
+.frame-parent53 {
+    width: 800px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    gap: 48px 0;
+    min-width: 800px;
+    max-width: 100%;
+}
+.bogor,
+.hari3 {
+    align-self: stretch;
+    position: relative;
+    line-height: 130%;
+}
+.bogor {
+    font-size: 16px;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #b0aea9;
+}
+.hari-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.selamat-yaa-luv {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+}
+.frame-parent55 {
+    align-self: stretch;
+    background-color: #fff;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+    gap: 16px 0;
+}
+.bogor1,
+.desta {
+    align-self: stretch;
+    position: relative;
+    line-height: 130%;
+}
+.bogor1 {
+    font-size: 16px;
+    letter-spacing: 0.26em;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #b0aea9;
+}
+.desta-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px 0;
+}
+.semoga-lancar-sampai {
+    align-self: stretch;
+    position: relative;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: NanumMyeongjo;
+}
+.button-kirim,
+.frame-parent56 {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.frame-parent56 {
+    align-self: stretch;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    gap: 16px 0;
+}
+
+.button-kirim {
+    border-radius: 10px;
+    background-color: #3b3b3b;
+    overflow-x: hidden;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 24px;
+    max-height: 500px;
+}
+.button-kirim,
+.frame-parent52,
+.home,
+.request-prayers {
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+.frame-parent52 {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 32px 0 0;
+    gap: 0 48px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 16px;
+    color: #b0aea9;
+}
+.home,
+.request-prayers {
+    flex-direction: column;
+}
+.request-prayers {
+    align-self: stretch;
+    background-color: #606060;
+    align-items: center;
+    padding: 80px;
+    gap: 48px 0;
+    max-width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #3b3b3b;
+    font-family: NanumMyeongjo;
+}
+.home {
+    width: 100%;
+    position: relative;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    align-items: flex-start;
+    padding: 0 0;
+    letter-spacing: normal;
+}
+
+.frame-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.field35,
+.frame-parent151,
+.ucapan-doa-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.frame-parent151,
+.ucapan-doa-container {
+    flex-direction: column;
+}
+
+.ucapan-doa-container {
+    align-self: stretch;
+    gap: 8px 0;
+}
+
+.ucapan-doa9 {
+    width: 149.5px;
+    position: relative;
+    line-height: 140%;
+    font-weight: 500;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.field35 {
+    border: 1px solid #fff;
+    background-color: transparent;
+    height: 128px;
+    width: auto;
+    font-size: 16px;
+    outline: 0;
+    align-self: stretch;
+    flex-direction: row;
+    padding: 10px 17px 10px 15px;
+    font-family: "Cormorant Infant";
+    color: white;
+}
+
+/* @media only screen and (max-width: 1920px) {
+
+    .banner2 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 80px 0 0;
+        box-sizing: border-box;
+        gap: 20px;
+        text-align: center;
+        font-size: 32px;
+        color: #fff;
+        font-family: "DM Serif Display";
+    }
+
+    .young-japanese-couple-1-icon1 {
+        height: 100vh;
+        width: 2283px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: -102.5px;
+        left: -363px;
+        object-fit: cover;
+    }
+} */
+
+@media screen and (max-width: 1536px) {
+    .young-japanese-couple-1-icon1 {
+        position: absolute;
+        margin: 0 !important;
+        bottom: -102.5px;
+        left: -700px;
+        object-fit: cover;
+    }
+
+    .untitled-1-1-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card6 {
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .card-inner {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .card-inner2 {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .text-block {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .card-list-parent {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 24px;
+        text-align: left;
+        font-size: 16px;
+        color: #b0aea9;
+    }
+
+    .frame-parent44 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 16px 0;
+    }
+
+    .pertama-bertemu {
+        font-size: 32px;
+        line-height: 130%;
+        font-family: "DM Serif Display";
+        color: #3b3b3b;
+    }
+
+    .kita-bertemu-pertama {
+        align-self: stretch;
+        position: relative;
+        font-size: 24px;
+        line-height: 150%;
+        color: #3b3b3b;
+    }
+
+    .text-block-path {
+        width: 750px;
+        position: relative;
+    }
+
+    .foto-icon1 {
+        object-fit: contain;
+    }
+
+    .foto-icon7 {
+        height: 520px;
+        width: 800px;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+        max-width: 100%;
+    }
+
+    .foto-icon4 {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -880px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon3 {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -440px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .frame-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .young-japanese-couple-1-icon1 {
+        position: absolute;
+        margin: 0 !important;
+        bottom: -102.5px;
+        left: -900px;
+        object-fit: cover;
+    }
+
+    .card6 {
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .card-inner {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .card-inner2 {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .text-block {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .card-list-parent {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding: 0 16px;
+        gap: 0 48px;
+        text-align: left;
+        font-size: 16px;
+        color: #b0aea9;
+    }
+
+    .frame-parent44 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 16px 0;
+    }
+
+    .pertama-bertemu {
+        font-size: 32px;
+        line-height: 130%;
+        font-family: "DM Serif Display";
+        color: #3b3b3b;
+    }
+
+    .kita-bertemu-pertama {
+        align-self: stretch;
+        position: relative;
+        font-size: 24px;
+        line-height: 150%;
+        color: #3b3b3b;
+    }
+
+    .our-love-story-parent {
+        background-color: #9e9c98;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 16px;
+        gap: 24px;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        font-family: NanumMyeongjo;
+        padding-bottom: 30px;
+    }
+
+    .our-love-story {
+        padding-top: 30px;
+        position: relative;
+        letter-spacing: 0.26em;
+        line-height: 130%;
+    }
+
+    .text-block-path {
+        width: 500px;
+        position: relative;
+    }
+
+    .input-alamat {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 20px;
+        gap: 24px 0;
+    }
+
+    .foto-icon7 {
+        height: 520px;
+        width: 600px;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+        max-width: 100%;
+    }
+
+    .foto-icon {
+        height: 450px;
+        width: 450px;
+        object-fit: contain;
+    }
+
+    .foto-icon1 {
+        height: 450px;
+        width: 450px;
+        object-fit: contain;
+        right: 35px;
+    }
+
+    .foto-icon2 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -400px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon3 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -900px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon4 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -1400px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .question4 {
+        width: 50%;
+        gap: 24px;
+    }
+
+    .frame-parent53 {
+        width: 800px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 20px 0;
+        gap: 48px 0;
+        min-width: 600px;
+        max-width: 100%;
+    }
+
+    .text-block-path {
+        width: 750px;
+        position: relative;
+    }
+
+    .frame-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .substitute-present {
+        align-self: stretch;
+        gap: 16px 0;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        font-family: Optima;
+    }
+
+    .card12 {
+        align-self: stretch;
+        border: 1px solid #1d1c16;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 24px;
+        gap: 16px 0;
+        margin-right: 10px;
+    }
+
+    .card13 {
+        align-self: stretch;
+        border: 1px solid #1d1c16;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 24px;
+        gap: 16px 0;
+        margin-right: 10px;
+    }
+
+    .request-prayers {
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hadiah-area {
+        padding: 24px;
+        gap: 24px;
+    }
+    .young-japanese-couple-1-icon1 {
+        left: -1000px;
+    }
+    .spacer {
+        padding: 24px;
+        gap: 24px;
+    }
+    .column {
+        align-items: center;
+        padding: 24px;
+        display: flex;
+        width: 75%;
+        text-align: center;
+    }
+    .rectangle-path {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card4 {
+        width: 50%;
+    }
+
+    .card-list-parent {
+        flex-wrap: nowrap;
+    }
+
+    .card-list3 {
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 48px 0;
+        max-width: 550px;
+    }
+
+    .card6,
+    .card8,
+    .card10 {
+        flex-direction: column;
+    }
+
+    .card6,
+    .card8 {
+        margin-left: 150px;
+    }
+
+    .card10 {
+        margin-right: 150px;
+    }
+
+    .frame-parent44,
+    .frame-parent47,
+    .text-block {
+        margin-top: 24px;
+    }
+
+    .frame-video {
+        width: 100%;
+        position: relative;
+        margin-top: -48px;
+    }
+
+    .foto-icon1 {
+        right: 15px;
+    }
+
+    .foto-icon2 {
+        right: -470px;
+    }
+
+    .foto-icon3 {
+        right: -960px;
+    }
+
+    .foto-icon4 {
+        right: -1450px;
+    }
+
+    .anonym-card-list {
+        flex-direction: column;
+    }
+
+    .frame-parent50 {
+        flex-direction: column-reverse;
+    }
+
+    .foto-icon7 {
+        width: 700px;
+        height: 620px;
+    }
+
+    .frame-form {
+        width: 700px;
+    }
+
+    .frame-parent51 {
+        margin-top: 24px;
+    }
+
+    .kirim-hadiah5 {
+        flex-direction: row;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .card-list5 {
+        width: 50%;
+        gap: 24px;
+        font-size: 24px;
+        color: #1d1c16;
+        font-family: NanumMyeongjo;
+        padding-left: 24px;
+    }
+
+    .card12,
+    .card13 {
+        margin-right: unset;
+    }
+
+    .frame-parent52 {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 30%;
+    }
+    .spacer {
+        padding: 16px;
+    }
+    .column {
+        text-align: center;
+        width: 80%;
+    }
+    .hadiah-area {
+        padding: 16px;
+        gap: 16px;
+    }
+    .wedding-date-address {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .photo-mix {
+        width: 100%;
+        height: 480px;
+    }
+    .resepsi-akad {
+        width: 100%;
+        align-items: center;
+    }
+    .info-akad .detail-waktu {
+        align-items: center;
+    }
+    .info-akad {
+        align-items: center;
+    }
+    .info-akad .paragraph {
+        text-align: center;
+    }
+    .info-resepsi {
+        align-items: center;
+    }
+    .info-resepsi .detail-waktu {
+        align-items: center;
+    }
+    .info-resepsi .paragraph {
+        text-align: center;
+    }
+    .kedua-mempelai {
+        justify-content: center;
+        padding: 16px;
+    }
+    .foto-mempelai-pria {
+        max-width: 480px;
+        width: 100%;
+    }
+    .foto-mempelai-wanita {
+        max-width: 480px;
+        width: 100%;
+    }
+    .mempelai-pria {
+        flex-direction: column;
+        justify-content: start;
+        gap: 24px;
+    }
+    .mempelai-wanita {
+        flex-direction: column;
+        justify-content: start;
+        gap: 24px;
+    }
+    .banner {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        box-sizing: border-box;
+        height: 840px;
+        width: 100%;
+        text-align: center;
+        font-size: 32px;
+        color: #fff;
+        font-family: "DM Serif Display";
+        background-image: url(./assets/BannerImage.jpg);
+        background-position: right -120px bottom 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .banner::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        bottom: 0;
+    }
+
+    .question2 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px 0;
+        max-width: 100%;
+        text-align: center;
+    }
+    .young-japanese-couple-1-icon1 {
+        height: 100vh;
+        width: 2283px;
+        position: absolute;
+        margin: 0 !important;
+        bottom: 0;
+        left: -1200px;
+        object-fit: cover;
+    }
+
+    .card-list2 {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card4 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+    }
+    .quotes {
+        text-align: center;
+        align-items: center;
+    }
+    .pertemuan-yang-kuimpikan-kini-container {
+        line-height: 150%;
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    .rhoma-irama {
+        font-size: 24px;
+        line-height: 150%;
+        font-family: NanumMyeongjo;
+    }
+
+    .row-input {
+        align-items: center;
+    }
+
+    .button-primary {
+        align-self: stretch;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        max-width: 100%;
+    }
+
+    .button-primary1 {
+        align-self: stretch;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 0 24px;
+        max-width: 100%;
+    }
+
+    .card6,
+    .card8 {
+        margin-left: 250px;
+    }
+
+    .card10 {
+        margin-right: 250px;
+    }
+
+    .visual-icon2,
+    .visual-icon6,
+    .visual-icon4 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .spacer {
+        justify-content: center;
+    }
+
+    .request-prayers {
+        padding: 16px;
+    }
+
+    /* .card6 {
+        width: 50%;
+        height: 100%;
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .card-inner {
+        margin-top: 10px;
+    }
+
+    .visual-icon2 {
+        height: 204px;
+        width: 204px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .card7 {
+        width: 50%;
+        height: 100%;
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .card8 {
+        width: 50%;
+        height: 100%;
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .visual-icon4 {
+        height: 204px;
+        width: 204px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+    .card9 {
+        width: 50%;
+        height: 100%;
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .card10 {
+        width: 50%;
+        height: 100%;
+        align-self: stretch;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 0 24px;
+    }
+
+    .spacer {
+        align-self: stretch;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 80px 96px 80px 80px;
+        box-sizing: border-box;
+        position: relative;
+        gap: 48px 0;
+        max-width: 100%;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 24px;
+        color: #3b3b3b;
+        font-family: NanumMyeongjo;
+    } */
+
+    .text-block-path {
+        width: 100%;
+        position: relative;
+    }
+
+    .frame-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .foto-icon {
+        left: -100px;
+        height: 450px; /* Menggunakan 'auto' untuk mengizinkan gambar menyesuaikan tinggi sesuai kebutuhan */
+        width: 450px; /* Mengatur lebar agar mengikuti lebar kontainer */
+        object-fit: contain; /* Memastikan gambar sepenuhnya terlihat di dalam kotak tanpa merubah rasio aspek */
+    }
+
+    .foto-icon1 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -330px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon2 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -830px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon3 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -1330px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon4 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -1830px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .anonym-card-list {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0 48px;
+        max-width: 100%;
+    }
+
+    .input-alamat {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 48px 0;
+        gap: 24px 0;
+    }
+
+    .frame-parent50 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0 48px;
+        max-width: 100%;
+    }
+
+    .foto-icon7 {
+        height: 520px;
+        width: 600px;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+        max-width: 100%;
+        margin-bottom: 48px;
+    }
+
+    .kirim-hadiah5 {
+        border: 1px solid #3b3b3b;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 16px;
+        gap: 24px;
+        text-align: left;
+        font-size: 32px;
+        font-family: "DM Serif Display";
+    }
+
+    .question4 {
+        width: 100%;
+        gap: 16px;
+        min-width: 100%;
+    }
+
+    .kirim-hadiah-container {
+        border-radius: 0 0 32px 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px 0;
+    }
+
+    .card12,
+    .card13 {
+        align-self: stretch;
+        border: 1px solid #1d1c16;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 24px;
+        gap: 16px 0;
+    }
+    .substitute-present {
+        align-self: stretch;
+        gap: 16px 0;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        font-family: Optima;
+    }
+
+    /* .multiple-cards {
+        height: 550px;
+        width: 1px;
+        margin: 0 auto;
+        position: relative;
+        background-color: #1d1c16;
+        overflow: hidden;
+        flex-shrink: 0;
+        transform: rotate(90deg);
+        top: -300px;
+        right: -10px;
+    } */
+
+    .card-list5 {
+        width: 100%;
+        gap: 24px;
+        font-size: 24px;
+        color: #1d1c16;
+        font-family: NanumMyeongjo;
+        padding-top: 24px;
+        border-top: 1px solid #1d1c16;
+        padding-left: 0px;
+        border-left: none;
+        min-height: auto;
+    }
+
+    .frame-parent52 {
+        align-self: stretch;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 32px 0 0;
+        gap: 0 48px;
+        max-width: 100%;
+        text-align: left;
+        font-size: 16px;
+        color: #b0aea9;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .young-japanese-couple-1-icon1 {
+        height: 100vh;
+        width: auto;
+        position: absolute;
+        margin: 0 !important;
+        bottom: 0;
+        left: -1010px;
+        object-fit: contain;
+    }
+
+    /* .card4 {
+        align-self: stretch;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 367px 25px 25px;
+        box-sizing: border-box;
+        position: relative;
+        min-height: 1080px;
+        z-index: 1;
+    } */
+
+    /* .row-input {
+        align-items: center;
+        position: absolute;
+        right: 0px;
+        bottom: 50px;
+    } */
+
+    .text-block-path {
+        width: 800px;
+        position: relative;
+    }
+
+    .foto-icon {
+        object-position: 70px;
+        width: 450px;
+        height: 450px;
+    }
+
+    .foto-icon1 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -400px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon2 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -900px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon3 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 100px;
+        right: -1400px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .foto-icon4 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        margin: 0 !important;
+        top: 0;
+        right: -1900px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .anonym-card-list {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0 48px;
+        max-width: 100%;
+    }
+    .foto-icon5,
+    .foto-icon6 {
+        position: absolute;
+        top: -0.5px;
+        left: 70px;
+        width: 397px;
+        height: 764px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .foto-icon6 {
+        top: 225.5px;
+        left: 250px;
+        z-index: 1;
+    }
+
+    .kita-bertemu-pertama2 {
+        height: unset;
+    }
+
+    .card6,
+    .card8 {
+        margin-left: 280px;
+    }
+
+    .card10 {
+        margin-right: 280px;
+    }
+
+    .kita-bertemu-pertama4 {
+        height: unset;
+    }
+
+    .visual-icon2,
+    .visual-icon6,
+    .visual-icon4 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .spacer {
+        justify-content: center;
+    }
+
+    .input-alamat {
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 24px 0;
+        gap: 24px 0;
+    }
+
+    /* .substitute-present {
+            align-self: stretch;
+            gap: 16px 0;
+            padding: 30px;
+            text-align: center;
+            font-size: 10px;
+            color: #fff;
+            margin-right: 20px;
+            font-family: Optima;
+        }
+
+        .question4 {
+            margin-bottom: 30px;
+            width: 943px;
+            gap: 0 0;
+            min-width: 500px;
+        }
+
+        .button20 {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background-color: #3b3b3b;
+            height: 56px;
+            flex-direction: row;
+            align-items: center;
+            padding: 16px 40px;
+            box-sizing: border-box;
+            font-family: NanumMyeongjo;
+            font-weight: 700;
+            font-size: 24px;
+            color: #fff;
+            min-width: 250px;
+        }
+
+        .button21 {
+            align-self: stretch;
+            height: 66px;
+            border: 1px solid #3b3b3b;
+            box-sizing: border-box;
+            flex-direction: row;
+            align-items: center;
+            padding: 16px 49px 16px 47px;
+            gap: 0 16px;
+        }
+
+        .multiple-cards {
+            height: 420px;
+            margin: auto 0;
+            width: 1px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #1d1c16;
+            overflow: hidden;
+            flex-shrink: 0;
+            transform: rotate(90deg);
+            top: -220px;
+        }
+
+        .card-list5 {
+            width: 560px;
+            gap: 24px 0;
+            font-size: 24px;
+            color: #1d1c16;
+            font-family: NanumMyeongjo;
+            padding: 30px;
+            margin-top: -420px;
+            margin-left: 5px;
+        }
+
+        .card12 {
+            align-self: stretch;
+            border: 1px solid #1d1c16;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 24px;
+            gap: 16px 0;
+            margin-right: 60px;
+        }
+
+        .card13 {
+            align-self: stretch;
+            border: 1px solid #1d1c16;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 24px;
+            gap: 16px 0;
+            margin-right: 60px;
+        } */
+
+    .frame-parent52 {
+        align-self: stretch;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 0 48px;
+        max-width: 100%;
+        text-align: left;
+        font-size: 16px;
+        color: #b0aea9;
+    }
+
+    .frame-parent53 {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 20px 0;
+        gap: 48px 0;
+        min-width: 500px;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .frame-parent53 {
+        min-width: unset;
+    }
+}

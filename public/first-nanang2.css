@@ -1,0 +1,265 @@
+body {
+  background-image: url(./assets/coba1.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 999;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.primary-button {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 140%;
+  background-color: #fff;
+  color: #3B3B3B;
+  font-family: NanumMyeongjo;
+  cursor: pointer;
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.young-japanese-couple-1-11 {
+    position: absolute;
+    top: -107px;
+    left: -16px;
+    width: 1951px;
+    height: 1950px;
+}
+.first-item {
+    position: absolute;
+    top: 602px;
+    left: -350px;
+    background-color: rgba(29, 28, 22, 0.8);
+    filter: blur(200px);
+    width: 2620px;
+    height: 1360px;
+    display: none;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 140%;
+  font-family: "DM Serif Display";
+  color: #ffc436;
+}
+.paragraph {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 140%;
+}
+.the-wedding-of1 {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 130%;
+}
+.rudi-arum1 {
+    position: relative;
+    font-size: 32px;
+    line-height: 140%;
+    font-family: "DM Serif Display";
+    color: #ffc436;
+    text-align: left;
+}
+.small-devider {
+    align-self: stretch;
+    position: relative;
+    background-color: #fff;
+    height: 1px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.oktober-20241 {
+    position: relative;
+    letter-spacing: 0.26em;
+    line-height: 150%;
+}
+.the-wedding-of-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 0;
+}
+.vector-icon19 {
+    position: absolute;
+    height: 50.67%;
+    width: 67.67%;
+    top: 25%;
+    right: 15.67%;
+    bottom: 24.33%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.div35 {
+    width: 16px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+}
+.badge21 {
+    position: absolute;
+    top: calc(50% - 14px);
+    left: calc(50% - 2px);
+    border-radius: 20px;
+    background-color: #ed1c24;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1px 2px;
+}
+.mail17 {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    display: none;
+}
+.buka-undangan3 {
+    position: relative;
+    font-size: 24px;
+    line-height: 140%;
+    font-family: NanumMyeongjo;
+    color: #3b3b3b;
+    text-align: left;
+}
+.add-icon17 {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: none;
+}
+.button29,
+.frame-parent119 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button29 {
+    align-self: stretch;
+    background-color: #fff;
+    height: 56px;
+    flex-direction: row;
+    padding: 16px 48px;
+    box-sizing: border-box;
+    gap: 0 16px;
+    cursor: pointer;
+    font-size: 10px;
+    font-family: Optima;
+}
+.frame-parent119 {
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+    padding: 48px;
+    gap: 24px;
+}
+
+.first1 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-family: NanumMyeongjo;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media only screen and (max-width: 1920px){
+
+ 
+
+  .young-japanese-couple-1-11 {
+    position: absolute;
+    top: -107px;
+    left: -16px;
+    width: 1951px;
+    height: 1950px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 1536px){
+
+  .young-japanese-couple-1-11 {
+    position: absolute;
+    top: -80px;
+    left: 0px;
+    width: 100%;
+    height: 1950px;
+    object-fit: cover;
+  }
+}
+
+
+@media only screen and (max-width: 1280px){
+
+  .young-japanese-couple-1-11 {
+    position: absolute;
+    top: -50px;
+    left: 0px;
+    width: 1280px;
+    height: 1950px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+
+  .young-japanese-couple-1-11 {
+    position: absolute;
+    top: -50px;
+    left: 0px;
+    width: 1024px;
+    height: 100vh; /* Menggunakan tinggi viewport penuh */
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .young-japanese-couple-1-11 {
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Menggunakan tinggi viewport penuh */
+    object-fit: cover;
+  }
+}
+
+
+@media only screen and (max-width: 640px){
+
+  .young-japanese-couple-1-11 {
+    position: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh; /* Menggunakan tinggi viewport penuh */
+    object-fit: cover;
+  }
+}
+
