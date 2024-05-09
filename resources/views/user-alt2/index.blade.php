@@ -244,7 +244,7 @@
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                 namaUndangan + "\n\n" +
                 "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
@@ -256,7 +256,7 @@
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                 namaUndangan + "\n\n" +
                 "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
@@ -266,7 +266,7 @@
             message =
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i Aldi untuk menghadiri acara kami.\n\n" +
                 "Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt2->nama_mempelai_laki }}&{{ $undanganAlt2->nama_mempelai_perempuan }}/to=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.\n\n" +
@@ -284,16 +284,16 @@
         window.open(whatsappLink, '_blank');
     }
 
-    function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
-        var link = "127.0.0.1:8000/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
-        navigator.clipboard.writeText(link)
-            .then(function() {
-                alert("Link berhasil disalin: " + link);
-            })
-            .catch(function(error) {
-                console.error("Gagal menyalin link: ", error);
-            });
-    }
+    // function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
+    //     var link = "jejakkebahagiaan.com/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
+    //     navigator.clipboard.writeText(link)
+    //         .then(function() {
+    //             alert("Link berhasil disalin: " + link);
+    //         })
+    //         .catch(function(error) {
+    //             console.error("Gagal menyalin link: ", error);
+    //         });
+    // }
 </script>
 
 

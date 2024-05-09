@@ -385,8 +385,7 @@
 
         <section class="request-prayers" data-scroll-to="requestPrayers">
             <div class="our-moment2">OUR MOMENT</div>
-            <form class="frame-parent52" method="POST" action="{{ url('/undangan-alt3/index') }}">
-                @csrf
+            <form class="frame-parent52">
                 <div class="frame-parent53">
                     <div class="frame-parent54">
                         <div class="the-groom-container">
@@ -399,20 +398,20 @@
                                 <div class="nama1">Nama</div>
                                 <div class="field7">
                                     <input name="nama" class="masukkan-nama-kamu3"
-                                        placeholder="Masukkan nama kamu" type="text" />
+                                        placeholder="Masukkan nama kamu" type="text" disabled/>
                                 </div>
                             </div>
                             <div class="input10">
                                 <div class="nama1">Alamat</div>
                                 <div class="field7">
                                     <input name="alamat" class="masukkan-nama-kamu3"
-                                        placeholder="Masukkan alamat kamu" type="text" />
+                                        placeholder="Masukkan alamat kamu" type="text" disabled />
                                 </div>
                             </div>
 
                             <div class="ucapan-doa-container">
                                 <div class="ucapan-doa9">Ucapan & Doa</div>
-                                <textarea class="field35" name="ucapan" placeholder="Kirim ucapan & doa" rows="6" cols="28"></textarea>
+                                <textarea class="field35" name="ucapan" placeholder="Kirim ucapan & doa" rows="6" cols="28" disabled></textarea>
                             </div>
                         </div>
                     </div>

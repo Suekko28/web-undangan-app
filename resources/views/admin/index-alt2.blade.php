@@ -389,7 +389,6 @@
     </div>
     <form class="send-prayers" disabled data-scroll-to="SendPrayers">
         <b class="kirimkan-doa-dan">Kirimkan Doa dan Ucapan</b>
-        @include('message')
         <div class="input-name-pesan">
             <div class="frame-nama-pesan">
                 <div class="nama6">Nama</div>

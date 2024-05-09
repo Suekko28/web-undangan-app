@@ -180,10 +180,10 @@
                                     <!-- Isi modal -->
                                     <p>Content of your modal goes here...</p>
                                     <div>
-                                        <button class="btn btn-primary"
+                                        {{-- <button class="btn btn-primary"
                                             onclick="copyLink('{{ $item->id }}', '{{ $undanganAlt1->nama_mempelai_laki }}', '{{ $undanganAlt1->nama_mempelai_perempuan }}', '{{ $item->nama_undangan }}')">
                                             <i class="fas fa-copy"></i> Copy Link
-                                        </button>
+                                        </button> --}}
                                         <a href="#" class="btn btn-primary" id="shareOptionWhatsApp"
                                             data-nama-undangan="{{ $item->nama_undangan }}"
                                             id="shareButton{{ $item->id }}" class="btn btn-primary"
@@ -244,7 +244,7 @@
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                 namaUndangan + "\n\n" +
                 "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
@@ -256,7 +256,7 @@
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\n" +
                 namaUndangan + "\n\n" +
                 "Berikut link undangan kami untuk informasi lengkap tentang acara dapat dilihat di sini:\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya dibagikan melalui pesan ini. Terima kasih banyak atas perhatiannya.\n\n" +
@@ -266,7 +266,7 @@
             message =
                 "Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i Aldi untuk menghadiri acara kami.\n\n" +
                 "Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :\n\n" +
-                "127.0.0.1:8000/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
+                "jejakkebahagiaan.com/{{ $undanganAlt1->nama_mempelai_laki }}&{{ $undanganAlt1->nama_mempelai_perempuan }}/=" +
                 namaUndangan + "\n\n" +
                 "Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\n" +
                 "Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.\n\n" +
@@ -285,7 +285,7 @@
     }
 
     function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
-        var link = "127.0.0.1:8000/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
+        var link = "jejakkebahagiaan.com/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
         navigator.clipboard.writeText(link)
             .then(function() {
                 alert("Link berhasil disalin: " + link);
@@ -383,19 +383,19 @@
             }
         });
 
-        function copyLink(url) {
-            // Membuat elemen input untuk menampung URL
-            var tempInput = document.createElement('input');
-            tempInput.value = url;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // Untuk perangkat mobile
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+        // function copyLink(url) {
+        //     // Membuat elemen input untuk menampung URL
+        //     var tempInput = document.createElement('input');
+        //     tempInput.value = url;
+        //     document.body.appendChild(tempInput);
+        //     tempInput.select();
+        //     tempInput.setSelectionRange(0, 99999); // Untuk perangkat mobile
+        //     document.execCommand('copy');
+        //     document.body.removeChild(tempInput);
 
-            // Memberikan umpan balik kepada pengguna
-            alert('Link berhasil disalin!');
-        }
+        //     // Memberikan umpan balik kepada pengguna
+        //     alert('Link berhasil disalin!');
+        // }
     });
 </script>
 
