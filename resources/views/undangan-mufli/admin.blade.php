@@ -26,7 +26,7 @@
                                 Dipilih</button>
                             <thead>
                                 <tr class="text-nowrap text-center">
-                                    <th><input type="checkbox" id="selectAll"></th>
+                                    {{-- <th><input type="checkbox" id="selectAll"></th> --}}
                                     <th>No</th>
                                     {{-- <th>Nama Undangan</th> --}}
                                     {{-- <th>Foto Prewedding</th> --}}
@@ -39,8 +39,8 @@
                                 <?php $i = $data->firstItem(); ?>
                                 @foreach ($data as $item)
                                     <tr class="text-center">
-                                        <td><input type="checkbox" class="delete-checkbox" name="selected[]"
-                                                value="{{ $item->id }}"></td>
+                                        {{-- <td><input type="checkbox" class="delete-checkbox" name="selected[]"
+                                                value="{{ $item->id }}"></td> --}}
                                         <td scope="row">{{ $i }}</td>
                                         {{-- <td>{{ $item->nama_undangan }}</td> --}}
                                         {{-- <td>
@@ -83,43 +83,73 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fungsi untuk menangani pemilihan semua checkbox
-            document.getElementById('selectAll').addEventListener('change', function() {
-                var checkboxes = document.querySelectorAll('.delete-checkbox');
-                checkboxes.forEach(function(checkbox) {
-                    checkbox.checked = document.getElementById('selectAll').checked;
-                });
-            });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     // Fungsi untuk menangani pemilihan semua checkbox
+        //     document.getElementById('selectAll').addEventListener('change', function() {
+        //         var checkboxes = document.querySelectorAll('.delete-checkbox');
+        //         checkboxes.forEach(function(checkbox) {
+        //             checkbox.checked = document.getElementById('selectAll').checked;
+        //         });
+        //     });
 
-            // Menangani klik pada tombol delete
+            // // Menangani klik pada tombol delete
+            // var deleteButtons = document.querySelectorAll('.delete-btn');
+            // deleteButtons.forEach(function(button) {
+            //     button.addEventListener('click', function(event) {
+            //         event.preventDefault();
+            //         var itemId = this.getAttribute('data-id');
+            //         Swal.fire({
+            //             title: "Are you sure?",
+            //             text: "You won't be able to revert this!",
+            //             icon: "warning",
+            //             showCancelButton: true,
+            //             confirmButtonColor: "#3085d6",
+            //             cancelButtonColor: "#d33",
+            //             confirmButtonText: "Yes, delete it!"
+            //         }).then((result) => {
+            //             if (result.isConfirmed) {
+            //                 document.getElementById('deleteForm').action =
+            //                     "{{ url('undangan-alternative2') }}/" + itemId;
+            //                 document.getElementById('deleteForm').submit();
+            //                 Swal.fire(
+            //                     'Deleted',
+            //                     'Your file has been deleted',
+            //                     'success'
+            //                 )
+            //             }
+            //         });
+            //     });
+            // });
+
+
             var deleteButtons = document.querySelectorAll('.delete-btn');
-            deleteButtons.forEach(function(button) {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    var itemId = this.getAttribute('data-id');
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            document.getElementById('deleteForm').action =
-                                "{{ url('undangan-alternative2') }}/" + itemId;
-                            document.getElementById('deleteForm').submit();
-                            Swal.fire(
-                                'Deleted',
-                                'Your file has been deleted',
-                                'success'
-                            )
-                        }
-                    });
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                var itemId = this.getAttribute('data-id');
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('deleteForm').action =
+                            "{{ url('undangan-alternative2') }}/" + itemId;
+                        document.getElementById('deleteForm').submit();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        );
+                    }
                 });
             });
+        });
+
 
             // Menangani pencarian
             const searchInput = document.getElementById('searchInput');
@@ -148,48 +178,47 @@
             });
 
             // Menangani penghapusan saat tombol "Hapus yang Dipilih" ditekan
-            document.getElementById('deleteSelected').addEventListener('click', function(event) {
-                event.preventDefault();
+            // document.getElementById('deleteSelected').addEventListener('click', function(event) {
+            //     event.preventDefault();
 
-                // Cek apakah ada setidaknya satu checkbox yang dicentang
-                var anyChecked = false;
-                var checkboxes = document.querySelectorAll('.delete-checkbox');
-                checkboxes.forEach(function(checkbox) {
-                    if (checkbox.checked) {
-                        anyChecked = true;
-                    }
-                });
+            //     // Cek apakah ada setidaknya satu checkbox yang dicentang
+            //     var anyChecked = false;
+            //     var checkboxes = document.querySelectorAll('.delete-checkbox');
+            //     checkboxes.forEach(function(checkbox) {
+            //         if (checkbox.checked) {
+            //             anyChecked = true;
+            //         }
+            //     });
 
-                if (anyChecked) {
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Di sini kamu bisa menambahkan logika untuk penghapusan multiple
-                            // Lakukan pengiriman form di sini
-                            document.getElementById('deleteForm').submit();
-                            Swal.fire(
-                                'Deleted',
-                                'Your file has been deleted',
-                                'success'
-                            )
-                        }
-                    });
-                } else {
-                    Swal.fire(
-                        'No checkbox selected',
-                        'Please select at least one item to delete',
-                        'error'
-                    );
-                }
-            });
-        });
+            //     if (anyChecked) {
+            //         Swal.fire({
+            //             title: "Are you sure?",
+            //             text: "You won't be able to revert this!",
+            //             icon: "warning",
+            //             showCancelButton: true,
+            //             confirmButtonColor: "#3085d6",
+            //             cancelButtonColor: "#d33",
+            //             confirmButtonText: "Yes, delete it!"
+            //         }).then((result) => {
+            //             if (result.isConfirmed) {
+            //                 // Di sini kamu bisa menambahkan logika untuk penghapusan multiple
+            //                 // Lakukan pengiriman form di sini
+            //                 document.getElementById('deleteForm').submit();
+            //                 Swal.fire(
+            //                     'Deleted',
+            //                     'Your file has been deleted',
+            //                     'success'
+            //                 )
+            //             }
+            //         });
+            //     } else {
+            //         Swal.fire(
+            //             'No checkbox selected',
+            //             'Please select at least one item to delete',
+            //             'error'
+            //         );
+            //     }
+            // });
     </script>
 
 
@@ -204,34 +233,7 @@
 
     </main>
 @endsection
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById('searchInput');
-        const tableRows = document.querySelectorAll('.table tbody tr');
-        const noDataMessage = document.getElementById('noDataMessage');
 
-        searchInput.addEventListener('input', function() {
-            const searchText = this.value.toLowerCase();
-            let found = false;
-
-            tableRows.forEach(function(row) {
-                const rowData = row.innerText.toLowerCase();
-                if (rowData.includes(searchText)) {
-                    row.style.display = '';
-                    found = true;
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-
-            if (!found) {
-                noDataMessage.style.display = 'block';
-            } else {
-                noDataMessage.style.display = 'none';
-            }
-        });
-    });
-</script>
 
 
 <!-- Content -->

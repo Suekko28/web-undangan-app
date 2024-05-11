@@ -120,25 +120,13 @@ class NamaUndanganAlt3Controller extends Controller
      */
     public function destroy(Request $request, $id = null)
     {
-        // Cek apakah ada ID yang diterima, jika tidak, artinya sedang menghapus data yang dipilih
-        if ($id === null) {
-            // Mendapatkan data yang dipilih dari form
-            $selectedIds = $request->input('selected', []);
-
-            // Menghapus data yang dipilih
-            NamaUndanganAlt3::whereIn('id', $selectedIds)->delete();
-
-            return redirect()->route('nama-undangan-list3')->with('success', 'Data yang dipilih berhasil dihapus');
+        // Hapus data tunggal berdasarkan ID yang diterima
+        $data = NamaUndanganAlt3::find($id);
+        if ($data) {
+            $data->delete();
+            // Redirect back to the previous page
+            return redirect()->back()->with('success', 'Data berhasil dihapus');
         } else {
-            // Hapus data tunggal berdasarkan ID yang diterima
-            $data = NamaUndanganAlt3::find($id);
-            if ($data) {
-                $data->delete();
-                // Redirect back to the previous page
-                return redirect()->back()->with('success', 'Data berhasil dihapus');
-            } else {
-                return redirect()->back()->with('error', 'Data tidak ditemukan');
-            }
+            return redirect()->back()->with('error', 'Data tidak ditemukan');
         }
-    }
-}
+    }}
