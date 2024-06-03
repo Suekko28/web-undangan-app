@@ -67,7 +67,7 @@ class UndanganAlt1FormRequest extends FormRequest
             'foto_pendekatan' => ['', 'image', 'mimes:jpeg,png,jpg'],
             'foto_lamaran' => ['', 'image', 'mimes:jpeg,png,jpg'],
             'foto_pernikahan' => ['', 'image', 'mimes:jpeg,png,jpg'],
-            'music' => ['required', 'mimes:mp3'],
+            'music' => ['required', 'mimes:mp3,MP3'],
             'judul_cerita1' => ['', ''],
             'judul_cerita2' => ['', ''],
             'judul_cerita3' => ['', ''],
