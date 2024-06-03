@@ -253,27 +253,10 @@ class UndanganAlt1Controller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, $id = null)
+    public function destroy(string $id)
     {
-        // Cek apakah ada ID yang diterima, jika tidak, artinya sedang menghapus data yang dipilih
-        if ($id === null) {
-            // Mendapatkan data yang dipilih dari form
-            $selectedIds = $request->input('selected', []);
-
-            // Menghapus data yang dipilih
-            UndanganAlt1::whereIn('id', $selectedIds)->delete();
-
-            return redirect()->route('undangan-alternative1')->with('success', 'Data yang dipilih berhasil dihapus');
-        } else {
-            // Hapus data tunggal berdasarkan ID yang diterima
-            $data = UndanganAlt1::find($id);
-            if ($data) {
-                $data->delete();
-                return redirect()->route('undangan-alternative1')->with('success', 'Data berhasil dihapus');
-            } else {
-                return redirect()->route('undangan-alternative1')->with('error', 'Data tidak ditemukan');
-            }
-        }
+        $data = UndanganAlt1::find($id)->delete();
+        return redirect()->route('undangan-alternative1')->with('success', 'Data berhasil Dihapus');
     }
 
 

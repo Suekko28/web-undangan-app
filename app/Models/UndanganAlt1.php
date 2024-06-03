@@ -78,6 +78,6 @@ class UndanganAlt1 extends Model
 
     public function alt1Models(): HasMany
     {
-        return $this->hasMany(Alt1Model::class, 'id_alt1_rsvp', 'id');
+        return $this->hasMany(alt1model::class, 'id_alt1_rsvp', 'id');
     }
 }

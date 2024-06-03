@@ -65,7 +65,7 @@
                     <div class="mb-3">
                         <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
                     </div>
-                    <div id="nonamaUndangansMessage" class="alert alert-warning" style="display: none;">
+                    <div id="noDataMessage" class="alert alert-warning" style="display: none;">
                         Nama Undangan tidak ditemukan.
                     </div>
                 </div>
@@ -76,11 +76,11 @@
                         @csrf
                         @method('DELETE')
                         <table class="table table-bordered">
-                            <button type="submit" class="btn btn-danger mb-3" id="deleteSelected">Hapus yang
-                                Dipilih</button>
+                            {{-- <button type="submit" class="btn btn-danger mb-3" id="deleteSelected">Hapus yang
+                                Dipilih</button> --}}
                             <thead>
                                 <tr class="text-nowrap text-center">
-                                    <th><input type="checkbox" id="selectAll"></th>
+                                    {{-- <th><input type="checkbox" id="selectAll"></th> --}}
                                     <th>No</th>
                                     <th>Nama Undangan</th>
                                     <th>Aksi</th>
@@ -90,8 +90,8 @@
                                 <?php $i = $namaUndangans->firstItem(); ?>
                                 @foreach ($namaUndangans as $item)
                                     <tr class="text-center">
-                                        <td><input type="checkbox" class="delete-checkbox" name="selected[]"
-                                                value="{{ $item->id }}"></td>
+                                        {{-- <td><input type="checkbox" class="delete-checkbox" name="selected[]"
+                                                value="{{ $item->id }}"></td> --}}
                                         <td scope="row">{{ $i }}</td>
                                         <td scope="row">{{ $item->nama_undangan }}</td>
                                         <td>
@@ -284,16 +284,75 @@
         window.open(whatsappLink, '_blank');
     }
 
-    function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
-        var link = "jejakkebahagiaan.com/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
-        navigator.clipboard.writeText(link)
-            .then(function() {
-                alert("Link berhasil disalin: " + link);
-            })
-            .catch(function(error) {
-                console.error("Gagal menyalin link: ", error);
+    // function copyLink(itemId, namaMempelaiLaki, namaMempelaiPerempuan, namaUndangan) {
+    //     var link = "jejakkebahagiaan.com/" + namaMempelaiLaki + "&" + namaMempelaiPerempuan + "/" + namaUndangan;
+    //     navigator.clipboard.writeText(link)
+    //         .then(function() {
+    //             alert("Link berhasil disalin: " + link);
+    //         })
+    //         .catch(function(error) {
+    //             console.error("Gagal menyalin link: ", error);
+    //         });
+    // }
+
+
+    // Fitur Delete by id menggunakan swal 
+    var deleteButtons = document.querySelectorAll('.delete-btn');
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var itemId = this.getAttribute('namaUndangans-id'); // Ubah menjadi 'namaUndangans-id'
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Ganti URL action formulir delete dengan rute yang tepat
+                    document.getElementById('deleteForm').action =
+                        "{{ route('nama-undangan.destroy', ['id' => ':id']) }}".replace(':id',
+                            itemId);
+                    document.getElementById('deleteForm').submit();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    );
+                }
             });
-    }
+        });
+    });
+
+
+    // Fitur Search
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('.table tbody tr');
+    const noDataMessage = document.getElementById('noDataMessage');
+
+    searchInput.addEventListener('input', function() {
+        const searchText = this.value.toLowerCase();
+        let found = false;
+
+        tableRows.forEach(function(row) {
+            const rowData = row.innerText.toLowerCase();
+            if (rowData.includes(searchText)) {
+                row.style.display = '';
+                found = true;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        if (!found) {
+            noDataMessage.style.display = 'block';
+        } else {
+            noDataMessage.style.display = 'none';
+        }
+    });
 </script>
 
 
@@ -302,128 +361,4 @@
     integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous">
 </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fungsi untuk menangani pemilihan semua checkbox
-        document.getElementById('selectAll').addEventListener('change', function() {
-            var checkboxes = document.querySelectorAll('.delete-checkbox');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = document.getElementById('selectAll').checked;
-            });
-        });
 
-        // Menangani klik pada tombol delete
-        var deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                var itemId = this.getAttribute('namaUndangans-id');
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.getElementById('deleteForm').action =
-                            "{{ route('nama-undangan.destroy', ['id' => ':id']) }}"
-                            .replace(':id', itemId);
-                        document.getElementById('deleteForm').submit();
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        );
-                    }
-                });
-            });
-        });
-
-        // Menangani penghapusan saat tombol "Hapus yang Dipilih" ditekan
-        document.getElementById('deleteSelected').addEventListener('click', function(event) {
-            event.preventDefault();
-
-            // Cek apakah ada setidaknya satu checkbox yang dicentang
-            var anyChecked = false;
-            var checkboxes = document.querySelectorAll('.delete-checkbox');
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    anyChecked = true;
-                }
-            });
-
-            if (anyChecked) {
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "You won't be able to revert this!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.getElementById('deleteForm').submit();
-                        Swal.fire(
-                            'Deleted!',
-                            'Your files have been deleted.',
-                            'success'
-                        );
-                    }
-                });
-            } else {
-                Swal.fire(
-                    'No checkbox selected',
-                    'Please select at least one item to delete',
-                    'error'
-                );
-            }
-        });
-
-        // function copyLink(url) {
-        //     // Membuat elemen input untuk menampung URL
-        //     var tempInput = document.createElement('input');
-        //     tempInput.value = url;
-        //     document.body.appendChild(tempInput);
-        //     tempInput.select();
-        //     tempInput.setSelectionRange(0, 99999); // Untuk perangkat mobile
-        //     document.execCommand('copy');
-        //     document.body.removeChild(tempInput);
-
-        //     // Memberikan umpan balik kepada pengguna
-        //     alert('Link berhasil disalin!');
-        // }
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById('searchInput');
-        const tableRows = document.querySelectorAll('.table tbody tr');
-        const noDataMessage = document.getElementById('noDataMessage');
-
-        searchInput.addEventListener('input', function() {
-            const searchText = this.value.toLowerCase();
-            let found = false;
-
-            tableRows.forEach(function(row) {
-                const rowData = row.innerText.toLowerCase();
-                if (rowData.includes(searchText)) {
-                    row.style.display = '';
-                    found = true;
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-
-            if (!found) {
-                noDataMessage.style.display = 'block';
-            } else {
-                noDataMessage.style.display = 'none';
-            }
-        });
-    });
-</script>
