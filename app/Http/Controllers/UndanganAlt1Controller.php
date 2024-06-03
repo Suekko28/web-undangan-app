@@ -44,6 +44,10 @@ class UndanganAlt1Controller extends Controller
 
     public function store(UndanganAlt1FormRequest $request)
     {
+
+        if (!Storage::exists('public/music')) {
+            Storage::makeDirectory('public/music');
+        }
         // Simpan gambar ke penyimpanan
         $banner_img = $request->file('banner_img');
         $foto_prewedding = $request->file('foto_prewedding');
@@ -56,7 +60,7 @@ class UndanganAlt1Controller extends Controller
         $foto_prewedding_path = $foto_prewedding->storeAs('public/images', $foto_prewedding->hashName());
         $foto_mempelai_laki_path = $foto_mempelai_laki->storeAs('public/images', $foto_mempelai_laki->hashName());
         $foto_mempelai_perempuan_path = $foto_mempelai_perempuan->storeAs('public/images', $foto_mempelai_perempuan->hashName());
-        $music_path = $music->storeAs('public/images', $music->hashName());
+        $music_path = $music->storeAs('public/music', $music->hashName());
 
         // Memisahkan nama undangan yang dipisahkan oleh baris menjadi array
         // $nama_undangans = explode("\n", $request->nama_undangan);
