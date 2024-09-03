@@ -3,6 +3,7 @@
 use App\Http\Controllers\Alt1Controller;
 use App\Http\Controllers\Alt2Controller;
 use App\Http\Controllers\Alt3Controller;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeAlt1Controller;
 use App\Http\Controllers\HomeAlt2Controller;
@@ -10,6 +11,7 @@ use App\Http\Controllers\HomeAlt3Controller;
 use App\Http\Controllers\IndexAlt1Controller;
 use App\Http\Controllers\IndexAlt2Controller;
 use App\Http\Controllers\IndexAlt3Controller;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NamaUndanganAlt1Controller;
 use App\Http\Controllers\NamaUndanganAlt2Controller;
 use App\Http\Controllers\NamaUndanganAlt3Controller;
@@ -83,9 +85,12 @@ Route::middleware(['auth'])->group(function () {
 
 // Routing User
 
-Route::get('/', function () {
-    return view('index');
-});
+
+// Route::get('/', function () {
+//     return view('landing-page.index');
+// });
+
+Route::resource('/' , LandingPageController::class);
 
 
 
@@ -145,6 +150,11 @@ Route::get('/nama-undangan/alt3/{id}/edit', [NamaUndanganAlt3Controller::class, 
 Route::post('/nama-undangan/alt3/{id}/list', [NamaUndanganAlt3Controller::class, 'store'])->name('nama-undangan-store3');
 Route::put('/nama-undangan/alt3/{undanganAlt3Id}/{id}', [NamaUndanganAlt3Controller::class, 'update'])->name('nama-undangan-update3');
 Route::delete('/nama-undangan/alt3/{id}', [NamaUndanganAlt3Controller::class, 'destroy'])->name('nama-undangan.destroy3');
+
+
+// Route Blog
+Route::resource('/blog', App\Http\Controllers\BlogController::class);
+// Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 
 
 
