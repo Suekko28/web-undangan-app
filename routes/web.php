@@ -22,6 +22,7 @@ use App\Http\Controllers\UndanganAlt3Controller;
 use App\Http\Controllers\UndanganController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ViewAlt1Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,19 +41,24 @@ use Illuminate\Support\Facades\Route;
 // Routing Admin
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.form');
-Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
-Route::get('/register', [LoginController::class, 'register'])->name('register.form');
-Route::post('/create', [LoginController::class, 'create'])->name('register.submit');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::get('/', function () {
-//     return redirect()->route('login.form');
-// });
+// Route::get('/login', [LoginController::class, 'index'])->name('login.form');
+// Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+// Route::get('/register', [LoginController::class, 'register'])->name('register.form');
+// Route::post('/create', [LoginController::class, 'create'])->name('register.submit');
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// // Route::get('/', function () {
+// //     return redirect()->route('login.form');
+// // });
 
+
+Auth::routes([
+    'reset' => false,
+    'verify' => false,
+]);
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
     Route::get('/view-alternative1', [ViewAlt1Controller::class, 'index'])->name('view-alternative1');
     Route::get('/home', function () {
         return redirect()->route('dashboard');
@@ -90,7 +96,7 @@ Route::middleware(['auth'])->group(function () {
 //     return view('landing-page.index');
 // });
 
-Route::resource('/' , LandingPageController::class);
+Route::resource('/', LandingPageController::class);
 
 
 
@@ -202,3 +208,7 @@ Route::get('/undangan-alt3/index', function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
