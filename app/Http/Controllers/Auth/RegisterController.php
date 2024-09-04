@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -50,13 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nama' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ], [
-            'nama.required' => 'Nama wajib diisi.',
-            'nama.string' => 'Nama harus berupa teks.',
-            'nama.max' => 'Nama tidak boleh lebih dari 255 karakter.',
+            'name.required' => 'name wajib diisi.',
+            'name.string' => 'name harus berupa teks.',
+            'name.max' => 'name tidak boleh lebih dari 255 karakter.',
 
             'email.required' => 'Email wajib diisi.',
             'email.string' => 'Email harus berupa teks.',
@@ -80,9 +80,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         User::create([
-            'nama' => $data['nama'],
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => '1',
         ]);
 
         // Add a success message to the session

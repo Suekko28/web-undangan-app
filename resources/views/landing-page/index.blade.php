@@ -134,8 +134,10 @@
             <div class="over">
                 @foreach ($data as $item)
                     <div class="card card-blog-custom">
-                        <div class="card-blog-img">{{asset('storage/image'. $item->image)}}</div>
-                        <div class="card-blog-date">{{$item->created_at}}</div>
+                        <div class="card-blog-img">
+                            <img class="rounded-4" src="{{asset('storage/blog/' . $item->image)}}" alt="" width="100%" height="228">
+                        </div>
+                        <div class="card-blog-date">{{ $item->created_at->format('d-F-Y') }}</div>
                         <div class="card-blog-title">{{$item->judul}}</div>
                         <div class="card-blog-detail">{{$item->deskripsi}}
                         </div>

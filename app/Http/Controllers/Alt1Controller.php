@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\alt1FormRequest;
 use App\Models\alt1model;
+use App\Models\UcapanAlt1;
 use App\Models\UndanganAlt1;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class Alt1Controller extends Controller
         $undanganAlt1 = UndanganAlt1::findOrFail($undanganAlt1Id);
     
         // Buat instance baru dari Alt1Model dan isi dengan data yang diberikan
-        $alt1Model = new Alt1Model();
+        $alt1Model = new UcapanAlt1();
         $alt1Model->fill($request->validated());
     
         // Simpan Alt1Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai
@@ -51,37 +52,4 @@ class Alt1Controller extends Controller
         ])->with('success', 'Berhasil menambahkan data');
     }
     
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

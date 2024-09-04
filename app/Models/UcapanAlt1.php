@@ -5,22 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class alt1model extends Model
+class UcapanAlt1 extends Model
 {
     use HasFactory;
-
 
     protected $fillable = [
         'nama',
         'ucapan',
         'kehadiran',
-        // 'undangan_alt1_rsvp_id',
+        'undangan_alt1_id',
     ];
 
-//     public function undanganAlt1RSVP(): BelongsTo {
-//         return $this->belongsTo(UndanganAlt1::class, 'undangan_alt1_rsvp_id', 'id');
-//     }
-// }
+    public function undanganAlt1RSVP(): BelongsTo {
+        return $this->belongsTo(UndanganAlt1::class, 'undangan_alt1_id', 'id');
+    }
 }

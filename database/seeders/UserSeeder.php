@@ -15,17 +15,17 @@ class UserSeeder extends Seeder
     {
         // Insert Admin User
         DB::table('users')->insert([
-            'name' => 'Admin User',
-            'email' => 'admin123@gmail.com',
-            'password' => Hash::make('password123'), // Ganti dengan password yang aman
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin123'), // Ganti dengan password yang aman
             'role' => 1, // Role 1 for Admin
         ]);
 
         // Insert Regular User
         DB::table('users')->insert([
-            'name' => 'Regular User',
-            'email' => 'user@gmail.com',
-            'password' => Hash::make('password123'), // Ganti dengan password yang aman
+            'name' => 'PSI',
+            'email' => 'adminPSI@gmail.com',
+            'password' => Hash::make('adminPSI123'), // Ganti dengan password yang aman
             'role' => 2, // Role 2 for Regular PSI
         ]);
     }

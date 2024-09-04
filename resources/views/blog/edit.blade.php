@@ -49,7 +49,7 @@
                             <div class="form-group mb-3">
                                 <label for="image">Gambar <span class="mandatory">*</span></label>
                                 <input type="file" class="form-control" id="image" name="image"
-                                    placeholder="Masukkan judul" value="{{$data->judul}}">
+                                    placeholder="" value="{{$data->image}}}">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="judul">Judul <span class="mandatory">*</span></label>

@@ -29,7 +29,7 @@
                                     {{-- <th><input type="checkbox" id="selectAll"></th> --}}
                                     <th>No</th>
                                     {{-- <th>Nama Undangan</th> --}}
-                                    {{-- <th>Foto Prewedding</th> --}}
+                                    <th>Foto</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
                                     <th>Aksi</th>
@@ -47,8 +47,12 @@
                                             <img src="{{ Storage::url('' . $item->banner_img) }}" width="120"
                                                 height="120" alt="Foto Prewedding">
                                         </td> --}}
+                                        <td>
+                                            <img src="{{ asset('storage/blog/' . $item->image) }}" alt=""
+                                                width="120" height="120" alt="Foto Blog">
+                                        </td>
                                         <td>{{ $item->judul }} </td>
-                                        <td>{{ $item->deskripsi }} </td>
+                                        <td>{{ Str::limit($item->deskripsi , 300)}} </td>
                                         </td>
                                         <td>
                                             <div class="btn-group-vertical">
