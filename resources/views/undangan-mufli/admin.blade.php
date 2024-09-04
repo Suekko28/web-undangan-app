@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('navbar-admin')
+@section('content')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
             <a class="btn btn-primary mb-3" href="{{ url('undangan-alternative2/create') }}">+ Buat Undangan</a>
@@ -22,8 +22,8 @@
                         @csrf
                         @method('DELETE')
                         <table class="table table-bordered">
-                            <button type="submit" class="btn btn-danger mb-3" id="deleteSelected">Hapus yang
-                                Dipilih</button>
+                            {{-- <button type="submit" class="btn btn-danger mb-3" id="deleteSelected">Hapus yang
+                                Dipilih</button> --}}
                             <thead>
                                 <tr class="text-nowrap text-center">
                                     {{-- <th><input type="checkbox" id="selectAll"></th> --}}

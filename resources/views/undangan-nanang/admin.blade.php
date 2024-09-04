@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('navbar-admin')
+@section('content')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y">
             <a class="btn btn-primary mb-3" href="{{ url('undangan-alternative3/create') }}">+ Buat Undangan</a>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('navbar-admin')
+@section('content')
     <main>
         <div class="container-xxl flex-grow-1 container-p-y vh-100">
             <!-- Responsive Table -->

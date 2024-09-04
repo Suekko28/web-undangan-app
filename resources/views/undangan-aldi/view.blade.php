@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('navbar-admin')
+@section('content')
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/assets/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
