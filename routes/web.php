@@ -56,7 +56,7 @@ Auth::routes([
     'verify' => false,
 ]);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
     Route::get('/view-alternative1', [ViewAlt1Controller::class, 'index'])->name('view-alternative1');
@@ -81,6 +81,38 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/undangan-alternative3', [UndanganAlt3Controller::class, 'index'])->name('undangan-alternative3');
     Route::get('/undangan-alternative3/{id}/view', [UndanganAlt3Controller::class, 'show'])->name('undangan-alternative3-view');
     Route::delete('/undangan-alternative3', [UndanganAlt3Controller::class, 'destroy'])->name('undangan-alternative3.destroy');
+
+    Route::resource('/blog', App\Http\Controllers\BlogController::class);
+
+
+});
+
+Route::middleware(['auth', 'PSI'])->group(function () {
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+    Route::get('/view-alternative1', [ViewAlt1Controller::class, 'index'])->name('view-alternative1');
+    Route::get('/home', function () {
+        return redirect()->route('dashboard');
+    });
+    // Route::get('/undangan/pilih-template', [UndanganController::class, 'template'])->name('template');
+    // Route::resource('/undangan', UndanganController::class);
+    Route::resource('/undangan-alternative1', UndanganAlt1Controller::class);
+    Route::get('/undangan-alternative1', [UndanganAlt1Controller::class, 'index'])->name('undangan-alternative1');
+    Route::get('/undangan-alternative1/{id}/view', [UndanganAlt1Controller::class, 'show'])->name('undangan-alternative1-view');
+    Route::delete('/undangan-alternative1', [UndanganAlt1Controller::class, 'destroy'])->name('undangan-alternative1.destroy');
+
+
+    Route::resource('/undangan-alternative2', UndanganAlt2Controller::class);
+    Route::get('/undangan-alternative2', [UndanganAlt2Controller::class, 'index'])->name('undangan-alternative2');
+    Route::get('/undangan-alternative2/{id}/view', [UndanganAlt2Controller::class, 'show'])->name('undangan-alternative2-view');
+    Route::delete('/undangan-alternative2', [UndanganAlt2Controller::class, 'destroy'])->name('undangan-alternative2.destroy');
+
+
+    Route::resource('/undangan-alternative3', UndanganAlt3Controller::class);
+    Route::get('/undangan-alternative3', [UndanganAlt3Controller::class, 'index'])->name('undangan-alternative3');
+    Route::get('/undangan-alternative3/{id}/view', [UndanganAlt3Controller::class, 'show'])->name('undangan-alternative3-view');
+    Route::delete('/undangan-alternative3', [UndanganAlt3Controller::class, 'destroy'])->name('undangan-alternative3.destroy');
+
 
 
 });
@@ -159,7 +191,6 @@ Route::delete('/nama-undangan/alt3/{id}', [NamaUndanganAlt3Controller::class, 'd
 
 
 // Route Blog
-Route::resource('/blog', App\Http\Controllers\BlogController::class);
 // Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 
 

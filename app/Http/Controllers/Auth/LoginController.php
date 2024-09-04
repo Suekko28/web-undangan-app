@@ -50,7 +50,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials)) {
             session(["token" => auth()->user()->createToken($request->email)->plainTextToken]);
-            return redirect()->route('index');
+            return redirect()->route('dashboard');
         } else {
             $validator->getMessageBag()->add('email', 'Username atau Password salah');
             return redirect()->back()->withErrors($validator)->withInput();
@@ -71,6 +71,6 @@ class LoginController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
-            : redirect('/dashboard');
+            : redirect()->route('dashboard');
     }
 }
