@@ -435,8 +435,8 @@
                     </button>
                 </div>
 
-                @foreach ($alt3models as $item)
                 <div class="button-kirim">
+                    @foreach ($alt3models as $item)
                         <div class="frame-parent55">
                             <div class="hari-parent">
                                 <div class="title2">{{ $item->nama }}</div>

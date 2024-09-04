@@ -37,19 +37,21 @@ class Alt1Controller extends Controller
     {
         // Temukan undangan berdasarkan ID yang diberikan
         $undanganAlt1 = UndanganAlt1::findOrFail($undanganAlt1Id);
-    
-        // Buat instance baru dari Alt1Model dan isi dengan data yang diberikan
+
+        // Buat instance baru dari UcapanAlt1 dan isi dengan data yang diberikan
         $alt1Model = new UcapanAlt1();
         $alt1Model->fill($request->validated());
-    
-        // Simpan Alt1Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai
+        $alt1Model->undangan_alt1_id = $undanganAlt1->id; // Set foreign key
+
+        // Simpan UcapanAlt1 ke dalam relasi alt1Models pada UndanganAlt1 yang sesuai
         $undanganAlt1->alt1Models()->save($alt1Model);
-    
+
         return redirect()->route('undangan-alt1-index', [
             'nama_mempelai_laki' => $nama_mempelai_laki,
             'nama_mempelai_perempuan' => $nama_mempelai_perempuan,
             'nama_undangan' => $nama_undangan
         ])->with('success', 'Berhasil menambahkan data');
     }
-    
+
+
 }

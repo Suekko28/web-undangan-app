@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\alt3FormRequest;
 use App\Models\alt3model;
+use App\Models\UcapanAlt3;
 use App\Models\UndanganAlt3;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class IndexAlt3Controller extends Controller
             ->firstOrFail();
 
         // Buat instance baru dari alt3Model dan isi dengan data yang diberikan
-        $alt3Model = new alt3model();
+        $alt3Model = new UcapanAlt3();
         $alt3Model->fill($request->validated());
 
         // Simpan alt3Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai

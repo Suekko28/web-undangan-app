@@ -68,7 +68,7 @@ class UndanganAlt2 extends Model
 
     public function alt2Models(): HasMany
     {
-        return $this->hasMany(alt2model::class, 'id_alt2_rsvp', 'id');
+        return $this->hasMany(UcapanAlt2::class, 'undangan_alt2_id', 'id');
     }
   
 

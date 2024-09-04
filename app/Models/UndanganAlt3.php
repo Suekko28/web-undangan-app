@@ -74,7 +74,7 @@ class UndanganAlt3 extends Model
 
     public function alt3Models(): HasMany
     {
-        return $this->hasMany(alt3model::class, 'id_alt3_rsvp', 'id');
+        return $this->hasMany(UcapanAlt3::class, 'undangan_alt3_id', 'id');
     }
 
     

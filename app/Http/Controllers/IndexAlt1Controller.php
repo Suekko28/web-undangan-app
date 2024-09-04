@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\alt1FormRequest;
 use App\Models\alt1model;
+use App\Models\UcapanAlt1;
 use App\Models\UndanganAlt1;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class IndexAlt1Controller extends Controller
             ->firstOrFail();
 
         // Buat instance baru dari Alt1Model dan isi dengan data yang diberikan
-        $alt1Model = new Alt1Model();
+        $alt1Model = new UcapanAlt1();
         $alt1Model->fill($request->validated());
 
         // Simpan Alt1Model ke dalam relasi undanganAlt1RSVP pada UndanganAlt1 yang sesuai

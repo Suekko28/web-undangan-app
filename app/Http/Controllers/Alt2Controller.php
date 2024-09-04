@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\alt2FormRequest;
 use App\Models\alt2model;
+use App\Models\UcapanAlt2;
 use Illuminate\Http\Request;
 
 class Alt2Controller extends Controller
@@ -32,7 +33,7 @@ class Alt2Controller extends Controller
     public function store(alt2FormRequest $request)
     {
         $data = $request->validated();
-        alt2model::create($data);
+        UcapanAlt2::create($data);
         return redirect()->to('/undangan-alt2/index');
     }
 

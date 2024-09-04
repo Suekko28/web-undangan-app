@@ -60,7 +60,7 @@ class UndanganAlt2FormRequest extends FormRequest
             'nama_rek2' => 'max:255',
             'no_rek2' => '',
             'atas_nama2' => 'max:255',
-            'alamat_tertera' => 'string',
+            // 'alamat_tertera' => 'string',
             'music' => 'required|mimes:mp3',
             'judul_cerita1' => 'max:255',
             'judul_cerita2' => 'max:255',

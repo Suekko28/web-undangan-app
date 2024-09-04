@@ -83,6 +83,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/undangan-alternative3', [UndanganAlt3Controller::class, 'destroy'])->name('undangan-alternative3.destroy');
 
     Route::resource('/blog', App\Http\Controllers\BlogController::class);
+    Route::resource('/promo', App\Http\Controllers\PromoController::class);
 
 
 });

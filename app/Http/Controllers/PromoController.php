@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\alt3FormRequest;
-use App\Models\alt2model;
-use App\Models\Alt3Model;
+use App\Http\Requests\PromoFormRequest;
+use App\Models\Promo;
 use Illuminate\Http\Request;
 
-class Alt3Controller extends Controller
+class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      
-        $data = alt3model::orderBy('id', 'desc')->get();
-        return view('undangan-nanang.index', compact('data'));
+        $data  = Promo::orderBy('id', 'desc')->paginate(4);
+        return view('promo.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -24,17 +24,26 @@ class Alt3Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('promo.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(alt3FormRequest $request)
+    public function store(PromoFormRequest $request)
     {
-        $data = $request->validated();
-        alt3model::create($data);
-        return redirect()->to('/undangan-alt3/index');
+        $data = $request->all();
+        $userId = auth()->user()->id;
+        $image = $request->file('image');
+        $nama_image = rand() . $image->getClientOriginalName();
+        $image->storeAs('public/promo', $nama_image);
+
+        $data['image'] = $nama_image;
+        $data['user_id'] = $userId;
+
+        Promo::create($data);
+        return redirect()->route('promo.index')->with('success', 'Data berhasil ditambahkan');
+
     }
 
     /**

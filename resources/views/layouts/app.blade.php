@@ -160,6 +160,15 @@
                                     </a>
                                 </li>
                             @endif
+                            @if (auth()->user()->role == 1)
+                                <li class="menu-item {{ request()->routeIs('promo.index') ? 'active' : '' }}">
+                                    <a href="{{ route('promo.index') }}" class="menu-link">
+                                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                                        <div data-i18n="Analytics">Promo</div>
+                                    </a>
+                                </li>
+                            @endif
+                            
                         </ul>
                     </aside>
 
