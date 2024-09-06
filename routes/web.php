@@ -140,17 +140,14 @@ Route::prefix('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/=')->group(functi
     Route::get('/preview/index', [IndexAlt1Controller::class, 'show'])->name('undangan-alt1-preview');
 });
 
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}', [HomeAlt1Controller::class, 'showDetail'])->name('undangan-alt1-first');
-Route::get('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}/index', [IndexAlt1Controller::class, 'showDetail'])->name('undangan-alt1-index');
-Route::post('/{nama_mempelai_laki}&{nama_mempelai_perempuan}/={nama_undangan}/index', [IndexAlt1Controller::class, 'store'])->name('undangan-alt1-post');
-
+ 
 Route::resource('/nama-undangan', NamaUndanganAlt1Controller::class);
 Route::get('/nama-undangan/alt1/{id}/list', [NamaUndanganAlt1Controller::class, 'index'])->name('nama-undangan-list');
-Route::get('/nama-undangan/alt1/{id}/create', [NamaUndanganAlt1Controller::class, 'create'])->name('nama-undangan-create');
-Route::get('/nama-undangan/alt1/{id}/edit', [NamaUndanganAlt1Controller::class, 'edit'])->name('nama-undangan-edit');
-Route::post('/nama-undangan/alt1/{id}/list', [NamaUndanganAlt1Controller::class, 'store'])->name('nama-undangan-store');
-Route::put('/nama-undangan/alt1/{undanganAlt1Id}/{id}', [NamaUndanganAlt1Controller::class, 'update'])->name('nama-undangan-update');
-Route::delete('/nama-undangan/alt1/{id}', [NamaUndanganAlt1Controller::class, 'destroy'])->name('nama-undangan.destroy');
+    Route::get('/nama-undangan/alt1/{id}/create', [NamaUndanganAlt1Controller::class, 'create'])->name('nama-undangan-create');
+    Route::get('/nama-undangan/alt1/{id}/edit', [NamaUndanganAlt1Controller::class, 'edit'])->name('nama-undangan-edit');
+    Route::post('/nama-undangan/alt1/{id}/list', [NamaUndanganAlt1Controller::class, 'store'])->name('nama-undangan-store');
+    Route::put('/nama-undangan/alt1/{undanganAlt1Id}/{id}', [NamaUndanganAlt1Controller::class, 'update'])->name('nama-undangan-update');
+    Route::delete('/nama-undangan/alt1/{id}', [NamaUndanganAlt1Controller::class, 'destroy'])->name('nama-undangan.destroy');
 
 
 // Route undangan alternative 2
