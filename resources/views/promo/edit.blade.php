@@ -48,8 +48,8 @@
                         <div class="fs-6">
                             <div class="form-group mb-3">
                                 <label for="image">Gambar <span class="mandatory">*</span></label>
-                                <input type="file" class="form-control" id="image" name="image"
-                                    placeholder="" value="{{$data->image}}">
+                                <input type="file" class="form-control" id="image" name="image" placeholder=""
+                                    value="{{ $data->image }}">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="link">Link <span class="mandatory">*</span></label>
@@ -67,6 +67,7 @@
 
                 </form>
             </div>
+        </section>
 
 
 
